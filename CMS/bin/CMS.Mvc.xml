@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.Mvc.IMvcAdapter">
+            <summary>
+            MvcAdapter contract interface. Provides an access to the core MVC functionality and objects.
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.IMvcAdapter.GetMvcHandler(System.Web.Routing.RequestContext)">
+            <summary>
+            Gets the MVC handler.
+            </summary>
+            <param name="context">The request context</param>
+        </member>
+        <member name="M:CMS.Mvc.IMvcAdapter.GetMvcRouteHandler">
+            <summary>
+            Gets the MVC route handler.
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.IMvcAdapter.ProceedDefaultRouteValues(System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary)">
+            <summary>
+            Proceeds the default route values.
+            </summary>
+            <param name="values">The values</param>
+            <param name="routeDefaults">The route defaults</param>
+        </member>
+        <member name="M:CMS.Mvc.IMvcAdapter.GetControllerType(System.Web.Routing.RequestContext,System.String)">
+            <summary>
+            Gets the type of the controller.
+            </summary>
+            <param name="context">The context</param>
+            <param name="controllerName">Name of the controller</param>
+        </member>
+        <member name="P:CMS.Mvc.IMvcAdapter.OptionalUrlParameter">
+            <summary>
+            Gets the "Optional URL parameter" type.
+            </summary>
+        </member>
+    </members>
+</doc>

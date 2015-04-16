@@ -1,0 +1,1189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.EcommerceProvider</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.EcommerceProvider.AuthorizeNetParameters">
+            <summary>
+            Class providing names of Authorize.NET payment gateway required parameters.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.AuthorizeNetParameters.CARD_CCV">
+            <summary>
+            Credit card CCV.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.AuthorizeNetParameters.CARD_NUMBER">
+            <summary>
+            Credit card number.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.AuthorizeNetParameters.CARD_EXPIRATION">
+            <summary>
+            Credit card expiration.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CheckoutProcessEnum">
+            <summary>
+            Type of checkout process.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CheckoutProcessEnum.Custom">
+            <summary>
+            Custom checkout process.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CheckoutProcessEnum.LiveSite">
+            <summary>
+            Checkout process for the live site.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CheckoutProcessEnum.CMSDeskOrder">
+            <summary>
+            Checkout process for the CMSDesk order section.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CheckoutProcessEnum.CMSDeskOrderItems">
+            <summary>
+            Checkout process for the CMSDesk order items section.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CheckoutProcessEnum.CMSDeskCustomer">
+            <summary>
+            Checkout process for the CMSDesk customer section.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CheckoutProcessInfo">
+            <summary>
+            Class providing checkout process definition management.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CheckoutProcessInfo.STEP_INDEX_NOT_KNOWN">
+            <summary>
+            This constants says that index of the step is not known.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.SetCheckoutProcessStepNode(CMS.EcommerceProvider.CheckoutProcessStepInfo)">
+            <summary>
+            Updates/inserts checkout step node in/into xml definition.
+            </summary>
+            <param name="stepObj">Checkout step data object with new step information</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.ReplaceCheckoutProcessStepNode(CMS.EcommerceProvider.CheckoutProcessStepInfo,System.String)">
+            <summary>
+            Updates/inserts checkout step node in/into xml definition.
+            </summary>
+            <param name="stepObj">Checkout step data object with new step information</param>
+            <param name="originalName">Name of the node to be replaced</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.RemoveCheckoutProcessStepNode(System.String)">
+            <summary>
+            Removes checkout step from the XML.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.MoveCheckoutProcessStepNodeUp(System.String)">
+            <summary>
+            Moves specified step up.
+            </summary>
+            <param name="stepName">Name of the step to move</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.MoveCheckoutProcessStepNodeDown(System.String)">
+            <summary>
+            Moves specified step down.
+            </summary>
+            <param name="stepName">Name of the step to move</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.GetCheckoutProcessStepNode(System.String)">
+            <summary>
+            Returns checkout step node according to the speicified step name.
+            </summary>
+            <param name="stepName">Checkout step name</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.GetCheckoutProcessStepInfo(System.String)">
+            <summary>
+            Returns CheckoutProcessStepInfo object created from the xml node of the specified name attribute.
+            </summary>
+            <param name="stepName">Step name</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.GetCheckoutProcessStepInfo(System.Int32)">
+            <summary>
+            Returns CheckoutProcessStepInfo object created from the xml node of the specified order(index).
+            </summary>
+            <param name="index">Index of the step to be returned</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.GetCheckoutProcessSteps(CMS.EcommerceProvider.CheckoutProcessEnum)">
+            <summary>
+            Returns list of steps for the specified type of checkout process.
+            </summary>
+            <param name="process">Checkout process type</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.LoadXmlDefinition(System.String)">
+            <summary>
+            Loads checkout process xml definition.
+            </summary>
+            <param name="definition">Checkout process xml definition</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.GetXmlDefinition">
+            <summary>
+            Returns checkout process xml form definition.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.GetDataTableFromXmlDefinition(CMS.EcommerceProvider.CheckoutProcessEnum)">
+            <summary>
+            Returns DataTable with steps for specified checkout process.
+            </summary>
+            <param name="process">Checkout process type</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.CreateCheckoutProcessRow(System.Data.DataTable,CMS.EcommerceProvider.CheckoutProcessStepInfo)">
+            <summary>
+            Creates table row with checkout step information.
+            </summary>
+            <param name="checkoutProcessTable">Checkout step table</param>
+            <param name="stepObj">Checkout step information</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.CreateCheckoutProcessTable">
+            <summary>
+            Returns the empty checkout process table.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.GetCheckoutProcessStepNodes(CMS.EcommerceProvider.CheckoutProcessEnum)">
+            <summary>
+            Returns checkout step nodes of the specified checkout process.
+            </summary>
+            <param name="process">Checkout process type</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.#ctor">
+            <summary>
+            Constructor - creates empty checkout process object.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessInfo.#ctor(System.String)">
+            <summary>
+            Constructor - loades checkout process xml definition.
+            </summary>
+            <param name="definition">Checkout process xml definition</param>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessInfo.RootNode">
+            <summary>
+            Root node of the checkout process xml definition.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CheckoutProcessStepInfo">
+            <summary>
+            Checkout process step object.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessStepInfo.#ctor">
+            <summary>
+            Constructor - creates empty checkout proces step object.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CheckoutProcessStepInfo.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Constructor - creates checkout proces step object from XML node data.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.Caption">
+            <summary>
+            Step caption.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.Name">
+            <summary>
+            Step code name.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.Icon">
+            <summary>
+            Step icon.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.ControlPath">
+            <summary>
+            ASCX control path.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.ShowInCMSDeskOrder">
+            <summary>
+            Indicates whether step should be included in checkout process in CMSDesk Order section.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.ShowInCMSDeskOrderItems">
+            <summary>
+            Indicates whether step should be included in checkout process in CMSDesk Order/Items section
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.ShowInCMSDeskCustomer">
+            <summary>
+            Indicates whether step should be included in checkout process in CMSDesk Customer section.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.ShowOnLiveSite">
+            <summary>
+            Indicates whether step should be included in checkout process on the live site.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.StepIndex">
+            <summary>
+            Zero based step index - initialized when creating list of checkout process steps.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CheckoutProcessStepInfo.IsExternal">
+            <summary>
+            True - step is not defined in standard checkout process, otherwise False.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CMSAuthorizeNetProvider">
+            <summary>
+            Class providing payment using Authorize.NET payment gateway.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CMSPaymentGatewayProvider">
+            <summary>
+            Class providing base methods and properties for payment gateway management.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mInfoMessage">
+            <summary>
+            Payment result message displayed to user when payment succeeds.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mErrorMessage">
+            <summary>
+            Payment result message displayed to user when payment fails.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mShoppingCartInfoObj">
+            <summary>
+            Shopping cart object which stores all data during the checkout process.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mOrder">
+            <summary>
+            Order object which is going to be paid.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mShoppingCartControl">
+            <summary>
+            Parent shopping cart control the current shopping cart step belongs to.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mPaymentResult">
+            <summary>
+            Payment result.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mOrderId">
+            <summary>
+            Order ID.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mIsPaymentCompleted">
+            <summary>
+            Indicates whether payment is already completed.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mPaymentDataContainer">
+            <summary>
+            Payment gateway data container of the current shopping cart step control.
+            </summary>  
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSPaymentGatewayProvider.mPaymentDataForm">
+            <summary>
+            Payment gateway form with custom controls.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.ProcessPayment">
+            <summary>
+            Process payment - you need to override this method to process payment by your custom payment processor.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.GetPaymentDataFormPath">
+            <summary>
+            Returns CMSPaymentGatewayForm form virtual path with custom controls which are used to display/input customer payment data, such as credit card number etc.- you need to override this method to load your custom controls.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.CreatePaymentResultInfo">
+            <summary>
+            Creates payment result object - base PaymentResultInfo object is created by default.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.InitializeGatewayControl(System.Web.UI.Control,System.Web.UI.Control)">
+            <summary>
+            Adds payment gateway custom data to the current shopping cart step - payment gateway form with initialized custom controls is added by default.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.ValidateCustomData">
+            <summary>
+            Validates payment gateway custom data of the current shopping cart step -  payment gateway form data validation is performed by default.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.ProcessCustomData">
+            <summary>
+            Process payment gateway custom data of the current shopping cart step -  payment gateway form data processing is performed by default.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.GetPaymentGatewayUrl">
+            <summary>
+            Returns payment gateway url.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.AddAdditionalInfoToPaymentResult">
+            <summary>
+            Adds some additional information to payment result, such as time stamp and payment method name.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.UpdateOrderPaymentResult">
+            <summary>
+            Updates order payment result in database.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.IsUserAuthorizedToFinishPayment(CMS.Membership.UserInfo,CMS.Ecommerce.ShoppingCartInfo,System.Boolean)">
+            <summary>
+            Checks whether specified user is authorized to finish payment.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.GetPaymentGatewayProvider(System.Int32)">
+            <summary>
+            Returns payment gateway provider instance.
+            </summary>
+            <param name="paymentOptionId">Payment option ID</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayProvider.UpdateOrderStatus(CMS.Ecommerce.OrderInfo,System.Int32)">
+            <summary>
+            Assigns order status to order. If can not be used due to global objects settings, looks for site status with the same code name.
+            </summary>
+            <param name="order">Order object</param>
+            <param name="statusId">Id of the status</param>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.ShoppingCartControl">
+            <summary>
+            Parent shopping cart control the current shopping cart step belongs to.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.ShoppingCartInfoObj">
+            <summary>
+            Shopping cart object which stores all data during the checkout process. If OrderId is set it is created from existing order, otherwise it is returned from current shopping cart control.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.OrderId">
+            <summary>
+            Order ID. Set this value when you want to process payment for the existing order outside the checkout process.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.Order">
+            <summary>
+            Order object which is going to be paid.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.PaymentResult">
+            <summary>
+            Payment result.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.IsPaymentCompleted">
+            <summary>
+            Indicates whether payment is already completed.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.InfoMessage">
+            <summary>
+            Payment result message displayed to user when payment succeeds.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.ErrorMessage">
+            <summary>
+            Payment result message displayed to user when payment fails.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayProvider.PaymentDataForm">
+            <summary>
+            Payment gateway form with custom controls.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSAuthorizeNetProvider.CreatePaymentResultInfo">
+            <summary>
+            Creates Authorize.Net payment result object.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSAuthorizeNetProvider.ProcessPayment">
+            <summary>
+            Process payment.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSAuthorizeNetProvider.GetOrderDescription">
+            <summary>
+            Builds an order description from the order data which is attached to the payment request.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSAuthorizeNetProvider.ProcessPaymentGatewayDecodedResponse(System.String[])">
+            <summary>
+            Process payment gateway decoded response and updates payment result.
+            </summary>
+            <param name="response">Decoded response</param>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSAuthorizeNetProvider.GetResponseParameterValue(System.String[],System.Int32)">
+            <summary>
+            Returns specified response parameter value from the array of values.
+            </summary>
+            <param name="response">Array of response parameters values</param>
+            <param name="parameterIndex">Parameter index</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSAuthorizeNetProvider.InitializePaymentRequest(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Fills empty input name-value collection with payment request parameters' names and their values.
+            </summary>
+            <param name="requestParams">Request parameters collection to fill</param>        
+            <returns>Returns error message when some error occurs.</returns>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSAuthorizeNetProvider.GetPaymentDataFormPath">
+            <summary>
+            Returns payment gateway form path with custom controls.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CMSCreditPaymentProvider">
+            <summary>
+            Class providing methods and properties for credit payment.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSCreditPaymentProvider.CREDIT_PAYMENT_FORM_ID">
+            <summary>
+            ID of the credit payment form control.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSCreditPaymentProvider.VALUE_NOT_KNOWN">
+            <summary>
+            This constant says that value of the credit is not known.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSCreditPaymentProvider.mAvailableCreditInMainCurrency">
+            <summary>
+            Available credit in main currency.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSCreditPaymentProvider.mAvailableCreditInOrderCurrency">
+            <summary>
+            Available credit in order currency.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSCreditPaymentProvider.mExchangeRate">
+            <summary>
+            Exchange rate.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSCreditPaymentProvider.mMainCurrencyObj">
+            <summary>
+            Main currency data object.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.CMSCreditPaymentProvider.mOrderCurrencyObj">
+            <summary>
+            Order currency data object.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSCreditPaymentProvider.ReloadPaymentData">
+            <summary>
+            Reloads payment data - order and main currencies, their exchange rates, customer available credit.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSCreditPaymentProvider.ProcessPayment">
+            <summary>
+            Process payment.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSCreditPaymentProvider.GetPaymentDataFormPath">
+            <summary>
+            Returns payment gateway form path with custom controls.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSCreditPaymentProvider.IsUserAuthorizedToFinishPayment(System.Boolean)">
+            <summary>
+            Checks whether current user is authorized to finish payment, if he is not authorized sets corresponding payment gateway error message.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSCreditPaymentProvider.IsUserAuthorizedToFinishPayment(CMS.Membership.UserInfo,CMS.Ecommerce.ShoppingCartInfo,System.Boolean)">
+            <summary>
+            Checks whether specified user is authorized to finish payment, if he is not authorized sets corresponding payment gateway error message.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSCreditPaymentProvider.MainCurrencyObj">
+            <summary>
+            Main currency info object.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSCreditPaymentProvider.OrderCurrencyObj">
+            <summary>
+            Order currency info object.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSCreditPaymentProvider.AvailableCreditInMainCurrency">
+            <summary>
+            Available credit in main currency.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSCreditPaymentProvider.AvailableCreditInOrderCurrency">
+            <summary>
+            Available credit in order currency.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSCreditPaymentProvider.ExchangeRate">
+            <summary>
+            Exchange rate between main and order currencies.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSCreditPaymentProvider.CreditChangeAfterPayment">
+            <summary>
+            Credit change after payment.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSCreditPaymentProvider.HasCustomerEnoughCredit">
+            <summary>
+            Indicates whether customer has enough credit to finish payment.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CMSPaymentGatewayForm">
+            <summary>
+            Form which is used as a base class for other payment gateways' forms.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayForm.LoadData">
+            <summary>
+            Initializes form controls with customer payment data.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayForm.ValidateData">
+            <summary>
+            Validates form data and returns error message if some error occurs.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPaymentGatewayForm.ProcessData">
+            <summary>
+            Process form data and returns error message if some error occurs.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayForm.PaymentProvider">
+            <summary>
+            Gets/Sets the payment provider which initialized this control.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.CMSPaymentGatewayForm.PaymentGatewayCustomData">
+            <summary>
+            Gets the payment gateway custom data storage.
+            </summary>        
+        </member>
+        <member name="T:CMS.EcommerceProvider.CMSPayPalProvider">
+            <summary>
+            Class providing payment using PayPal payment gateway.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.CreatePaymentResultInfo">
+            <summary>
+            Creates PayPal payment result object.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.GetPaymentDataFormPath">
+            <summary>
+            Adds payment gateway custom data to the specified shopping cart step.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.ProcessPayment">
+            <summary>
+            Process payment - initialize payment request and redirect to the PayPal payment gateway to finish payment.
+            </summary>        
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.GetFullPaymentGatewayUrl(System.String,System.Collections.Hashtable)">
+            <summary>
+            Returns complete payment gateway url with initialized querystring.
+            </summary>
+            <param name="url">Base payment gateway url</param>
+            <param name="requestParams">Name-Value collection with url parameters and their values</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.InitializePaymentRequest(System.Collections.Hashtable)">
+            <summary>
+            Fills input name-value collection with payment request parameters' names and their values. Values are not URL-encoded.
+            </summary>
+            <param name="requestParams">Request parameters collection to fill</param>        
+            <returns>Returns error message when some error occurs.</returns>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.GetOrderDescription">
+            <summary>
+            Builds an order description from the order data which is attached to the payment request.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.ConfirmPayment(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Confirms payment - post the data that was posted to the merchant back to PayPal and returns PayPal response as result of payment confirmation.
+            Returns "VERIFIED" - payment data match, "INVALID" - payment data don't match.
+            </summary>
+            <param name="collection">Name-Value collection with the data that was posted to the merchant by PayPal</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CMSPayPalProvider.ComparePaymentDataToOrderData(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Compares payment data (seller email, total price, payment currency) to order data and returns appropriate error message if data don't match, otherwise returns empty string.
+            </summary>
+            <param name="collection">Name-Value collection with the payment data that were posted to the merchant by PayPal</param>
+        </member>
+        <member name="T:CMS.EcommerceProvider.CreditPaymentForm">
+            <summary>
+            Class describing credit payment form base functionality.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.CreditPaymentForm.DisplayAvailableCredit">
+            <summary>
+            Displays available credit.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.ShoppingCart">
+            <summary>
+            Summary description for ShoppingCart.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.DEFAULT_CHECKOUT_PROCESS">
+            <summary>
+            Default checkout process XML definition.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.DEFAULT_REQUIRED_FIELDS_MARK">
+            <summary>
+            Default required field marker. Contains html code with styled asterisk.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mLocalShoppingCart">
+            <summary>
+            Local shopping cart object.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mShoppingCartObj">
+            <summary>
+            Shopping cart object.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mCurrentStepControl">
+            <summary>
+            Shopping cart current step control.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mIsCurrentStepPostBack">
+            <summary>
+            Indicates whether current step control is loaded after postback.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mIsControlLoaded">
+            <summary>
+            Indicates if current step control is loaded.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mShoppingCartContainer">
+            <summary>
+            Shopping cart container.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mCheckoutProcess">
+            <summary>
+            Checkout process.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mCheckoutProcessSteps">
+            <summary>
+            Checkout process steps.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mCheckoutProcessType">
+            <summary>
+            Type of the checkout process.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mPreviousStepIndex">
+            <summary>
+            Previsou step index.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mNextStepIndex">
+            <summary>
+            Next step index.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mEnablePasswordRetrieval">
+            <summary>
+            Indicates whether password retrieval is enabled.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mRegistrationTrackConversionName">
+            <summary>
+            Conversion track name used after successful registration.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mRegistrationConversionValue">
+            <summary>
+            Conversion track value used after successful registration.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mOrderTrackConversionName">
+            <summary>
+            Conversion track name used after new order is saved.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mOrderConversionValue">
+            <summary>
+            Conversion track value used after new order is saved.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mAddToShoppingCartTrackConversionName">
+            <summary>
+            Conversion track name used after added to shopping cart.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mAddToShoppingCartConversionValue">
+            <summary>
+            Conversion track value used after added to shopping cart.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mSendNewRegNotificationToAddress">
+            <summary>
+            Email address the new registration notification should be sent to.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mAssignToRoles">
+            <summary>
+            Roles the new user should be assign to after his registration.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mAssignToSites">
+            <summary>
+            Sites the new user should be assign to after his registration.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mRedirectAfterPurchase">
+            <summary>
+            Redirect after purchase.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mEnableProductPriceDetail">
+            <summary>
+            Indicates whether product price detail link is displayd.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mImageFolderPath">
+            <summary>
+            Relative path to the folder with shopping cart step images.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mImageStepSeparator">
+            <summary>
+            HTML code of the image step separator.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mRequiredFieldsMark">
+            <summary>
+            HTML code which is attached as postfix to the shopping cart step form required fields.
+            </summary>
+        </member>
+        <member name="F:CMS.EcommerceProvider.ShoppingCart.mPaymentGatewayProvider">
+            <summary>
+            Payment gateway provider.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.GetShoppingCartStepControl(CMS.EcommerceProvider.CheckoutProcessStepInfo)">
+            <summary>
+            Returns initialized shopping cart step control.
+            </summary>
+            <param name="procesStepObj">Checkout process step information</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.LogErrorLoadingStep(System.String)">
+            <summary>
+            Logs error while loading shopping cart step.
+            </summary>
+            <param name="message">Error message</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.GetCheckoutProcessStepFromList(System.Int32)">
+            <summary>
+            Returns CheckoutProcessStepInfo object from the checkout process step list.
+            </summary>
+            <param name="index">Index of the checkout process step to be returned</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.GetCheckoutProcessStepFromList(System.String)">
+            <summary>
+            Returns CheckoutProcessStepInfo object from the checkout process step list.
+            </summary>
+            <param name="stepName">Code name of the checkout process step to be returned</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.GetTempValue(System.String)">
+            <summary>
+            Returns the value from the ShoppingCart viewstate.
+            </summary>
+            <param name="key">Key to viewstate value</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.SetTempValue(System.String,System.Object)">
+            <summary>
+            Sets the value to the ShoppingCart viewstate.
+            </summary>
+            <param name="key">Key to viewstate value</param>
+            <param name="value">Value to store</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.LoadCheckoutProcess(CMS.EcommerceProvider.CheckoutProcessInfo)">
+            <summary>
+            Loads checkout process from external source.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.GetShoppingCartStepControl(System.String)">
+            <summary>
+            Returns initialized shopping cart step control.
+            </summary>
+            <param name="stepCodeName">Step code name</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.GetShoppingCartStepControl(System.Int32)">
+            <summary>
+            Returns initialized shopping cart step control.
+            </summary>
+            <param name="index">Step index</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.LoadStep(CMS.EcommerceProvider.ShoppingCartStep)">
+            <summary>
+            Loads specified shopping cart step control and set current step index to control index (step is included in current checkout process) or leave current step index as is (when loading external control which is not defined in current checkout process).
+            </summary>
+            <param name="stepControl">Shopping cart step control to be loaded</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.LoadStep(System.Int32)">
+            <summary>
+            Loads step control with specified index and set current step index to control index.
+            </summary>
+            <param name="index">Checkout process step index</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.LoadStep(System.String)">
+            <summary>
+            Loads step control with specified name and set current step index to control index.
+            </summary>
+            <param name="stepName">Checkout process step code name</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.LoadCurrentStep">
+            <summary>
+            Loads current step - you need to override this method to load current step control.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.CleanUpShoppingCart">
+            <summary>
+            Removes current shopping cart data from database and from session.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.GetRedirectAfterPurchaseUrl">
+            <summary>
+            Returns url the customer should be redirected to after purchase.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.RaiseOrderCompletedEvent">
+            <summary>
+            Raises order completed event - after the order is completed (all its data are saved in database).
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.RaisePaymentCompletedEvent">
+            <summary>
+            Raises payment completed event - after the order payments is completed.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.RaisePaymentSkippedEvent">
+            <summary>
+            Raises payment skipped event - after the order payments is skipped.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.ReloadShoppingCartInfo(System.Guid)">
+            <summary>
+            Reloads shopping cart items and settings from database.
+            </summary>
+            <param name="cartGuid">GUID of the shopping cart to be reloaded</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.TrackActivityProductAddedToShoppingCart(System.Int32,System.String,System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            Logs activity "product added to shopping cart".
+            </summary>
+            <param name="skuId">Product ID</param>
+            <param name="skuName">Product name</param>
+            <param name="contactId">Contact ID</param>
+            <param name="siteName">Site name</param>
+            <param name="url">URL</param>
+            <param name="quantity">Quantity</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.TrackActivityAllProductsRemovedFromShoppingCart(CMS.Ecommerce.ShoppingCartInfo,System.String,System.Int32)">
+            <summary>
+            Logs activity "product removed from shopping cart" for all items in shopping cart.
+            </summary>
+            <param name="shoppingCartInfoObj">Shopping cart</param>
+            <param name="siteName">Site name</param>
+            <param name="contactId">ContactID</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.TrackActivityCustomerRegistration(CMS.Ecommerce.CustomerInfo,CMS.Membership.UserInfo,System.Int32,System.String,System.String)">
+            <summary>
+            Logs activity "customer registration".
+            </summary>
+            <param name="ci">Customer info</param>
+            <param name="ui">User info (optional)</param>
+            <param name="contactId">Contact ID</param>
+            <param name="siteName">Site name</param>
+            <param name="url">URL</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.TrackActivityPurchasedProducts(CMS.Ecommerce.ShoppingCartInfo,System.String,System.Int32)">
+            <summary>
+            Logs activity "purchase" for all items.
+            </summary>
+            <param name="shoppingCartInfoObj">Shopping cart</param>
+            <param name="siteName">Site name</param>
+            <param name="contactId">Contact ID</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.TrackActivityPurchase(System.Int32,System.Int32,System.String,System.String,System.Double,System.String)">
+            <summary>
+            Logs activity "purchase".
+            </summary>
+            <param name="orderId">Order ID</param>
+            <param name="contactId">Contact ID</param>
+            <param name="siteName">Site name</param>
+            <param name="url">URL</param>
+            <param name="totalPrice">Total price</param>
+            <param name="totalPriceAsString">Total price user friendly formatted</param>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.ButtonNextClickAction">
+            <summary>
+            Standard action after the 'Next button' is clicked - 1. Validates current step, 2. Process current step information, 3. Loads next step.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCart.ButtonBackClickAction">
+            <summary>
+            Standard action after the 'Back button' is clicked - Loads previous step.
+            </summary>
+        </member>
+        <member name="E:CMS.EcommerceProvider.ShoppingCart.OnOrderCompleted">
+            <summary>
+            Fires after the order is completed - all its data are saved in database.
+            </summary>
+        </member>
+        <member name="E:CMS.EcommerceProvider.ShoppingCart.OnPaymentCompleted">
+            <summary>
+            Fires after the order payment completed.
+            </summary>
+        </member>
+        <member name="E:CMS.EcommerceProvider.ShoppingCart.OnPaymentSkipped">
+            <summary>
+            Fires after the order payment is skipped.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.LocalShoppingCart">
+            <summary>
+            Local shopping cart object.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.ShoppingCartInfoObj">
+            <summary>
+            Shopping cart object.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.CheckoutProcess">
+            <summary>
+            Checkout process.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.CheckoutProcessSteps">
+            <summary>
+            Checkout process steps.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.CheckoutProcessType">
+            <summary>
+            Checkout process type.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.CurrentStepIndex">
+            <summary>
+            Shopping cart current step index.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.PreviousStepIndex">
+            <summary>
+            Previous step index. (Set it if you want to load another step with index different from CurrentStepIndex - 1).
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.NextStepIndex">
+            <summary>
+            Next step index. (Set it if you want to load another step with index different from CurrentStepIndex + 1).
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.ButtonBack">
+            <summary>
+            Button 'Back' - you need to override this property to get access to shopping cart 'Back' button in shopping cart steps.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.ButtonNext">
+            <summary>
+            Button 'Next' - you need to override this property to get access to shopping cart 'Next' button in shopping cart steps.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.ShoppingCartContainer">
+            <summary>
+            Shopping cart container.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.PreviousPageUrl">
+            <summary>
+            Page url, we should return to after "Continue shopping" button is clicked.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.CurrentStepControl">
+            <summary>
+            Shopping cart current step control.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.PaymentGatewayProvider">
+            <summary>
+            Payment gateway provider instance.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.IsCurrentStepPostBack">
+            <summary>
+            Indicates whether current step control is loaded after postback.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.ExternalControlPath">
+            <summary>
+            External control (control which is not defined in current checkout process) path.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.IsInternalOrder">
+            <summary>
+            Indicates whether it is an internal order made from CMSDesk.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.EnablePasswordRetrieval">
+            <summary>
+            Indicates whether password retrieval is enabled.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.RegistrationTrackConversionName">
+            <summary>
+            Conversion track name used after successful registration.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.OrderTrackConversionName">
+            <summary>
+            Conversion track name used after new order is saved.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.SendNewRegistrationNotificationToAddress">
+            <summary>
+            Email address the new registration notification should be sent to.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.AssignToRoles">
+            <summary>
+            Roles the new user should be assign to after his registration.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.AssignToSites">
+            <summary>
+            Sites the new user should be assign to after his registration.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.RedirectAfterPurchase">
+            <summary>
+            Redirect after purchase.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.EnableProductPriceDetail">
+            <summary>
+            Indicates whether product price detail link is displayd.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.ImageFolderPath">
+            <summary>
+            Relative path to the folder with shopping cart step images.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.ImageStepSeparator">
+            <summary>
+            HTML code of the image step separator.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.RequiredFieldsMark">
+            <summary>
+            HTML code which is attached as postfix to the shopping cart step form required fields.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.UserInfo">
+            <summary>
+            User info - returns shopping cart user, if not specified returns current user.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCart.CurrentContactID">
+            <summary>
+            Current contact ID. Shared across shopping cart steps.
+            </summary>
+        </member>
+        <member name="T:CMS.EcommerceProvider.ShoppingCartStep">
+            <summary>
+            Class describing shopping cart base functionality.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCartStep.ProcessStep">
+            <summary>
+            Process current step information. If succeeded returns true, otherwise returns false.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCartStep.IsValid">
+            <summary>
+            Validates current step information before processing. If succeeded returns true, otherwise returns false.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCartStep.ButtonBackClickAction">
+            <summary>
+            Standard action after the 'Back button' is clicked - calls parent shopping cart control ButtonBackClickAction() by default.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCartStep.ButtonNextClickAction">
+            <summary>
+            Standard action after the 'Next button' is clicked - calls parent shopping cart control ButtonNextClickAction() by default.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCartStep.OnLoad(System.EventArgs)">
+            <summary>
+            Default OnLoad event.
+            </summary>
+        </member>
+        <member name="M:CMS.EcommerceProvider.ShoppingCartStep.InitCurrentContact">
+            <summary>
+            Initializes current contact ID.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCartStep.ShoppingCartControl">
+            <summary>
+            Parent shopping cart control.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCartStep.CheckoutProcessStep">
+            <summary>
+            Checkout process step information.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCartStep.ShoppingCart">
+            <summary>
+            Shopping cart info object of the parent shopping cart.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCartStep.StepContainer">
+            <summary>
+            Shopping cart step container.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCartStep.Enabled">
+            <summary>
+            Indicates if control is enabeld.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCartStep.ContactID">
+            <summary>
+            Contact ID passed between shopping cart steps.
+            </summary>
+        </member>
+        <member name="P:CMS.EcommerceProvider.ShoppingCartStep.LogActivityForCustomer">
+            <summary>
+            Indicates if logging activity is enabled for current customer.
+            </summary>
+        </member>
+    </members>
+</doc>

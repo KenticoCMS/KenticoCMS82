@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="CMSWebParts_SocialMedia_LinkedIn_LinkedInShareButton" CodeFile="~/CMSWebParts/SocialMedia/LinkedIn/LinkedInShareButton.ascx.cs" %>
+<asp:Literal runat="server" ID="ltlButtonCode" EnableViewState="false" />

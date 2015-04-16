@@ -1,0 +1,28 @@
+﻿@inherits WebViewPage<News>
+
+@using CMS.DocumentEngine.Types;              
+@using CMS.Helpers
+
+@{ 
+    Layout = "~/Views/CorporateSite/Shared/Master.cshtml";
+}
+
+<div class="innerContent">
+    <h1>@ViewBag.PageTitle</h1>
+    <p>
+        This is a sample for the page rendered by MVC Razor view engine. It displays the news detail.
+        The detail is provided by the <strong>News</strong> controller and the <strong>~/Views/CorporateSite/News/Detail.cshtml</strong> view
+        and routed through MVC URL pattern <strong>/NewsMVC/{alias}</strong> added as document alias to the same document as the main document.
+        This way, there is no need to provide separate documents for detail view.
+    </p>
+    <div class="LightGradientBox ">
+        <h2>
+            @Model.NewsTitle</h2>
+        <p>
+            @Html.Raw(Model.NewsText)
+        </p>
+        <p>
+            <a href="@URLHelper.ResolveUrl("~/NewsMVC")">Back to the list of news</a>
+        </p>
+    </div>
+</div>

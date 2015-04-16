@@ -1,0 +1,36 @@
+<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="Show()" />
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="Hide()" />
+<SCRIPT LANGUAGE="javascript">
+	function Show() {
+		var child = element.getElementsByTagName("ul")[0];
+		if (child) {
+			if (child.style)
+			{
+				child = child.style;
+			}
+			child.display = "block";
+			if (element.tagName == "DIV") {
+				child.visibility = "visible";
+				child.zIndex = 2100;
+				child.backgroundColor = "white";
+			}
+		}
+	}
+	function Hide() {
+		var child = element.getElementsByTagName("ul")[0];
+		if (child) {
+			if (child.style)
+			{
+				child=child.style;
+			}
+			child.display = "none";
+			if (element.tagName == "DIV") {
+				child.visibility = "hidden";
+				child.zIndex = -10;
+				child.backgroundColor = "transparent";
+			}		
+		}
+	}
+</SCRIPT>
+</PUBLIC:COMPONENT>

@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.MetaWeblogProvider</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.MetaWeblogProvider.IMetaWeblogAPI">
+            <summary>
+            MetaWeblog API interface.
+            </summary>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.AddPost(System.String,System.String,System.String,CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post,System.Boolean)">
+            <summary>
+            Inserts the new blog post within specified blog.
+            </summary>
+            <param name="blogid">ID of the blog post is added to</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="post">Blog post info</param>
+            <param name="publish">Indicates whether the blog post should be published. If false it is a draft post</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.UpdatePost(System.String,System.String,System.String,CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post,System.Boolean)">
+            <summary>
+            Updates information on specified blog post.
+            </summary>
+            <param name="postid">ID of the post to update</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="post">Blog post info</param>
+            <param name="publish">Indicates whether the blog post should be published. If false it is a draft post</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.GetPost(System.String,System.String,System.String)">
+            <summary>
+            Gets a specific post of the specified blog.
+            </summary>
+            <param name="postid">ID of the post to retrieve</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.GetCategories(System.String,System.String,System.String)">
+            <summary>
+            Gets a list of tags used in the particular blog.
+            </summary>
+            <param name="blogid">ID of the blog tags are retrieved for</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.GetRecentPosts(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Gets a set of the most recent blog posts in descending order by publish date.
+            </summary>
+            <param name="blogid">ID of the blog</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="numberOfPosts">Indicates the number of returned posts</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.NewMediaObject(System.String,System.String,System.String,CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObject)">
+            <summary>
+            Creates a new media object on the server side for later use in the blog.
+            </summary>
+            <param name="blogid">ID of the blog</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="mediaObject">Media object info</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.DeletePost(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Removes blog post.
+            </summary>
+            <param name="key">This value is ignored. Required to keep blog compatibility</param>
+            <param name="postid">ID of the post to delete</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="publish">This value is ignored. Required to keep blog compatibility</param>
+            <returns></returns>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.GetUsersBlogs(System.String,System.String,System.String)">
+            <summary>
+            Gets a list of user's blog posts.
+            </summary>
+            <param name="key">This value is ignored. Required to keep blog applications compatibility</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.IMetaWeblogAPI.GetUserInfo(System.String,System.String,System.String)">
+            <summary>
+            Gets an info on specific blog user.
+            </summary>
+            <param name="key">This value is ignored. Required to keep blog applications compatibility</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPI">
+            <summary>
+            Class serving MetaWeblogAPI requests.
+            </summary>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.AddPost(System.String,System.String,System.String,CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post,System.Boolean)">
+            <summary>
+            Inserts the new blog post within specified blog.
+            </summary>
+            <param name="blogid">ID of the blog post is added to</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="post">Blog post info</param>
+            <param name="publish">Indicates whether the blog post should be published. If false it is a draft post</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.UpdatePost(System.String,System.String,System.String,CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post,System.Boolean)">
+            <summary>
+            Updates information on specified blog post.
+            </summary>
+            <param name="postid">ID of the post to update</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="post">Blog post info</param>
+            <param name="publish">Indicates whether the blog post should be published. If false it is a draft post</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetPost(System.String,System.String,System.String)">
+            <summary>
+            Gets a specific post of the specified blog.
+            </summary>
+            <param name="postid">ID of the post to retrieve</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetCategories(System.String,System.String,System.String)">
+            <summary>
+            Gets a list of tags used in the particular blog.
+            </summary>
+            <param name="blogid">ID of the blog tags are retrieved for</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetRecentPosts(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Gets a set of the most recent blog posts in descending order by publish date.
+            </summary>
+            <param name="blogid">ID of the blog</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="numberOfPosts">Indicates the number of returned posts</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.NewMediaObject(System.String,System.String,System.String,CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObject)">
+            <summary>
+            Creates a new media object on the server side for later use in the blog.
+            </summary>
+            <param name="blogid">ID of the blog</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="mediaObject">Media object info</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.DeletePost(System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Deletes a specific blog post on the server side.
+            </summary>
+            <param name="key">This value is ignored. Required to keep blog compatibility</param>
+            <param name="postid">ID of the post to delete</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+            <param name="publish">This value is ignored. Required to keep blog compatibility</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetUsersBlogs(System.String,System.String,System.String)">
+            <summary>
+            Gets a list of user's blog posts.
+            </summary>
+            <param name="key">This value is ignored. Required to keep blog applications compatibility</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetUserInfo(System.String,System.String,System.String)">
+            <summary>
+            Gets an info on specific blog user.
+            </summary>
+            <param name="key">This value is ignored. Required to keep blog applications compatibility</param>
+            <param name="username">Name of the user performing action</param>
+            <param name="password">Password to access user's account</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.ValidateUser(System.String,System.String)">
+            <summary>
+            Indicates whether the user is allowed for MetaWeblogAPI service.
+            </summary>
+            <param name="userName">User name</param>
+            <param name="password">Password</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.IsUserOwner(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Checks if the user is owner of the given document or global administrator.
+            </summary>
+            <param name="doc">Tree node representing blog</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.IsUserAllowedForDocument(CMS.DocumentEngine.TreeNode,CMS.DocumentEngine.NodePermissionsEnum,System.Boolean)">
+            <summary>
+            Checks if the user is allowed for specific document.
+            </summary>
+            <param name="doc">Tree node representing blog</param>
+            <param name="permission">Indicates whether to check create permission</param>
+            <param name="checkWorkflow">Indicates whether to check workflow</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetBlogNodeById(System.String)">
+            <summary>
+            Gets a node representing blog according specified blog ID.
+            </summary>
+            <param name="blogid">ID of the blog to retrieve</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetBlogPostById(System.String)">
+            <summary>
+            Gets blog post according given ID.
+            </summary>
+            <param name="postid">ID of the blog post to retrieve</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetBlogPostTags(System.Int32)">
+            <summary>
+            Gets all categories related to the specified post.
+            </summary>
+            <param name="postDocId">ID of the blog post document categories should be related to</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetBlogPostPublishDate(System.DateTime)">
+            <summary>
+            Gets a publish date of specified blog post. Value is returned in server time zone.
+            </summary>
+            <param name="postCreated">Post create date received from client</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.EnsureBlogInfo(System.String)">
+            <summary>
+            Initializes current blog information according specified ID.
+            </summary>
+            <param name="blogId">ID of the current blog</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetBlogNodeByPost(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Returns node representing blog that post belongs to.
+            </summary>
+            <param name="post">Post the blog node is retrieved for</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.Unpublish(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Unpublishes blog post by workflow, or "published to" value.
+            </summary>
+            <param name="post">Blog post node</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.Publish(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Publishes blog post.
+            </summary>
+            <param name="post">Blog post node</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.PublishWithWorkflow(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Publishes blog post through workflow.
+            </summary>
+            <param name="post">Blog post node</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.PublishWithoutWorkflow(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Publishes node through "publish from", "publish to" values.
+            </summary>
+            <param name="post">Blog post node</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.EnsureWorkflowScope(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Cleans workflow information if document should not have one.
+            </summary>
+            <param name="post"></param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.PublishAttachments(CMS.DocumentEngine.TreeNode,System.Boolean)">
+            <summary>
+            Saves the temporary attachments to the blog post.
+            </summary>
+            <param name="postNode">Blog post node</param>
+            <param name="deleteExisting">Determines whether to delete existing attachments first</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetAttachmentsGuid(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Gets a list of attachment GUIDs found in the post summary and body fields.
+            </summary>
+            <param name="postNode">Blog post node</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetGuidsList(System.Collections.ArrayList,System.String)">
+            <summary>
+            Fills given list by attachments GUIDs.
+            </summary>
+            <param name="list">List to be filled by GUIDs</param>
+            <param name="input">Input text to be searched for attachments GUIDs</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetPostSummary(System.String)">
+            <summary>
+            Returns summary text if automatic summary is enabled.
+            </summary>
+            <param name="text">Text summary should comes from</param>
+        </member>
+        <member name="M:CMS.MetaWeblogProvider.MetaWeblogAPI.GetTagsString(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Gets string representation of given tags array.
+            </summary>
+            <param name="tags">Array containing post tags</param>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.AttachmentGuidRegex">
+            <summary>
+            Regular expression used to match all attachment GUIDs in the blog post text.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.DeleteUnusedAttachments">
+            <summary>
+            Indicates whether the unused attachments should be removed.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.BlogPostSummaryEnabled">
+            <summary>
+            Indicates whether the summary should be generated.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.BlogPostSummaryLength">
+            <summary>
+            Gets number of characters used for automatic summary.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.TreeProvider">
+            <summary>
+            User related tree provider object.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.WorkflowManager">
+            <summary>
+            Manager for workflow operations.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.VersionManager">
+            <summary>
+            Manager for version operations.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.BlogPath">
+            <summary>
+            Alias path to the blog node.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.BlogCulture">
+            <summary>
+            Current blog culture.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.BlogNode">
+            <summary>
+            Node representing blog.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.SiteName">
+            <summary>
+            Gets current blog's site name.
+            </summary>
+        </member>
+        <member name="P:CMS.MetaWeblogProvider.MetaWeblogAPI.User">
+            <summary>
+            Current user information.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects">
+            <summary>
+            MetaWeblog API objects class.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.BlogInfo">
+            <summary>
+            Blog detail info.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.BlogInfo.blogid">
+            <summary>
+            Blog identifier.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.BlogInfo.url">
+            <summary>
+            Blog URL.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.BlogInfo.blogName">
+            <summary>
+            Blog code name.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Category">
+            <summary>
+            Category detail info.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Category.categoryId">
+            <summary>
+            Category identifier.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Category.categoryName">
+            <summary>
+            Category code name.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.CategoryInfo">
+            <summary>
+            Complete category information.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.CategoryInfo.description">
+            <summary>
+            Category description.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.CategoryInfo.htmlUrl">
+            <summary>
+            HTML URL.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.CategoryInfo.rssUrl">
+            <summary>
+            RSS URL.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.CategoryInfo.title">
+            <summary>
+            Title.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.CategoryInfo.categoryid">
+            <summary>
+            Category identifier.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Enclosure">
+            <summary>
+            Enclosure detail info.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Enclosure.length">
+            <summary>
+            Length.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Enclosure.type">
+            <summary>
+            Type.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Enclosure.url">
+            <summary>
+            URL.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post">
+            <summary>
+            Post complete info.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.dateCreated">
+            <summary>
+            Date and time post created.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.description">
+            <summary>
+            Post description.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.title">
+            <summary>
+            Post title.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.categories">
+            <summary>
+            Post categories.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.permalink">
+            <summary>
+            Post permanent link.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.postid">
+            <summary>
+            Post identifier.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.userid">
+            <summary>
+            Post user identifier.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Post.wp_slug">
+            <summary>
+            WorldPress slug.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Source">
+            <summary>
+            Source information.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Source.name">
+            <summary>
+            Source name.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.Source.url">
+            <summary>
+            Source URL.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.UserInfo">
+            <summary>
+            Blog related user info.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.UserInfo.userid">
+            <summary>
+            User identifier.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.UserInfo.firstname">
+            <summary>
+            User first name.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.UserInfo.lastname">
+            <summary>
+            User last name.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.UserInfo.nickname">
+            <summary>
+            User nick name.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.UserInfo.email">
+            <summary>
+            User email.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.UserInfo.url">
+            <summary>
+            User URL.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObject">
+            <summary>
+            Media object structure (image, video, audio, etc.).
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObject.name">
+            <summary>
+            Object name.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObject.type">
+            <summary>
+            Object type.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObject.bits">
+            <summary>
+            Object data.
+            </summary>
+        </member>
+        <member name="T:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObjectInfo">
+            <summary>
+            Media object information.
+            </summary>
+        </member>
+        <member name="F:CMS.MetaWeblogProvider.MetaWeblogAPIObjects.MediaObjectInfo.url">
+            <summary>
+            Media object URL.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,30 @@
+﻿@inherits WebViewPage<InfoDataSet<News>>
+
+@using CMS.DocumentEngine.Types;
+@using CMS.Helpers
+
+@{ 
+    Layout = "~/Views/CorporateSite/Shared/Master.cshtml";
+}
+
+<div class="innerContent">
+    <h1>@ViewBag.PageTitle</h1>
+    <p>
+        This is a sample for the page rendered by MVC Razor view engine. It displays the news list.
+        The list is routed by a MVC route <strong>/NewsMVC</strong> to provide extension-less URL,
+        and then displayed by the <strong>News</strong> controller and the <strong>~/Views/CorporateSite/News/List.cshtml</strong> view.
+    </p>
+    <div class="LightGradientBox ">
+        @foreach (var doc in Model)
+        {
+            <h2>
+                <a href="@URLHelper.ResolveUrl("~/NewsMVC/" + doc.NodeAlias)">
+                    @doc.NewsTitle
+                </a>
+            </h2>
+            <p>
+                @Html.Raw(doc.NewsText)
+            </p>
+        }
+    </div>
+</div>

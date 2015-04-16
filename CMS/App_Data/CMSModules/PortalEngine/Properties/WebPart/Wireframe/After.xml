@@ -1,0 +1,11 @@
+<form>
+  <category name="Comments" />
+  <field column="Comments" fieldcaption="Comments" visible="true" columntype="longtext" fieldtype="usercontrol" allowempty="true" fielddescription="{$documentation.webpartproperties.comments$}" guid="80e99300-3501-4942-a554-ca545fda2c8c">
+    <settings>
+      <controlname>largetextarea</controlname>
+    </settings>
+  </field>
+  <category name="Web part container" />
+  <field column="UseContainer" fieldcaption="Use web part container" visible="true" columntype="boolean" fieldtype="checkbox" allowempty="true" columnsize="200" fielddescription="{$documentation.webpartproperties.container$}" guid="5b74cfb7-4e8b-4570-a4cb-c6fa20f2171e" />
+  <field column="ContainerTitle" fieldcaption="Container title" visible="true" columntype="text" fieldtype="textbox" allowempty="true" columnsize="200" fielddescription="{$documentation.webpartproperties.containertitle$}" guid="8249d912-0dd7-49db-9fab-8ccc42548f94" />
+</form>

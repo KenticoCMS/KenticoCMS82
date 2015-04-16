@@ -1,0 +1,51 @@
+﻿<category name="Web part container">
+  <properties>
+    <visible>true</visible>
+  </properties>
+</category>
+
+<field guid="5b74cfb7-4e8b-4570-a4cb-c6fa20f2171e" columnsize="200" fieldtype="CustomUserControl" columntype="text" visible="true" column="Container" allowempty="true">
+  <properties>
+    <fielddescription>{$documentation.webpartproperties.container$}</fielddescription>
+    <fieldcaption>Web part container</fieldcaption>
+  </properties>
+  <settings>
+    <controlname>selectcontainer</controlname>
+  </settings>
+</field>
+<field guid="8249d912-0dd7-49db-9fab-8ccc42548f94" columnsize="200" fieldtype="CustomUserControl" columntype="text" visible="true" column="ContainerTitle" allowempty="true">
+  <properties>
+    <fielddescription>{$documentation.webpartproperties.containertitle$}</fielddescription>
+    <fieldcaption>Container title</fieldcaption>
+  </properties>
+  <settings>
+    <controlname>textboxcontrol</controlname>
+  </settings>
+</field>
+<field guid="8249d912-0dd7-49db-1cab-2aaa42548f94" columnsize="200" fieldtype="CustomUserControl" columntype="text" visible="true" column="ContainerCSSClass" allowempty="true">
+  <properties>
+    <fielddescription>{$documentation.webpartproperties.containercssclass$}</fielddescription>
+    <fieldcaption>Container CSS class</fieldcaption>
+  </properties>
+  <settings>
+    <controlname>textboxcontrol</controlname>
+  </settings>
+</field>
+<field guid="80e99300-3501-4942-a554-ca545fda3e5a" fieldtype="CustomUserControl" columntype="longtext" visible="true" column="ContainerCustomContent" allowempty="true">
+  <properties>
+    <fielddescription>{$documentation.webpartproperties.containercustomcontent$}</fielddescription>
+    <fieldcaption>Container custom content</fieldcaption>
+  </properties>
+  <settings>
+    <controlname>largetextarea</controlname>
+  </settings>
+</field>
+<field guid="f11c3f83-83c6-4b8e-80ae-d073acdd93fb" fieldtype="CustomUserControl" columntype="boolean" visible="true" column="ContainerHideOnSubPages" allowempty="true">
+  <properties>
+    <fielddescription>{$documentation.webpartproperties.containerhideonsub$}</fielddescription>
+    <fieldcaption>Hide container on subpages</fieldcaption>
+  </properties>
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>

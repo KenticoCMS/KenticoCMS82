@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.WebApi.ApiControllerManager">
+            <summary>
+            Manages a collection of API controllers.
+            </summary>
+            <remarks>
+            When the application starts, it locates API controllers using the <see cref="T:CMS.WebApi.RegisterApiControllerAttribute"/> attribute
+            and registers them with the default instance of this class.
+            </remarks>
+        </member>
+        <member name="F:CMS.WebApi.ApiControllerManager.mInstance">
+            <summary>
+            The default instance of this class.
+            </summary>
+        </member>
+        <member name="F:CMS.WebApi.ApiControllerManager.mControllerTypes">
+            <summary>
+            A collection of current API controllers.
+            </summary>
+        </member>
+        <member name="F:CMS.WebApi.ApiControllerManager.mLock">
+            <summary>
+            An object that is used to synchronize access to this instance.
+            </summary>
+        </member>
+        <member name="M:CMS.WebApi.ApiControllerManager.Register(System.Type)">
+            <summary>
+            Adds the specified API controller type to a collection.
+            </summary>
+            <param name="controllerType">The type of the API controller.</param>
+            <exception cref="T:System.ArgumentNullException">The type of API controller is not specified.</exception>
+            <exception cref="T:System.ArgumentException">The specified type does not inherit from the <see cref="T:System.Web.Http.ApiController"/> class.</exception>
+        </member>
+        <member name="M:CMS.WebApi.ApiControllerManager.GetControllerTypes">
+            <summary>
+            Returns a list of current API controller types.
+            </summary>
+            <returns>An array of type <see cref="T:System.Type"/>.</returns>
+        </member>
+        <member name="P:CMS.WebApi.ApiControllerManager.Current">
+            <summary>
+            Gets the current instance of this class.
+            </summary>
+        </member>
+        <member name="T:CMS.WebApi.WebApiModule">
+            <summary>
+            Represents the Web API module.
+            </summary>
+        </member>
+        <member name="M:CMS.WebApi.WebApiModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CMS.WebApi.WebApiModule"/> class.
+            </summary>
+        </member>
+        <member name="M:CMS.WebApi.WebApiModule.OnInit">
+            <summary>
+            Initializes the module.
+            </summary>
+        </member>
+        <member name="T:CMS.WebApi.WebApiModuleMetadata">
+            <summary>
+            Represents the Web API module metadata.
+            </summary>
+        </member>
+        <member name="M:CMS.WebApi.WebApiModuleMetadata.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CMS.WebApi.WebApiModuleMetadata"/> class.
+            </summary>
+        </member>
+        <member name="T:CMS.WebApi.RegisterApiControllerAttribute">
+            <summary>
+            Specifies the API controller available for the application.
+            </summary>
+        </member>
+        <member name="F:CMS.WebApi.RegisterApiControllerAttribute.mControllerType">
+            <summary>
+            The type of the API controller.
+            </summary>
+        </member>
+        <member name="M:CMS.WebApi.RegisterApiControllerAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CMS.WebApi.RegisterApiControllerAttribute"/> class.
+            </summary>
+            <param name="controllerType">The type of the API controller.</param>
+        </member>
+        <member name="M:CMS.WebApi.RegisterApiControllerAttribute.PreInit">
+            <summary>
+            Registers the API controller with the API controller manager.
+            </summary>
+        </member>
+        <member name="P:CMS.WebApi.RegisterApiControllerAttribute.MarkedType">
+            <summary>
+            Gets the type of the API controller.
+            </summary>
+        </member>
+    </members>
+</doc>

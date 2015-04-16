@@ -1,0 +1,1237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.skmMenuControl</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.skmMenuControl.MenuItemType">
+            <summary>
+            Specifies the type of <see cref="F:CMS.skmMenuControl.MenuItemType.MenuItem"/>.
+            </summary> 	
+        </member>
+        <member name="F:CMS.skmMenuControl.MenuItemType.MenuItem">
+            <summary>
+            A standard menu item.
+            </summary>
+        </member>
+        <member name="F:CMS.skmMenuControl.MenuItemType.MenuSeparator">
+            <summary>
+            A separator menu item.  Separators provide a level of separation between menu items.
+            </summary>
+        </member>
+        <member name="F:CMS.skmMenuControl.MenuItemType.MenuHeader">
+            <summary>
+            A menu item header.
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.MenuLayout">
+            <summary>
+            Specifies the visual orientation for the <see cref="T:CMS.skmMenuControl.Menu"/>'s top-level menu items.
+            </summary> 
+            <remarks>The main menu in Windows applications use the <strong>Horizontal</strong> approach: for example, the File menu is
+            laid next to the Edit menu which is laid next to the View menu, and so on.  Many Web pages, however, use
+            a <strong>Vertical</strong> layout, displaying the top-level menu items along the left hand side of the Web page.
+            </remarks>
+        </member>
+        <member name="F:CMS.skmMenuControl.MenuLayout.Horizontal">
+            <summary>
+            Each top-level menu item is laid out end-to-end.
+            </summary>
+        </member>
+        <member name="F:CMS.skmMenuControl.MenuLayout.Vertical">
+            <summary>
+            Each top-level menu item is laid one above the other.
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.MouseCursor">
+            <summary>
+            The <strong>MouseCursor</strong> enumeration specifies the different cursors for the menu.
+            </summary>
+            <remarks>The <strong>Pointer</strong> option will only display a pointer cursor for clickable menu items.</remarks>
+        </member>
+        <member name="F:CMS.skmMenuControl.MouseCursor.Default">
+            <summary>
+            Default pointer or pointer controlled by CSS.
+            </summary>
+        </member>
+        <member name="F:CMS.skmMenuControl.MouseCursor.Pointer">
+            <summary>
+            Pointer normally associated with links (usually a hand).
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.MenuPositioning">
+            <summary>
+            The <strong>MenuPositioning</strong> enumeration specifies whether absolute or relative positioning will be used.
+            </summary> 
+        </member>
+        <member name="F:CMS.skmMenuControl.MenuPositioning.Absolute">
+            <summary>
+            Absolute positioning.
+            </summary>
+        </member>
+        <member name="F:CMS.skmMenuControl.MenuPositioning.Relative">
+            <summary>
+            Relative positioning.
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.MenuItemClickedEventHandler">
+            <summary>
+            Represents the method that will handle the <see cref="T:CMS.skmMenuControl.Menu"/> class's
+            event.
+            </summary>
+            <param name="sender">The source of the event</param>
+            <param name="e">A <see cref="T:CMS.skmMenuControl.MenuItemClickEventArgs"/> that contains the event data</param>
+        </member>
+        <member name="T:CMS.skmMenuControl.Menu">
+            <summary>
+            The menu class is an ASP.NET server control that displays a client-side menu utilizing
+            CSS and DHTML.  Its contents are bound through an XML file or by programmatically constructing the
+            Menu's menu items.  For full documentation, FAQs, examples, and a messageboard, be sure to check out the
+            official skmMenu site: <a href="http://skmMenu.com/">skmMenu.com</a>.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.OnMenuItemClick(CMS.skmMenuControl.MenuItemClickEventArgs)">
+            <summary>
+            Raises the <see cref="E:CMS.skmMenuControl.Menu.MenuItemClick"/> event.  This allows you to provide a custom handler for the event.
+            </summary>
+            <param name="e">Instance of <see cref="T:CMS.skmMenuControl.MenuItemClickEventArgs"/> that contains the event data</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.SaveViewState">
+            <summary>
+            SaveViewState saves the state of the menu into an object (specifically, an object array
+            with five indices).  This is required to have the state persisted across postbacks.
+            </summary>
+            <returns>A five-element object array representing the menu's state.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.LoadViewState(System.Object)">
+            <summary>
+            Loads the state from the passed in saveState object.  This method runs during the
+            page life-cycle, and is required for the menu to work across postbacks.
+            </summary>
+            <param name="savedState">The state persisted by SaveViewState() in the previous life-cycle</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.TrackViewState">
+            <summary>
+            TrackViewState informs all of the menus complex properties that they, too, need to
+            track their viewstate changes.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            The Render method is responsible for generating the HTML markup.
+            </summary>
+            <param name="writer">HTMLTextWriter instance to write to</param>
+            <remarks><strong>Render</strong> ensures that the Menu is created in a server-side Web Form.  This check is required
+            because the Menu may contain <see cref="T:CMS.skmMenuControl.MenuItem"/> instances that, when clicked, cause a postback.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.CreateChildControls">
+            <summary>
+            This method is called from base.Render(), and starts the build menu process.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.OnDataBinding(System.EventArgs)">
+            <summary>
+            Event handler for the DataBinding event.
+            </summary>
+            <remarks>This method runs when the DataBind() method is called.  Essentially, it clears out the
+            current state and builds up the menu from the specified <see cref="P:CMS.skmMenuControl.Menu.DataSource"/>.
+            </remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.OnPreRender(System.EventArgs)">
+            <summary>
+            Generates the client-side JavaScript.
+            </summary><remarks>
+            For non-databound (dynamic) menus, <strong>OnPreRender</strong> also sets all of the MenuIDs.
+            <p />
+            For more information on adding client-side script via an ASP.NET server control, refer to:
+            <a href="http://msdn.microsoft.com/asp.net/default.aspx?pull=/library/en-us/dnaspp/html/aspnet-injectclientsidesc.asp">Injecting Client-Side Script from an ASP.NET Server Control</a>
+            </remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.BuildImagePreload(CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Determines what images are used by a specified <see cref="T:CMS.skmMenuControl.MenuItem"/> instance.
+            </summary>
+            <param name="mi">The <strong>MenuItem</strong> to examine</param>
+            <remarks>The <see cref="T:CMS.skmMenuControl.MenuItem"/> class has a number of image properties, like MouseOverImage,
+            MouseDownImage and others.  This method checks these properties to determine if any images
+            are used.  If it locates any, it marks the image to be preloaded using client-side JavaScript.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.BuildMenuID(CMS.skmMenuControl.MenuItem,System.String,System.Int32)">
+            <summary>
+            Creates a MenuID for a MenuItem.
+            </summary>
+            <param name="mi">The MenuItem that will have its <strong>MenuID</strong> set</param>
+            <param name="parentID">The <strong>MenuID</strong> of the <strong>MenuItem</strong> <em>mi</em>'s parent</param>
+            <param name="indexValue">If <strong>MenuItem</strong> <em>mi</em> has a parent, the <strong>indexValue</strong> indicates
+            what index <em>mi</em> is in its parent's set of <strong>MenuItem</strong> children.</param>
+            <remarks><strong>BuildMenuID()</strong> formats the index as a three-digit number.  This puts an upperbound on the
+            number of <strong>MenuItems</strong> any menu can contain.  Precisely, no single menu may contain more than 1,000
+            <strong>MenuItem</strong>s.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.GetClass(System.String,System.String)">
+            <summary>
+            Allows for two strings to be passed in - a default CSS class and a specific Menu class.  If no
+            Menu class is specifies, the default class is returned.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.GetClass(System.String,System.String,System.String)">
+            <summary>
+            Allows for three strings to be passed in - a default CSS class, a specific Menu class, and a style class.
+            The proper class string is returned.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.GetURL(System.Boolean,System.String)">
+            <summary>
+            This method utilizes <strong>ResolveUrl()</strong> if needed.  <strong>ResolveUrl()</strong> resolves any tildes that may
+            appear in the URL into the proper path.  For more information see <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemwebuicontrolclassresolveurltopic.asp">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemwebuicontrolclassresolveurltopic.asp</a>
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.BuildMenu">
+            <summary>
+            BuildMenu builds the top-level menu.  It is called from the OnDataBinding method as well
+            as from <see cref="M:CMS.skmMenuControl.Menu.CreateChildControls"/>.  It has code to check if the top-level menu should be
+            laid out horizontally or vertically.
+            </summary> 
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.AddMenu(System.String,CMS.skmMenuControl.MenuItemCollection)">
+            <summary>
+            AddMenu is called recursively, doing a depth-first traversal of the menu hierarchy and building
+            up the HTML elements from the object model.
+            </summary>
+            <param name="menuID">The ID of the parent menu</param>
+            <param name="myItems">The collection of menuitems</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.UserHasPermission(CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Determines if a user belongs to a role for a particular <see cref="T:CMS.skmMenuControl.MenuItem"/>.
+            </summary>
+            <param name="mi">The MenuItem to check</param>
+            <returns><strong>true</strong> if the user has the right permissions to view this MenuItem; <strong>false</strong> otherwise.</returns>
+            <remarks>UserHasPermission() works by returning <strong>true</strong> if there are no roles defined for <strong>mi</strong>
+            or if there is at least one role defined for the user and the <strong>mi</strong> role collection and user role collection
+            are <em>not</em> disjoint.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.GenerateShimCall(System.String,System.String)">
+            <summary>
+            For Internet Explorer 5.5 and up, IFRAMEs are used.  This method returns the client-side JavaScript to show/hide
+            the IFRAME.
+            </summary>
+            <param name="state">A string vaue containing either the string <strong>true</strong> or <strong>false</strong>.  A value of
+            <strong>true</strong> makes the IFRAME visible; <strong>false</strong> hides it.</param>
+            <param name="id">The client-side <strong>id</strong> of the IFRAME</param>
+            <returns>A client-side JavaScript function call that will show/hide the IFRAME.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.GatherMenuItems(System.Xml.XmlNode,System.String)">
+            <summary>
+            This method is used from the OnDataBinding method; it traverses the XML document,
+            building up the object model.
+            </summary>
+            <param name="itemsNode">The current menuItem XmlNode</param>
+            <param name="parentID">The ID of the parent menuItem XmlNode</param>
+            <returns>A set of MenuItems for this menu.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.BuildMenuItem(System.Xml.XmlNode,System.String,System.Int32)">
+            <summary>
+            This method creates a single <see cref="T:CMS.skmMenuControl.MenuItem"/> and is called repeatedly from <see cref="M:CMS.skmMenuControl.Menu.GatherMenuItems(System.Xml.XmlNode,System.String)"/>.
+            </summary>
+            <param name="menuItem">The MenuItem XmlNode</param>
+            <param name="parentID">The parent MenuItem's ID</param>
+            <param name="indexValue">The ordinal index of the MenuItem in the set of MenuItems</param>
+            <returns>A new <see cref="T:CMS.skmMenuControl.MenuItem"/> instance.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.BuildMenuSpacer(System.Xml.XmlNode,CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Creates a MenuItem spacer.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.RegisterClientScriptBlock">
+            <summary>
+            Registers the main client script.
+            </summary>
+            <remarks>RegisterClientScriptBlock() adds the global variables and JavaScript methods.  Depending on
+            how skmMenu is configured, this client-side script is either emitted directly to the browser in the
+            HTML stream, or references an external JavaScript file.  It is recommended that the external JavaScript
+            file approach be used, since it yields better performance on both the client and server.<p/>
+            For more information on using an external JavaScript file, see the <see cref="P:CMS.skmMenuControl.Menu.ScriptPath"/> property.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.RegisterClientStartupScript">
+            <summary>
+            Registers the startup client script.
+            </summary>
+            <remarks>The startup script involves calls to the client-side <strong>skm_registerMenu()</strong> function.
+            </remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.RegisterSubmenuArray">
+            <summary>
+            Registers the SubMenus for the menu with a JavaScript array.
+            </summary>
+            <remarks>A client-side array <strong>skm_subMenuIDs</strong> maintains an array of all of the <strong>id</strong> values
+            of the client-side submenus.  This is useful in dynamically determining the client position of a submenu.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.RegisterPreloadCommand">
+            <summary>
+            Registers the Preload command to preload any images.
+            </summary>
+            <remarks>Preloading images used in a page improves the user experience by loading an image before it is needed.
+            If a menu has rollover images and does <strong>not</strong> preload its images, there will be a short delay when the
+            user mouses over the menu item for the first time, as the image must then be downloaded.  Preloading the images
+            removes this delay since the image will have likely been downloaded by the time the user mouses over the menu
+            image.<p />For more information on preloading JavaScript images refer to <a href="http://javascript.internet.com/miscellaneous/preload-images.html">this article</a>.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.InstantiateStyleInfoJavascript(System.Web.UI.WebControls.Style)">
+            <summary>
+            Returns the javascript that instantiates a style info object
+            that corresponds to the style specified.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.ConvertToDouble(System.String,System.IFormatProvider)">
+            <summary>
+            Double conversion function to avoid errors on IE 7.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.GetLayout(System.String)">
+            <summary>
+            Returns the menu layout based on the given string.
+            </summary>
+            <param name="layout">String layout representation</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.IsIE90OrBetter">
+            <summary>
+            Returns if browsing device is IE 9.0 or better (higher).
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.IsIE55OrBetter">
+            <summary>
+            Returns if browsing device is IE 5.5 or better (higher).
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.IsIE50OrBetter">
+            <summary>
+            Returns if browsing device is IE 5.0 or better (higher).
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Menu.IsMozillaOrNetscape60OrBetter">
+            <summary>
+            Returns if browsing device is IE 5.0 or better (higher).
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.ScriptID">
+            <summary>
+            Script control ID (ID used for the script functions).
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.RenderScripts">
+            <summary>
+            If true, the scripts for the menu are rendered.
+            </summary>
+        </member>
+        <member name="E:CMS.skmMenuControl.Menu.MenuItemClick">
+            <summary>
+            Occurs when a <see cref="T:CMS.skmMenuControl.MenuItem"/> associated with a command is clicked.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.UseExternalScript">
+            <summary>
+            A helper method that determines if an external script is being used.
+            </summary>
+            <remarks><strong>UseExternalScript</strong> simply returns the result of the check <strong>ExternalScriptUrl != null</strong>.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.ExternalScriptUrl">
+            <summary>
+            Return the configured URL for the external script.
+            </summary>
+            <remarks>
+             The external JavaScript file maybe specified either in the <strong>Web.config</strong> file or through the
+             Menu control's <see cref="P:CMS.skmMenuControl.Menu.ScriptPath"/> property.  <strong>ExternalScriptUrl checks first the <strong>Web.config</strong>
+             file and then the <see cref="P:CMS.skmMenuControl.Menu.ScriptPath"/> property to determine if an external JavaScript file should be used.</strong>
+            </remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.DataSource">
+            <summary>
+            Sets or gets the name of the XML file or XmlDocument object that is the datasource for the menu.
+            </summary>
+            <remarks>The <strong>DataSource</strong> can be assigned either a string filename to an XML file, or an
+            XmlDocument object.  Attempting to assign the <strong>DataSource</strong> to something other than a string or
+            XmlDocument will result in an <strong>ArgumentException</strong> being thrown.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.Items">
+            <summary>
+            Returns the Menu's top-level <see cref="T:CMS.skmMenuControl.MenuItem"/>s.
+            </summary>
+            <remarks>This returns a <see cref="T:CMS.skmMenuControl.MenuItemCollection"/> instance holding the top-level menu items only.
+            If you want to drill down into submenu items, you must programmatically recurse down.  For example,
+            imagine we had a menu with two top-level menu items, File and Help, and File had three menu items,
+            New, Open, and Save.  To programmatically access the New menu item from the Menu you'd use:
+            <code>
+             MenuItem FileNewMenuItem = MenuControlID.Items[0].Items[0];
+            </code></remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.UserRoles">
+            <summary>
+            Specifies the roles the current user belongs to.  When assigning roles to the MenuItems, the user's roles
+            affect what menu items are displayed.
+            </summary>
+            <remarks>
+            Each MenuItem in a skmMenu can be assigned a set of <em>roles</em>.  A <em>role</em> is a name that implies some
+            level of access.  Roles are denoted as strings.  Example roles might be: developer, tester, and admin.<p/>
+            To denote a role for a <see cref="T:CMS.skmMenuControl.MenuItem"/>, the <see cref="P:CMS.skmMenuControl.MenuItem.Roles"/> property can be used programmatically,
+            <em>or</em> the &lt;roles&gt; XML element can be used if the menu data is supplied in an XML file.  (For more
+            information on the &lt;roles&gt; XML element and binding menu data via an XML file, consult
+            <a href="http://skmmenu.com/menu/Download/XMLStructure.html">http://skmmenu.com/menu/Download/XMLStructure.html</a>.<p/>
+            The Menu class's <strong>UserRoles</strong> property specifies the set of roles the user viewing the page has.  This
+            needs to be set programmatically in the first page load (the role information is persisted across postbacks).
+            Typically this role assignment will need to be done by looking up the current user's set of roles in a database
+            or some other ACL store.<p/>
+            After the <strong>UserRoles</strong> property has been set, you can bind the XML data to skmMenu through a call to
+            DataBind.  Only those <see cref="T:CMS.skmMenuControl.MenuItem"/>s that either (a) have no roles defined or (b) has a role
+            collection that intersects the <strong>UserRoles</strong> role collection, will be rendered.  For a live demo of
+            roles with skmMenu, see <a href="http://skmmenu.com/menu/Examples/Roles.aspx">http://skmmenu.com/menu/Examples/Roles.aspx</a>.
+            </remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.SelectedMenuItemStyle">
+            <summary>
+            Specifies the style for selected <see cref="T:CMS.skmMenuControl.MenuItem"/>s.
+            </summary>
+            <remarks>A MenuItem is <em>selected</em> when the user moves the mouse over the menu item.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.DefaultResolveURL">
+            <summary>
+            Specifies whether URL's should be resolved before being output.
+            </summary>
+            <remarks>If this property is marked <strong>True</strong> then MenuItem URLs can use ~, as in ~/SomeDir/SomePage.htm.  Internally, if this
+            property is set to <strong>True</strong> the <strong>ResolveUrl()</strong> method is used.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.HighlightTopMenu">
+            <summary>
+            Specifies whether the top level menu should remain highlighted when the submenu beneath is displayed.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.ClickToOpen">
+            <summary>
+            Specifies whether a submenu is displayed on mouse over or when clicked.
+            </summary>
+            <value>A value of <strong>True</strong> indicates that submenus are displayed with a menu item is clicked;
+            a value of <strong>False</strong> indicates that the submenu is displayed when the menu item is moused over.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.zIndex">
+            <summary>
+            Gets or sets the z-index style value for the menu.
+            </summary>
+            <remarks>For Internet Explorer, submenus are displayed using IFRAMEs.  Using IFRAMEs keeps the menu
+            above other form elements, such as drop-down lists.  The <strong>zIndex</strong> specifies the "height" of the IFRAME
+            relative to othjer elements on the page.  The default value of 1000 should ensure that the menus are
+            always the top-most elements on the page.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.Opacity">
+            <summary>
+            Gets or sets the opacity style value for the menu.
+            </summary>
+            <remarks>Opacity values must be between 0 and 100.<p />
+            The opacity property only works for select Web browsers: IE 5.0+, Netscape 6+ and Mozilla.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.SubMenuCssClass">
+            <summary>
+            Gets or sets the value for css class used for SubMenus.
+            </summary>
+            <remarks>If <strong>SubMenuCssClass</strong> is not specified and CssClass is specified, CssClass is 
+            used instead.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.LeftOpen">
+            <summary>
+            If is true, menu will open submenus to the other side.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.DefaultCssClass">
+            <summary>
+            Gets or sets the default CSS class name for the <see cref="T:CMS.skmMenuControl.MenuItem"/>'s CSS class.
+            </summary>
+            <remarks>If a <see cref="T:CMS.skmMenuControl.MenuItem"/> has no specified CSS class, the <strong>DefaultCssClass</strong> is used instead.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.DefaultMouseOverCssClass">
+            <summary>
+            Gets or sets the default value for the menuitem's mouse over css class.  Used when a menuitem has no value specified.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.DefaultMouseDownCssClass">
+            <summary>
+            Gets or sets the default value for the menuitem's mouse down css class.  Used when a menuitem has no value specified.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.DefaultMouseUpCssClass">
+            <summary>
+            Gets or sets the default value for the menuitem's mouse up css class.  Used when a menuitem has no value specified.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.ScriptPath">
+            <summary>
+            Gets or sets the path to an external JavaScript file.  If no external path is specified, the JavaScript is
+            rendered by the control directly in the page.
+            </summary>
+            <remarks>It is highly recommended that you utilize an external JavaScript file, as it promises performance increases
+            both for the client and server.  The client can cache an external JavaScript file, thereby reducing the bandwidth
+            needed to be downloaded.  On the server side, using an external JavaScript file results in several dozen lines
+            of JavaScript code not needing to be rendered.<p />To use an external JavaScript file, place the <strong>skmMenu.js</strong> file
+            that was included in the download in a directory in your Web site.  You can then set this property to the
+            path of the <strong>skmMenu.js</strong> file.</remarks>
+            <example>
+            [C#] This example assumes that the <strong>skmMenu.js</strong> file was placed in the /scripts/ directory of your Web site.
+            <code>
+            protected Menu myMenuControl;
+            
+            private void Page_Load(object sender, EventArgs e)
+            {
+              myMenuControl.ScriptPath = "/scripts/skmMenu.js";
+              ...
+            }
+            </code>
+            </example>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.DefaultTarget">
+            <summary>
+            Gets or sets the default target for links in menuitems.  Used if no target property is specified for a menuitem.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.ItemPadding">
+            <summary>
+            Gets or sets padding for each menuitem (pixels).
+            </summary>
+            <remarks>Menus and submenus are rendered as HTML tables.  This property, then, specifies the rendered
+            table's <strong>CellPadding</strong>.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.ItemSpacing">
+            <summary>
+            Gets or sets the spacing for each menuitem (pixels).
+            </summary>
+            <remarks>Menus and submenus are rendered as HTML tables.  This property, then, specifies the rendered
+            table's <strong>CellSpacing</strong>.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.UnselectedMenuItemStyle">
+            <summary>
+            Specifies the style for unselected <see cref="T:CMS.skmMenuControl.MenuItem"/>s.
+            </summary>
+            <remarks>An <em>unselected</em> MenuItem is one that does <strong>not</strong> have the mouse cursor hovering over it.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.Layout">
+            <summary>
+            Sets or Gets the menu's layout direction.
+            </summary>
+            <value>A <see cref="T:CMS.skmMenuControl.MenuLayout"/> enumeration value.  The default is <strong>Vertical</strong></value>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.Cursor">
+            <summary>
+            Sets or Gets the menu's mouse cursor.
+            </summary>
+            <value>A <see cref="T:CMS.skmMenuControl.MouseCursor"/> enumeration value.  The default is <strong>MouseCursor.Default</strong>.</value>
+            <remarks>Setting the <strong>Cursor</strong> property to <strong>MouseCursor.Pointer</strong> will have the browser display
+            a mouse pointer when the mouse is above a clickable menu item.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.GridLines">
+            <summary>
+            Sets or Gets the menu's gridline property.
+            </summary>
+            <value>This property is set with one of the <strong>GridLines</strong> enumeration values.  The default is <strong>None</strong>.</value>
+            <remarks>
+            Menus and submenus are rendered as HTML tables.  This property, then, specifies the rendered
+            table's <strong>GridLines</strong> property value.
+            The following table lists the possible values:
+            <list type="table">
+            	<listheader><term>Value</term><term>Description</term></listheader>
+            	<item><term>None</term><description>No cell border is displayed.</description></item>
+            	<item><term>Horizontal</term><description>Only the upper and lower borders of the cells in a data listing control are displayed.</description></item>
+            	<item><term>Vertical</term><description>Only the left and right borders of the cells in the data list control are displayed.</description></item>
+            	<item><term>Both</term><description>All borders of the cells in a data listing control are displayed.</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.MenuFadeDelay">
+            <summary>
+            Gets or sets the number of half seconds to display the menu after the user's mouse
+            has left the menu, before hiding the menu.
+            </summary>
+            <value>The number of half-seconds to delay after the user's mouse has left the menu before hiding the menu.  Must have an integer value greater than
+            or equal to 0.  The default is 2, causing the submenus to delay for one second before vanishing.</value>
+            <remarks>It is recommended that this property have at least a value of 1.  Setting it to 0 will cause the
+            submenu to disappear <strong>immediately</strong> after the user's mouse cursor leaves the submenu area.  This can
+            result in a frustrating user experience.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.IFrameSrc">
+            <summary>
+            Specifies what SRC property should be loaded into an IFRAME.
+            </summary>
+            <remarks>When the user is using Internet Explorer to render a page with skmMenu on it, the skmMenu submenus
+            are rendered as IFRAMEs.  By default, the SRC is a blank string.  If you are using skmMenu on SSL, however, this
+            blank SCR will cause a dialog box to appear warning the user that both secure and non-secure items are
+            being displayed.  To circumvent this, you need to create a blank page, like blank.html.  Configure this
+            property so that the SCR of the IFRAME is then blank.html.  This is only needed when using skmMenu over
+            SSL.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.HighlightLastSelectedItem">
+            <summary>
+            Indicates if the last selected item should be highlighted even if mouse is moved out.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.HighlightedItemIndexByDefault">
+            <summary>
+            When HighlightLastSelectedItem is true, this property contains index of menu item that will be highlighted by default.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.Menu.RenderZindexValues">
+            <summary>
+            Indicates if z-index values should be rendered in the style attributes.
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.Design.MenuDesigner">
+            <summary>
+            Designer class for the menu control.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Design.MenuDesigner.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Design.MenuDesigner.Initialize(System.ComponentModel.IComponent)">
+            <summary>
+            Initialization.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.Design.MenuDesigner.GetDesignTimeHtml">
+            <summary>
+            Returns design-time HTML.
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.MenuItem">
+            <summary>
+            A MenuItem represents a single item in a menu.</summary>
+            <remarks>A MenuItem is a single "item" in a menu.  Typically a MenuItem will have some <see cref="P:CMS.skmMenuControl.MenuItem.Text"/>
+            associated with it, and often a <see cref="P:CMS.skmMenuControl.MenuItem.Url"/> or <see cref="P:CMS.skmMenuControl.MenuItem.CommandName"/>.  MenuItems can also optionally
+            have a set of <see cref="P:CMS.skmMenuControl.MenuItem.SubItems"/>, which represents a nested submenu.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates a new MenuItem instance.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.System#Web#UI#IStateManager#SaveViewState">
+            <summary>
+            This method saves the state for a particular menuitem.</summary>
+            <remarks>This method returns a Triplet, where the first item is the result from the MenuItem's ViewState's
+            SaveViewState() method call.  The second is the ViewState saved from the
+            subItems MenuItemCollection instance.  The third item is the ViewState saved from the
+            RolesCollection.
+            </remarks>
+            <returns>A Triplet containing the ViewState and state of the subitems.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.System#Web#UI#IStateManager#LoadViewState(System.Object)">
+            <summary>
+            Loads the state upon postback back into the MenuItem.
+            </summary>
+            <param name="savedState">The state preserved from the SaveViewState() method in the
+            previous page invocation.</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItem.System#Web#UI#IStateManager#TrackViewState">
+            <summary>
+            Starts tracking view state for the ViewState and subItems properties.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Enabled">
+            <summary>
+            Gets or sets a value indicating whether the Web server control is enabled.
+            </summary>
+            <value><b>true</b> if the control is enabled, <b>false</b> otherwise; the default is <b>true</b>.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.BackColor">
+            <summary>
+            Gets or sets the background color of the Web server control.
+            </summary>
+            <remarks>Use the BackColor property to specify the background color of the Web server control.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.BorderColor">
+            <summary>
+            Gets or sets the border color of the Web control.
+            </summary>
+            <value>A System.Drawing.Color that represents the border color of the control. The default is Color.Empty, which indicates that this property is not set.</value>
+            <remarks>Use the BorderColor property to specify the border color of the Web Server control.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.BorderStyle">
+            <summary>
+            Gets or sets the border style of the Web server control.
+            </summary>
+            <value>One of the BorderStyle enumeration values. The default is <b>NotSet</b>.</value>
+            <remarks>Use the BorderStyle property to specify the border style for the Web server control. This property is set using one of the BorderStyle enumeration values.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.BorderWidth">
+            <summary>
+            Gets or sets the border width of the Web server control.
+            </summary>
+            <value>A Unit that represents the border width of a Web server control. The default value is Unit.Empty, which indicates that this property is not set.</value>
+            <remarks>Use the BorderWidth property to specify a border width for a control.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.CssClass">
+            <summary>
+            Gets or sets the Cascading Style Sheet (CSS) class rendered by the Web server control on the client.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Font">
+            <summary>
+            Gets the font properties associated with the Web server control.
+            </summary>
+            <value>A FontInfo that represents the font properties of the Web server control.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.ForeColor">
+            <summary>
+            Gets or sets the foreground color (typically the color of the text) of the Web server control.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Height">
+            <summary>
+            Gets or sets the height of the Web server control.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.ToolTip">
+            <summary>
+            Gets or sets the text displayed when the mouse pointer hovers over the Web server control.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Width">
+            <summary>
+            Gets or sets the width of the Web server control.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.System#Web#UI#IStateManager#IsTrackingViewState">
+            <summary>
+            Specifies if the MenuItem is tracking ViewState.  Required, since MenuItem
+            implements the IStateManager interface.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Image">
+            <summary>
+            Gets or sets the MenuItem's image.
+            </summary>
+            <remarks>If both of the MenuItem's <see cref="P:CMS.skmMenuControl.MenuItem.Text"/> and <see cref="P:CMS.skmMenuControl.MenuItem.Image"/> properties are specified, 
+            <see cref="P:CMS.skmMenuControl.MenuItem.Text"/> will be used.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MenuAltTag">
+            <summary>
+            Menu ALT tag.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.ImageAltText">
+            <summary>
+            Gets or sets the alternate text for the MenuItem's image.
+            </summary>
+            <remarks>This value, if specified, is rendered as the <b>alt</b> attribute in the generated
+            <b>&lt;img&gt;</b> element.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.RightImage">
+            <summary>
+            Gets or sets an image to be shown to the right of the menuitem's text or main image.</summary>
+            <remarks>You can only have either a <see cref="P:CMS.skmMenuControl.MenuItem.LeftImage"/> or a <see cref="P:CMS.skmMenuControl.MenuItem.RightImage"/>.  If both 
+            are specified, only the <see cref="P:CMS.skmMenuControl.MenuItem.LeftImage"/> will be used.
+            </remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.RightImageLeftPadding">
+            <summary>
+            Gets or sets the width of the space to show an image in on the right of the MenuItem's <see cref="P:CMS.skmMenuControl.MenuItem.Text"/> or 
+            main image.
+            </summary>
+            <value>The default value is <b>Unit.Empty</b>.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.RightImageAlign">
+            <summary>
+            Specifies alignment for an image to be shown to the right of the MenuItem's <see cref="P:CMS.skmMenuControl.MenuItem.Text"/> or main image.
+            </summary>
+            <value>Set to one of the values of the <b>System.Web.UI.WebControls.ImageAlign</b> enumeration.
+            The default is <b>ImageAlign.NotSet</b></value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.UniqueClassId">
+            <summary>
+            Unique class id.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Browser">
+            <summary>
+            Browser.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.OverStyle">
+            <summary>
+            OverStyle.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.LeftOverImage">
+            <summary>
+            Sets Left over image.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.RightOverImage">
+            <summary>
+            Sets right over image.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.LeftImage">
+            <summary>
+            Gets or sets an image to be shown to the left of the MenuItem's <see cref="P:CMS.skmMenuControl.MenuItem.Text"/> or main image.		
+            </summary>
+            <remarks>You can only have either a <see cref="P:CMS.skmMenuControl.MenuItem.LeftImage"/> or a <see cref="P:CMS.skmMenuControl.MenuItem.RightImage"/>.  If both are 
+            specified, only the <see cref="P:CMS.skmMenuControl.MenuItem.LeftImage"/> will be used.
+            </remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.LeftImageRightPadding">
+            <summary>
+            Gets or sets the width of the space to show an image in on the left of the MenuItem's <see cref="P:CMS.skmMenuControl.MenuItem.Text"/> or main image.
+            </summary>
+            <value>The default value is <b>Unit.Empty</b>.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.LeftImageAlign">
+            <summary>
+            Specifies alignment for an image to be shown to the left of the MenuItem's <see cref="P:CMS.skmMenuControl.MenuItem.Text"/> or main image.
+            </summary>
+            <value>Set to one of the values of the <b>System.Web.UI.WebControls.ImageAlign</b> enumeration.
+            The default is <b>ImageAlign.NotSet</b></value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MouseOverImage">
+            <summary>
+            Gets or sets the MenuItem's mouseover image.
+            </summary>
+            <remarks>The client-side <b>mouseover</b> event fires when the user's mouse moves over the MenuItem.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MouseUpImage">
+            <summary>
+            Gets or sets the MenuItem's mouseup image.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MouseDownImage">
+            <summary>
+            Gets or sets the MenuItem's mousedown image.
+            </summary>
+            <remarks>The client-side <b>mousedown</b> event fires when the mouse is over the MenuItem
+            and the uses clicks the mouse button.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Name">
+            <summary>
+            Gets or sets the MenuItem's name.
+            </summary>
+            <value>A string value denoting the MenuItem's <b>Name</b>.  The default is an empty string.</value>
+            <remarks>Use the <b>Name</b> property to give a unique, identifying name to a MenuItem instance.
+            The <see cref="T:CMS.skmMenuControl.MenuItemCollection"/> class, which contains a collection of MenuItem instances, can
+            be searched for a MenuItem with a specified <b>Name</b>.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Text">
+            <summary>
+            Gets or sets the MenuItem's text content.
+            </summary>
+            <remarks>For total customization of the appearance of the MenuItem, the <b>Text</b> property can have 
+            HTML content.</remarks>
+            <example>
+            The following example illustrates using HTML content in the <b>Text</b> property:<p />[C#]
+            <code>
+            MenuItem mi = new MenuItem();
+            mi.Text = "&lt;b&gt;This will be bold!&lt;/b&gt;";
+            </code>
+            </example>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Url">
+            <summary>
+            Gets or sets the MenuItem's Url.
+            </summary>
+            <remarks>If a MenuItem has a <b>Url</b> value, the MenuItem is "clickable."  That is, the end user
+            will be able to click the MenuItem and be whisked to the specified URL.<p />The <b>Url</b> value can use
+            the ~ notation.  For this to work, though, the Menu class's <b>DefaultResolveUrl</b> property must be
+            set to True.</remarks>
+            <value>Specifies the URL the user will be whisked to when the MenuItem is clicked.  The default value
+            is <b>String.Empty</b>.  The <b>Url</b> property is optional.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.JavascriptCommand">
+            <summary>
+            Gets or sets the MenuItem's Javascript command.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Target">
+            <summary>
+            Gets or sets the MenuItem's target used when the <see cref="P:CMS.skmMenuControl.MenuItem.Url"/> is navigated to.
+            </summary>
+            <remarks>The <see cref="P:CMS.skmMenuControl.MenuItem.Url"/> property must be set to a non-empty string for <b>Target</b> to have any affect.
+            <p/>To have a MenuItem opened in a new window, set <b>Target</b> to _blank</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.SubItems">
+            <summary>
+            Retrieves the MenuItem's set of SubItems.
+            </summary>
+            <remarks>The <b>SubItems</b> collection is useful when programmatically creating or modifying
+            a menu's content.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.Roles">
+            <summary>
+            Specifies the MenuItem's roles.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MenuID">
+            <summary>
+            Gets or sets the MenuItem's ID.  It is not recommended that this be set directly.
+            </summary>
+            <remarks>The <b>ID</b> for each MenuItem is programmatically set in the <see cref="T:CMS.skmMenuControl.Menu"/> class's
+            <see cref="M:CMS.skmMenuControl.Menu.BuildMenuItem(System.Xml.XmlNode,System.String,System.Int32)"/> method.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MenuType">
+            <summary>
+            Gets or sets the MenuItem's type.  It is not recommended that this be set directly.
+            </summary>
+            <value>The MenuItem type can be one of the available <see cref="T:CMS.skmMenuControl.MenuItemType"/> enumeration values.
+            The default is <b>MenuItemType.MenuItem</b>.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.CommandName">
+            <summary>
+            Gets or Sets the CommandName property.
+            </summary>
+            <remarks>If a MenuItem's <b>CommandName</b> property is set, and the <see cref="P:CMS.skmMenuControl.MenuItem.Url"/> property is
+            <em>not</em> set, then the MenuItem, when clicked, will cause the Web Form to postback, and a
+            MenuItemClicked event will be raised.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MouseOverCssClass">
+            <summary>
+            Gets or sets the MenuItem's mouseover CSS class.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MouseUpCssClass">
+            <summary>
+            Gets or sets the MenuItem's mouseup CSS class.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.MouseDownCssClass">
+            <summary>
+            Gets or sets the MenuItem's mousedown CSS class.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.ResolveURLs">
+            <summary>
+            Specifies whether URL should be resolved before being output.  </summary>
+            <remarks>If either <see cref="P:CMS.skmMenuControl.Menu.DefaultResolveURL"/> in the <see cref="T:CMS.skmMenuControl.Menu"/> class is true or this value is true, 
+            then the URL for the menuitem will be resolved.
+            </remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.HorizontalAlign">
+            <summary>
+            Specifies horizontal alignment for the MenuItem.
+            </summary>
+            <value>One of the horizontal alignment options from the <b>System.Web.UI.WebControls.HorizontalAlign</b> enumeration.
+            The default is <b>HorizontalAlign.NotSet</b>.</value>
+            <remarks>The horizontal alignment indicates how the text and/or images of the MenuItem are aligned.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItem.VerticalAlign">
+            <summary>
+            Specifies vertical alignment for the MenuItem.
+            </summary>
+            <value>One of the vertical alignment options from the <b>System.Web.UI.WebControls.VerticalAlign</b> enumeration.
+            The default is <b>VerticalAlign.NotSet</b>.</value>
+        </member>
+        <member name="T:CMS.skmMenuControl.MenuItemClickEventArgs">
+            <summary>
+            Provides the EventArgs class for the MenuItemClick event.
+            This EventArgs provides a single string parameter: CommandName
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemClickEventArgs.#ctor(System.String)">
+            <summary>
+            Describes which menuitem was clicked by returning the command name property.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemClickEventArgs.CommandName">
+            <summary>
+            Readonly access to commandName parameter of EventArgs class.
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.MenuItemCollection">
+            <summary>
+            MenuItemCollection represents a collection of <see cref="T:CMS.skmMenuControl.MenuItem"/> instances.
+            </summary>
+            <remarks>Each item in a menu is represented by an instance of the <see cref="T:CMS.skmMenuControl.MenuItem"/> class.
+            The MenuItem class has a SubItems property, which is of type MenuItemCollection.  This
+            MenuItemCollection, then, allows for each MenuItem to have a submenu of MenuItems.<p/>This flexible
+            object model allows for an unlimited number of submenu depths.</remarks>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.Add(CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Adds a MenuItem to the collection.  If the ViewState is being tracked, the
+            MenuItem's TrackViewState() method is called and the item is set to dirty, so
+            that we don't lose any settings made prior to the Add() call.
+            </summary>
+            <param name="item">The MenuItem to add to the collection</param>
+            <returns>The ordinal position of the added item.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.AddSpacer(System.Int32)">
+            <summary>
+            Adds a spacer to the collection.  
+            </summary>
+            <param name="itemHeight">The height of the spacer to add to the collection</param>
+            <returns>The ordinal position of the added item.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.AddSpacer(System.Int32,System.String)">
+            <summary>
+            Adds a spacer to the collection.  
+            </summary>
+            <param name="itemHeight">The height of the spacer to add to the collection</param>
+            <param name="itemCssClass">The CssClass for the spacer to add to the collection</param>
+            <returns>The ordinal position of the added item.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.AddSpacer(System.Int32,System.String,System.String)">
+            <summary>
+            Adds a spacer to the collection.
+            </summary>
+            <param name="itemHeight">The height of the spacer to add to the collection</param>
+            <param name="itemCssClass">The CssClass for the spacer to add to the collection</param>
+            /// <param name="itemText">The Text for the spacer to add to the collection</param>
+            <returns>The ordinal position of the added item.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.AddHeader(System.String)">
+            <summary>
+            Adds a header to the collection.  
+            </summary>
+            <param name="itemText">The text for the header to add to the collection</param>
+            <returns>The ordinal position of the added item.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.AddRange(CMS.skmMenuControl.MenuItemCollection)">
+            <summary>
+            Adds the MenuItems in a MenuItemCollection.
+            </summary>
+            <param name="items">The MenuItemCollection instance whose MenuItems to add</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.Clear">
+            <summary>
+            Clears out the entire MenuItemCollection.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.Contains(CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Determines if a particular MenuItem exists within the collection.
+            </summary>
+            <param name="item">The MenuItem instance to check for</param>
+            <returns>A Boolean - true if the MenuItem is in the collection, false otherwise.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.IndexOf(CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Returns the ordinal index of a MenuItem, if it exists; if the item does not exist,
+            -1 is returned.
+            </summary>
+            <param name="item">The MenuItem to search for</param>
+            <returns>The ordinal position of the item in the collection.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.Insert(System.Int32,CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Inserts a MenuItem instance at a particular location in the collection.
+            </summary>
+            <param name="index">The ordinal location to insert the item</param>
+            <param name="item">The MenuItem to insert</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.Remove(CMS.skmMenuControl.MenuItem)">
+            <summary>
+            Removes a specified MenuItem from the collection.
+            </summary>
+            <param name="item">The MenuItem instance to remove</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes a MenuItem from a particular ordinal position in the collection.
+            </summary>
+            <param name="index">The ordinal position of the MenuItem to remove</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the contents of the MenuItem to an array.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.GetEnumerator">
+            <summary>
+            Gets an Enumerator for enumerating through the collection.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.System#Web#UI#IStateManager#TrackViewState">
+            <summary>
+            Indicates that changes to the view state should be tracked.  Calls TrackViewState()
+            for each MenuItem in the collection.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.System#Web#UI#IStateManager#SaveViewState">
+            <summary>
+            Saves the view state in an object array.  Each item in the collection has its
+            SaveViewState() method called.  This array is then returned, representing the
+            state of the MenuItemCollection.
+            </summary>
+            <returns>An object array.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.MenuItemCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)">
+            <summary>
+            Iterate through the object array passed in.  For each element in the object array
+            passed-in, a new MenuItem instance is created, added to the collection, and populated
+            by calling LoadViewState().
+            </summary>
+            <param name="savedState">The object array returned by the SaveViewState() method in
+            the previous page visit.</param>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemCollection.MenuCssClass">
+            <summary>
+            Collection CSS class
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemCollection.Count">
+            <summary>
+            Returns the number of elements in the MenuItemCollection.
+            </summary>
+            <value>The actual number of elements contained in the <see cref="T:CMS.skmMenuControl.MenuItemCollection"/>.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemCollection.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:CMS.skmMenuControl.MenuItemCollection"/> is synchronized (thread-safe).
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemCollection.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchrnoize access to the <see cref="T:CMS.skmMenuControl.MenuItemCollection"/>.
+            </summary>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemCollection.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:CMS.skmMenuControl.MenuItem"/> at a specified ordinal index.
+            </summary>
+            <remarks>Allows read-only access to the <see cref="T:CMS.skmMenuControl.MenuItemCollection"/>'s elements by index.
+            For example, myMenuCollection[4] would return the fifth <see cref="T:CMS.skmMenuControl.MenuItem"/> instance.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemCollection.Item(System.String)">
+            <summary>
+            Gets the MenuItem with a specified Name.
+            </summary>
+            <remarks>The MenuItem class has a Name property that allows for items
+            to be indexed by name. For example, myMenuCollection["Contact"] would return the 
+            <see cref="T:CMS.skmMenuControl.MenuItem"/> instance with the Name "Contact", or <strong>null</strong> if no such
+            MenuItem existed in the MenuItemCollection.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.MenuItemCollection.System#Web#UI#IStateManager#IsTrackingViewState">
+            <summary>
+            A required property since MenuItemCollection implements IStateManager.  This
+            property simply indicates if the MenuItemCollection is tracking its view state or not.
+            </summary>
+        </member>
+        <member name="T:CMS.skmMenuControl.RoleCollection">
+            <summary>
+            Provides a collection of roles.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.System#Web#UI#IStateManager#TrackViewState">
+            <summary>
+            Indicates that changes to the view state should be tracked.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.System#Web#UI#IStateManager#SaveViewState">
+            <summary>
+            Returns an array of objects, where each object is a string in the collection.
+            </summary>
+            <returns>An object array.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)">
+            <summary>
+            Iterate through the object array passed in.  For each element in the object array
+            passed-in, a new role is added to the collection.
+            </summary>
+            <param name="savedState">The object array returned by the SaveViewState() method in
+            the previous page visit.</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.Add(System.String)">
+            <summary>
+            Adds a new role to the collection.
+            </summary>
+            <param name="role">The name of the role to add</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.AddRange(System.String[])">
+            <summary>
+            Adds a range of roles to the collection.
+            </summary>
+            <param name="roles">A string array of roles to add</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.Remove(System.String)">
+            <summary>
+            Removes a role from the collection.
+            </summary>
+            <param name="role">The name of the role to remove</param>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.Clear">
+            <summary>
+            Clears out the roles collection.
+            </summary>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.Contains(System.String)">
+            <summary>
+            Returns a Boolean indicating if the passed-in role name exists in the role collection.
+            </summary>
+            <param name="role">A role</param>
+            <returns>Returns <strong>true</strong> if <strong>role</strong> is contained in the collection, <strong>false</strong> if it is not.</returns>
+        </member>
+        <member name="M:CMS.skmMenuControl.RoleCollection.Disjoint(CMS.skmMenuControl.RoleCollection)">
+            <summary>
+            Returns true if this role collection and the passed in role collection are disjoint (share no elements in
+            common).
+            </summary>
+            <param name="roles">A role collection</param>
+            <returns><strong>true</strong> if the collections are disjoint, <strong>false</strong> otherwise.</returns>
+        </member>
+        <member name="P:CMS.skmMenuControl.RoleCollection.Count">
+            <summary>
+            Returns the number of roles in the collection.
+            </summary>
+            <value>An integer value greater than or equal to zero indicating the number of roles in the role collection.</value>
+        </member>
+        <member name="P:CMS.skmMenuControl.RoleCollection.Roles">
+            <summary>
+            Returns the list of roles as a string array.
+            </summary>
+            <remarks>The RoleCollection class only contains methods to add, remove, and check to see if a role exists in
+            the collection.  It does not provide a means to enumerate through the roles.  In order to enumerate through
+            the roles, use this property to retrieve the roles as a string array.</remarks>
+        </member>
+        <member name="P:CMS.skmMenuControl.RoleCollection.System#Web#UI#IStateManager#IsTrackingViewState">
+            <summary>
+            Specifies if the RoleCollection is tracking ViewState.  Required, since RoleCollection
+            implements the IStateManager interface.
+            </summary>
+        </member>
+    </members>
+</doc>

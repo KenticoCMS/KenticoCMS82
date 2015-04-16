@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+	<actions>
+		<action name="delete" caption="$General.Delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$General.ConfirmDelete$" />
+	</actions>
+	<columns>
+		<column source="TaskTitle" caption="$SyncLog.Columns.TaskTitle$" wrap="false" />
+		<column source="SyncLogTime" caption="$SyncLog.Columns.Time$" wrap="false" />
+		<column source="ServerDisplayName" caption="$SyncLog.Columns.Server$" wrap="false" />
+		<column source="SyncLogError" caption="$SyncLog.Columns.Error$" istext="true" cssclass="main-column-100" />
+	</columns>
+	<objecttype name="staging.syncloglist" />
+</grid>

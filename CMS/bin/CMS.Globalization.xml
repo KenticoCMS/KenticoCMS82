@@ -1,0 +1,1114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.Globalization</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.Globalization.CountriesMacroContainer">
+            <summary>
+            Wrapper class to provide Countries enumeration in the MacroEngine.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.CountriesMacroContainer.mCountryNames">
+            <summary>
+            Names of the countries in the system.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountriesMacroContainer.CMS#Base#ISimpleDataContainer#GetValue(System.String)">
+            <summary>
+            Returns country of specified name if exists.
+            </summary>
+            <param name="columnName">Column name</param>
+        </member>
+        <member name="M:CMS.Globalization.CountriesMacroContainer.CMS#Base#ISimpleDataContainer#SetValue(System.String,System.Object)">
+            <summary>
+            Not implemented.
+            </summary>
+            <param name="columnName">Column name</param>
+            <param name="value">New value</param>
+        </member>
+        <member name="M:CMS.Globalization.CountriesMacroContainer.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Returns country of specified name if exists.
+            </summary>
+            <param name="countryName">Name of the country</param>
+            <param name="value">CountryInfo will be returned if exists</param>
+        </member>
+        <member name="M:CMS.Globalization.CountriesMacroContainer.ContainsColumn(System.String)">
+            <summary>
+            Returns true if country of specified name exists.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountriesMacroContainer.CountryNames">
+            <summary>
+            Names of the countries in the system.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountriesMacroContainer.CMS#Base#ISimpleDataContainer#Item(System.String)">
+            <summary>
+            Gets a country of specified name if exists. Setter is not implemented.
+            </summary>
+            <param name="columnName">Column name</param>
+        </member>
+        <member name="P:CMS.Globalization.CountriesMacroContainer.ColumnNames">
+            <summary>
+            Returns list of all countries.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.CountryInfo">
+            <summary>
+            CountryInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.CountryInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.CountryInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty CountryInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new CountryInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfo.InsertAsCloneInternal(CMS.DataEngine.CloneSettings,CMS.DataEngine.CloneResult,CMS.DataEngine.BaseInfo)">
+            <summary>
+            Inserts cloned object to DB.
+            </summary>
+            <param name="settings">Cloning settings</param>
+            <param name="result">Cloning result</param>
+            <param name="originalObject">Original source BaseInfo (object being cloned)</param>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfo.CountryID">
+            <summary>
+            Country ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfo.CountryDisplayName">
+            <summary>
+            Country display name.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfo.CountryName">
+            <summary>
+            Country code name.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfo.CountryTwoLetterCode">
+            <summary>
+            Country two-letter code.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfo.CountryThreeLetterCode">
+            <summary>
+            Country three-letter code.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfo.CountryGUID">
+            <summary>
+            Country GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfo.CountryLastModified">
+            <summary>
+            Object last modified.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.CountryInfoProvider">
+            <summary>
+            Class providing management of the countries.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.CountryInfoProvider.mCountryInfosByTwoLetterCode">
+            <summary>
+            Countries indexed by two letter country code.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.CountryInfoProvider.mCountryInfosByThreeLetterCode">
+            <summary>
+            Countries indexed by three letter country code.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.CountryInfoProvider.tableLock">
+            <summary>
+            Table lock for loading.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountryInfo(System.Int32)">
+            <summary>
+            Returns the CountryInfo structure for the specified country.
+            </summary>
+            <param name="countryId">Country id</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountryInfo(System.String)">
+            <summary>
+            Returns the CountryInfo structure for the specified country.
+            </summary>
+            <param name="countryName">Country name</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountryInfoByCode(System.String)">
+            <summary>
+             Returns the CountryInfo structure for the specified country code.
+            </summary>
+            <param name="countryCode">Code of the country. Two- and three- letter codes are supported.</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.SetCountryInfo(CMS.Globalization.CountryInfo)">
+            <summary>
+            Sets (updates or inserts) specified country.
+            </summary>
+            <param name="country">Country to set</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.DeleteCountryInfo(CMS.Globalization.CountryInfo)">
+            <summary>
+            Deletes specified country.
+            </summary>
+            <param name="countryObj">Country object</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.DeleteCountryInfo(System.Int32)">
+            <summary>
+            Deletes specified country.
+            </summary>
+            <param name="countryId">Country id</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountries(System.String,System.String)">
+            <summary>
+            Gets the countries.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountries(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets the countries.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by</param>
+            <param name="topN">TOP N rows</param>
+            <param name="columns">Returned columns</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountries">
+            <summary>
+            Returns countries query.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetAllCountries">
+            <summary>
+            Gets all countries.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountriesWithStates">
+            <summary>
+            Returns DataSet with all countries which have some states.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.CheckDependencies(System.Int32)">
+            <summary>
+            Check dependencies. Returns true if something is dependent.
+            </summary>
+            <param name="countryId">Country ID</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears hashtables.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountryInfoInternal(System.Int32)">
+            <summary>
+            Returns the CountryInfo structure for the specified country.
+            </summary>
+            <param name="countryId">Country id</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountryInfoInternal(System.String)">
+            <summary>
+            Returns the CountryInfo structure for the specified country.
+            </summary>
+            <param name="countryName">Country name</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountryInfoByCodeInternal(System.String)">
+            <summary>
+             Returns the CountryInfo structure for the specified country code.
+            </summary>
+            <param name="countryCode">Code of the country. Two- and three- letter codes are supported.</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.SetCountryInfoInternal(CMS.Globalization.CountryInfo)">
+            <summary>
+            Sets (updates or inserts) specified country.
+            </summary>
+            <param name="country">Country to set</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.DeleteCountryInfoInternal(CMS.Globalization.CountryInfo)">
+            <summary>
+            Deletes specified country.
+            </summary>
+            <param name="countryObj">Country object</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountriesInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets all countries according specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by</param>
+            <param name="topN">TOP N rows</param>
+            <param name="columns">Returned columns</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.GetCountriesWithStatesInternal">
+            <summary>
+            Returns DataSet with all countries which have some states.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.CheckDependenciesInternal(System.Int32)">
+            <summary>
+            Check dependencies. Returns true if something is dependent.
+            </summary>
+            <param name="countryId">Country ID</param>
+        </member>
+        <member name="M:CMS.Globalization.CountryInfoProvider.LoadCountries">
+            <summary>
+            Loads countries to hashtables.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfoProvider.CountryInfosByTwoLetterCode">
+            <summary>
+            Countries indexed by two-letter country code.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.CountryInfoProvider.CountryInfosByThreeLetterCode">
+            <summary>
+            Countries indexed by three-letter country code.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.StateInfo">
+            <summary>
+            StateInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.StateInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.StateInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.StateInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.StateInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.StateInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty StateInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.StateInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new StateInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfo.StateName">
+            <summary>
+            State code name.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfo.StateCode">
+            <summary>
+            State short code.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfo.StateDisplayName">
+            <summary>
+            State display name.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfo.CountryID">
+            <summary>
+            Country ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfo.StateID">
+            <summary>
+            State ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfo.StateGUID">
+            <summary>
+            State GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfo.StateLastModified">
+            <summary>
+            Object last modified.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.StateInfoProvider">
+            <summary>
+            Class providing StateInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.StateInfoProvider.mStateInfosByCode">
+            <summary>
+            States indexed by state code.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.StateInfoProvider.tableLock">
+            <summary>
+            Table lock for loading.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStateInfo(System.Int32)">
+            <summary>
+            Returns the StateInfo structure for the specified state.
+            </summary>
+            <param name="stateId">State id</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStateInfo(System.String)">
+            <summary>
+            Returns the StateInfo structure for the specified state.
+            </summary>
+            <param name="stateName">StateName</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetCountryStates(System.Int32)">
+            <summary>
+            Returns DataSet with states of the specified country.
+            </summary>
+            <param name="countryId">Country id</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStates(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns DataSet with states.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by</param>
+            <param name="topN">TOP N rows</param>
+            <param name="columns">Returned columns</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStates">
+            <summary>
+            Returns states query.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStateInfoByCode(System.String)">
+            <summary>
+             Returns the StateInfo structure for the specified state code.
+            </summary>
+            <param name="stateCode">Code of the state</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.SetStateInfo(CMS.Globalization.StateInfo)">
+            <summary>
+            Sets (updates or inserts) specified state.
+            </summary>
+            <param name="state">State to set</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.DeleteStateInfo(CMS.Globalization.StateInfo)">
+            <summary>
+            Deletes specified state.
+            </summary>
+            <param name="stateObj">State object</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.DeleteStateInfo(System.Int32)">
+            <summary>
+            Deletes specified state.
+            </summary>
+            <param name="stateId">State id</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.CheckDependencies(System.Int32)">
+            <summary>
+            Check dependencies.
+            </summary>
+            <param name="stateId">State ID</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.DeleteCountryStates(System.Int32)">
+            <summary>
+            Deletes all country states.
+            </summary>
+            <param name="countryId">Country ID</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears hashtables.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStateInfoInternal(System.Int32)">
+            <summary>
+            Returns the StateInfo structure for the specified state.
+            </summary>
+            <param name="stateId">State id</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStateInfoInternal(System.String)">
+            <summary>
+            Returns the StateInfo structure for the specified state.
+            </summary>
+            <param name="stateName">StateName</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetCountryStatesInternal(System.Int32)">
+            <summary>
+            Returns DataSet with states of the specified country.
+            </summary>
+            <param name="countryId">Country id</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStatesInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns DataSet with states.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by</param>
+            <param name="topN">TOP N rows</param>
+            <param name="columns">Returned columns</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.GetStateInfoByCodeInternal(System.String)">
+            <summary>
+             Returns the StateInfo structure for the specified state code.
+            </summary>
+            <param name="stateCode">Code of the state</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.SetStateInfoInternal(CMS.Globalization.StateInfo)">
+            <summary>
+            Sets (updates or inserts) specified state.
+            </summary>
+            <param name="stateObj">State to set</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.DeleteStateInfoInternal(CMS.Globalization.StateInfo)">
+            <summary>
+            Deletes specified state.
+            </summary>
+            <param name="stateObj">State object</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.CheckDependenciesInternal(System.Int32)">
+            <summary>
+            Check dependencies.
+            </summary>
+            <param name="stateId">State ID</param>
+        </member>
+        <member name="M:CMS.Globalization.StateInfoProvider.LoadStates">
+            <summary>
+            Loads states to hashtables.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.StateInfoProvider.StateInfosByCode">
+            <summary>
+            States indexed by state code.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.GlobalizationModuleMetadata">
+            <summary>
+            Represents the Globalization module metadata.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.GlobalizationModuleMetadata.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.GlobalizationModule">
+            <summary>
+            Represents the Globalization module.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.GlobalizationModule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.GlobalizationModule.OnInit">
+            <summary>
+            Initializes the module.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.ITimeZoneManager">
+            <summary>
+            Time zone manager.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.ITimeZoneManager.TimeZoneType">
+            <summary>
+            Time zone type.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.ITimeZoneManager.CustomTimeZone">
+            <summary>
+            Custom time zone.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.TimeZoneHelper">
+            <summary>
+            Static timezone accessing methods.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetTimeZoneManager(System.Web.UI.Control)">
+            <summary>
+            Gets the time zone manager for the given control.
+            </summary>
+            <param name="control">Control for which to get the time zone manager</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertTimeZoneDateTime(System.DateTime,CMS.Globalization.TimeZoneInfo,CMS.Globalization.TimeZoneInfo,System.Boolean)">
+            <summary>
+            Returns DateTime according timezone information.
+            </summary>
+            <param name="dateTime">Source datetime</param>
+            <param name="srcTimeZoneInfo">Source timezone</param>
+            <param name="destTimeZoneInfo">Destination timezone</param>
+            <param name="timeZonesRequired">If true than the time is converted only if timezones are enabled in the system</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetGMToffset(System.DateTime,CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Compute gmt offset with dependence on daylight saving time.
+            </summary>
+            <param name="dt">DateTime to convert</param>
+            <param name="tzi">Time zone info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.IsDaylightSavingsTime(System.DateTime,CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Returns true if given DateTime is within daylight saving time in given time zone.
+            </summary>
+            <param name="dt">DateTime to be checked</param>
+            <param name="tzi">Time zone with DST configuration</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetTimeZoneInfo(System.Int32)">
+            <summary>
+            Returns timezone info.
+            </summary>
+            <param name="timeZoneId">TimeZone ID</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetTimeZoneInfo(System.String)">
+            <summary>
+            Returns timezone info.
+            </summary>
+            <param name="timeZoneId">TimeZone ID</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetTimeZoneInfo(CMS.Base.IUserInfo)">
+            <summary>
+            Returns user timezone.
+            </summary>
+            <param name="userInfo">User info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetTimeZoneInfo(CMS.Base.ISiteInfo)">
+            <summary>
+            Returns site timezone.
+            </summary>
+            <param name="siteInfo">Site info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetTimeZoneInfo(CMS.Base.IUserInfo,CMS.Base.ISiteInfo)">
+            <summary>
+            Returns timezone of given user or site timezone is the user one is not set. If also site timezone is not set then server timezone is returned.
+            </summary>
+            <param name="userInfo">User info</param>
+            <param name="siteInfo">Site info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetUserDateTime(CMS.Base.IUserInfo)">
+            <summary>
+            Returns user current date time in dependence on user time zone.
+            </summary>
+            <param name="userInfo">User info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToUserDateTime(System.DateTime,CMS.Base.IUserInfo)">
+            <summary>
+            Returns  user date time in dependence on user time zone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="userInfo">User info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToUserDateTime(System.DateTime,CMS.Base.IUserInfo,CMS.Globalization.TimeZoneInfo@)">
+            <summary>
+            Returns  user date time in dependence on user time zone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="userInfo">User info</param>
+            <param name="usedTimeZone">Destination time zone</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetSiteDateTime(CMS.Base.ISiteInfo)">
+            <summary>
+            Returns user current date time in dependence on user time zone.
+            </summary>
+            <param name="siteInfo">Site info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToSiteDateTime(System.DateTime,CMS.Base.ISiteInfo)">
+            <summary>
+            Returns  site date time in dependence on site time zone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="siteInfo">Site info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToSiteDateTime(System.DateTime,CMS.Base.ISiteInfo,CMS.Globalization.TimeZoneInfo@)">
+            <summary>
+            Returns  site date time in dependence on site time zone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="siteInfo">Site info</param>
+            <param name="usedTimeZone">Destination time zone</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToServerDateTime(System.DateTime,CMS.Base.IUserInfo)">
+            <summary>
+            Returns  server date time in dependence on server time zone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="userInfo">User info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToServerDateTime(System.DateTime,CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Returns server date time in dependence on server time zone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="customTimeZone">Custom time zone info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToServerDateTime(System.DateTime,CMS.Base.ISiteInfo)">
+            <summary>
+            Returns server date time in dependence on server time zone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="siteInfo">Site info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertTimeToUTC(System.DateTime,CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Returns UTC date time in dependence on given time zone.
+            </summary>
+            <param name="dateTime">DateTime to convert</param>
+            <param name="timeZoneInfo">Time zone</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertTimeToUserTime(System.DateTime,CMS.Globalization.TimeZoneInfo,CMS.Base.IUserInfo)">
+            <summary>
+            Returns user date time in dependence on user time zone from specified DateTime a TimeZone.
+            </summary>
+            <param name="dateTime">DateTime</param>
+            <param name="timeZoneInfo">Time zone</param>
+            <param name="userInfo">User info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetUTCStringOffset(CMS.Globalization.TimeZoneInfo,System.String)">
+            <summary>
+            Returns string representation of time zone shift in form '(UTC + 00:00)'.
+            </summary>
+            <param name="tzi">Time zone info</param>
+            <param name="format">Format string, if null following format is used - '(UTC {0:zzz})'</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetUTCLongStringOffset(CMS.Base.IUserInfo,CMS.Base.ISiteInfo)">
+            <summary>
+            Returns "long" string representation of used time zone (user, site or server) in form '(UTC + 00:00) TimeZoneDisplayName'.
+            Returns null if time zones are disabled.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetUTCLongStringOffset(CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Returns "long" string representation of time zone shift in form '(UTC + 00:00) TimeZoneDisplayName'.
+            </summary>
+            <param name="tzi">Time zone info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertToUserTimeZone(System.DateTime,System.Boolean,CMS.Base.IUserInfo,CMS.Base.ISiteInfo,System.String)">
+            <summary>
+            Returns string representing of given time converted into user date time (site or server).
+            </summary>
+            <param name="time">DateTime to be converted</param>
+            <param name="displayGMT">Indicates if GMT information should be appended to result string</param>
+            <param name="ui">IUserInfo</param>
+            <param name="si">ISiteInfo</param>
+            <param name="format">Output format</param>        
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetCurrentTimeZoneDateTimeString(System.DateTime,CMS.Base.IUserInfo,CMS.Base.ISiteInfo,CMS.Globalization.TimeZoneInfo@,System.String)">
+            <summary>
+            Returns string representation of the given date/time converted to user, site or server time zone.
+            </summary>
+            <param name="dt">Server DateTime value</param>
+            <param name="ui">Current user info</param>
+            <param name="si">Current site info</param>
+            <param name="usedTimeZone">Used time zone</param>
+            <param name="format">Output format</param>           
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.GetCurrentTimeZoneDateTimeStringInternal(System.DateTime,CMS.Base.IUserInfo,CMS.Base.ISiteInfo,CMS.Globalization.TimeZoneInfo@,System.String,System.Boolean)">
+            <summary>
+            Returns string representation of the given date/time converted to user, site or server time zone.
+            </summary>
+            <param name="dt">Server DateTime value</param>
+            <param name="ui">Current user info</param>
+            <param name="si">Current site info</param>
+            <param name="usedTimeZone">Used time zone</param>
+            <param name="format">Output format</param>
+            <param name="displayGMT">Indicates if GMT information should be appended to result string</param>          
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertDataSet(System.Data.DataSet,CMS.Base.IUserInfo)">
+            <summary>
+            Converts the DateTime columns values of the DataSet to user datetime.
+            </summary>
+            <param name="dataSet">DataSet to be converted</param>
+            <param name="userInfo">IUserInfo object</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.ConvertDataTable(System.Data.DataTable,CMS.Base.IUserInfo)">
+            <summary>
+            Converts the DateTime columns of the table values to user datetime.
+            </summary>
+            <param name="table">DataTable to be converted</param>
+            <param name="userInfo">IUserInfo object</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneHelper.AdjustDateTimeValues(System.Data.DataRow,System.Int32[],CMS.Base.IUserInfo)">
+            <summary>
+            Converts DateTime values in DataRow according to user TimeZone settings.
+            </summary>
+            <param name="dr">DataRow to be converted</param>
+            <param name="dateTimeColumnsIndexes">Indexes of DateTime columns in datarow</param>
+            <param name="userInfo">IUserInfo object</param>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneHelper.ServerTimeZone">
+            <summary>
+            Returns server timezone.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneHelper.TimeZonesEnabled">
+            <summary>
+            Returns true if global CMSTimeZonesEnable setting key is true.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.TimeZoneInfo">
+            <summary>
+            TimeZoneInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.TimeZoneInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.TimeZoneInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty TimeZoneInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new TimeZoneInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneName">
+            <summary>
+            Time zone name.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneDaylight">
+            <summary>
+            If time zone uses daylight saving time.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneDisplayName">
+            <summary>
+            Display Name.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneID">
+            <summary>
+            ID of time zone.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneRuleEndIn">
+            <summary>
+            Rule End In.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneRuleStartRule">
+            <summary>
+            Rule Start Rule.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneRuleEndRule">
+            <summary>
+            TimeZone Rule End Rule.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneRuleStartIn">
+            <summary>
+            Rule Start In.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneGMT">
+            <summary>
+            GMT shift of time zone.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneGUID">
+            <summary>
+            Time zone GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Globalization.TimeZoneInfo.TimeZoneLastModified">
+            <summary>
+            Time zone modified.
+            </summary>
+        </member>
+        <member name="T:CMS.Globalization.TimeZoneInfoProvider">
+            <summary>
+            Class providing TimeZoneInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZoneInfo(System.Int32)">
+            <summary>
+            Returns the TimeZoneInfo structure for the specified Id.
+            </summary>
+            <param name="timeZoneId">TimeZone id</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZoneInfo(System.String)">
+            <summary>
+            Returns the TimeZoneInfo structure for the specified name.
+            </summary>
+            <param name="timeZoneName">TimeZone name</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZones(System.String,System.String)">
+            <summary>
+            Returns DataSet with all time zones.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by clause</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZones(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns DataSet with all time zones.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by clause</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZones">
+            <summary>
+            Returns DataSet with all time zones.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.SetTimeZoneInfo(CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Sets (updates or inserts) specified timeZone.
+            </summary>
+            <param name="timeZone">TimeZone to set</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.DeleteTimeZoneInfo(CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Deletes specified timeZone.
+            </summary>
+            <param name="infoObj">TimeZone object</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.DeleteTimeZoneInfo(System.Int32)">
+            <summary>
+            Deletes specified timeZone.
+            </summary>
+            <param name="timeZoneId">TimeZone id</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.CreateRuleDateTime(System.String)">
+            <summary>
+            Returns DateTime for specified rule.
+            </summary>
+            <param name="rule">Rule</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.CreateRuleDateTime(System.String,System.Int32)">
+            <summary>
+            Returns DateTime for specified rule and year.
+            </summary>
+            <param name="rule">Rule</param>
+            <param name="year">Year</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GenerateTimeZoneRules">
+            <summary>
+            Regenerate all time zone rules.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZoneTypeEnum(System.String)">
+            <summary>
+            Returns the enum representation of timezone based on specified string.
+            </summary>
+            <param name="timeZoneTypeString">String representation of timezone</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZoneTypeString(CMS.Globalization.TimeZoneTypeEnum)">
+            <summary>
+            Returns the string representation of timezone type based on specified enum value.
+            </summary>
+            <param name="timeZoneType">Enum representation of avatar type</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZoneTypeString(System.Type,System.Int32)">
+            <summary>
+            Returns TimeZoneTypeEnum string code derived from type of enumeration and enum value.
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZoneInfoInternal(System.Int32)">
+            <summary>
+            Returns the TimeZoneInfo structure for the specified Id.
+            </summary>
+            <param name="timeZoneId">TimeZone id</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZoneInfoInternal(System.String)">
+            <summary>
+            Returns the TimeZoneInfo structure for the specified name.
+            </summary>
+            <param name="timeZoneName">TimeZone name</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZonesInternal(System.String,System.String)">
+            <summary>
+            Returns DataSet with all time zones.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by clause</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetTimeZonesInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns DataSet with all time zones.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by clause</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.SetTimeZoneInfoInternal(CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Sets (updates or inserts) specified timeZone.
+            </summary>
+            <param name="timeZone">TimeZone to set</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.DeleteTimeZoneInfoInternal(CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Deletes specified timeZone.
+            </summary>
+            <param name="infoObj">TimeZone object</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneInfoProvider.GetDay(System.String,System.Int32,System.Int32,System.Int32,System.Double)">
+            <summary>
+            Returns day of specified condition.
+            </summary>
+            <param name="weekDay">3 digit code of week day</param>
+            <param name="dayValue">Starting day</param>
+            <param name="month">Month</param>
+            <param name="year">Year</param>
+            <param name="add">Step (1,-1)</param>
+        </member>
+        <member name="T:CMS.Globalization.TimeZoneMethods">
+            <summary>
+            Time zone methods
+            </summary>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneMethods.GetDateTimeForControl(System.Web.UI.Control,System.DateTime)">
+            <summary>
+            Gets the date time value for the given control.
+            </summary>
+            <param name="control">Control</param>
+            <param name="dateTime">Date time</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneMethods.GetDateTimeForControl(System.Web.UI.Control,System.DateTime,CMS.Globalization.TimeZoneInfo@)">
+            <summary>
+            Gets the date time value for the given control.
+            </summary>
+            <param name="control">Control</param>
+            <param name="dateTime">Date time</param>
+            <param name="usedTimeZone">Time zone used for time conversion</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneMethods.DateTimeServerConvert(System.DateTime,CMS.Globalization.TimeZoneTypeEnum,CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Convert datetime with dependence on time zone type to server date time.
+            </summary>
+            <param name="dateTime">User/Site date time</param>
+            <param name="type">Time zone type</param>
+            <param name="customTimeZone">Custom time zone info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneMethods.DateTimeConvert(System.DateTime,CMS.Globalization.TimeZoneTypeEnum,CMS.Globalization.TimeZoneInfo)">
+            <summary>
+            Convert date time with dependence on time zone type from server date time.
+            </summary>
+            <param name="dateTime">Server date time</param>
+            <param name="type">Time zone type</param>
+            <param name="customTimeZone">Custom time zone info</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneMethods.DateTimeConvert(System.DateTime,CMS.Globalization.TimeZoneTypeEnum,CMS.Globalization.TimeZoneInfo,CMS.Globalization.TimeZoneInfo@)">
+            <summary>
+            Convert date time with dependence on time zone type from server date time.
+            </summary>
+            <param name="dateTime">Server date time</param>
+            <param name="type">Time zone type</param>
+            <param name="customTimeZone">Custom time zone info</param>
+            <param name="usedTimeZone">Time zone used for time conversion</param>
+        </member>
+        <member name="M:CMS.Globalization.TimeZoneMethods.ConvertDateTime(System.DateTime,System.Web.UI.Control)">
+            <summary>
+            Convert date time with dependences on current time zone manager.
+            </summary>
+            <param name="dateTime">Date time to convert</param>
+            <param name="sender">Sender</param>
+        </member>
+        <member name="T:CMS.Globalization.TimeZoneTypeEnum">
+            <summary>
+            Defines timezone types. 
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.TimeZoneTypeEnum.Inherit">
+            <summary>
+            Indicates whether time zone type is inherited.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.TimeZoneTypeEnum.Server">
+            <summary>
+            Server timezone type.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.TimeZoneTypeEnum.WebSite">
+            <summary>
+             WebSite timezone type.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.TimeZoneTypeEnum.User">
+            <summary>
+            User timezone type.
+            </summary>
+        </member>
+        <member name="F:CMS.Globalization.TimeZoneTypeEnum.Custom">
+            <summary>
+            Custom timezone type.
+            </summary>
+        </member>
+    </members>
+</doc>

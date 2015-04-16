@@ -1,0 +1,27 @@
+<form>
+  <category name="General" caption="{$general.objecttype$}" collapsible="true" collapsedbydefault="false" />
+  <field column="ObjectType" fieldcaption="Object type" visible="true" columntype="text" fielddescription="{$documentation.property.generalobjecttype$}" fieldtype="CustomUserControl" allowempty="true" columnsize="200" publicfield="false" spellcheck="false" guid="1CAC9EC5-6214-41EA-BF9A-EA9FA867E2DC" >
+    <settings>
+      <ControlName>ObjectTypeSelector</ControlName>
+      <objecttypelist>ObjectTypes.AllObjectTypes</objecttypelist>
+      <SpecialFields>;(inherit)</SpecialFields>
+    </settings>
+  </field>
+  <field column="ParentObjectType" fieldcaption="Parent object type" visible="true" fielddescription="{$documentation.property.parentobjecttype$}" columntype="text" fieldtype="CustomUserControl" allowempty="true" columnsize="200" publicfield="false" spellcheck="false" guid="2BC65BD6-D60C-4474-9B25-2AE36373E84A"  >
+    <settings>
+      <ControlName>ObjectTypeSelector</ControlName>
+      <objecttypelist>ObjectTypes.AllObjectTypes</objecttypelist>
+      <SpecialFields>;(automatic)</SpecialFields>
+      <DisplayAll>false</DisplayAll>
+    </settings>
+  </field>
+  <category name="Header" caption="{$General.header$}" collapsible="true" collapsedbydefault="true" />
+  <field column="TitleText" fieldcaption="Title text" fielddescription="{$documentation.property.titletext$}" visible="true" columntype="text" fieldtype="CustomUserControl" allowempty="true" columnsize="200" publicfield="false" spellcheck="false" guid="5159544B-4475-4B10-8E15-3A61F192FEE8" >
+    <settings>
+      <ControlName>LocalizableTextBox</ControlName>
+    </settings>
+  </field>
+  <field column="DescriptionLink" fieldcaption="{$documentation.property.descriptionlink.caption$}" visible="true" fielddescription="{$documentation.property.decriptionlink$}" columntype="text" columnsize="200" fieldtype="TextBox" allowempty="true" publicfield="true" spellcheck="false" guid="59f79d13-ecf3-4c1a-943f-96acc8ff7413" />
+  <category name="Breadcrumbs" caption="{$general.breadcrumbs$}" collapsible="true" collapsedbydefault="true" />
+  <field column="DisplayBreadcrumbs" fieldcaption="Display breadcrumbs" fielddescription="{$documentation.property.displaybreadcrumbs$}" visible="true" columntype="Boolean" fieldtype="Checkbox" allowempty="true" publicfield="false" spellcheck="false" guid="C5A2D697-7178-4E2A-9876-81F736BE289A" />
+</form>

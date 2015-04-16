@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions>
+    <action name="view" externalsourcename="taskview" caption="$General.View$" fonticonclass="icon-eye" fonticonstyle="allow" />
+    <action name="synchronize" caption="$general.synchronize$" fonticonclass="icon-rotate-double-right" />
+    <action name="delete" caption="$General.Delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$General.ConfirmDelete$" />
+  </actions>
+  <columns>
+    <column source="##ALL##" externalsourcename="TaskTitle" caption="$tasks.headertitle$" wrap="false" cssclass="main-column-100" allowsorting="true" sort="TaskTitle" >
+      <tooltip source="TaskTitle" width="0" />
+    </column>
+    <column source="TaskType" caption="$Tasks.HeaderType$"  />
+    <column source="TaskTime" externalsourcename="TaskTime" caption="$tasks.headertime$" wrap="false"  />
+    <column source="##ALL##" externalsourcename="TaskResult" caption="$tasks.headerresult$"  />
+  </columns>
+  <pager>
+    <key name="PageSizeOptions" value="10,15,25,50,100,##ALL##" />
+    <key name="DefaultPageSize" value="15" />
+  </pager>
+  <options>
+    <key name="ShowSelection" value="true" />
+    <key name="SelectionColumn" value="TaskID" />
+  </options>
+</grid>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions parameters="ControlID">
+    <action name="edit" caption="$General.Edit$" fonticonclass="icon-edit" fonticonstyle="allow" />
+    <action name="#delete" caption="$General.Delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$General.ConfirmDelete$" />
+  </actions>
+  <columns>
+    <column source="ControlDisplayName" caption="$general.displayname$" wrap="false" localize="true">
+      <filter type="text" />
+    </column>
+    <column source="ControlName" caption="$Unigrid.InlineControl.Columns.ControlName$" wrap="false">
+      <filter type="text" />
+    </column>
+    <column cssclass="filling-column" />
+  </columns>
+  <objecttype name="cms.InlineControl" columns="ControlID, ControlDisplayName, ControlName" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>

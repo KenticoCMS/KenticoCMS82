@@ -1,0 +1,32 @@
+﻿.om-import-csv-mapping-table {
+    table, tbody, thead, th, tr, td {
+        overflow: hidden;
+        display: block;
+    }
+
+    td, th {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    tr:hover {
+        border: 0;
+    }
+
+    margin-bottom: @base-unit * 1.5;
+}
+
+.om-import-csv-mapping-tables-container {
+    padding: 0 @base-unit/4;
+}
+
+.om-import-csv-process-container {
+    top: 0;
+}
+
+// Skip header actions placeholder
+.om-import-csv-content-container {
+    height: auto;
+    top: @base-unit * 3.5;
+    bottom: 0;
+}

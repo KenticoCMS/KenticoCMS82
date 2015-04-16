@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.SearchProviderSQL</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.SearchProviderSQL.SearchProvider">
+            <summary>
+            Class providing searching.
+            </summary>
+        </member>
+        <member name="F:CMS.SearchProviderSQL.SearchProvider.ALL_CULTURES">
+            <summary>
+            Supplementary constant to specify all document cultures.
+            </summary>
+        </member>
+        <member name="F:CMS.SearchProviderSQL.SearchProvider.ALL_SITES">
+            <summary>
+            Supplementary constant to specify all sites.
+            </summary>
+        </member>
+        <member name="M:CMS.SearchProviderSQL.SearchProvider.Search(System.String,System.String,System.String,System.String,CMS.Search.SearchModeEnum,System.Boolean,System.String,System.Boolean,System.Boolean,System.String,System.String,System.Boolean)">
+            <summary>
+            Searches data and returns results.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="searchNodePath">Search node path</param>
+            <param name="cultureCode">Culture code</param>
+            <param name="searchExpression">Search expression</param>
+            <param name="searchMode">Search mode</param>
+            <param name="searchChildNodes">Search child nodes</param>
+            <param name="classNames">Class names</param>
+            <param name="filterResultsByReadPermission">Filter results by read permission?</param>
+            <param name="searchOnlyPublished">Search only published?</param>
+            <param name="whereCondition">Where condition</param>
+            <param name="orderBy">Order by clause</param>
+            <param name="combineWithDefaultCulture">Specifies if return the default culture document when specified culture not found</param>
+        </member>
+        <member name="M:CMS.SearchProviderSQL.SearchProvider.IntersectResultItems(System.Data.DataSet@,System.Data.DataSet[])">
+            <summary>
+            Intersects the result items.
+            </summary>
+            <param name="target">Target data</param>
+            <param name="newData">New data (to intersect)</param>
+        </member>
+        <member name="M:CMS.SearchProviderSQL.SearchProvider.AddResultItems(System.Data.DataSet@,System.Data.DataSet)">
+            <summary>
+            Adds the result items to the given DataSet.
+            </summary>
+            <param name="target">Target DataSet</param>
+            <param name="newData">New data</param>
+        </member>
+        <member name="M:CMS.SearchProviderSQL.SearchProvider.GetCompleteWhereCondition(System.String,System.String,System.String,System.Boolean,System.String,System.Boolean,System.Int32)">
+            <summary>
+            Returns the complete where condition based on the given parameters.
+            </summary> 
+            <param name="siteName">Nodes site name</param>
+            <param name="aliasPath">Path. It may contain % and _ as wild card characters for any number of unknown characters or one unknown character respectively (for MS SQL)</param>
+            <param name="cultureCode">Nodes culture code</param>
+            <param name="combineWithDefaultCulture">Specifies if return the default culture document when specified culture not found</param>
+            <param name="where">Where condition to use for the data selection</param>
+            <param name="maxRelativeLevel">Maximal child level of the selected nodes</param>
+            <param name="selectOnlyPublished">Select only published nodes</param>
+        </member>
+        <member name="M:CMS.SearchProviderSQL.SearchProvider.GetSearchWords(System.String,CMS.Search.SearchModeEnum)">
+            <summary>
+            Converts search expression to array of searched words according to search mode.
+            </summary>
+            <param name="searchExpression">Search expression</param>
+            <param name="searchMode">Search mode</param>
+        </member>
+    </members>
+</doc>

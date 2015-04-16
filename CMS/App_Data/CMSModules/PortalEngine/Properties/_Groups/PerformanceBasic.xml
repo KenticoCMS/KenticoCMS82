@@ -1,0 +1,28 @@
+﻿<category name="Performance">
+  <properties>
+    <collapsedbydefault>true</collapsedbydefault>
+    <collapsible>true</collapsible>
+    <visible>true</visible>
+  </properties>
+</category>
+
+<field guid="ee85cfe4-7726-4b4d-80e2-e7bf2991d9d5" fieldtype="CustomUserControl" columntype="boolean" visible="true" column="DisableViewState">
+  <properties>
+    <fielddescription>{$documentation.webpartproperties.disableviewstate$}</fielddescription>
+    <defaultvalue>false</defaultvalue>
+    <fieldcaption>Disable view state</fieldcaption>
+  </properties>
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field guid="a3ae5ad3-1e5d-4b52-91f2-a372774ed4f3" fieldtype="CustomUserControl" columntype="boolean" visible="true" column="DisableMacros">
+  <properties>
+    <fielddescription>{$documentation.webpartproperties.disablemacros$}</fielddescription>
+    <defaultvalue>false</defaultvalue>
+    <fieldcaption>Disable macros</fieldcaption>
+  </properties>
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>

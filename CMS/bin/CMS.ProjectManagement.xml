@@ -1,0 +1,2085 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.ProjectManagement</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.ProjectManagement.ProjectManagementHandlers">
+            <summary>
+            Provides handlers for projects
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectManagementHandlers.Init">
+            <summary>
+            Initializes the project handlers
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectManagementHandlers.Update_Before(System.Object,CMS.DocumentEngine.DocumentEventArgs)">
+            <summary>
+            Ensures site change of the project when site of the document changes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectManagementModuleMetadata">
+            <summary>
+            Represents the Project Management module metadata.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectManagementModuleMetadata.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectManagementResolvers">
+            <summary>
+            Resolvers used in e-mail templates and other macro visual components.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectManagementResolvers.ProjectManagementResolver">
+            <summary>
+            Project management e-mail template macro resolver.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectManagementModule">
+            <summary>
+            Represents the Project Management module.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectManagementModule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectManagementModule.OnInit">
+            <summary>
+            Initializes the module.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectManagementModule.ClearHashtables(System.Boolean)">
+            <summary>
+            Clears the module hashtables.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectManagementPermissionType">
+            <summary>
+            Project Management module object types.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectManagementPermissionType.READ">
+            <summary>
+            Allows to read a project.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectManagementPermissionType.CREATE">
+            <summary>
+            Allows to create a task.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectManagementPermissionType.MODIFY">
+            <summary>
+            Allows to modify project tasks.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectManagementPermissionType.MANAGE">
+            <summary>
+            Allows to create, modify and delete project management data.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectManagementPermissionType.DELETE">
+            <summary>
+            Allows to delete project tasks.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectManagementPermissionType.MANAGE_CONFIGURATION">
+            <summary>
+            Allows to manage the project management configuration (statuses, priorities).
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.TasksDisplayTypeEnum">
+            <summary>
+            Tasks display type enumerarion.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.TasksDisplayTypeEnum.ProjectTasks">
+            <summary>
+            Project tasks.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.TasksDisplayTypeEnum.TasksAssignedToMe">
+            <summary>
+            Tasks assigned to me.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.TasksDisplayTypeEnum.TasksOwnedByMe">
+            <summary>
+            Tasks owned by me.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum">
+            <summary>
+            Type of project information email.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum.TaskOverdue">
+            <summary>
+            Email containing information about task delay.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum.TaskCreated">
+            <summary>
+            Email with information about task creation.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum.TaskChanged">
+            <summary>
+            Information about task changed.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum.TaskReminder">
+            <summary>
+            Email containing a user defined notification (reminder).
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskOrderByEnum">
+            <summary>
+            Project task - "order by" enumeration.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskOrderByEnum.ProjectOrder">
+            <summary>
+            Project based order.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskOrderByEnum.UserOrder">
+            <summary>
+            User based order.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskOrderByEnum.NotSpecified">
+            <summary>
+            Not specified order.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.IProjectInfo">
+            <summary>
+            Project info interface
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectID">
+            <summary>
+            Project ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectDescription">
+            <summary>
+            Project description.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectStartDate">
+            <summary>
+            Project start date.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectOwner">
+            <summary>
+            Project owner.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectCreatedByID">
+            <summary>
+            Project creator.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectName">
+            <summary>
+            Project code name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectGUID">
+            <summary>
+            Unique project identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectSiteID">
+            <summary>
+            Site ID of the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectAllowOrdering">
+            <summary>
+            Allow manual ordering of the project tasks.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectDeadline">
+            <summary>
+            Project deadline.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectStatusID">
+            <summary>
+            Project status.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectGroupID">
+            <summary>
+            Group ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectLastModified">
+            <summary>
+            Last modification of the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectNodeID">
+            <summary>
+            Node ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectDisplayName">
+            <summary>
+            Project display name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.ProjectAccess">
+            <summary>
+            Project access bit array.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.AllowRead">
+            <summary>
+            Indicates whether the access to project and its tasks is allowed.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.AllowCreate">
+            <summary>
+            Indicates whether a new task can be created.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.AllowModify">
+            <summary>
+            Indicates whether the user can modify a task.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.IProjectInfo.AllowDelete">
+            <summary>
+            Indicates whether the user can delete a task.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectInfo">
+            <summary>
+            ProjectInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectInfo.OBJECT_TYPE_GROUP">
+            <summary>
+            Object type for group
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectInfo.TYPEINFOGROUP">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.LoadDefaultData">
+            <summary>
+            Loads the default data to the object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.GetPermissionName(CMS.DataEngine.PermissionsEnum)">
+            <summary>
+            Permision Modify for projects is called Manage.
+            Modify is reserved for project tasks.
+            </summary>
+            <param name="permission">Permission.</param>
+            <returns>Corresponding permission name.</returns>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.CheckPermissionsInternal(CMS.DataEngine.PermissionsEnum,System.String,CMS.Base.IUserInfo,System.Boolean)">
+            <summary>
+            Checks permissions.
+            </summary>
+            <param name="permission">Checked permission.</param>
+            <param name="siteName">Site name.</param>
+            <param name="user">User.</param>
+            <param name="exceptionOnFailure">Whether to throw excetion when user is not permitted.</param>
+            <returns>True when user is permitted, false otherwise (when exceptionOnFailure is not set).</returns>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.InsertAsCloneInternal(CMS.DataEngine.CloneSettings,CMS.DataEngine.CloneResult,CMS.DataEngine.BaseInfo)">
+            <summary>
+            Inserts cloned object to DB.
+            </summary>
+            <param name="settings">Cloning settings</param>
+            <param name="result">Cloning result</param>
+            <param name="originalObject">Original source BaseInfo (object being cloned)</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfo.InsertAsClonePostprocessing(CMS.DataEngine.CloneSettings,CMS.DataEngine.CloneResult,CMS.DataEngine.BaseInfo)">
+            <summary>
+            Clones forum role and forum moderator bindings
+            </summary>
+            <param name="settings">Cloning settings</param>
+            <param name="result">Result of the cloning - messages in this object will be altered by processing this method</param>
+            <param name="originalObject">Original source BaseInfo (object being cloned)</param>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectID">
+            <summary>
+            Project ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectDescription">
+            <summary>
+            Project description.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectStartDate">
+            <summary>
+            Project start date.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectOwner">
+            <summary>
+            Project owner.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectCreatedByID">
+            <summary>
+            Project creator.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectName">
+            <summary>
+            Project code name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectGUID">
+            <summary>
+            Unique project identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectSiteID">
+            <summary>
+            Site ID of the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectAllowOrdering">
+            <summary>
+            Allow manual ordering of the project tasks.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectDeadline">
+            <summary>
+            Project deadline.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectStatusID">
+            <summary>
+            Project status.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectGroupID">
+            <summary>
+            Group ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectLastModified">
+            <summary>
+            Last modification of the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectNodeID">
+            <summary>
+            Node ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectDisplayName">
+            <summary>
+            Project display name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.ProjectAccess">
+            <summary>
+            Project access bit array.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.AllowRead">
+            <summary>
+            Indicates whether the access to project and its tasks is allowed.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.AllowCreate">
+            <summary>
+            Indicates whether a new task can be created.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.AllowModify">
+            <summary>
+            Indicates whether the user can modify a task.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.AllowDelete">
+            <summary>
+            Indicates whether the user can delete a task.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectInfo.TypeInfo">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectInfoProvider">
+            <summary>
+            Class providing ProjectInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectInfo(System.Int32)">
+            <summary>
+            Returns Project with specified ID.
+            </summary>
+            <param name="projectId">Project ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectInfo(System.String,System.Int32,System.Int32)">
+            <summary>
+            Returns Project with specified name.
+            </summary>
+            <param name="projectName">Project name</param>
+            <param name="siteId">The site id</param>
+            <param name="groupId">The group id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectJoinedViewData(System.Int32)">
+            <summary>
+            Gets project data form database view where project is joined with its status, user, creator and document.
+            </summary>
+            <param name="projectId">Project identifier.</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjects">
+            <summary>
+            Returns dataset of all Projects.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjects(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all Projects matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectProgress(System.Int32)">
+            <summary>
+            Gets the project progress.
+            </summary>
+            <param name="projectId">The project id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.SetProjectInfo(CMS.ProjectManagement.ProjectInfo)">
+            <summary>
+            Sets (updates or inserts) specified Project.
+            </summary>
+            <param name="projectObj">Project to be set</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.DeleteProjectInfo(CMS.ProjectManagement.ProjectInfo)">
+            <summary>
+            Deletes specified Project.
+            </summary>
+            <param name="projectObj">Project to be deleted</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.DeleteProjectInfo(System.Int32)">
+            <summary>
+            Deletes Project with specified ID.
+            </summary>
+            <param name="projectId">Project ID</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.CombineSecurityWhereCondition(System.String,CMS.Membership.CurrentUserInfo,System.String)">
+            <summary>
+            Add security where condition to the existing where condition.
+            </summary>
+            <param name="where">Existing where condition</param>
+            <param name="currentUser">The current user</param>
+            <param name="siteName">Name of the site</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.ClearProjectPermissionTable(System.Int32,CMS.Membership.UserInfo)">
+            <summary>
+            Clear project permission table.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.IsAuthorizedPerProject(System.Int32,System.String,CMS.Membership.CurrentUserInfo)">
+            <summary>
+            Returns true if and only if current user is authorized for the specified action.
+            </summary>
+            <param name="projectId">Project ID</param>
+            <param name="permissionName">Name of the permission to check</param>
+            <param name="currentUser">The current user</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears the hashtable.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.ResetProjectOrder(System.Int32)">
+            <summary>
+            Resets the project order.
+            </summary>
+            <param name="projectId">The project id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectInfo(System.String,System.String,System.String)">
+            <summary>
+            Returns Project with specified name.
+            </summary>
+            <param name="projectName">Project name</param>
+            <param name="siteName">Site name</param>
+            <param name="groupName">Name of the group</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.IsAuthorizedPerProjectInternal(System.Int32,System.String,CMS.Membership.CurrentUserInfo)">
+            <summary>
+            Returns true if and only if current user is authorized for the specified action.
+            </summary>
+            <param name="projectId">Project ID</param>
+            <param name="permissionName">Name of the permission to check</param>
+            <param name="currentUser">The current user</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.IsRoleAuthorizedPerProjectInternal(System.Int32,System.String,CMS.Membership.UserInfo,System.Int32)">
+            <summary>
+            Indicates whether specified user has assigned specific permission for the specified project.
+            </summary>
+            <param name="projectId">ID of the project to check permission for</param>
+            <param name="permissionName">Name of the permission</param>
+            <param name="userInfo">User info to check permission for</param>      
+            <param name="siteId">ID of the site role should belongs to</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.CombineSecurityWhereConditionInternal(System.String,System.String,CMS.Membership.CurrentUserInfo,System.String)">
+            <summary>
+            Add security where condition to the existing where condition.
+            </summary>
+            <param name="permission">The permission name</param>
+            <param name="where">Existing where condition</param>
+            <param name="currentUser">The current user</param>
+            <param name="siteName">Name of the site</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectInfoInternal(System.Int32)">
+            <summary>
+            Returns Project with specified ID.
+            </summary>
+            <param name="projectId">Project ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectInfoInternal(System.String,System.Int32,System.Int32)">
+            <summary>
+            Returns Project with specified name.
+            </summary>
+            <param name="projectName">Project name</param>
+            <param name="siteId">The site id</param>
+            <param name="groupId">The group id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectsInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all Projects matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectProgressInternal(System.Int32)">
+            <summary>
+            Gets the project progress.
+            </summary>
+            <param name="projectId">The project id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetJoinedViewDataInternal(System.Int32)">
+            <summary>
+            Gets project data form database view where project is joined with its status, user, creator and document.
+            </summary>
+            <param name="projectId">Project identifier.</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.SetProjectInfoInternal(CMS.ProjectManagement.ProjectInfo)">
+            <summary>
+            Sets (updates or inserts) specified Project.
+            </summary>
+            <param name="projectObj">Project to be set</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.DeleteProjectInfoInternal(CMS.ProjectManagement.ProjectInfo)">
+            <summary>
+            Deletes specified Project.
+            </summary>
+            <param name="projectObj">Project to be deleted</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.ResetProjectOrderInternal(System.Int32)">
+            <summary>
+            Resets the project order.
+            </summary>
+            <param name="projectId">The project id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.UpdateData(System.String,System.String,CMS.DataEngine.QueryDataParameters)">
+            <summary>
+            Updates data for all records given by where condition
+            </summary>
+            <param name="updateExpression">Update expression, e.g. "Value = Value * 2"</param>
+            <param name="where">Where condition</param>
+            <param name="parameters">Parameters</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectPermissionCode(System.Int32,System.Int32)">
+            <summary>
+            Gets the project-permission code.
+            </summary>
+            <param name="projectId">The project id</param>
+            <param name="userId">The user id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectInfoProvider.GetProjectNameCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets the projectName, SiteId, GroupID code.
+            </summary>
+            <param name="projectName">Code name of the project</param>
+            <param name="siteId">The site id</param>
+            <param name="groupId">The group id</param>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectListInfo">
+            <summary>
+            Object providing view of project and progress of its tasks.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectListInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectListInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectListInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectListInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectListInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectListInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectListInfo.GetDataQueryInternal">
+            <summary>
+            Gets the data query for this object type
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectListInfo.ColumnNames">
+            <summary>
+            Column names.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectRolePermissionInfo">
+            <summary>
+            ProjectRolePermissionInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectRolePermissionInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectRolePermissionInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectRolePermissionInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectRolePermissionInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectRolePermissionInfo.RoleID">
+            <summary>
+            Role ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectRolePermissionInfo.ProjectID">
+            <summary>
+            Project ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectRolePermissionInfo.PermissionID">
+            <summary>
+            Permission ID.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectRolePermissionInfoProvider">
+            <summary>
+            Class providing management of specified relationship.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.GetRelationships(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns the relationships specified by the parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.GetProjectRolePermissionInfo(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the relationship structure for the specified parameters.
+            </summary>
+            <param name="projectId">ID of the Project</param>
+            <param name="roleId">ID of the Role</param>
+            <param name="permissionId">ID of the Permission</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.SetProjectRolePermissionInfo(CMS.ProjectManagement.ProjectRolePermissionInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectRolePermissionInfo.
+            </summary>
+            <param name="projectrolepermission">ProjectRolePermissionInfo to set</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.DeleteProjectRolePermissionInfo(CMS.ProjectManagement.ProjectRolePermissionInfo)">
+            <summary>
+            Deletes specified ProjectRolePermissionInfo.
+            </summary>
+            <param name="infoObj">ProjectRolePermissionInfo object</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.RemoveRelationship(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Deletes specified relationship.
+            </summary>
+            <param name="projectId">ID of the Project</param>
+            <param name="roleId">ID of the Role</param>
+            <param name="permissionId">ID of the Permission</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.RemoveRelationship(CMS.ProjectManagement.ProjectInfo,CMS.Membership.RoleInfo,CMS.Modules.PermissionNameInfo)">
+            <summary>
+            Deletes specified relationship.
+            </summary>
+            <param name="project">PM_Project object</param>
+            <param name="role">CMS_Role object</param>
+            <param name="permission">CMS_Permission object</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.AddRelationship(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates specified relationship.
+            </summary>
+            <param name="projectId">ID of the Project</param>
+            <param name="roleId">ID of the Role</param>
+            <param name="permissionId">ID of the Permission</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.AddRelationship(CMS.ProjectManagement.ProjectInfo,CMS.Membership.RoleInfo,CMS.Modules.PermissionNameInfo)">
+            <summary>
+            Creates specified relationship.
+            </summary>
+            <param name="project">PM_Project object</param>
+            <param name="role">CMS_Role object</param>
+            <param name="permission">CMS_Permission object</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.RelationshipExists(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Determines whether specified relationship exists.
+            </summary>
+            <param name="projectId">ID of the Project</param>
+            <param name="roleId">ID of the Role</param>
+            <param name="permissionId">ID of the Permission</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.GetRelationshipsInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns the relationships specified by the parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.GetProjectRolePermissionInfoInternal(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the relationship structure for the specified parameters.
+            </summary>
+            <param name="projectId">ID of the Project</param>
+            <param name="roleId">ID of the Role</param>
+            <param name="permissionId">ID of the Permission</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.SetProjectRolePermissionInfoInternal(CMS.ProjectManagement.ProjectRolePermissionInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectRolePermissionInfo.
+            </summary>
+            <param name="projectrolepermission">ProjectRolePermissionInfo to set</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectRolePermissionInfoProvider.DeleteProjectRolePermissionInfoInternal(CMS.ProjectManagement.ProjectRolePermissionInfo)">
+            <summary>
+            Deletes specified ProjectRolePermissionInfo.
+            </summary>
+            <param name="infoObj">ProjectRolePermissionInfo object</param>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectStatusInfo">
+            <summary>
+            ProjectStatusInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectStatusInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectStatusInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfo.GetPermissionName(CMS.DataEngine.PermissionsEnum)">
+            <summary>
+            Only Read and ManageConfiguration are relevant permissions.
+            </summary>
+            <param name="permission">Permission.</param>
+            <returns>Corresponding permission name.</returns>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectStatusInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectStatusInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfo.LoadDefaultData">
+            <summary>
+            Loads the default object data
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusOrder">
+            <summary>
+            Project status order.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusIsNotStarted">
+            <summary>
+            Gets or sets the value that indicates whether status is not started.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusIsFinished">
+            <summary>
+            Indicates if the status means a start status.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusGUID">
+            <summary>
+            Unique project identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusColor">
+            <summary>
+            Project status color.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusEnabled">
+            <summary>
+            Status is enabled.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusIcon">
+            <summary>
+            Project status icon.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusName">
+            <summary>
+            Project status code name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusDisplayName">
+            <summary>
+            Project status display name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusLastModified">
+            <summary>
+            Last modification of the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectStatusInfo.StatusID">
+            <summary>
+            Project Status ID.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectStatusInfoProvider">
+            <summary>
+            Class providing ProjectStatusInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatusInfo(System.Int32)">
+            <summary>
+            Returns ProjectStatus with specified ID.
+            </summary>
+            <param name="projectstatusId">Projectstatus ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatusInfo(System.String)">
+            <summary>
+            Returns ProjectStatus with specified name.
+            </summary>
+            <param name="projectstatusName">Projectstatus name</param>                
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatuses">
+            <summary>
+            Returns dataset of all ProjectStatuses.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatuses(System.Boolean)">
+            <summary>
+            Returns dataset of all ProjectStatuses.
+            </summary>
+            <param name="showOnlyEnabled">If set to <c>true</c> [show only enabled statuses]</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatuses(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all ProjectStatuses matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.SetProjectStatusInfo(CMS.ProjectManagement.ProjectStatusInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectStatus.
+            </summary>
+            <param name="projectstatusObj">Projectstatus to be set</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.DeleteProjectStatusInfo(CMS.ProjectManagement.ProjectStatusInfo)">
+            <summary>
+            Deletes specified ProjectStatus.
+            </summary>
+            <param name="projectstatusObj">Projectstatus to be deleted</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.DeleteProjectStatusInfo(System.Int32)">
+            <summary>
+            Deletes ProjectStatus with specified ID.
+            </summary>
+            <param name="projectstatusId">Projectstatus ID</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.MoveStatusUp(System.Int32)">
+            <summary>
+            Moves status up in the order sequence (up = smaller StatusOrder = soooner in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.MoveStatusDown(System.Int32)">
+            <summary>
+            Moves status down in the order sequence (down = larger StatusOrder = later in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetStatusCount">
+            <summary>
+            Gets the number of enabled statuses.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetStatusCount(System.Boolean)">
+            <summary>
+            Gets the status count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.CheckDependencies(System.Int32)">
+            <summary>
+            Check if the status can be removed.
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clear hashtables.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.CheckDependenciesInternal(System.Int32)">
+            <summary>
+            Gets the status count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetStatusCountInternal(System.Boolean)">
+            <summary>
+            Gets the status count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.MoveStatusUpInternal(System.Int32)">
+            <summary>
+            Moves status up in the order sequence (up = smaller StatusOrder = soooner in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.MoveStatusDownInternal(System.Int32)">
+            <summary>
+            Moves status down in the order sequence (down = larger StatusOrder = later in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatusesInternal(System.Boolean)">
+            <summary>
+            Returns dataset of all ProjectStatuses.
+            </summary>
+            <param name="showOnlyEnabled">If set to <c>true</c> [show only enabled statuses]</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatusInfoInternal(System.Int32)">
+            <summary>
+            Returns ProjectStatus with specified ID.
+            </summary>
+            <param name="projectstatusId">Projectstatus ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatusInfoInternal(System.String)">
+            <summary>
+            Returns ProjectStatus with specified name.
+            </summary>
+            <param name="projectstatusName">Projectstatus name</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.GetProjectStatusesInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all ProjectStatuses matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.SetProjectStatusInfoInternal(CMS.ProjectManagement.ProjectStatusInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectStatus.
+            </summary>
+            <param name="projectstatusObj">Projectstatus to be set</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectStatusInfoProvider.DeleteProjectStatusInfoInternal(CMS.ProjectManagement.ProjectStatusInfo)">
+            <summary>
+            Deletes specified ProjectStatus.
+            </summary>
+            <param name="projectstatusObj">Projectstatus to be deleted</param>        
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskInfo">
+            <summary>
+            ProjectTaskInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskInfo.OBJECT_TYPE_ADHOC">
+            <summary>
+            Object type for ad-hoc tasks
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskInfo.TYPEINFO">
+            <summary>
+            Project task TypeInfo.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskInfo.TYPEINFO_ADHOCTASK">
+            <summary>
+            Ad-hoc task TypeInfo.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfo.GetExistingWhereCondition">
+            <summary>
+            Returns the existing object based on current object data.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectTaskInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectTaskInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfo.LoadDefaultData">
+            <summary>
+            Loads the object default data
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskDescription">
+            <summary>
+            Task description.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskPriorityID">
+            <summary>
+            Task Priority ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskHours">
+            <summary>
+            Task total or estimated hours.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskProgress">
+            <summary>
+            Task progress.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskNotificationSent">
+            <summary>
+            Indicates if a notification was sent.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskUserOrder">
+            <summary>
+            Task order se by the user.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskGUID">
+            <summary>
+            Unique task identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskDisplayName">
+            <summary>
+            Task name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskOwnerID">
+            <summary>
+            Task owner.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskCreatedByID">
+            <summary>
+            Task creator.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskStatusID">
+            <summary>
+            Task status.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskProjectID">
+            <summary>
+            Parent Project ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskIsPrivate">
+            <summary>
+            Task is private for the assignee.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskID">
+            <summary>
+            Task ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskAssignedToUserID">
+            <summary>
+            Task assigned to a user.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskDeadline">
+            <summary>
+            Task deadline.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskProjectOrder">
+            <summary>
+            Task order set by the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.ProjectTaskLastModified">
+            <summary>
+            Last modification of the task.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfo.TypeInfo">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskInfoProvider">
+            <summary>
+            Class providing ProjectTaskInfo management.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskInfoProvider.mHtmlLineEndRegex">
+            <summary>
+            Regex for HTML line end tag.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GenerateProgressHtml(System.Int32,System.Boolean)">
+            <summary>
+            Returns HTML code which displays the progress bar for specified value.
+            </summary>
+            <param name="progressValue">Progress value</param>
+            <param name="showProgresValue">Indicates whether value should be displayed next to the progress bar</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetProjectTaskInfo(System.Int32)">
+            <summary>
+            Returns Project task with specified ID.
+            </summary>
+            <param name="projectTaskId">Project task ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetProjectTaskInfo(System.Guid)">
+            <summary>
+            Returns Project task with specified GUID.
+            </summary>
+            <param name="projectTaskGuid">Project task GUID</param>                
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetProjectTasks">
+            <summary>
+            Returns dataset of all Project tasks.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetOverdueTasks">
+            <summary>
+            Gets the overdue tasks.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetProjectTasks(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all Project tasks matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.SetProjectTaskInfo(CMS.ProjectManagement.ProjectTaskInfo)">
+            <summary>
+            Sets (updates or inserts) specified Project task.
+            </summary>
+            <param name="projectTaskObj">Project task to be set</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.SetProjectTaskInfo(CMS.ProjectManagement.ProjectTaskInfo,System.Boolean)">
+            <summary>
+            Sets (updates or inserts) specified Project task.
+            </summary>
+            <param name="projectTaskObj">Project task to be set</param>
+            /// <param name="sendNotification">If set to <c>true</c>, send email notification to the task the owner and assignee</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.DeleteProjectTaskInfo(CMS.ProjectManagement.ProjectTaskInfo)">
+            <summary>
+            Deletes specified Project task.
+            </summary>
+            <param name="projectTaskObj">Project task to be deleted</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.DeleteProjectTaskInfo(System.Int32)">
+            <summary>
+            Deletes Project task with specified ID.
+            </summary>
+            <param name="projectTaskId">Project task ID</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.MoveTaskUp(System.Int32,CMS.ProjectManagement.ProjectTaskOrderByEnum)">
+            <summary>
+            Moves task up in the order sequence (up = smaller ProjectOrder/UserOrder = sooner in the navigation)
+            </summary>
+            <param name="taskId">The task id</param>
+            <param name="orderByType">Select sorting mode</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetUserActiveTasksCount(System.Int32,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Returns count of active tasks for current user.
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="sitename">Site name, if site name is not defined select tasks from all sites</param>
+            <param name="includeFinished">Indicates whether finished tasks should be included in active tasks</param>
+            <param name="includeNotStarted">Indicates whether not started tasks should be included in active tasks</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.MoveTaskDown(System.Int32,CMS.ProjectManagement.ProjectTaskOrderByEnum)">
+            <summary>
+            Moves task down in the order sequence (down = larger ProjectOrder/UserOrder = later in the navigation)
+            </summary>
+            <param name="taskId">The task id</param>
+            <param name="orderByType">Select sorting mode</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.CombineSecurityWhereCondition(System.String,CMS.Membership.CurrentUserInfo,System.String)">
+            <summary>
+            Add security where condition to the existing where condition.
+            </summary>
+            <param name="where">Existing where condition</param>
+            <param name="currentUser">The current user</param>
+            <param name="siteName">Name of the site</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.IsAuthorizedPerTask(System.Int32,System.String,CMS.Membership.CurrentUserInfo,System.Int32)">
+            <summary>
+            Indicates whether specified user has assigned specific permission for the specified task.
+            </summary>
+            <param name="taskId">ID of the task to check permission for</param>
+            <param name="permissionName">Name of the permission</param>
+            <param name="currentUser">The current user</param>
+            <param name="siteId">The site id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.IsAuthorizedPerTask(CMS.ProjectManagement.ProjectTaskInfo,System.String,CMS.Membership.CurrentUserInfo)">
+            <summary>
+            Indicates whether specified user has assigned specific permission for the specified task.
+            </summary>
+            <param name="taskObj">The task to check permission for</param>
+            <param name="permissionName">Name of the permission</param>
+            <param name="currentUser">The current user</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.SendNotificationEmail(CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum,CMS.ProjectManagement.ProjectTaskInfo,System.String)">
+            <summary>
+            Send notification email to users.
+            </summary>
+            <param name="eventType">Event type</param>
+            <param name="taskInfo">The task info</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.SendNotificationEmail(CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum,CMS.ProjectManagement.ProjectTaskInfo,System.String,System.String)">
+            <summary>
+            Send notification email to users.
+            </summary>
+            <param name="eventType">Event type</param>
+            <param name="taskInfo">The task info</param>
+            <param name="siteName">Site name</param>
+            <param name="reminderMessage">The reminder message</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetTaskMaxOrder(CMS.ProjectManagement.ProjectTaskOrderByEnum,System.Int32)">
+            <summary>
+            Gets the max order number of the tasks of the specified project.
+            </summary>
+            <param name="orderType">Type of the order</param>
+            <param name="id">The id (ProjectID for ProjectOrder, AssigneeID fo UserOrder)</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GenerateProgressHtmlInternal(System.Int32,System.Boolean)">
+            <summary>
+            Returns HTML code which displays the progress bar for specified value.
+            </summary>
+            <param name="progressValue">Progress value</param>
+            <param name="showProgresValue">Indicates whether value should be displayed next to the progress bar</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.IsAuthorizedPerTaskInternal(CMS.ProjectManagement.ProjectTaskInfo,System.String,CMS.Membership.CurrentUserInfo)">
+            <summary>
+            Indicates whether specified user has assigned specific permission for the specified task.
+            </summary>
+            <param name="taskObj">The task to check permission for</param>
+            <param name="permissionName">Name of the permission</param>
+            <param name="currentUser">The current user</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.MoveTaskUpInternal(System.Int32,CMS.ProjectManagement.ProjectTaskOrderByEnum)">
+            <summary>
+            Moves task up in the order sequence (up = smaller ProjectOrder/UserOrder = sooner in the navigation)
+            </summary>
+            <param name="taskId">The task id</param>
+            <param name="orderByType">Select sorting mode</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.MoveTaskDownInternal(System.Int32,CMS.ProjectManagement.ProjectTaskOrderByEnum)">
+            <summary>
+            Moves task down in the order sequence (down = larger ProjectOrder/UserOrder = later in the navigation)
+            </summary>
+            <param name="taskId">The task id</param>
+            <param name="orderByType">Select sorting mode</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.CombineSecurityWhereConditionInternal(System.String,System.String,CMS.Membership.CurrentUserInfo,System.String)">
+            <summary>
+            Add security where condition to the existing where condition.
+            </summary>
+            <param name="permission">The permission name</param>
+            <param name="where">Existing where condition</param>
+            <param name="currentUser">The current user</param>
+            <param name="siteName">Name of the site</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetProjectTaskInfoInternal(System.Int32)">
+            <summary>
+            Returns Project task with specified ID.
+            </summary>
+            <param name="projectTaskId">Project task ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetProjectTaskInfoInternal(System.Guid)">
+            <summary>
+            Returns Project task with specified GUID.
+            </summary>
+            <param name="projectTaskGuid">Project task GUID</param>                                 
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetProjectTasksInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all Project tasks matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetOverdueTasksInternal">
+            <summary>
+            Gets the overdue tasks.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.GetTaskMaxOrderInternal(CMS.ProjectManagement.ProjectTaskOrderByEnum,System.Int32)">
+            <summary>
+            Gets the max order number of the tasks of the specified project.
+            </summary>
+            <param name="orderType">Type of the order</param>
+            <param name="id">The id (ProjectID for ProjectOrder, AssigneeID fo UserOrder)</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.SetProjectTaskInfoInternal(CMS.ProjectManagement.ProjectTaskInfo,System.Boolean)">
+            <summary>
+            Sets (updates or inserts) specified Project task.
+            </summary>
+            <param name="projectTaskObj">Project task to be set</param>
+            <param name="sendNotification">If set to <c>true</c>, send email notification to the user</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.DeleteProjectTaskInfoInternal(CMS.ProjectManagement.ProjectTaskInfo)">
+            <summary>
+            Deletes specified Project task.
+            </summary>
+            <param name="projectTaskObj">Project task to be deleted</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskInfoProvider.SendNotificationEmailInternal(CMS.ProjectManagement.ProjectTaskEmailNotificationTypeEnum,CMS.ProjectManagement.ProjectTaskInfo,System.String,System.String)">
+            <summary>
+            Send notification email to users.
+            </summary>
+            <param name="eventType">Event type</param>
+            <param name="taskInfo">The task info</param>
+            <param name="siteName">Site name</param>
+            <param name="reminderMessage">The reminder message</param>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskInfoProvider.HtmlLineEndRegex">
+            <summary>
+            Gets the regex for HTML line end tag.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskListInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskListInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskListInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectTaskListInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskListInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectTaskListInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskListInfo.GetDataQueryInternal">
+            <summary>
+            Gets the data query for this object type
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskPriorityInfo">
+            <summary>
+            ProjectTaskPriorityInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskPriorityInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskPriorityInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfo.GetPermissionName(CMS.DataEngine.PermissionsEnum)">
+            <summary>
+            Only Read and ManageConfiguration are relevant permissions.
+            </summary>
+            <param name="permission">Permission.</param>
+            <returns>Corresponding permission name.</returns>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectTaskPriorityInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectTaskPriorityInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfo.LoadDefaultData">
+            <summary>
+            Loads the default object data
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityEnabled">
+            <summary>
+            Task priority is enabled.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityDefault">
+            <summary>
+            Task priority is default.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityName">
+            <summary>
+            Task priority code name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityGUID">
+            <summary>
+            Unique project identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityDisplayName">
+            <summary>
+            Task priority display name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityID">
+            <summary>
+            Task priority ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityLastModified">
+            <summary>
+            Last modification of the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskPriorityInfo.TaskPriorityOrder">
+            <summary>
+            Task  priority order.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider">
+            <summary>
+            Class providing ProjectTaskPriorityInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPriorityInfo(System.Int32)">
+            <summary>
+            Returns ProjectTaskPriority with specified ID.
+            </summary>
+            <param name="projecttaskpriorityId">Projecttaskpriority ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPriorityInfo(System.String)">
+            <summary>
+            Returns ProjectTaskPriority with specified name.
+            </summary>
+            <param name="projecttaskpriorityName">Projecttaskpriority name</param>                
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPriorities">
+            <summary>
+            Returns dataset of all ProjectTaskPriorities.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPriorities(System.Boolean)">
+            <summary>
+            Returns dataset of all ProjectTaskPriorities.
+            </summary>
+            <param name="showOnlyEnabled">If set to <c>true</c> [show only enabled priorities]</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPriorities(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all ProjectTaskPriorities matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.SetProjectTaskPriorityInfo(CMS.ProjectManagement.ProjectTaskPriorityInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectTaskPriority.
+            </summary>
+            <param name="projecttaskpriorityObj">Projecttaskpriority to be set</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.DeleteProjectTaskPriorityInfo(CMS.ProjectManagement.ProjectTaskPriorityInfo)">
+            <summary>
+            Deletes specified ProjectTaskPriority.
+            </summary>
+            <param name="projecttaskpriorityObj">Projecttaskpriority to be deleted</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.DeleteProjectTaskPriorityInfo(System.Int32)">
+            <summary>
+            Deletes ProjectTaskPriority with specified ID.
+            </summary>
+            <param name="projecttaskpriorityId">Projecttaskpriority ID</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.MovePriorityUp(System.Int32)">
+            <summary>
+            Moves priority up in the order sequence (up = smaller PriorityOrder = soooner in the navigation).
+            </summary>
+            <param name="priorityId">The priority id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.MovePriorityDown(System.Int32)">
+            <summary>
+            Moves priority down in the order sequence (down = larger PriorityOrder = later in the navigation).
+            </summary>
+            <param name="priorityId">The priority id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetPriorityCount">
+            <summary>
+            Gets the number of enabled priorities.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetPriorityCount(System.Boolean)">
+            <summary>
+            Gets the priority count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetDefaultPriority">
+            <summary>
+            Returns default ProjectTaskPriority.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.CheckDependencies(System.Int32)">
+            <summary>
+            Check if the priority can be removed.
+            </summary>
+            <param name="priorityId">The priority id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears the hashtable.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.ClearDefaultPrioritiesInternal">
+            <summary>
+            Clears the default priorities. Set all to <c>false</c>
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetDefaultPriorityInternal">
+            <summary>
+            Returns default ProjectTaskPriority.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetPriorityCountInternal(System.Boolean)">
+            <summary>
+            Gets the priority count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.CheckDependenciesInternal(System.Int32)">
+            <summary>
+            Gets the priority count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.MovePriorityUpInternal(System.Int32)">
+            <summary>
+            Moves priority up in the order sequence (up = smaller PriorityOrder = soooner in the navigation).
+            </summary>
+            <param name="priorityId">The priority id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.MovePriorityDownInternal(System.Int32)">
+            <summary>
+            Moves priority down in the order sequence (down = larger PriorityOrder = later in the navigation).
+            </summary>
+            <param name="priorityId">The priority id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPrioritiesInternal(System.Boolean)">
+            <summary>
+            Returns dataset of all ProjectTaskPriorities.
+            </summary>
+            <param name="showOnlyEnabled">If set to <c>true</c> [show only enabled priorities]</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPriorityInfoInternal(System.Int32)">
+            <summary>
+            Returns ProjectTaskPriority with specified ID.
+            </summary>
+            <param name="projecttaskpriorityId">Projecttaskpriority ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPriorityInfoInternal(System.String)">
+            <summary>
+            Returns ProjectTaskPriority with specified name.
+            </summary>
+            <param name="projecttaskpriorityName">Projecttaskpriority name</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.GetProjectTaskPrioritiesInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all ProjectTaskPriorities matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.SetProjectTaskPriorityInfoInternal(CMS.ProjectManagement.ProjectTaskPriorityInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectTaskPriority.
+            </summary>
+            <param name="projecttaskpriorityObj">Projecttaskpriority to be set</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskPriorityInfoProvider.DeleteProjectTaskPriorityInfoInternal(CMS.ProjectManagement.ProjectTaskPriorityInfo)">
+            <summary>
+            Deletes specified ProjectTaskPriority.
+            </summary>
+            <param name="projecttaskpriorityObj">Projecttaskpriority to be deleted</param>        
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskStatusInfo">
+            <summary>
+            ProjectTaskStatusInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskStatusInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.ProjectTaskStatusInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfo.GetPermissionName(CMS.DataEngine.PermissionsEnum)">
+            <summary>
+            Only Read and ManageConfiguration are relevant permissions.
+            </summary>
+            <param name="permission">Permission.</param>
+            <returns>Corresponding permission name.</returns>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty ProjectTaskStatusInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new ProjectTaskStatusInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfo.LoadDefaultData">
+            <summary>
+            Loads the default object data
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusName">
+            <summary>
+            Task status code name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusLastModified">
+            <summary>
+            Last modification of the project.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusIcon">
+            <summary>
+            Task status icon.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusDisplayName">
+            <summary>
+            Task status display name.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusEnabled">
+            <summary>
+            Status is enabled.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusOrder">
+            <summary>
+            Task status order.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusGUID">
+            <summary>
+            Unique project identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusIsFinished">
+            <summary>
+            Indicates if the status means a finished status.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusColor">
+            <summary>
+            Task status color.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusID">
+            <summary>
+            Task Status ID.
+            </summary>
+        </member>
+        <member name="P:CMS.ProjectManagement.ProjectTaskStatusInfo.TaskStatusIsNotStarted">
+            <summary>
+            Gets or sets the value that indicates whether status is not started.
+            </summary>
+        </member>
+        <member name="T:CMS.ProjectManagement.ProjectTaskStatusInfoProvider">
+            <summary>
+            Class providing ProjectTaskStatusInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatusInfo(System.Int32)">
+            <summary>
+            Returns ProjectTaskStatus with specified ID.
+            </summary>
+            <param name="projecttaskstatusId">Projecttaskstatus ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatusInfo(System.String)">
+            <summary>
+            Returns ProjectTaskStatus with specified name.
+            </summary>
+            <param name="projecttaskstatusName">Projecttaskstatus name</param>                
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatuses">
+            <summary>
+            Returns dataset of all ProjectTaskStatuses.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatuses(System.Boolean)">
+            <summary>
+            Returns dataset of all ProjectTaskStatuses.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatuses(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all ProjectTaskStatuses matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.SetProjectTaskStatusInfo(CMS.ProjectManagement.ProjectTaskStatusInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectTaskStatus.
+            </summary>
+            <param name="projecttaskstatusObj">Projecttaskstatus to be set</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.DeleteProjectTaskStatusInfo(CMS.ProjectManagement.ProjectTaskStatusInfo)">
+            <summary>
+            Deletes specified ProjectTaskStatus.
+            </summary>
+            <param name="projecttaskstatusObj">Projecttaskstatus to be deleted</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.DeleteProjectTaskStatusInfo(System.Int32)">
+            <summary>
+            Deletes ProjectTaskStatus with specified ID.
+            </summary>
+            <param name="projecttaskstatusId">Projecttaskstatus ID</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.MoveStatusUp(System.Int32)">
+            <summary>
+            Moves status up in the order sequence (up = smaller StatusOrder = soooner in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.MoveStatusDown(System.Int32)">
+            <summary>
+            Moves status down in the order sequence (down = larger StatusOrder = later in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetStatusCount">
+            <summary>
+            Gets the number of enabled statuses.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetStatusCount(System.Boolean)">
+            <summary>
+            Gets the status count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.CheckDependencies(System.Int32)">
+            <summary>
+            Check if the status can be removed.
+            </summary>
+            <param name="taskStatusId">The task status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears the hashtable.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetStatusCountInternal(System.Boolean)">
+            <summary>
+            Gets the status count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.CheckDependenciesInternal(System.Int32)">
+            <summary>
+            Gets the status count.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.MoveStatusUpInternal(System.Int32)">
+            <summary>
+            Moves status up in the order sequence (up = smaller StatusOrder = soooner in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.MoveStatusDownInternal(System.Int32)">
+            <summary>
+            Moves status down in the order sequence (down = larger StatusOrder = later in the navigation).
+            </summary>
+            <param name="statusId">The status id</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatusesInternal(System.Boolean)">
+            <summary>
+            Returns dataset of all ProjectTaskStatuses.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatusInfoInternal(System.Int32)">
+            <summary>
+            Returns ProjectTaskStatus with specified ID.
+            </summary>
+            <param name="projecttaskstatusId">Projecttaskstatus ID</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatusInfoInternal(System.String)">
+            <summary>
+            Returns ProjectTaskStatus with specified name.
+            </summary>
+            <param name="projecttaskstatusName">Projecttaskstatus name</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.GetProjectTaskStatusesInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns dataset of all ProjectTaskStatuses matching the specified parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by expression</param>
+            <param name="topN">Number of records to be selected</param>        
+            <param name="columns">Columns to be selected</param>
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.SetProjectTaskStatusInfoInternal(CMS.ProjectManagement.ProjectTaskStatusInfo)">
+            <summary>
+            Sets (updates or inserts) specified ProjectTaskStatus.
+            </summary>
+            <param name="projecttaskstatusObj">Projecttaskstatus to be set</param>        
+        </member>
+        <member name="M:CMS.ProjectManagement.ProjectTaskStatusInfoProvider.DeleteProjectTaskStatusInfoInternal(CMS.ProjectManagement.ProjectTaskStatusInfo)">
+            <summary>
+            Deletes specified ProjectTaskStatus.
+            </summary>
+            <param name="projecttaskstatusObj">Projecttaskstatus to be deleted</param>        
+        </member>
+        <member name="T:CMS.ProjectManagement.Reminder">
+            <summary>
+            Class used by scheduler to execute the task.
+            </summary>
+        </member>
+        <member name="M:CMS.ProjectManagement.Reminder.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Sends reminder email to the user who have overdue tasks.
+            </summary>
+            <param name="task">Task data</param>
+        </member>
+        <member name="T:CMS.ProjectManagement.StatusDisplayTypeEnum">
+            <summary>
+            Enum for status display type in lists.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.StatusDisplayTypeEnum.Icon">
+            <summary>
+            Icon.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.StatusDisplayTypeEnum.Text">
+            <summary>
+            Text.
+            </summary>
+        </member>
+        <member name="F:CMS.ProjectManagement.StatusDisplayTypeEnum.IconAndText">
+            <summary>
+            Icon and text.
+            </summary>
+        </member>
+    </members>
+</doc>

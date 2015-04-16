@@ -1,0 +1,49 @@
+﻿//
+// Stylesheet for ecommerce products UI.
+// --------------------------------------------------
+
+.ProductSectionNavigation {
+    background: @color-gray-140;
+
+    .TreeBody {
+        overflow: auto;
+    }
+}
+
+.RTL {
+    .ProductEditForms {
+        margin: 0 126px 0 0;
+
+        .MessagesWrapper {
+            margin: -10px -10px 10px 0;
+        }
+    }
+
+    .ProductEditFormsOptionCategory {
+        margin: 0;
+    }
+}
+
+.ProductEditForms {
+    .MessagesWrapper {
+        margin: -10px 0 10px -10px;
+    }
+
+    .EditingFormTable, .EditingFormFieldSet {
+        width: 100%;
+    }
+}
+
+.RTL .ProductEditForms, .ProductEditForms, .RTL .ProductEditFormsOptionCategory, ProductEditFormsOptionCategory {
+    .FormPanel {
+        float: none;
+        min-width: 650px;
+    }
+}
+
+.ProductEditForms, .ProductEditFormsOptionCategory {
+    .EditingFormLabelCell {
+        min-width: 155px;
+        width: 155px;
+    }
+}

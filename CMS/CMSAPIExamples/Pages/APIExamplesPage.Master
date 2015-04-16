@@ -1,0 +1,64 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="APIExamplesPage.master.cs"
+    Inherits="CMSAPIExamples_Pages_APIExamplesPage" %>
+
+<%@ Register Src="~/CMSAdminControls/UI/PageElements/PageTitle.ascx" TagName="PageTitle"
+    TagPrefix="cms" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>API Examples master page</title>
+    <style type="text/css">
+        html, body
+        {
+            height: 100%;
+            margin: 0;
+            border: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="<%=mBodyClass%>">
+    <form id="form1" runat="server">
+        <asp:Panel ID="pnlHeader" runat="server" EnableViewState="false">
+            <cms:PageTitle ID="titleElem" ShortID="t" runat="server" Visible="false" />
+        </asp:Panel>
+        <div class="api-examples-container">
+            <div class="api-examples-column">
+                <div class="api-examples-column-content">
+                    <div class="api-examples-column-header">
+                        <cms:LocalizedHeading ID="headCreate" Level="3" runat="server" EnableViewState="false" Text="Creating and managing" />
+                        <asp:LinkButton ID="btnRunAll" runat="server" EnableViewState="false" OnClick="btnRunAll_Click"
+                            ToolTip="Run all" Text="Run all" />
+                        <asp:Label runat="server" ID="lblCreateInfo" EnableViewState="false" CssClass="api-examples-description" />
+                    </div>
+                    <div class="api-examples-body">
+                        <asp:ContentPlaceHolder ID="plcLeftContainer" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+            <div class="api-examples-column">
+                <div class="api-examples-column-content right">
+                    <div class="api-examples-column-header">
+                        <cms:LocalizedHeading ID="headCleanup" Level="3" runat="server" EnableViewState="false" Text="Cleanup" />
+                        <asp:LinkButton ID="btnCleanAll" runat="server" EnableViewState="false" OnClick="btnCleanAll_Click"
+                            ToolTip="Cleanup all" Text="Cleanup all" />
+                        <asp:Label runat="server" ID="lblCleanInfo" EnableViewState="false" CssClass="api-examples-description" />
+                    </div>
+                    <div class="api-examples-body">
+                        <asp:ContentPlaceHolder ID="plcRightContainer" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="api-examples-footer">
+            <cms:CMSUpdatePanel ID="pnlUpdateCode" runat="server" RenderMode="Inline" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <cms:ExtendedTextArea runat="server" ID="txtCode" EditorMode="Advanced" Language="CMSSharp" ReadOnly="true" Height="250px" />
+                </ContentTemplate>
+            </cms:CMSUpdatePanel>
+        </div>
+    </form>
+</body>
+</html>

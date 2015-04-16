@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions parameters="LeftNodeID;RightNodeID;RelationshipNameID">
+    <action name="delete" externalsourcename="delete" caption="$General.Remove$" fonticonclass="icon-bin" fonticonstyle="critical" commandargument="{0};{1};{2}" confirmation="$Relationship.DeleteMsg$" />
+  </actions>
+  <columns>
+    <column source="LeftNodeID" allowsorting="false" externalsourcename="lefnodename" caption="$Unigrid.Relationship.Columns.LeftDocument$" wrap="false" columnname="LeftNodeName">
+      <filter type="text" format="LeftNodeID IN (SELECT NodeID FROM CMS_Tree WHERE {3})" source="nodename" />
+    </column>
+    <column source="LeftNodeID" allowsorting="false" caption="$Unigrid.Relationship.Columns.LeftDocumentType$" wrap="false" externalsourcename="#transform: cms.node.nodeclassid #classname" columnname="LeftClassID">
+    </column>
+    <column source="RelationshipNameID" allowsorting="false" externalsourcename="#transform: cms.relationshipname.relationshipdisplayname" caption="$Unigrid.Relationship.Columns.RelationshipName$" wrap="false" localize="true" columnname="RelationshipDisplayName">
+      <filter type="text" format="RelationshipNameID IN (SELECT RelationshipNameID FROM CMS_RelationshipName WHERE {3})" source="RelationshipName" />
+    </column>
+    <column source="RightNodeID" allowsorting="false" externalsourcename="rightnodename" caption="$Unigrid.Relationship.Columns.RightDocument$" wrap="false" columnname="RightNodeName">
+      <filter type="text" format="RightNodeID IN (SELECT NodeID FROM CMS_Tree WHERE {3})" source="nodename" />
+    </column>
+    <column source="RightNodeID" allowsorting="false" caption="$Unigrid.Relationship.Columns.RightDocumentType$" wrap="false" externalsourcename="#transform: cms.node.nodeclassid #classname" columnname="RightClassID">
+    </column>
+  </columns>
+  <pager>
+    <key name="ShowFirstLastButtons" value="false" />
+  </pager>
+  <objecttype name="cms.relationship" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>

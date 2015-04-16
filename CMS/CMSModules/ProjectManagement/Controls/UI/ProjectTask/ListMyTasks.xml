@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions parameters="ProjectTaskID">
+    <action name="edit" caption="$general.edit$" fonticonclass="icon-edit" fonticonstyle="allow" onclick="var ret = true; if (window.EditProjectTask) {ret = window.EditProjectTask({0}); } if (ret == false) {return false;} " />
+    <action name="delete" caption="$general.delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$general.confirmdelete$" />
+    <action name="up" externalsourcename="up" caption="$Unigrid.Groups.Actions.up$" fonticonclass="icon-chevron-up" />
+    <action name="down" externalsourcename="down" caption="$Unigrid.Groups.Actions.down$" fonticonclass="icon-chevron-down" />
+  </actions>
+  <columns>
+    <column source="ProjectTaskDisplayName" caption="$general.title$" wrap="false" externalsourcename="ProjectTaskDisplayName" localize="true">
+      <filter type="text" size="200" />
+    </column>
+    <column source="##ALL##" caption="$pm.projecttask.progress$" externalsourcename="taskprogress" wrap="false" sort="ProjectTaskProgress" />
+    <column source="ProjectTaskHours" caption="$pm.projecttask.estimatehours$" wrap="false" />
+    <column source="##ALL##" caption="$pm.projecttask.owner$" wrap="false"  externalsourcename="OwnerFormattedFullName" sort="OwnerFullName" >
+    </column>
+    <column source="ProjectTaskDeadline" caption="$pm.projecttask.deadline$" wrap="false"  externalsourcename="ProjectTaskDeadline"/>
+    <column source="ProjectDisplayName" caption="$pm.project$" wrap="false" />
+    <column source="TaskPriorityDisplayName" caption="$pm.projecttask.priority$" wrap="false" />
+    <column source="##ALL##" caption="$pm.projecttask.status$" externalsourcename="TaskStatus" wrap="false" sort="TaskStatusDisplayName" />
+    <column cssclass="filling-column" />
+  </columns>
+  <objecttype name="pm.projecttasklist" columns="ProjectTaskID, ProjectDisplayName, ProjectTaskDeadline, ProjectTaskHours, ProjectTaskDisplayName, AssigneeFullName, ProjectTaskProgress, OwnerFullName, TaskPriorityDisplayName, TaskStatusDisplayName, TaskStatusIcon, TaskStatusColor, AssigneeUserName, OwnerUserName, ProjectOwner" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>

@@ -1,0 +1,1381 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.Personas</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.Personas.PersonaPicturesInGrid">
+            <summary>
+            Control which renders table containing pictures of personas passed in constructor. Each table row contains 5 pictures.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaPicturesInGrid.#ctor(System.Collections.Generic.List{CMS.Personas.PersonaInfo})">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="personas">Personas whose pictures will be rendered</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaPicturesInGrid.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders HTML table containing persona pictures or nothing if there is no persona.
+            </summary>
+            <param name="writer">The <see cref="T:System.Web.UI.HtmlTextWriter"/> object that receives the server control content. </param>
+        </member>
+        <member name="T:CMS.Personas.PreviewModePersonasSelector">
+            <summary>
+            Displays selector of site's personas and saves the selected one to the <see cref="T:CMS.Personas.IPreviewPersonaStorage"/>. This control is used on the page preview mode.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PreviewModePersonasSelector.OnInit(System.EventArgs)">
+            <summary>
+            Init event handler.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.PersonasSelectableButton">
+            <summary>
+            Nice looking dropdown with personas.
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.PersonasSelectableButton.mPersonas">
+            <summary>
+            Personas in this dropdown for further use.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasSelectableButton.SetPersonas(System.Collections.Generic.List{CMS.Personas.PersonaInfo})">
+            <summary>
+            Initializes control with personas. Specified personas will be displayed in the dropdown.
+            </summary>
+            <param name="personas">Personas to display</param>
+        </member>
+        <member name="M:CMS.Personas.PersonasSelectableButton.OnInit(System.EventArgs)">
+            <summary>
+            Init event handler.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasSelectableButton.InitOpeningButtonControls(CMS.ExtendedControls.CMSButtonAction)">
+            <summary>
+            Adds required attributes to the button.
+            </summary>
+            <param name="firstAction">Action</param>
+            <returns>Opening button</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasSelectableButton.CreateListItemHyperLink(CMS.ExtendedControls.CMSButtonAction)">
+            <summary>
+            Adds required attributes to the hyperlink.
+            </summary>
+            <param name="action">Action</param>
+            <returns>Action hyperlink</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasSelectableButton.CreateButtonForOneAction(CMS.ExtendedControls.CMSButtonAction)">
+            <summary>
+            Adds required attributes to the button.
+            </summary>
+            <param name="onlyAction">Action</param>
+            <returns>Opening button</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasSelectableButton.SetControlImage(System.Web.UI.WebControls.WebControl,System.String,System.String)">
+            <summary>
+            Tries to get url of the persona picture with the specified name (<paramref name="actionName"/>). 
+            If image exists, sets specified css class to the control and adds picture as a background-image.
+            </summary>
+            <param name="control">Control to add attributes to</param>
+            <param name="actionName">Persona code name</param>
+            <param name="cssClass">Css class to add if picture exists</param>
+        </member>
+        <member name="M:CMS.Personas.PersonasSelectableButton.GetPersonaPictureUrl(System.String)">
+            <summary>
+            Gets url of the picture of the persona specified by its name.
+            </summary>
+            <param name="personaName">Name of the persona</param>
+            <returns>Url of th persona picture</returns>
+        </member>
+        <member name="P:CMS.Personas.PersonasSelectableButton.SelectedPersona">
+            <summary>
+            Currently selected persona. Becomes available on the PreLoad phase.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.Extenders.ContentEditMenuPersonaSelectorExtender">
+            <summary>
+            Adds a persona selector to the edit menu of the Content module.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Extenders.ContentEditMenuPersonaSelectorExtender.#ctor">
+            <summary>
+            Initializes a new instance of the ContentEditMenuPersonaSelectorExtender class.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Extenders.ContentEditMenuPersonaSelectorExtender.Initialize(CMS.ExtendedControls.IExtensibleEditMenu)">
+            <summary>
+            Adds a persona selector to the edit menu of the Content module.
+            </summary>
+            <param name="menu">The menu to add the persona selector to.</param>
+        </member>
+        <member name="T:CMS.Personas.Extenders.DocumentListUniGridExtender">
+            <summary>
+            Extender of the UniGrid on the document listing page. This extender adds another column to the UniGrid which displays pictures of the personas assigned to the document.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Extenders.DocumentListUniGridExtender.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Extenders.DocumentListUniGridExtender.Initialize(CMS.UIControls.IExtensibleUniGrid)">
+            <summary>
+            Allows the extender to attach a behavior to the specified instance.
+            </summary>
+            <param name="instance">The instance to attach a behavior to.</param>
+        </member>
+        <member name="M:CMS.Personas.Extenders.DocumentListUniGridExtender.RenderPersonaPictures(System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Creates control which displays images of personas assigned to the document specified by <paramref name="nodeID"/>.
+            </summary>
+            <param name="nodeID">NodeID of document whose personas should be displayed</param>
+            <param name="nodePersonas">Mapping of NodeIDs to the list of persona IDs which are assigned to the Node</param>
+            <returns>Control which displays persona images or empty string if document does not have any persona</returns>
+        </member>
+        <member name="T:CMS.Personas.Extenders.DocumentListMassActionsExtender">
+            <summary>
+            Extender of the mass actions on the document listing page. Adds to persona related actions: mass tagging and mass untagging.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Extenders.DocumentListMassActionsExtender.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Extenders.DocumentListMassActionsExtender.Initialize(CMS.UIControls.IExtensibleMassActions)">
+            <summary>
+            Adds two mass actions to the MassAction control.
+            </summary>
+            <param name="instance">The MassActions control to add persona related actions to</param>
+        </member>
+        <member name="M:CMS.Personas.Extenders.DocumentListMassActionsExtender.BuildDialogUrl(CMS.Personas.MultipleDocumentsActionTypeEnum,CMS.UIControls.MassActionScopeEnum,System.Collections.Generic.List{System.Int32},CMS.Controls.DocumentListMassActionsParameters)">
+            <summary>
+            Creates URL of the dialog which allows user to choose which personas should be assigned to or removed from documents. Stores additional parameters to the
+            session (via WindowHelper) as well.
+            </summary>
+            <param name="massActionType">Tag/Untag documents</param>
+            <param name="massActionScope">All documents according to filter values or only selected ones</param>
+            <param name="selectedNodeIDs">Specifies NodeIDs which should be tagged/untagged if only selected documents are chosen in <paramref name="massActionScope"/> parameter</param>
+            <param name="additionalParameters">Additional parameters allowing to filter documents when 'All document' scope is selected</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="additionalParameters"/> is null</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="massActionScope"/> is set to 'selected documents' and <paramref name="selectedNodeIDs"/> is null or empty</exception>
+            <returns>URL of the dialog which should be opened to finish action</returns>
+        </member>
+        <member name="T:CMS.Personas.ContactIsInPersonaInstanceTranslator">
+            <summary>
+            Translator for Contact is in persona macro rule.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.ContactIsInPersonaInstanceTranslator.Translate(CMS.OnlineMarketing.MacroRuleInstance)">
+            <summary>
+            Translates ContactIsInPersona Macro rule. Macro is in format 'Contact {_is} in persona {personaGuid}'.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.DelayedContactPersonaEvaluator">
+            <summary>
+            IContactPersonaEvaluator that uses <see cref="T:CMS.Base.CMSWorkerQueue"/>. That means all duplicate calls in one request will be processed just once.
+            Internally uses <see cref="T:CMS.Personas.ContactPersonaEvaluator"/>.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.IContactPersonaEvaluator">
+            <summary>
+            Contains methods for reevaluation of contact's persona.
+            </summary>
+            <remarks>
+            Use <see cref="T:CMS.Personas.PersonasFactory"/> to obtain implementation of this interface.
+            Contact can be in one persona only - contact belongs to persona if score quotient (contact score points divided by persona score limit) is the highest one of all personas.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.IContactPersonaEvaluator.ReevaluateAllContacts(System.Int32)">
+            <summary>
+            Reevaluates all contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when persona properties were changed, or rules were recalculated.
+            </remarks>
+            <param name="siteId">ID of the site</param>
+        </member>
+        <member name="M:CMS.Personas.IContactPersonaEvaluator.ReevaluateAllContactsAsync(System.Int32)">
+            <summary>
+            Reevaluates all contacts and assigns them to proper persona asynchronously.
+            </summary>
+            <remarks>
+            This method should be used when persona properties were changed, or rules were recalculated.
+            </remarks>
+            <param name="siteId">ID of the site</param>
+            <returns>Asynchronous execution task</returns>
+        </member>
+        <member name="M:CMS.Personas.IContactPersonaEvaluator.ReevaluateContacts(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contactsIds">Contacts which should be assigned to persona</param>
+        </member>
+        <member name="M:CMS.Personas.IContactPersonaEvaluator.ReevaluateContactsAsync(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contactsIds">Contacts which should be assigned to persona</param>
+            <returns>Asynchronous execution task</returns>
+        </member>
+        <member name="M:CMS.Personas.IContactPersonaEvaluator.ReevaluateContact(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates given contact and finds proper persona the contact should be assigned to.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contact">Contact which should be assigned to persona</param>
+        </member>
+        <member name="M:CMS.Personas.IContactPersonaEvaluator.ReevaluateContactAsync(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates given contact and finds proper persona the contact should be assigned to asynchronously.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contact">Contact which should be assigned to persona</param>
+            <returns>Asynchronous execution task</returns>
+        </member>
+        <member name="M:CMS.Personas.DelayedContactPersonaEvaluator.ReevaluateAllContacts(System.Int32)">
+            <summary>
+            Reevaluates all contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            Does not use delayed <see cref="T:CMS.Base.AbstractWorker"/> call.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.DelayedContactPersonaEvaluator.ReevaluateAllContactsAsync(System.Int32)">
+            <summary>
+            Reevaluates all contacts and assigns them to proper persona asynchronously.
+            </summary>
+            <remarks>
+            Does not use delayed <see cref="T:CMS.Base.AbstractWorker"/> call.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.DelayedContactPersonaEvaluator.ReevaluateContacts(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contactsIds">Contacts which should be assigned to persona</param>
+        </member>
+        <member name="M:CMS.Personas.DelayedContactPersonaEvaluator.ReevaluateContactsAsync(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contactsIds">Contacts which should be assigned to persona</param>
+            <returns>Asynchronous execution task</returns>
+        </member>
+        <member name="M:CMS.Personas.DelayedContactPersonaEvaluator.ReevaluateContact(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates given contact and finds proper persona the contact should be assigned to.
+            </summary>
+            <remarks>
+            Does method uses delayed <see cref="T:CMS.Base.AbstractWorker"/> call. That means if in one request, more than one reevaluation request occurs, 
+            it gets processed just once for each contact.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.DelayedContactPersonaEvaluator.ReevaluateContactAsync(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates given contact and finds proper persona the contact should be assigned to asynchronously.
+            </summary>
+            <remarks>
+            Does not use delayed <see cref="T:CMS.Base.AbstractWorker"/> call.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/>is null</exception>
+        </member>
+        <member name="T:CMS.Personas.Handlers.PersonasHandlers">
+            <summary>
+            Personas events handlers.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Handlers.PersonasHandlers.Init">
+            <summary>
+            Initializes the events handlers.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Handlers.PersonasHandlers.EvaluateContactsPersonaAfterRuleDelete(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Evaluate contacts for persona. If deleted rule has negative value, the persona contact base is expanded, if rule
+            value is positive, the persona contact base is reduced.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Handlers.PersonasHandlers.DeletePersonaPicture(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Sets persona picture to empty Guid, if refers to recently deleted Meta file.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Handlers.PersonasHandlers.ReevaluateContacts(System.Object,CMS.OnlineMarketing.RecalculateAfterContactActionsBatchEventArgs)">
+            <summary>
+            Reevaluates persona for the contact given in event arguments.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.Handlers.PersonasHandlers.ReevaluateAllContacts(System.Object,CMS.OnlineMarketing.ScoreEventArgs)">
+            <summary>
+            Reevaluates persona for all contacts that are related to score given in event arguments.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.PersonasNewslettersHandlers">
+            <summary>
+            Personas events handlers needed to enable newsletters integration.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasNewslettersHandlers.Init">
+            <summary>
+            Initializes the events handlers.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasNewslettersHandlers.RenamePersonaSubscriber(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Renames persona subscriber when name of persona changes.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasNewslettersHandlers.GeneratePersonaSubscriberQueueItems(System.Object,CMS.Newsletters.GenerateQueueItemsEventArgs)">
+            <summary>
+            Checks whether issue that is being generated into newsletter queue (see <see cref="T:CMS.Newsletters.EmailQueueItemInfo"/>) contains Persona subscribers.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasNewslettersHandlers.ObtainSubscriberAddressesForPersonaSubscriber(System.Object,CMS.Newsletters.ObtainSubscriberAddressesEventArgs)">
+            <summary>
+            Fills the <see cref="P:CMS.Newsletters.ObtainSubscriberAddressesEventArgs.Addresses"/> list with e-mail addresses of contacts that are in a persona of given subscriber (in case that subscriber is 
+            persona subscriber).
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasNewslettersHandlers.GeneratePreviewForPersonaSubscriber(System.Object,CMS.Newsletters.GeneratePreviewEventArgs)">
+            <summary>
+            Generates HTML preview for a persona subscriber. Takes the first contact it finds and generates the issue email body.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.IPersonaChangesPropagator">
+            <summary>
+            Handles propagation of changes after persona is updated.
+            </summary>
+            <remarks>
+            Use <see cref="T:CMS.Personas.PersonaChangesPropagator"/> to obtain implementation of this interface.
+            Changes are either propagated to underlying score or reevaluation of contact persona is executed.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.IPersonaChangesPropagator.PropagatePersonaChanges(System.Collections.Generic.List{System.String},System.Int32,CMS.Personas.PersonaInfo)">
+            <summary>
+            Checks changed columns of persona and propagate changes either to underlying score or contacts the persona is assigned to.
+            </summary>
+            <remarks>
+            If persona was enabled, evaluation is executed for all contacts, but score is not recalculated.
+            If persona was disabled, evaluation is executed for all contacts assigned to current persona.
+            If persona point threshold increased, evaluation is executed for all contacts assigned to the persona.
+            If persona point threshold decreased, evaluation is executed for all contacts not assigned to the persona.
+            If persona display name was changed, change is propagated to underlying score display name.
+            </remarks>
+            <param name="changedColumns">Columns that changed in persona</param>
+            <param name="originalPersonaScoreLimit">Points limit for persona before persona was changed</param>
+            <param name="persona">Persona to be evaluated</param>
+        </member>
+        <member name="M:CMS.Personas.IPersonaChangesPropagator.PropagatePersonaDeletion(CMS.Personas.PersonaInfo)">
+            <summary>
+            Reevaluates all contacts and delete persona underlying score.
+            </summary>
+            <param name="persona">Persona being deleted</param>
+        </member>
+        <member name="M:CMS.Personas.IPersonaChangesPropagator.PropagatePersonaCreation(CMS.Personas.PersonaInfo)">
+            <summary>
+            Creates new underlying score and assign it to the persona.
+            </summary>
+            <param name="persona">Persona being created</param>
+        </member>
+        <member name="T:CMS.Personas.ContactInfoMethods">
+            <summary>
+            Persona methods extending ContactInfo.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.ContactInfoMethods.IsInPersona(CMS.MacroEngine.EvaluationContext,System.Object[])">
+            <summary>
+            Returns a bool representing if the contact is assigned to a specified persona.
+            </summary>
+            <param name="context">Evaluation context with child resolver</param>
+            <param name="parameters">Method parameters</param>
+        </member>
+        <member name="M:CMS.Personas.ContactInfoMethods.GetPersona(CMS.MacroEngine.EvaluationContext,System.Object[])">
+            <summary>
+            Gets the persona the contact is assigned to or null if contact is not assigned to any persona.
+            </summary>
+            <param name="context">Evaluation context with child resolver</param>
+            <param name="parameters">Method parameters</param>
+        </member>
+        <member name="T:CMS.Personas.PersonasModule">
+            <summary>
+            Represents entry point of the Persona Based Recommendations (or shortly Personas) module. This module allows CMS users to define Personas representing
+            groups of visitors/customer. Visitors are then automatically assigned to the defined Personas and different content can be displayed to them.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasModule.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasModule.OnInit">
+            <summary>
+            Handles the module initialization.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.PersonasModuleMetadata">
+            <summary>
+            Represents metadata for the Personas module.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasModuleMetadata.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.MultipleDocumentsActionTypeEnum">
+            <summary>
+            Specifies types of mass action on personas and nodes.
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.MultipleDocumentsActionTypeEnum.Tag">
+            <summary>
+            Assign personas to nodes
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.MultipleDocumentsActionTypeEnum.Untag">
+            <summary>
+            Delete assignment between personas and nodes
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.IMultipleDocumentsAction">
+            <summary>
+            Denotes contract for performing actions on multiple personas and multiple nodes.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.IMultipleDocumentsAction.PerformAction(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Performs action on multiple personas and multiple nodes.
+            </summary>
+            <param name="nodeIDs">Nodes action will be performed on</param>
+            <param name="personasIDs">Personas the action will be performed on</param>
+        </member>
+        <member name="T:CMS.Personas.MultipleDocumentsActionFactory">
+            <summary>
+            Simplifies creating implementations of operations on personas and nodes.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.MultipleDocumentsActionFactory.GetActionImplementation(CMS.Personas.MultipleDocumentsActionTypeEnum)">
+            <summary>
+            Gets implementation of the specified mass action.
+            </summary>
+            <param name="massActionType">Specifies which mass action will be created</param>
+            <returns>Mass action implementation</returns>
+        </member>
+        <member name="T:CMS.Personas.MultipleDocumentsUntagger">
+            <summary>
+            Implementation of mass action for deleting assignment between multiple personas and multiple nodes.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.MultipleDocumentsUntagger.PerformAction(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Deletes all bindings between specified nodes and personas.
+            </summary>
+            <param name="nodeIDs">Bindings between these nodes and personas in <paramref name="personasIDs"/> will be deleted</param>
+            <param name="personasIDs">Bindings between these personas and nodes in <paramref name="nodeIDs"/> will be deleted</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="nodeIDs"/> or <paramref name="personasIDs"/> is null</exception>
+        </member>
+        <member name="T:CMS.Personas.PersonaChangesPropagator">
+            <summary>
+            Handles propagation of changes after persona is updated.
+            </summary>
+            <remarks>
+            Changes are either propagated to underlying score or reevaluation of contact persona is executed.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.PersonaChangesPropagator.PropagatePersonaChanges(System.Collections.Generic.List{System.String},System.Int32,CMS.Personas.PersonaInfo)">
+            <summary>
+            Checks changed columns of persona and propagate changes either to underlying score or contacts the persona is assigned to.
+            </summary>
+            <remarks>
+            If persona properties were changed, evaluation is executed for all contacts.
+            </remarks>
+            <param name="changedColumns">Columns that changed in persona</param>
+            <param name="originalPersonaScoreLimit">Points limit for persona before persona was changed</param>
+            <param name="persona">Persona to be evaluated</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="changedColumns"/> or <paramref name="persona"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PersonaChangesPropagator.PropagatePersonaDeletion(CMS.Personas.PersonaInfo)">
+            <summary>
+            Reevaluates all contacts and delete persona underlying score.
+            </summary>
+            <param name="persona">Persona being deleted</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="persona"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PersonaChangesPropagator.PropagatePersonaCreation(CMS.Personas.PersonaInfo)">
+            <summary>
+            Creates new underlying score and assign it to the persona.
+            </summary>
+            <param name="persona">Persona being created</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="persona"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PersonaChangesPropagator.PropagatePersonaEnabledChangeToScore(CMS.Personas.PersonaInfo)">
+            <summary>
+            Copies changes of PersonaEnabled flag to ScoreInfo object.
+            </summary>
+            <param name="persona">PersonaInfo with changed properties</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaChangesPropagator.PropagatePersonaDisplayNameChangeToScore(CMS.Personas.PersonaInfo)">
+            <summary>
+            Copies changes in PersonaDisplayName field to ScoreInfo object.
+            </summary>
+            <param name="persona">PersonaInfo with changed properties</param>
+        </member>
+        <member name="T:CMS.Personas.MultipleDocumentsTagger">
+            <summary>
+            Implementation of mass action for assigning multiple personas to multiple nodes.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.MultipleDocumentsTagger.PerformAction(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Assigns all given personas to the given nodes.
+            </summary>
+            <param name="nodeIDs">Personas in <paramref name="personasIDs"/> will be assigned to nodes in this paramter</param>
+            <param name="personasIDs">Personas in this parameter will be assigned to nodes in <paramref name="nodeIDs"/></param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="nodeIDs"/> or <paramref name="personasIDs"/> is null</exception>
+        </member>
+        <member name="T:CMS.Personas.PersonaInfo">
+            <summary>
+            PersonaInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.PersonaInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.PersonaInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty PersonaInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new PersonaInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfo.InsertAsCloneInternal(CMS.DataEngine.CloneSettings,CMS.DataEngine.CloneResult,CMS.DataEngine.BaseInfo)">
+            <summary>
+            Clones related score before cloning persona.
+            </summary>
+            <param name="settings">Cloning settings</param>
+            <param name="result">Result of the cloning - messages in this object will be altered by processing this method</param>
+            <param name="originalObject">Original source BaseInfo (object being cloned)</param>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaID">
+            <summary>
+            Persona ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaDisplayName">
+            <summary>
+            Persona display name.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaName">
+            <summary>
+            Persona name.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaDescription">
+            <summary>
+            Persona description.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaEnabled">
+            <summary>
+            Persona enabled.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaGUID">
+            <summary>
+            Persona GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaSiteID">
+            <summary>
+            Persona site ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaScoreID">
+            <summary>
+            Persona score ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaPointsThreshold">
+            <summary>
+            Persona score limit.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.PersonaPictureMetafileGUID">
+            <summary>
+            Guid of the metafile which represents persona picture. This metafile can belong to this PersonaInfo or to the persona ClassInfo. 
+            Null means that persona does not have picture selected and default one should be used.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaInfo.RelatedScore">
+            <summary>
+            Persona ScoreInfo object that is used for calculation of persona score.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.PersonaInfoProvider">
+            <summary>
+            Class providing PersonaInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.#ctor">
+            <summary>
+            Constructor which enables caching by ID.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonas">
+            <summary>
+            Returns a query for all the PersonaInfo objects.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.SetPersonaInfo(CMS.Personas.PersonaInfo)">
+            <summary>
+            Sets (updates or inserts) specified PersonaInfo.
+            </summary>
+            <param name="infoObj">PersonaInfo to be set</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.DeletePersonaInfo(CMS.Personas.PersonaInfo)">
+            <summary>
+            Deletes specified PersonaInfo.
+            </summary>
+            <param name="infoObj">PersonaInfo to be deleted</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonaInfoById(System.Int32)">
+            <summary>
+            Returns PersonaInfo with specified ID.
+            </summary>
+            <param name="id">PersonaInfo ID</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonaInfoByCodeName(System.String)">
+            <summary>
+            Returns PersonaInfo with specified code name.
+            </summary>
+            <param name="codeName">Persona code name</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonaInfoByScoreId(System.Int32)">
+            <summary>
+            Returns PersonaInfo by specifying underlying score ID.
+            </summary>
+            <param name="id">Score ID</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.ReevaluateContact(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates contact, returning ID of persona contact should be assigned to. 
+            </summary>
+            <remarks>
+            This method shouldn't be called directly - only from the ContactPersonaEvaluator.
+            </remarks>
+            <param name="contact">Contact being reevaluated</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> is null</exception>
+            <returns>ID of persona the contact should ve assigned to, null if contact isn't assigned to any persona.</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.ReevaluateContacts(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts.
+            </summary>
+            <remarks>
+            This method shouldn't be called directly - only from the ContactPersonaEvaluator.
+            </remarks>
+            <param name="contactIds">Contacts being reevaluated</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contactIds"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.ReevaluateAllContacts(System.Int32)">
+            <summary>
+            Reevaluates persona for all contacts. 
+            </summary>
+            <remarks>
+            This method shouldn't be called directly - only from the ContactPersonaEvaluator.
+            </remarks>
+            <param name="siteId">ID of the site</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonasInternal">
+            <summary>
+            Returns a query for all the PersonaInfo objects.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.SetPersonaInfoInternal(CMS.Personas.PersonaInfo)">
+            <summary>
+            Sets (updates or inserts) specified PersonaInfo.
+            </summary>
+            <param name="infoObj">PersonaInfo to be set</param>        
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.DeletePersonaInfoInternal(CMS.Personas.PersonaInfo)">
+            <summary>
+            Deletes specified PersonaInfo.
+            </summary>
+            <param name="infoObj">PersonaInfo to be deleted</param>        
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonaInfoByIdInternal(System.Int32)">
+            <summary>
+            Returns PersonaInfo with specified ID.
+            </summary>
+            <param name="id">PersonaInfo ID</param>        
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonaInfoByCodeNameInternal(System.String)">
+            <summary>
+            Returns PersonaInfo with specified code name.
+            </summary>   
+            <param name="codeName">Persona code name</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.GetPersonaInfoByScoreIdInternal(System.Int32)">
+            <summary>
+            Returns PersonaInfo by specifying underlying score ID.
+            </summary>
+            <param name="id">Score ID</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.ReevaluateContactInternal(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates contact, returning ID of persona contact should be assigned to. 
+            </summary>
+            <remarks>
+            This method shouldn't be called directly - only from the ContactPersonaEvaluator.
+            </remarks>
+            <param name="contact">Contact being reevaluated</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> is null</exception>
+            <returns>ID of persona the contact should be assigned to, null if contact isn't assigned to any persona</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.ReevaluateContactsInternal(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts.
+            </summary>
+            <remarks>
+            This method shouldn't be called directly - only from the ContactPersonaEvaluator.
+            </remarks>
+            <param name="contactIds">Contacts being reevaluated</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contactIds"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.ReevaluateAllContactsInternal(System.Int32)">
+            <summary>
+            Reevaluates persona for all contacts. 
+            </summary>
+            <remarks>
+            This method shouldn't be called directly - only from the ContactPersonaEvaluator.
+            </remarks>
+            <param name="siteId">ID of the site</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaInfoProvider.RefreshCacheForContactsWithChangedPersona(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Gets updated persona from DB for all reevaluated contacts and refreshes cache for them.
+            This method should be used always when persona of contact was changed directly on server.
+            </summary>
+            <param name="contactIdsList">List of affected contacts</param>
+        </member>
+        <member name="T:CMS.Personas.PersonaNewsletterGenerator">
+            <summary>
+            Class responsible for generating newsletter items (emails) for a persona subscriber (see <see cref="F:CMS.Newsletters.SubscriberInfo.TYPEINFOPERSONA"/>).
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaNewsletterGenerator.GenerateQueueItems(CMS.Newsletters.IssueInfo,CMS.Newsletters.SubscriberInfo,System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Creates newsletter queue items for a persona subscriber and an issue. See <see cref="T:CMS.Newsletters.EmailQueueItemInfo"/>.
+            </summary>
+            <param name="issue">Issue to send</param>
+            <param name="personaSubscriber">Persona subscriber to send the issue to</param>
+            <param name="generatedEmails">E-mail addresses that have been already added to the queue. Used to remove duplicates throughout different subscriber types.</param>
+            <exception cref="T:System.ArgumentException"><paramref name="personaSubscriber"/> isn't persona subscriber</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="issue"/> is null</exception>
+        </member>
+        <member name="T:CMS.Personas.PersonaNodeInfo">
+            <summary>
+            PersonaNodeInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.PersonaNodeInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.PersonaNodeInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfo.CheckPermissionsInternal(CMS.DataEngine.PermissionsEnum,System.String,CMS.Base.IUserInfo,System.Boolean)">
+            <summary>
+            Checks the permissions of the object.
+            </summary>
+            <param name="permission">Permission type</param>
+            <param name="siteName">Name of the site</param>
+            <param name="userInfo">UserInfo object</param>
+            <param name="exceptionOnFailure">If true, PermissionCheckException is thrown whenever a permission check fails</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty PersonaNodeInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new PersonaNodeInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="P:CMS.Personas.PersonaNodeInfo.PersonaID">
+            <summary>
+            Persona ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PersonaNodeInfo.NodeID">
+            <summary>
+            Node ID.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.PersonaNodeInfoProvider">
+            <summary>
+            Class providing PersonaNodeInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.GetPersonaNodes">
+            <summary>
+            Returns all PersonaNodeInfo bindings.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.GetPersonaNodeInfo(System.Int32,System.Int32)">
+            <summary>
+            Returns PersonaNodeInfo binding structure.
+            </summary>
+            <param name="personaId">Persona ID</param>
+            <param name="nodeId">Node ID</param>  
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.SetPersonaNodeInfo(CMS.Personas.PersonaNodeInfo)">
+            <summary>
+            Sets specified PersonaNodeInfo.
+            </summary>
+            <param name="infoObj">PersonaNodeInfo to set</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.DeletePersonaNodeInfo(CMS.Personas.PersonaNodeInfo)">
+            <summary>
+            Deletes specified PersonaNodeInfo binding.
+            </summary>
+            <param name="infoObj">PersonaNodeInfo object</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.RemovePersonaFromNode(System.Int32,System.Int32)">
+            <summary>
+            Deletes PersonaNodeInfo binding.
+            </summary>
+            <param name="personaId">Persona ID</param>
+            <param name="nodeId">Node ID</param>  
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.AddPersonaToNode(System.Int32,System.Int32)">
+            <summary>
+            Creates PersonaNodeInfo binding. 
+            </summary>
+            <param name="personaId">Persona ID</param>
+            <param name="nodeId">Node ID</param>   
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.RemovePersonasFromDocuments(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Deletes all bindings between specified nodes and personas.
+            </summary>
+            <param name="nodeIDs">Bindings between these nodes and personas in <paramref name="personasIDs"/> will be deleted</param>
+            <param name="personasIDs">Bindings between these personas and nodes in <paramref name="nodeIDs"/> will be deleted</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="nodeIDs"/> or <paramref name="personasIDs"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.GetPersonaNodeInfoInternal(System.Int32,System.Int32)">
+            <summary>
+            Returns the PersonaNodeInfo structure.
+            Null if binding doesn't exist.
+            </summary>
+            <param name="personaId">Persona ID</param>
+            <param name="nodeId">Node ID</param>  
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.SetPersonaNodeInfoInternal(CMS.Personas.PersonaNodeInfo)">
+            <summary>
+            Sets specified PersonaNodeInfo binding.
+            </summary>
+            <param name="infoObj">PersonaNodeInfo object</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.DeletePersonaNodeInfoInternal(CMS.Personas.PersonaNodeInfo)">
+            <summary>
+            Deletes specified PersonaNodeInfo.
+            </summary>
+            <param name="infoObj">PersonaNodeInfo object</param>
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.RemovePersonaFromNodeInternal(System.Int32,System.Int32)">
+            <summary>
+            Deletes PersonaNodeInfo binding.
+            </summary>
+            <param name="personaId">Persona ID</param>
+            <param name="nodeId">Node ID</param>  
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.AddPersonaToNodeInternal(System.Int32,System.Int32)">
+            <summary>
+            Creates PersonaNodeInfo binding. 
+            </summary>
+            <param name="personaId">Persona ID</param>
+            <param name="nodeId">Node ID</param>   
+        </member>
+        <member name="M:CMS.Personas.PersonaNodeInfoProvider.RemovePersonasFromDocumentsInternal(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Deletes all bindings between specified nodes and personas.
+            </summary>
+            <param name="nodeIDs">Bindings between these nodes and personas in <paramref name="personasIDs"/> will be deleted</param>
+            <param name="personasIDs">Bindings between these personas and nodes in <paramref name="nodeIDs"/> will be deleted</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="nodeIDs"/> or <paramref name="personasIDs"/> is null</exception>
+        </member>
+        <member name="T:CMS.Personas.IPersonaPictureImgTagGenerator">
+            <summary>
+            Defines contract of the service capable of generating HTML img tags displaying persona picture.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.IPersonaPictureImgTagGenerator.GenerateImgTag(CMS.Personas.PersonaInfo,System.Int32)">
+            <summary>
+            Generates img tag which displays persona picture with a specified size.
+            </summary>
+            <param name="persona">This persona's picture will be displayed</param>
+            <param name="imageSideSizeInPx">Size of the picture</param>
+            <returns>HTML which displays persona picture</returns>
+        </member>
+        <member name="T:CMS.Personas.PersonaPictureImgTagGenerator">
+            <summary>
+            Class capable of generating HTML img tags displaying persona picture.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonaPictureImgTagGenerator.GenerateImgTag(CMS.Personas.PersonaInfo,System.Int32)">
+            <summary>
+            Generates img tag which displays persona picture with a specified size.
+            </summary>
+            <param name="persona">This persona's picture will be displayed</param>
+            <param name="imageSideSizeInPx">Size of the picture</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="persona"/> is null</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="imageSideSizeInPx"/> isn't greater than zero</exception>
+            <returns>HTML which displays persona picture</returns>
+        </member>
+        <member name="T:CMS.Personas.IPersonaPictureUrlCreator">
+            <summary>
+            Creates urls of the persona images.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.IPersonaPictureUrlCreator.CreateDefaultPersonaPictureUrl(System.Int32)">
+            <summary>
+            Gets URL of the the image which should be used when persona has no picture selected or when picture of contact belonging to no persona should be displayed.
+            </summary>
+            <param name="imageSideSizeInPx">Maximum size of one side of the image. Persona pictures are usually squares</param>
+            <returns>Url of the default persona picture</returns>
+        </member>
+        <member name="M:CMS.Personas.IPersonaPictureUrlCreator.CreatePersonaPictureUrl(CMS.Personas.PersonaInfo,System.Int32)">
+            <summary>
+            Gets url of the specified persona's picture.
+            </summary>
+            <param name="persona">Url to the image of this persona will be created</param>
+            <param name="imageSideSizeInPx">Maximum size of pictures side</param>
+            <returns>Url leading to the persona's image or to the default image if persona does not have picture set</returns>
+        </member>
+        <member name="T:CMS.Personas.PersonaPictureUrlCreator">
+            <summary>
+            Creates urls of the persona images.
+            </summary>
+        </member>
+        <member name="F:CMS.Personas.PersonaPictureUrlCreator.defaultPictureGuid">
+            <summary>
+            Guid of the default image used when persona does not have picture selected.
+            </summary>
+            <remarks>
+            Default picture is class thumbnail whose name starts with "default.".
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.PersonaPictureUrlCreator.CreateDefaultPersonaPictureUrl(System.Int32)">
+            <summary>
+            Gets URL of the the image which should be used when persona has no picture selected or when picture of contact belonging to no persona should be displayed.
+            </summary>
+            <param name="imageSideSizeInPx">Maximum size of one side of the image. Persona pictures are usually squares</param>
+            <exception cref="T:System.ArgumentException"><paramref name="imageSideSizeInPx"/> is lower than 1</exception>
+            <returns>Url of the default persona picture</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonaPictureUrlCreator.CreatePersonaPictureUrl(CMS.Personas.PersonaInfo,System.Int32)">
+            <summary>
+            Gets url of the specified persona's picture.
+            </summary>
+            <param name="persona">Url to the image of this persona will be created</param>
+            <param name="imageSideSizeInPx">Maximum size of pictures side</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="persona"/> is null</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="imageSideSizeInPx"/> is lower than 1</exception>
+            <returns>Url leading to the persona's image or to the default image if persona does not have picture set</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonaPictureUrlCreator.GetMetafileUrl(System.Guid,System.String,System.Int32)">
+            <summary>
+            Gets url to the specified metafile.
+            </summary>
+            <param name="metafileGuid">Url to the metafile with this guid will be created</param>
+            <param name="metafileSeoFileName">Returned image will have this name. No spaces are allowed</param>
+            <param name="sizeInPx">Maximum size of one side of picture</param>
+            <returns>Url to the metafil</returns>
+        </member>
+        <member name="T:CMS.Personas.ContactPersonaEvaluator">
+            <summary>
+            Contains methods for reevaluation of contact's persona. 
+            </summary>
+            <remarks>
+            Contact can be in one persona only - contact belongs to persona if score quotient (contact score points divided by persona score limit) is the highest one of all personas.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.ContactPersonaEvaluator.ReevaluateAllContacts(System.Int32)">
+            <summary>
+            Reevaluates all contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when persona properties were changed, or rules were recalculated.
+            </remarks>
+            <param name="siteId">ID of the site</param>
+        </member>
+        <member name="M:CMS.Personas.ContactPersonaEvaluator.ReevaluateAllContactsAsync(System.Int32)">
+            <summary>
+            Reevaluates all contacts and assigns them to proper persona asynchronously.
+            </summary>
+            <remarks>
+            This method should be used when persona properties were changed, or rules were recalculated.
+            </remarks>
+            <param name="siteId">ID of the site</param>
+            <returns>Asynchronous execution task</returns>
+        </member>
+        <member name="M:CMS.Personas.ContactPersonaEvaluator.ReevaluateContacts(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contactsIds">Contacts which should be assigned to persona</param>
+        </member>
+        <member name="M:CMS.Personas.ContactPersonaEvaluator.ReevaluateContactsAsync(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Reevaluates given contacts and assigns them to proper persona.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contactsIds">Contacts which should be assigned to persona</param>
+            <returns>Asynchronous execution task</returns>
+        </member>
+        <member name="M:CMS.Personas.ContactPersonaEvaluator.ReevaluateContact(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates given contact and finds proper persona the contact should be assigned to.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contact">Contact which should be assigned to persona</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.ContactPersonaEvaluator.ReevaluateContactAsync(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Reevaluates given contact and finds proper persona the contact should be assigned to asynchronously.
+            </summary>
+            <remarks>
+            This method should be used when new activity is logged for contact or its attribute was changed. These 
+            actions can change contact points and thus it is possible the contact can be assigned to more correct persona.
+            </remarks>
+            <param name="contact">Contact which should be assigned to persona</param>
+            <returns>Asynchronous execution task</returns>
+        </member>
+        <member name="M:CMS.Personas.ContactPersonaEvaluator.StartNewLongRunningTask(System.Action)">
+            <summary>
+            Copies context into the action and creates new Task which executes it.
+            </summary>
+            <param name="action">Action to execute asynchronously</param>
+            <returns>Newly created task</returns>
+        </member>
+        <member name="T:CMS.Personas.PagePreviewPersonaService">
+            <summary>
+            Provides methods to determine membership of contacts in personas. Takes into account persona which is enforced in the page preview mode when user wants 
+            to see how page looks like for certain persona. This persona is taken into account only if caller is asking for personas for current contact.
+            </summary>
+            <remarks>
+            This is the implementation of the <see cref="T:CMS.Personas.IPersonaService"/> interface which is used in the page preview mode. Please obtain its instance via <see cref="T:CMS.Personas.PersonasFactory"/>.
+            </remarks>
+        </member>
+        <member name="T:CMS.Personas.IPersonaService">
+            <summary>
+            Provides methods to determine membership of contacts in personas.
+            </summary>
+            <remarks>
+            Use <see cref="T:CMS.Personas.PersonasFactory"/> to obtain implementation of this interface.
+            Contact can be in one persona only - contact belongs to persona if score quotient (contact score points divided by persona score limit) is the highest one of all personas.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.IPersonaService.IsContactInPersona(CMS.OnlineMarketing.ContactInfo,CMS.Personas.PersonaInfo)">
+            <summary>
+            Returns true when contact belongs to specified persona.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="contact">Contact</param>
+            <param name="persona">Persona</param>
+            <returns>True when contact fulfills persona definition</returns>
+        </member>
+        <member name="M:CMS.Personas.IPersonaService.GetPersonaForContact(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Gets persona the specified contact is assigned to or null of contact does not belong to any persona.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="contact">Contact</param>
+            <returns>Persona that specified contact belongs to or null</returns>
+        </member>
+        <member name="M:CMS.Personas.IPersonaService.GetContactsForPersona(CMS.Personas.PersonaInfo)">
+            <summary>
+            Gets all contacts that fulfills persona definition.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="persona">Persona</param>
+            <returns>All contacts that fulfills persona definition</returns>
+        </member>
+        <member name="M:CMS.Personas.PagePreviewPersonaService.#ctor(CMS.Personas.IPersonaService,CMS.OnlineMarketing.ContactInfo,CMS.Personas.IPreviewPersonaStorage)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="originalPersonaService">Service which defines relationships between personas and contacts by default</param>
+            <param name="currentContact">Current contact</param>
+            <param name="previewPersonaStorage">Storage for saving and retrieving personas which should be displayed in the preview mode</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="originalPersonaService"/>, <paramref name="currentContact"/> or <paramref name="previewPersonaStorage"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PagePreviewPersonaService.IsContactInPersona(CMS.OnlineMarketing.ContactInfo,CMS.Personas.PersonaInfo)">
+            <summary>
+            Returns true when contact belongs to specified persona.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="contact">Contact</param>
+            <param name="persona">Persona</param>
+            <returns>True when contact fulfills persona definition</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> or <paramref name="persona"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PagePreviewPersonaService.GetPersonaForContact(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Gets persona the specified contact is assigned to or null of contact does not belong to any persona.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="contact">Contact</param>
+            <returns>Persona that specified contact belongs to or null</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> is null</exception>
+        </member>
+        <member name="M:CMS.Personas.PagePreviewPersonaService.GetContactsForPersona(CMS.Personas.PersonaInfo)">
+            <summary>
+            Gets all contacts that fulfills persona definition.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="persona">Persona</param>
+            <returns>All contacts that fulfills persona definition</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="persona"/> is null</exception>
+        </member>
+        <member name="P:CMS.Personas.PagePreviewPersonaService.EnforcedPersona">
+            <summary>
+            Persona enforced by the user. If null, user wants to see page as someone who is not assigned to any persona.
+            </summary>
+        </member>
+        <member name="P:CMS.Personas.PagePreviewPersonaService.ActAsContactWithoutPersona">
+            <summary>
+            If true, user wants to see page as someone who is not assigned to any persona.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.PersonaService">
+            <summary>
+            Provides methods to determine membership of contacts in personas.
+            </summary>
+            <remarks>
+            This is the default implementation of the <see cref="T:CMS.Personas.IPersonaService"/> interface. Please obtain its instance via <see cref="T:CMS.Personas.PersonasFactory"/>.
+            Contact can be in one persona only - contact belongs to persona if score quotient (contact score points divided by persona score limit) is the highest one of all personas.
+            </remarks>
+        </member>
+        <member name="M:CMS.Personas.PersonaService.IsContactInPersona(CMS.OnlineMarketing.ContactInfo,CMS.Personas.PersonaInfo)">
+            <summary>
+            Returns true when contact belongs to specified persona.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="contact">Contact</param>
+            <param name="persona">Persona</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> or <paramref name="persona"/> is null</exception>
+            <returns>True when contact fulfills persona definition</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonaService.GetPersonaForContact(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Gets persona the specified contact is assigned to or null of contact does not belong to any persona.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="contact">Contact</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="contact"/> is null</exception>
+            <returns>Persona that specified contact belongs to or null</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonaService.GetContactsForPersona(CMS.Personas.PersonaInfo)">
+            <summary>
+            Gets all contacts that fulfills persona definition.
+            </summary>
+            <remarks>
+            The contact can be only in one persona at the same time. Belonging to persona is determined by the highest quotient of total score the contact obtained divided by persona score limit.
+            </remarks>
+            <param name="persona">Persona</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="persona"/> is null</exception>
+            <returns>All contacts that fulfills persona definition</returns>
+        </member>
+        <member name="T:CMS.Personas.PersonasFactory">
+            <summary>
+            Factory to access classes of the Personas module.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PersonasFactory.GetPersonaService">
+            <summary>
+            Provides services for persona.
+            </summary>
+            <remarks>
+            This method returns special implementation in the preview mode (<see cref="T:CMS.Personas.PagePreviewPersonaService"/>). That special
+            implementation takes into account persona which is enforced in the page preview mode when user wants to see how page 
+            looks like for certain persona. This persona is taken into account only if caller is asking for personas for current contact.
+            </remarks>
+            <returns>Service for determining membership of contacts in personas</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasFactory.GetContactPersonaEvaluator">
+            <summary>
+            Provides services for reevaluating contact's persona.
+            </summary>
+            <remarks>
+            Reevaluation should be performed after every change of contact's score to ensure the contact belongs to the right persona.
+            </remarks>
+            <returns>Service for reevaluation of to which persona the contact belongs</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasFactory.GetPersonaChangesPropagator">
+            <summary>
+            Handles propagation of changes after persona is updated.
+            </summary>
+            <remarks>
+            Changes are either propagated to underlying score or reevaluation of contact persona is executed.
+            </remarks>
+            <returns>Service for propagation the persona changes to underlying score or to contact persona evaluator</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasFactory.GetPreviewPersonaStorage">
+            <summary>
+            Gets implementation of storage for saving and retrieving personas which should be displayed in the preview mode.
+            </summary>
+            <returns>Preview persona storage</returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasFactory.GetPersonaPictureUrlCreator">
+            <summary>
+            Gets implementation of the service for creating persona picture URLs.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CMS.Personas.PersonasFactory.GetPersonaPictureImgTagGenerator">
+            <summary>
+            Gets implementation of service for generating img tags of persona pictures.
+            </summary>
+            <returns>Persona picture img tag generator</returns>
+        </member>
+        <member name="T:CMS.Personas.IPreviewPersonaStorage">
+            <summary>
+            Defines contract for the storage for saving and retrieving personas which should be displayed in the preview mode.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.IPreviewPersonaStorage.SetCurrentSiteID(System.Int32)">
+            <summary>
+            Sets siteID which will be then used when storing and retrieving personas. Personas on each site will be stored independently.
+            </summary>
+            <remarks>SiteID isn't set using constructor parameter, because our ObjectFactory does not support constructor injection</remarks>
+            <param name="siteID">ID of the current site</param>
+        </member>
+        <member name="M:CMS.Personas.IPreviewPersonaStorage.StorePreviewPersona(CMS.Personas.PersonaInfo)">
+            <summary>
+            Stores persona for the preview mode. When <see cref="M:CMS.Personas.IPreviewPersonaStorage.GetPreviewPersona"/> is called later, persona saved using this method is retrieved.
+            </summary>
+            <param name="persona">Persona enforced by the user. If null, user wants to see page as someone who is not assigned to any persona</param>
+        </member>
+        <member name="M:CMS.Personas.IPreviewPersonaStorage.GetPreviewPersona">
+            <summary>
+            Persona enforced by the user for the preview mode. If null, user wants to see page as someone who is not assigned to any persona.
+            </summary>
+        </member>
+        <member name="T:CMS.Personas.PreviewPersonaSessionStorage">
+            <summary>
+            Stores persona enforced for the preview mode in the session.
+            </summary>
+        </member>
+        <member name="M:CMS.Personas.PreviewPersonaSessionStorage.SetCurrentSiteID(System.Int32)">
+            <summary>
+            Sets siteID which will be then used when storing and retrieving personas. Personas on each site will be stored independently.
+            </summary>
+            <remarks>SiteID isn't set using constructor parameter, because our ObjectFactory does not support constructor injection</remarks>
+            <param name="siteID">ID of the current site</param>
+        </member>
+        <member name="M:CMS.Personas.PreviewPersonaSessionStorage.StorePreviewPersona(CMS.Personas.PersonaInfo)">
+            <summary>
+            Stores persona for the preview mode. When <see cref="M:CMS.Personas.IPreviewPersonaStorage.GetPreviewPersona"/> is called later, persona saved using this method is retrieved.
+            </summary>
+            <param name="persona">Persona enforced by the user. If null, user wants to see page as someone who is not assigned to any persona</param>
+        </member>
+        <member name="M:CMS.Personas.PreviewPersonaSessionStorage.GetPreviewPersona">
+            <summary>
+            Persona enforced by the user for the preview mode. If null, user wants to see page as someone who is not assigned to any persona.
+            </summary>
+        </member>
+    </members>
+</doc>

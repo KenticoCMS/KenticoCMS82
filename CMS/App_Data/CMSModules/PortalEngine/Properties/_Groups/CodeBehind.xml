@@ -1,0 +1,16 @@
+﻿<category name="CodeBehind" caption="Code behind" collapsible="true" collapsedbydefault="true" visible="true" />
+<field column="ExtenderAssemblyName" fieldcaption="Extender" visible="true" columntype="text" fieldtype="CustomUserControl" allowempty="true" columnsize="100" publicfield="false" guid="168dea06-38c2-4eca-9143-3761c524ab2b">
+  <settings>
+    <ShowInterfaces>False</ShowInterfaces>
+    <BaseClassName>CMS.ExtendedControls.ControlExtender, CMS.ExtendedControls</BaseClassName>
+    <ClassNameColumnName>ExtenderClassName</ClassNameColumnName>
+    <ShowClasses>True</ShowClasses>
+    <ShowEnumerations>False</ShowEnumerations>
+    <controlname>assemblyclassselector</controlname>
+  </settings>
+</field>
+<field column="ExtenderClassName" columntype="text" fieldtype="CustomUserControl" allowempty="true" columnsize="100" publicfield="false" guid="da3d187f-2f43-4f69-a3e2-450c9aa78367">
+  <settings>
+    <controlname>textboxcontrol</controlname>
+  </settings>
+</field>

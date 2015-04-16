@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions parameters="ProjectID">
+    <action name="edit" caption="$general.edit$" fonticonclass="icon-edit" fonticonstyle="allow" />
+    <action name="#delete" caption="$general.delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$general.confirmdelete$" />
+  </actions>
+  <columns>
+    <column source="ProjectDisplayName" caption="$general.name$" wrap="false" maxlength="50" localize="true" >
+      <filter type="text" size="200" />
+    </column>
+    <column source="ProjectDeadline" caption="$pm.project.deadline$" wrap="false" externalsourcename="#userdatetimegmt" />
+    <column source="ProjectOwner" caption="$pm.project.owner$" wrap="false" externalsourcename="#transform: cms.user : {%FullName%} ({%UserName%})" sort="ProjectOwnerFullName" />
+    <column source="##ALL##" caption="$pm.project.status$" externalsourcename="StatusIcon" sort="ProjectStatus" wrap="false" />
+    <column source="##ALL##" caption="$pm.project.progress$" externalsourcename="ProjectProgress" sort="ProjectProgress" wrap="false" />
+    <column cssclass="filling-column" />
+  </columns>
+  <objecttype name="pm.projectlist" columns="ProjectID, ProjectDeadline, ProjectOwnerFullName, ProjectProgress, ProjectStatus, ProjectStatusColor, ProjectStatusIcon, ProjectOwnerUserName, ProjectDisplayName, ProjectNodeID, ProjectOwner" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>

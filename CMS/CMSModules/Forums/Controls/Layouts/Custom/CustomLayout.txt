@@ -1,0 +1,3 @@
+﻿To create a custom layout, you need to create a sub-folder inside this folder. 
+The name of this sub-folder will be used as the name of the layout. 
+The sub-folder has to contain controls with the same names as included in the Flat or Tree folders

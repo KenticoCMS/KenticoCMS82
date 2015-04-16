@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<access-policy>
+  <cross-domain-access>
+    <policy>
+      <allow-from http-methods="*">
+        <domain uri="*"/>
+      </allow-from>
+      <grant-to>
+        <resource path="/CMSModules/Content/CMSPages/MultiFileUploader.ashx"/>
+        <resource path="/CMSModules/Forums/CMSPages/MultiFileUploader.ashx"/>
+        <resource path="/CMSModules/MediaLibrary/CMSPages/MultiFileUploader.ashx"/>
+      </grant-to>
+    </policy>
+  </cross-domain-access>
+</access-policy>

@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.FileSystemStorage</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.FileSystemStorage.DirectoryInfo">
+            <summary>
+            Envelope for System.IO.DirectoryInfo.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="path">Path to directory</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.#ctor(System.IO.DirectoryInfo)">
+            <summary>
+            Initializes new instance of directory info.
+            </summary>
+            <param name="info">System info</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.CreateSubdirectory(System.String)">
+            <summary>
+            Creates subdirectory.
+            </summary>
+            <param name="subdir">Subdirectory to create</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.Delete">
+            <summary>
+            Deletes directory.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.GetFiles">
+            <summary>
+            Returns a file list from the current directory.
+            </summary>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.GetFiles(System.String,CMS.IO.SearchOption)">
+            <summary>
+            Returns a file list from the current directory.
+            </summary>
+            <param name="searchPattern">Search pattern</param>
+            <param name="searchOption">Search options</param>      
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.GetFiles(System.String)">
+            <summary>
+            Returns a file list from the current directory.
+            </summary>
+            <param name="searchPattern">Search pattern</param>              
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.GetDirectories">
+            <summary>
+            Returns the subdirectories of the current directory.
+            </summary>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.GetDirectories(System.String)">
+            <summary>
+            Returns the subdirectories of the current directory.
+            </summary>        
+            <param name="searchPattern">Search pattern</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.DirectoryInfo.GetDirectories(System.String,CMS.IO.SearchOption)">
+            <summary>
+            Returns an array of directories in the current DirectoryInfo matching the given search criteria and using a value
+            to determine whether to search subdirectories.
+            </summary>        
+            <param name="searchPattern">Search pattern</param>
+            <param name="searchOption">Specifies whether to search the current directory, or the current directory and all subdirectories.</param>
+        </member>
+        <member name="P:CMS.FileSystemStorage.DirectoryInfo.FullName">
+            <summary>
+            Full name of directory (whole path).
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.DirectoryInfo.LastWriteTime">
+            <summary>
+            Last write time to directory.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.DirectoryInfo.Name">
+            <summary>
+            Name of directory (without path).
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.DirectoryInfo.CreationTime">
+            <summary>
+            Creation time.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.DirectoryInfo.Exists">
+            <summary>
+            Whether directory exists.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.DirectoryInfo.Parent">
+            <summary>
+            Parent directory.
+            </summary>
+        </member>
+        <member name="T:CMS.FileSystemStorage.Directory">
+            <summary>
+            Envelope for System.IO.Directory.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.Exists(System.String)">
+            <summary>
+            Determines whether the given path refers to an existing directory on disk.
+            </summary>
+            <param name="path">Path to test</param>  
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.CreateDirectory(System.String)">
+            <summary>
+            Creates all directories and subdirectories as specified by path.
+            </summary>
+            <param name="path">Path to create</param> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.GetFiles(System.String)">
+            <summary>
+            Returns the names of files (including their paths) in the specified directory.
+            </summary>
+            <param name="path">Path to retrieve files from</param> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.GetFiles(System.String,System.String)">
+            <summary>
+            Returns the names of files (including their paths) in the specified directory.
+            </summary>
+            <param name="path">Path to retrieve files from</param> 
+            <param name="searchPattern">Search pattern</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.GetDirectories(System.String)">
+            <summary>
+            Gets the names of subdirectories in the specified directory.
+            </summary>
+            <param name="path">Path to retrieve directories from</param> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.GetCurrentDirectory">
+            <summary>
+            Gets the current working directory of the application.
+            </summary>  
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.Delete(System.String,System.Boolean)">
+            <summary>
+            Deletes an empty directory and, if indicated, any subdirectories and files in the directory.
+            </summary>
+            <param name="path">Path to directory</param>
+            <param name="recursive">If delete if subdirs exists</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.Delete(System.String)">
+            <summary>
+            Deletes an empty directory.
+            </summary>
+            <param name="path">Path to directory</param>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.Move(System.String,System.String)">
+            <summary>
+            Moves a file or a directory and its contents to a new location.
+            </summary>
+            <param name="sourceDirName">Source directory name</param>
+            <param name="destDirName">Destination directory name</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.GetDirectories(System.String,System.String)">
+            <summary>
+            Returns the names of files (including their paths) in the specified directory.
+            </summary>        
+            <param name="path">Path to directory</param>
+            <param name="searchPattern">Search pattern</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.GetDirectories(System.String,System.String,CMS.IO.SearchOption)">
+            <summary>
+            Gets the names of the subdirectories (including their paths) that match the specified search
+            pattern in the current directory, and optionally searches subdirectories.
+            </summary>        
+            <param name="path">Path to directory</param>
+            <param name="searchPattern">Search pattern</param>
+            <param name="searchOption">Specifies whether to search the current directory, or the current directory and all subdirectories.</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.GetAccessControl(System.String)">
+            <summary>
+            Gets a DirectorySecurity  object that encapsulates the access control list (ACL) entries for a specified directory.
+            </summary>
+            <param name="path">Path to directory</param>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.PrepareFilesForImport(System.String)">
+            <summary>
+            Prepares files for import. Converts them to media library.
+            </summary>
+            <param name="path">Path.</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.Directory.DeleteDirectoryStructure(System.String)">
+            <summary>
+            Deletes all files in the directory structure. It works also in a shared hosting environment.
+            </summary>
+            <param name="path">Full path of the directory to delete</param>
+        </member>
+        <member name="T:CMS.FileSystemStorage.FileInfo">
+            <summary>
+            Envelope for System.IO.FileInfo class.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.#ctor(System.String)">
+            <summary>
+            Initializes new instance of FileInfo.
+            </summary>
+            <param name="filename">File name from which info should be created</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.#ctor(System.IO.FileInfo)">
+            <summary>
+            Initializes new instance of FileInfo.
+            </summary>
+            <param name="info">System file info</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.CreateText">
+            <summary>
+            Creates or opens a file for writing UTF-8 encoded text.
+            </summary> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.Delete">
+            <summary>
+            Deletes file.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.OpenRead">
+            <summary>
+            Opens file for reading.
+            </summary> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.OpenText">
+            <summary>
+            Creates stream which reads from file.
+            </summary> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.CopyTo(System.String,System.Boolean)">
+            <summary>
+            Copies an existing file to a new file, allowing the overwriting of an existing file.
+            </summary>
+            <param name="destFileName">Destination file name</param>
+            <param name="overwrite">Whether overwriting is allowed</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.CopyTo(System.String)">
+            <summary>
+            Copies an existing file to a new file, allowing the overwriting of an existing file.
+            </summary>
+            <param name="destFileName">Destination file name</param>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.MoveTo(System.String)">
+            <summary>
+            Copies an existing file to a new file, allowing the overwriting of an existing file.
+            </summary>
+            <param name="destFileName">Destination file name</param>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileInfo.ToString">
+            <summary>
+            Converts FileInfo object to string.
+            </summary>   
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.Length">
+            <summary>
+            Length of file.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.Extension">
+            <summary>
+            File extenstion.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.FullName">
+            <summary>
+            Full name of file (with whole path).
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.Name">
+            <summary>
+            File name of file (without path).
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.DirectoryName">
+            <summary>
+            Directory name of file (without path).
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.LastWriteTime">
+            <summary>
+            Last wirte time to file.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.Exists">
+            <summary>
+            If file exists.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.CreationTime">
+            <summary>
+            Creation date of file.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.LastAccessTime">
+            <summary>
+            Creation date of file.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.Directory">
+            <summary>
+            Directory of file.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.IsReadOnly">
+            <summary>
+             If is read only.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.Attributes">
+            <summary>
+            File attributes.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileInfo.SystemInfo">
+            <summary>
+            Returns system file info object.
+            </summary>
+        </member>
+        <member name="T:CMS.FileSystemStorage.File">
+            <summary>
+            Envelope for System.IO.File class.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.Exists(System.String)">
+            <summary>
+            Determines whether the specified file exists.
+            </summary>
+            <param name="path">Path to file</param>  
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.OpenText(System.String)">
+            <summary>
+            Opens an existing UTF-8 encoded text file for reading.
+            </summary>
+            <param name="path">Path to file</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.Delete(System.String)">
+            <summary>
+            Deletes the specified file. An exception is not thrown if the specified file does not exist.
+            </summary>
+            <param name="path">Path to file</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.Copy(System.String,System.String,System.Boolean)">
+            <summary>
+            Copies an existing file to a new file. Overwriting a file of the same name is allowed.
+            </summary>
+            <param name="sourceFileName">Path to source file</param>
+            <param name="destFileName">Path to destination file</param>
+            <param name="overwrite">If destination file should be overwritten</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.Copy(System.String,System.String)">
+            <summary>
+            Copies an existing file to a new file.
+            </summary>
+            <param name="sourceFileName">Path to source file</param>
+            <param name="destFileName">Path to destination file</param>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.ReadAllBytes(System.String)">
+            <summary>
+            Opens a binary file, reads the contents of the file into a byte array, and then closes the file.
+            </summary>
+            <param name="path">Path to file</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.Create(System.String)">
+            <summary>
+            Creates or overwrites a file in the specified path.
+            </summary>
+            <param name="path">Path to file</param> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.Move(System.String,System.String)">
+            <summary>
+            Moves a specified file to a new location, providing the option to specify a new file name.
+            </summary>
+            <param name="sourceFileName">Source file name</param>
+            <param name="destFileName">Destination file name</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.ReadAllText(System.String)">
+            <summary>
+            Opens a text file, reads all lines of the file, and then closes the file.
+            </summary>
+            <param name="path">Path to file</param> 
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.ReadAllText(System.String,System.Text.Encoding)">
+            <summary>
+            Opens a text file, reads all lines of the file, and then closes the file.
+            </summary>
+            <param name="path">Path to file</param> 
+            <param name="encoding">The character encoding to use</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.WriteAllText(System.String,System.String)">
+            <summary>
+            Creates a new file, write the contents to the file, and then closes the file. If the target file already exists, it is overwritten.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="contents">Content to write</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.WriteAllText(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Creates a new file, write the contents to the file, and then closes the file. If the target file already exists, it is overwritten.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="contents">Content to write</param>
+            <param name="encoding">The character encoding to use</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.AppendAllText(System.String,System.String)">
+            <summary>
+            Opens a file, appends the specified string to the file, and then closes the file. If the file does not exist, this method creates a file, writes the specified string to the file, then closes the file. 
+            </summary>
+            <param name="path">Path</param>
+            <param name="contents">Content to write</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.AppendAllText(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Opens a file, appends the specified string to the file, and then closes the file. If the file does not exist, this method creates a file, writes the specified string to the file, then closes the file. 
+            </summary>
+            <param name="path">Path</param>
+            <param name="contents">Content to write</param>
+            <param name="encoding">The character encoding to use</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.WriteAllBytes(System.String,System.Byte[])">
+            <summary>
+            Creates a new file, writes the specified byte array to the file, and then closes the file. If the target file already exists, it is overwritten.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="bytes">Bytes to write</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.OpenRead(System.String)">
+            <summary>
+            Opens an existing file for reading.
+            </summary>
+            <param name="path">Path to file</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.SetAttributes(System.String,CMS.IO.FileAttributes)">
+            <summary>
+            Sets the specified FileAttributes  of the file on the specified path.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="fileAttributes">File attributes</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.Open(System.String,CMS.IO.FileMode,CMS.IO.FileAccess)">
+            <summary>
+            Opens a FileStream  on the specified path, with the specified mode and access.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="mode">File mode</param>
+            <param name="access">File access</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.SetLastWriteTimeUtc(System.String,System.DateTime)">
+            <summary>
+            Sets the date and time, in coordinated universal time (UTC), that the specified file was last written to.
+            </summary>
+            <param name="path">Path</param>
+            <param name="lastWriteTimeUtc">Specified time</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.CreateText(System.String)">
+            <summary>
+            Creates or opens a file for writing UTF-8 encoded text.
+            </summary>
+            <param name="path">Path to file</param>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.GetAccessControl(System.String)">
+            <summary>
+            Gets a DirectorySecurity  object that encapsulates the access control list (ACL) entries for a specified directory.
+            </summary>
+            <param name="path">Path to directory</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.GetLastWriteTime(System.String)">
+            <summary>
+            Returns the date and time the specified file or directory was last written to.
+            </summary>
+            <param name="path">Path to file</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.SetLastWriteTime(System.String,System.DateTime)">
+            <summary>
+            Sets the date and time that the specified file was last written to.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="lastWriteTime">Last write time</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.File.GetFileUrl(System.String,System.String)">
+            <summary>
+            Returns URL to file. If can be accessed directly then direct URL is generated else URL with GetFile page is generated.
+            </summary>
+            <param name="path">Virtual path starting with ~ or absolute path.</param>
+            <param name="siteName">Site name.</param>
+        </member>
+        <member name="T:CMS.FileSystemStorage.FileStream">
+            <summary>
+            Envelope for FileStream classes (System.IO).
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.#ctor(System.String,CMS.IO.FileMode)">
+            <summary>
+            Initializes new instance and intializes new system file stream.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="mode">File mode</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.#ctor(System.String,CMS.IO.FileMode,CMS.IO.FileAccess)">
+            <summary>
+            Initializes new instance and intializes new system file stream.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="mode">File mode</param>
+            <param name="access">File access</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.#ctor(System.String,CMS.IO.FileMode,CMS.IO.FileAccess,CMS.IO.FileShare)">
+            <summary>
+            Initializes new instance and intializes new system file stream.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="mode">File mode</param>
+            <param name="access">File access</param>       
+            <param name="share">Sharing permissions</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.#ctor(System.String,CMS.IO.FileMode,CMS.IO.FileAccess,CMS.IO.FileShare,System.Int32)">
+            <summary>
+            Initializes new instance and intializes new system file stream.
+            </summary>
+            <param name="path">Path to file</param>
+            <param name="mode">File mode</param>
+            <param name="access">File access</param>
+            <param name="bufferSize">Buffer size</param>
+            <param name="share">Sharing permissions</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.#ctor(System.IO.FileStream)">
+            <summary>
+            Initializes new instance and intializes new system file stream.
+            </summary>
+            <param name="fs">File stream</param>        
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads data from stream and stores them into array.
+            </summary>
+            <param name="array">Array where result is stored</param>
+            <param name="offset">Offset from beginning of file</param>
+            <param name="count">Number of characters which are read</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.Close">
+            <summary>
+            Closes the current stream and releases any resources (such as sockets and file handles) associated with the current stream.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.CloseInnerStream(System.Boolean,System.Boolean)">
+            <summary>
+            Closes or disposes the inner file stream
+            </summary>
+            <param name="dispose">If true, the inner stream is closed, otherwise is disposed</param>
+            <param name="logOperation">If true, the close operation is logged</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.LogCloseOperation">
+            <summary>
+            Logs the stream close operation
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.Seek(System.Int64,CMS.IO.SeekOrigin)">
+            <summary>
+            Sets cursor position at specified position.
+            </summary>
+            <param name="offset">Offset from beginning of file</param>
+            <param name="loc">Seek origin</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes a sequence of bytes to the current stream and advances the current position within this stream by the number of bytes written.
+            </summary>
+            <param name="buffer">Buffer</param>
+            <param name="offset">Offset</param>
+            <param name="count">Number of chars</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.Flush">
+            <summary>
+            Clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+            </summary>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.WriteByte(System.Byte)">
+            <summary>
+            Writes byte to stream.
+            </summary>
+            <param name="value">Value to write</param>
+        </member>
+        <member name="M:CMS.FileSystemStorage.FileStream.Dispose">
+            <summary>
+            Releases all resources.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileStream.SystemStream">
+            <summary>
+            Gets or sets system stream.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileStream.Length">
+            <summary>
+            Gets the length in bytes of the stream.
+            </summary>
+        </member>
+        <member name="P:CMS.FileSystemStorage.FileStream.Position">
+            <summary>
+             Gets or sets the position within the current stream.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1603 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.Blogs</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.Blogs.BlogCommentDataSource">
+            <summary>
+            Blog comments data source server control.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentDataSource.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentDataSource.PropagateProperties(CMS.Controls.ICMSDataProperties)">
+            <summary>
+            Propagates given settings
+            </summary>
+            <param name="properties">Settings</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentDataSource.GetDataSourceFromDB">
+            <summary>
+            Gets datasource from DB.
+            </summary>
+            <returns>Dataset as object</returns>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentDataSource.GetDefaultCacheDependencies">
+            <summary>
+            Gets the default cache dependencies for the data source.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentDataSource.GetDefaultCacheKey">
+            <summary>
+            Gets cache key.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.SelectOnlyApproved">
+            <summary>
+            Gets or sets if only approved comments should be selected.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.Properties">
+            <summary>
+            Data properties
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.UseDocumentFilter">
+            <summary>
+            Indicates if the comments should be retrieved according to document filter settings.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.Path">
+            <summary>
+            Path of the documents to be displayed. /% selects all documents.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.CultureCode">
+            <summary>
+            Culture code, such as en-us.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.CombineWithDefaultCulture">
+            <summary>
+            Indicates if the documents from the default culture version should be alternatively used.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.SelectOnlyPublished">
+            <summary>
+            Indicates if only published documents should be displayed.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.MaxRelativeLevel">
+            <summary>
+            Relative level of child documents that should be selected. -1 selects all child documents.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDataSource.DocumentsWhereCondition">
+            <summary>
+            Gets or sets the where condition for blog posts.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogCommentDetail">
+            <summary>
+            Class with blog comment data.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mCommentID">
+            <summary>
+            Default ID of the blog comment.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mCommentsDataRow">
+            <summary>
+            Comment data row.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mShowEditButton">
+            <summary>
+            Indicates whether the EDIT button would be displayed.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mShowDeleteButton">
+            <summary>
+            Indicates whether the DELETE button would be displayed.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mShowApproveButton">
+            <summary>
+            Indicates whether the APPROVE button would be displayed.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mShowRejectButton">
+            <summary>
+            Indicates whether the REJECT button would be displayed.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mAbuseReportRoles">
+            <summary>
+            Roles possible to report abuse.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mAbuseReportSecurityAccess">
+            <summary>
+            Specifes what kind of users are able to report abuse.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.mAbuseReportOwnerID">
+            <summary>
+            Default ID of the abuse report owner.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentDetail.BlogpPoperties">
+            <summary>
+            Object holding information on current blog properties.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentDetail.FireOnCommentAction(System.String,System.Object)">
+            <summary>
+            Fires event when some blog comment action occurs.
+            </summary>
+            <param name="actionName">Name of the action that takes place</param>
+            <param name="actionArgument">Argument of the action</param>
+        </member>
+        <member name="E:CMS.Blogs.BlogCommentDetail.OnCommentAction">
+            <summary>
+            Event fired when some kind of action related to the blog comment occurs.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.CommentID">
+             <summary>
+            Comment ID.
+             </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.CommentsDataRow">
+            <summary>
+            DataRow with comments data.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.ShowEditButton">
+            <summary>
+            Indicates whether 'edit' button should be displayed.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.ShowDeleteButton">
+            <summary>
+            Indicates whether 'delete' button should be displayed.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.ShowApproveButton">
+            <summary>
+            Indicates whether 'approve' button should be displayed.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.ShowRejectButton">
+            <summary>
+            Indicates whether 'reject' button should be displayed.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.AbuseReportRoles">
+            <summary>
+            Gets or sets list of roles (separated by ';') which are allowed to report abuse (in combination with SecurityAccess.AuthorizedRoles).
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.AbuseReportSecurityAccess">
+            <summary>
+            Gets or sets the security access for report abuse link.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentDetail.AbuseReportOwnerID">
+            <summary>
+            Gets or sets the owner ID (in combination with SecurityAccess.Owner).
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.OnCommentActionEventHandler">
+            <summary>
+            Fired when comment action (edit, delete, reject, approve, ..) is performed.
+            </summary>
+            <param name="actionName">Action name</param>
+            <param name="actionArgument">Action argument</param>
+        </member>
+        <member name="T:CMS.Blogs.OnBeforeCommentSavedEventHandler">
+            <summary>
+            Fired before the comment is saved.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.OnAfterCommentSavedEventHandler">
+            <summary>
+            Fired after the comment is saved.
+            </summary>
+            <param name="commentObj">Comment data</param>
+        </member>
+        <member name="T:CMS.Blogs.BlogCommentInfo">
+            <summary>
+            BlogCommentInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogCommentInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty BlogCommentInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new BlogCommentInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfo.CheckPermissionsInternal(CMS.DataEngine.PermissionsEnum,System.String,CMS.Base.IUserInfo,System.Boolean)">
+            <summary>
+            Checks the permissions of the object.
+            </summary>
+            <param name="permission">Permission type</param>
+            <param name="siteName">Name of the site</param>
+            <param name="userInfo">UserInfo object</param>
+            <param name="exceptionOnFailure">If true, PermissionCheckException is thrown whenever a permission check fails</param>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentInfo">
+            <summary>
+            Post ip, and agent values.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentDate">
+            <summary>
+            Comment date and time.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentUrl">
+            <summary>
+            Comment url.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentText">
+            <summary>
+            Comment text.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentEmail">
+            <summary>
+            Comment e-mail.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentUserID">
+            <summary>
+            Comment user ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentIsSpam">
+            <summary>
+            Comment is spam.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentApproved">
+            <summary>
+            Comment is approved.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentApprovedByUserID">
+            <summary>
+            Comment approved by user ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentID">
+            <summary>
+            Comment ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentUserName">
+            <summary>
+            Comment user name.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentPostDocumentID">
+            <summary>
+            Comment post document ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfo.CommentIsTrackback">
+            <summary>
+            Comment is trackback.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogCommentInfoProvider">
+            <summary>
+            Class providing BlogCommentInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetBlogCommentInfo(System.Int32)">
+            <summary>
+            Returns the BlogCommentInfo structure for the specified blogComment.
+            </summary>
+            <param name="blogCommentId">BlogComment id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.SetBlogCommentInfo(CMS.Blogs.BlogCommentInfo)">
+            <summary>
+            Sets (updates or inserts) specified blog comment.
+            </summary>
+            <param name="blogComment">Blog comment to set</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.DeleteBlogCommentInfo(CMS.Blogs.BlogCommentInfo)">
+            <summary>
+            Deletes specified blogComment.
+            </summary>
+            <param name="blogCommentObj">BlogComment object</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.DeleteBlogCommentInfo(System.Int32)">
+            <summary>
+            Deletes specified blogComment.
+            </summary>
+            <param name="blogCommentId">BlogComment id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetBlogComments">
+            <summary>
+            Returns object query for blog comments.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetAllComments(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns all comments.
+            </summary>
+            <param name="where">Where condition to filter data</param>
+            <param name="orderBy">Order by statement</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetAllComments(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all comments.
+            </summary>
+            <param name="where">Where condition to filter data</param>
+            <param name="orderBy">Order by statement</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+            <param name="offset">Index of first record to get</param>
+            <param name="maxRecords">Maximum number of records to get. If maxRecords is zero or less, all records are returned (no paging is used)</param>
+            <param name="totalRecords">Returns total records</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetCommentsWaitingForApproval(System.String,System.Int32)">
+            <summary>
+            Returns DataSet with all owner comments waiting for approval.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="ownerID">Owner ID</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetComments(System.String,System.String)">
+            <summary>
+            Returns DataSet with all comments filtered by specified conditions.
+            </summary>
+            <param name="where">Where condition which specifies comments to be returned</param>
+            <param name="blogWhere">Where condition which specifies blogs the comments should be returned from</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetComments(System.Int32,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Returns DataSet with all comments which belongs to the specified user or which are moderated by specified user.
+            </summary>
+            <param name="ownerId">Blog owner (user id)</param>
+            <param name="moderator">Blog moderator (user name)</param>
+            <param name="where">Where condition which specifies comments to be returned</param>
+            <param name="blogWhere">Where condition which specifies blogs the comments should be returned from</param>
+            <param name="columns">Columns to be selected</param>
+            <param name="topN">Selects only top N items</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetComments(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32@,System.String)">
+            <summary>
+            Returns DataSet with all comments which belongs to the specified user or which are moderated by specified user.
+            </summary>
+            <param name="ownerId">Blog owner (user id)</param>
+            <param name="moderator">Blog moderator (user name)</param>
+            <param name="where">Where condition which specifies comments to be returned</param>
+            <param name="blogWhere">Where condition which specifies blogs the comments should be returned from</param>
+            <param name="columns">Columns to be selected</param>
+            <param name="topN">Selects only top N items</param>
+            <param name="order">Order by</param>
+            <param name="offset">Index of first record to get</param>
+            <param name="maxRecords">Maximum number of records to get. If maxRecords is zero or less, all records are returned (no paging is used)</param>
+            <param name="totalRecords">Returns total records</param>
+            <param name="siteName">Site name of the blog</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetPostComments(System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns DataSet with post comments which are not marked as spam.
+            </summary>
+            <param name="postDocumentId">Post documentID</param>
+            <param name="onlyApproved">Indicates if only approved comments should be returned</param>
+            <param name="includingSpam">Indicates if comments which are marked as SPAM should be included in the result</param>
+            <param name="includingTrackbacks">Indicates if comments which are marked as trackback comments should be included in the result</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetPostCommentsCount(System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns count of the post comments.
+            </summary>
+            <param name="postDocumentId">Post documentID</param>
+            <param name="onlyApproved">Indicates if only approved comments should be included in the count</param>
+            <param name="includingSpam">Indicates if comments which are marked as SPAM should be included in the count</param>
+            <param name="includingTrackbacks">Indicates if comments which are marked as trackbacks should be included in the count</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.SendNewCommentNotification(CMS.Blogs.BlogCommentInfo,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Sends a notification e-mail to blog post subscribers, to blog moderators and to blog owner.
+            </summary>
+            <param name="comment">Blog comment data</param>
+            <param name="toSubscribers">Indicates if notification email should be sent to blog post subscribers</param>
+            <param name="toModerators">Indicates if notification email should be sent to blog moderators</param>
+            <param name="toBlogOwner">Indicates if notification email should be sent to blog owner</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetApprovedComments(System.Int32)">
+            <summary>
+            Return all blog comments for specified document
+            </summary>
+            <param name="documentId">Document ID</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetCommentsWhereCondition(System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns WHERE condition for the comments selection according to the specified parameters.
+            </summary>
+            <param name="postDocumentId">Post document ID</param>
+            <param name="onlyApproved">Indicates if only approved comments should be included</param>
+            <param name="includingSpam">Indicates if comments which are marked as SPAM should be included</param>
+            <param name="includingTrackbacks">Indicates if comments which are marked as trackbacks should be included</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetCommentSiteName(System.Int32)">
+            <summary>
+            Returns sitename with dependence on selected document id.
+            </summary>
+            <param name="documentId">Document id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetBlogCommentsInternal">
+            <summary>
+            Returns object query for blog comments.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetBlogCommentInfoInternal(System.Int32)">
+            <summary>
+            Returns the BlogCommentInfo structure for the specified blogComment.
+            </summary>
+            <param name="blogCommentId">BlogComment id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.SetBlogCommentInfoInternal(CMS.Blogs.BlogCommentInfo)">
+            <summary>
+            Sets (updates or inserts) specified blog comment.
+            </summary>
+            <param name="blogComment">Blog comment to set</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.DeleteBlogCommentInfoInternal(CMS.Blogs.BlogCommentInfo)">
+            <summary>
+            Deletes specified blogComment.
+            </summary>
+            <param name="blogCommentObj">BlogComment object</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetAllCommentsInternal(System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all comments.
+            </summary>
+            <param name="where">Where condition to filter data</param>
+            <param name="orderBy">Order by statement</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+            <param name="offset">Index of first record to get</param>
+            <param name="maxRecords">Maximum number of records to get. If maxRecords is zero or less, all records are returned (no paging is used)</param>
+            <param name="totalRecords">Returns total records</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetCommentsWaitingForApprovalInternal(System.String,System.Int32)">
+            <summary>
+            Returns DataSet with all owner comments waiting for approval.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="ownerID">Owner ID</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetCommentsInternal(System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32@,System.String)">
+            <summary>
+            Returns DataSet with all comments which belongs to the specified user or which are moderated by specified user.
+            </summary>
+            <param name="ownerId">Blog owner (user id)</param>
+            <param name="moderator">Blog moderator (user name)</param>
+            <param name="where">Where condition which specifies comments to be returned</param>
+            <param name="blogWhere">Where condition which specifies blogs the comments should be returned from</param>
+            <param name="columns">Columns to be selected</param>
+            <param name="topN">Selects only top N items</param>
+            <param name="order">Order by</param>
+            <param name="offset">Index of first record to get</param>
+            <param name="maxRecords">Maximum number of records to get. If maxRecords is zero or less, all records are returned (no paging is used)</param>
+            <param name="totalRecords">Returns total records</param>
+            <param name="siteName">Site name of the blog</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetPostCommentsInternal(System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns DataSet with post comments which are not marked as spam.
+            </summary>
+            <param name="postDocumentId">Post documentID</param>
+            <param name="onlyApproved">Indicates if only approved comments should be returned</param>
+            <param name="includingSpam">Indicates if comments which are marked as SPAM should be included in the result</param>
+            <param name="includingTrackbacks">Indicates if comments which are marked as trackback comments should be included in the result</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.GetPostCommentsCountInternal(System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns count of the post comments.
+            </summary>
+            <param name="postDocumentId">Post document ID</param>
+            <param name="onlyApproved">Indicates if only approved comments should be included in the count</param>
+            <param name="includingSpam">Indicates if comments which are marked as SPAM should be included in the count</param>
+            <param name="includingTrackbacks">Indicates if comments which are marked as trackbacks should be included in the count</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogCommentInfoProvider.SendNewCommentNotificationInternal(CMS.Blogs.BlogCommentInfo,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Sends a notification e-mail to blog post subscribers, to blog moderators and to blog owner.
+            </summary>
+            <param name="comment">Blog comment data</param>
+            <param name="toSubscribers">Indicates if notification email should be sent to blog post subscribers</param>
+            <param name="toModerators">Indicates if notification email should be sent to blog moderators</param>
+            <param name="toBlogOwner">Indicates if notification email should be sent to blog owner</param>
+        </member>
+        <member name="P:CMS.Blogs.BlogCommentInfoProvider.EnableEmails">
+            <summary>
+            Indicates if e-mails are allowed to be sent to subscribers and moderators, by default it is set to True.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogHelper">
+            <summary>
+            Class providing blog helper methods.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetParentBlog(System.Int32,System.Boolean)">
+            <summary>
+            Returns parent blog of the specified document.
+            </summary>
+            <param name="documentId">Document ID</param>
+            <param name="selectOnlyPublished">Select only published</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetParentBlog(System.String,System.String,System.Boolean)">
+            <summary>
+            Returns parent blog of the specified document.
+            </summary>
+            <param name="aliasPath">Alias path</param>
+            <param name="siteName">Site name</param>
+            <param name="selectOnlyPublished">Select only published</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetBlogPosts(System.String,System.String,System.String,System.Boolean,System.String,System.String,System.Boolean)">
+            <summary>
+            Returns DataSet with all posts from all blogs.
+            </summary>
+            <param name="siteName">Nodes site name</param>
+            <param name="aliasPath">Path. It may contain % and _ as wild card characters for any number of unknown characters or one unknown character respectively (for MS SQL)</param>
+            <param name="cultureCode">Nodes culture code</param>
+            <param name="combineWithDefaultCulture">Specifies if return the default culture document when specified culture not found</param>        
+            <param name="where">Where condition to use for parent blogs selection</param>
+            <param name="orderBy">Order by clause to use for the data selection</param>        
+            <param name="selectOnlyPublished">Select only published nodes</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetCommentParentBlog(System.Int32,System.Boolean)">
+            <summary>
+            Returns parent blog of the specified comment.
+            </summary>
+            <param name="commentId">Comment id</param>
+            <param name="selectOnlyPublished">Select only published</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetBlogPostTrackbackUrl(System.Int32)">
+            <summary>
+            Returns Trackback URL for given post.
+            </summary>
+            <param name="PostDocumentID">ID of blog post</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetBlogPostTrackbackUrl(System.Guid,System.String,System.String)">
+            <summary>
+            Returns trackback URL for given blog post.
+            </summary>
+            <param name="nodeGuid">Blog post node GUID</param>
+            <param name="documentName">Blog post document name</param>
+            <param name="culture">Blog post document culture</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.IsUserBlogModerator(System.String,CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Determines if user is moderator of the specified blog.
+            </summary>
+            <param name="userName">User name</param>
+            <param name="blogNode">Blog node (tree node of type 'cms.blog')</param>        
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.IsUserBlogOwner(System.Int32,CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Determines if user is owner of the specified blog.
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="blogNode">Blog node (tree node of type 'cms.blog')</param>        
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.IsUserAuthorizedToManageComments(CMS.DocumentEngine.TreeNode,System.Boolean)">
+            <summary>
+            Checks if the current user is allowed to manage comments of the blog placed on specified node.
+            </summary>
+            <param name="blogNode">Node the blog resides at</param>
+            <param name="exceptionOnFailure">If true, PermissionCheckException is thrown whenever a permission check fails</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetBlogs(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Returns all blogs from specified site, optionally owned by specified user or moderated by specified user.
+            </summary>
+            <param name="siteName">Site name</param> 
+            <param name="ownerId">Blog owner (user ID)</param>
+            <param name="moderator">Blog moderator (user name)</param>
+            <param name="columns">Columns to be selected</param>
+            <param name="customWhere">Additional WHERE condition</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetBlogsWhere(System.Int32,System.String,System.String)">
+            <summary>
+            Returns combined where condition using given ownerId, moderator name and custom where condition.
+            </summary>
+            <param name="ownerId">Blog owner (user ID)</param>
+            <param name="moderator">Blog moderator (user name)</param>
+            <param name="customWhere">Additional WHERE condition</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetBlogDoubleOptInInterval(System.String)">
+            <summary>
+            Get blog double opt-in interval from settings
+            </summary>
+            <param name="siteName">Site name of related settings</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.BlogOptInEnabled(CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Indicates if opt-in is enabled for blog
+            </summary>
+            <param name="blog">Blog document to check</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogHelper.GetDocumentTags(System.Int32,System.String,System.String)">
+            <summary>
+            Gets a list of links of given tags in a specified group pointing to the page with URL specified.
+            </summary>
+            <param name="groupId">ID of the group document tags belong to</param>
+            <param name="tags">String containing all the tags related to the document</param>
+            <param name="url">URL of the page displaying other documents of the specified tag</param>
+        </member>
+        <member name="T:CMS.Blogs.BlogsLiveModelProvider">
+            <summary>
+            Provides live tile model for the blogs dashboard tile.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogsLiveModelProvider.GetModel(CMS.ApplicationDashboard.LiveTileContext)">
+            <summary>
+            Loads total number of comments waiting for the approval.
+            </summary>
+            <param name="liveTileContext">Context of the live tile. Contains information about the user and the site the model is requested for</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="liveTileContext"/> is null</exception>
+            <returns>Live tile model</returns>
+        </member>
+        <member name="M:CMS.Blogs.BlogsLiveModelProvider.GetNumberOfWaitingComments(CMS.SiteProvider.SiteInfo,CMS.Base.IUserInfo)">
+            <summary>
+            Gets number of total comments waiting for the approval.
+            </summary>
+            <param name="siteInfo">Site the comments belongs to</param>
+            <param name="userInfo">The user providing the approval</param>
+            <returns>Total number of waiting comments</returns>
+        </member>
+        <member name="T:CMS.Blogs.MyBlogsLiveModelProvider">
+            <summary>
+            Provides live tile model for the my blogs dashboard tile.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.MyBlogsLiveModelProvider.GetModel(CMS.ApplicationDashboard.LiveTileContext)">
+            <summary>
+            Loads total number of comments waiting for the approval.
+            </summary>
+            <param name="liveTileContext">Context of the live tile. Contains information about the user and the site the model is requested for</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="liveTileContext"/> is null</exception>
+            <returns>Live tile model</returns>
+        </member>
+        <member name="M:CMS.Blogs.MyBlogsLiveModelProvider.GetNumberOfWaitingComments(System.Int32,System.Int32)">
+            <summary>
+            Gets number of total comments waiting for the approval.
+            </summary>
+            <param name="siteId">Site the comments belongs to</param>
+            <param name="userId">The user providing the approval</param>
+            <returns>Total number of waiting comments</returns>
+        </member>
+        <member name="T:CMS.Blogs.BlogTransformationFunctions">
+            <summary>
+            Blog functions.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogTransformationFunctions.GetUserName(System.Object)">
+            <summary>
+            Returns user name.
+            </summary>
+            <param name="userId">User id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogTransformationFunctions.GetUserFullName(System.Object)">
+            <summary>
+            Returns user full name.
+            </summary>
+            <param name="userId">User id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogTransformationFunctions.GetBlogCommentsCount(System.Object,System.Object)">
+            <summary>
+            Returns number of comments of given blog.
+            </summary>
+            <param name="postId">Post document id</param>
+            <param name="postAliasPath">Post alias path</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogTransformationFunctions.GetBlogCommentsCount(System.Object,System.Object,System.Boolean)">
+            <summary>
+            Returns number of comments of given blog.
+            </summary>
+            <param name="postId">Post document id</param>
+            <param name="postAliasPath">Post alias path</param>
+            <param name="includingTrackbacks">Indicates if trackback comments should be included</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogTransformationFunctions.GetDocumentTags(System.Object,System.Object,System.String)">
+            <summary>
+            Gets a list of links of tags assigned for the specific document pointing to the page with URL specified
+            </summary>
+            <param name="documentGroupId">ID of the group document tags belong to</param>
+            <param name="documentTags">String containing all the tags related to the document</param>
+            <param name="documentListPage">URL of the page displaying other documents of the specified tag</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogTransformationFunctions.GetDocumentTags(System.Object,System.Object,System.Object,System.String)">
+            <summary>
+            Gets a list of links of tags assigned for the specific document pointing to the page with URL specified.
+            </summary>
+            <param name="documentGroupId">ID of the group document tags belong to</param>
+            <param name="documentTags">String containing all the tags related to the document</param>
+            <param name="nodeAliasPath">Node alias path</param>
+            <param name="documentListPage">Path or URL of the page displaying other documents of the specified tag</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogTransformationFunctions.GetDocumentTags(System.Int32,System.String,System.String,System.String,System.String)">
+            <summary>
+            Gets a list of links of tags assigned for the specific document pointing to the page with URL specified.
+            </summary>
+            <param name="groupId">ID of the group document tags belong to</param>
+            <param name="tags">String containing all the tags related to the document</param>
+            <param name="path">Node alias path</param>
+            <param name="culture">Document culture</param>
+            <param name="listPage">Path or URL of the page displaying other documents of the specified tag</param>
+        </member>
+        <member name="T:CMS.Blogs.BlogMethods">
+            <summary>
+            Blog methods - wrapping methods for macro resolver.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogMethods.GetUserName(CMS.MacroEngine.EvaluationContext,System.Object[])">
+            <summary>
+            Returns user name.
+            </summary>
+            <param name="context">Evaluation context with child resolver</param>
+            <param name="parameters">Method parameters</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogMethods.GetUserFullName(CMS.MacroEngine.EvaluationContext,System.Object[])">
+            <summary>
+            Returns user full name.
+            </summary>
+            <param name="context">Evaluation context with child resolver</param>
+            <param name="parameters">Method parameters</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogMethods.GetBlogCommentsCount(CMS.MacroEngine.EvaluationContext,System.Object[])">
+            <summary>
+            Returns number of comments of given blog.
+            </summary>
+            <param name="context">Evaluation context with child resolver</param>
+            <param name="parameters">Method parameters</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogMethods.GetDocumentTags(CMS.MacroEngine.EvaluationContext,System.Object[])">
+            <summary>
+            Gets a list of links of tags assigned for the specific document pointing to the page with URL specified.
+            </summary>
+            <param name="context">Evaluation context with child resolver</param>
+            <param name="parameters">Method parameters</param>
+        </member>
+        <member name="T:CMS.Blogs.BlogResolvers">
+            <summary>
+            Resolvers used in e-mail templates and other macro visual components.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogResolvers.BlogResolver">
+            <summary>
+            Blog e-mail template macro resolver.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogResolvers.BlogSubscriptionResolver">
+            <summary>
+            Blog e-mail template macro resolver.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogsModuleMetadata">
+            <summary>
+            Represents the Blogs module metadata.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogsModuleMetadata.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogHandlers">
+            <summary>
+            Provides handlers for blogs
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogHandlers.Init">
+            <summary>
+            Initializes the blog handlers
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogHandlers.GetContent_Execute(System.Object,CMS.DocumentEngine.DocumentSearchEventArgs)">
+            <summary>
+            Includes blog content to the document search content
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogExport">
+            <summary>
+            Handles special actions during the Blog export process.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogExport.Init">
+            <summary>
+            Initializes export handlers
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogExport.RegisterTranslationRecords(System.Data.DataSet,CMS.DataEngine.TranslationHelper,System.String[])">
+            <summary>
+            Ensure translation records registration.
+            </summary>
+            <param name="data">Source dataset</param>
+            <param name="th">Translation helper</param>
+            <param name="excludedNames">Excluded object names</param>
+        </member>
+        <member name="T:CMS.Blogs.BlogImport">
+            <summary>
+            Handles special actions during the Blog import process.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogImport.Init">
+            <summary>
+            Initializes import handlers
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.ImportSpecialActions">
+            <summary>
+            Handles special actions during the import process.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ImportSpecialActions.Init">
+            <summary>
+            Initializes export handlers
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogPostSubscriptionInfo">
+            <summary>
+            BlogPostSubscriptionInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogPostSubscriptionInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogPostSubscriptionInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty BlogPostSubscriptionInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new BlogPostSubscriptionInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfo.CheckPermissionsInternal(CMS.DataEngine.PermissionsEnum,System.String,CMS.Base.IUserInfo,System.Boolean)">
+            <summary>
+            Checks the permissions of the object.
+            </summary>
+            <param name="permission">Permission type</param>
+            <param name="siteName">Name of the site</param>
+            <param name="userInfo">UserInfo object</param>
+            <param name="exceptionOnFailure">If true, PermissionCheckException is thrown whenever a permission check fails</param>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionPostDocumentID">
+            <summary>
+            Subscription post document ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionEmail">
+            <summary>
+            Subscription e-mail.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionID">
+            <summary>
+            Subscription ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionGUID">
+            <summary>
+            Subscription GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionLastModified">
+            <summary>
+            Subscription last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionUserID">
+            <summary>
+            Subsription user ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionApproved">
+            <summary>
+            Indicates if subscription approved.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogPostSubscriptionInfo.SubscriptionApprovalHash">
+            <summary>
+            Subscription approval hash code.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogPostSubscriptionInfoProvider">
+            <summary>
+            Class providing BlogPostSubscriptionInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptionInfo(System.Int32)">
+            <summary>
+            Returns the BlogPostSubscriptionInfo structure for the specified blogPostSubscriptionId.
+            </summary>
+            <param name="blogPostSubscriptionId">Blog post subscription ID</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptionInfo(System.Guid)">
+            <summary>
+            Returns the BlogPostSubscriptionInfo structure for the subscriber specified by its GUID.
+            </summary>
+            <param name="guid">Subscriber GUID</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptions">
+            <summary>
+            Gets the query for all blog post subscriptions.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptionInfo(System.String,System.Int32)">
+            <summary>
+            Returns blog post subscription info for specified email and blog post.
+            </summary>
+            <param name="email">Subscriber e-mail</param>
+            <param name="documentId">Blog post document ID</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptionInfo(System.String)">
+            <summary>
+            Returns blog post subscription info for specified subscription hash.
+            </summary>
+            <param name="subscriptionHash">Subscription hash</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptions(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns all blog post subscriptions for specified user which were created on specified site. Blog post document name is attached for each subscription.
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="siteId">Site ID</param>
+            <param name="topN">TOP N query parameter</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptions(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            Returns all blog post subscriptions for specified user which were created on specified site. Blog post document name is attached for each subscription.
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="siteId">Site ID</param>
+            <param name="where">WHERE condition</param>
+            <param name="topN">TOP N query parameter</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptions(System.Int32,System.Int32,System.String,System.Int32,System.String,System.String,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns all blog post subscriptions for specified user which were created on specified site. Blog post document name is attached for each subscription.
+            </summary>
+            <param name="userId">User ID</param>
+            <param name="siteId">Site ID</param>
+            <param name="where">WHERE condition</param>
+            <param name="topN">TOP N query parameter</param>
+            <param name="columns">Columns expression</param>
+            <param name="order">Order by</param>
+            <param name="offset">Index of first record to get</param>
+            <param name="maxRecords">Maximum number of records to get. If maxRecords is zero or less, all records are returned (no paging is used)</param>
+            <param name="totalRecords">Returns total records</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptions(System.String,System.String,System.String)">
+            <summary>
+            Returns all subscriptions info with specified parameters.
+            </summary>
+            <param name="where">WHERE condition</param>
+            <param name="orderby">ORDER BY</param>
+            <param name="columns">Selected columns</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.SetBlogPostSubscriptionInfo(CMS.Blogs.BlogPostSubscriptionInfo)">
+            <summary>
+            Sets (updates or inserts) specified blogPostSubscription.
+            </summary>
+            <param name="blogPostSubscription">BlogPostSubscription to set</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.DeleteBlogPostSubscriptionInfo(CMS.Blogs.BlogPostSubscriptionInfo)">
+            <summary>
+            Deletes specified blog post subscription.
+            </summary>
+            <param name="infoObj">BlogPostSubscription object</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.DeleteBlogPostSubscriptionInfo(System.Int32)">
+            <summary>
+            Deletes specified blogPostSubscription.
+            </summary>
+            <param name="blogPostSubscriptionId">BlogPostSubscription id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.SendConfirmationEmail(CMS.Blogs.BlogPostSubscriptionInfo,System.Boolean)">
+            <summary>
+            Sends subscription or unsubscription confirmation mail.
+            </summary>
+            <param name="blogSubscription">Blog post subscription info</param>
+            <param name="isSubscription">If true subscription email is sent else unsubscription email is sent</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.SendDoubleOptInEmail(CMS.Blogs.BlogPostSubscriptionInfo)">
+            <summary>
+            Sends double opt-in mail.
+            </summary>
+            <param name="blogSubscription">Blog post subscription info</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.Subscribe(CMS.Blogs.BlogPostSubscriptionInfo,System.DateTime,System.Boolean,System.Boolean)">
+            <summary>
+            Subscribe method intend to subscribe user to blog post and send confirmation/opt-in email 
+            </summary>
+            <param name="bpsi">Subscription to be saved</param>
+            <param name="when">Time of subscription</param>
+            <param name="sendConfirmationEmail">Indicates if confirmation email should be send</param>
+            <param name="sendOptInEmail">Indicates if opt-in email should be send</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.ValidateHash(CMS.Blogs.BlogPostSubscriptionInfo,System.String,System.String,System.DateTime)">
+            <summary>
+            Validates request hash and checks if request was approved in needed interval.  
+            </summary>
+            <param name="bpsi">Blog post subscription info.</param>
+            <param name="requestHash">Hash parameter representing specific subscription</param>
+            <param name="datetime">Date and time of request.</param>
+            <param name="siteName">Site name.</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetUnsubscriptionUrl(CMS.Blogs.BlogPostSubscriptionInfo,CMS.DocumentEngine.TreeNode,CMS.DocumentEngine.TreeNode,System.String)">
+            <summary>
+            Returns unsubscription URL which is used to cancel existing subscription
+            </summary>
+            <param name="subscription">Blog post subscription object</param>
+            <param name="blog">Blog document</param>
+            <param name="blogPost">Blog post to which user was subscribed</param>
+            <param name="unsubscriptionUrl">Custom unsubscription page URL</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetActivationUrl(CMS.Blogs.BlogPostSubscriptionInfo,CMS.DocumentEngine.TreeNode,CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Returns approval page URL to confirm blog post subscription.
+            </summary>
+            <param name="subscription">Forum subscription object</param>
+            <param name="blog">Blog document</param>
+            <param name="blogPost">Blog post to which user was subscribed</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.ApproveSubscription(CMS.Blogs.BlogPostSubscriptionInfo,System.String,System.Boolean,System.String,System.DateTime)">
+            <summary>
+            Approves existing subscription - sets SubscriptionApproved to true. 
+            Checks if subscription wasn't already approved. Confirmation e-mail may be sent optionally.
+            </summary>
+            <param name="bpsi">Blog post subscription</param>
+            <param name="subscriptionHash">Hash parameter representing specific subscription</param>
+            <param name="sendConfirmationEmail">Indicates if confirmation e-mail should be sent. Confirmation e-mail may also be sent if blog settings requires so</param>
+            <param name="datetime">Date and time of request.</param>
+            <param name="siteName">Site name.</param>
+            <returns>Returns TRUE if subscription found and not already approved. Returns FALSE if subscription not found or already approved.</returns>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.Unsubscribe(System.String,System.Boolean,System.String,System.DateTime)">
+            <summary>
+            Unsubscribes user from blog post.
+            </summary>
+            <param name="subscriptionHash">Subscription hash.</param>
+            <param name="sendConfirmationEmail">Indicates whether send confirmation e-mail</param>
+            <param name="datetime">Date and time of request</param>
+            <param name="siteName">Site name.</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.LogSubscriptionActivity(CMS.Blogs.BlogPostSubscriptionInfo,System.String,System.Boolean)">
+            <summary>
+            Logs activity using context values.
+            </summary>
+            <param name="bpsi">Blog subscription info</param>
+            <param name="activityType">Activity type to log</param>
+            <param name="checkViewMode">Indicates if view mode should be checked</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.LogSubscriptionActivity(CMS.Blogs.BlogPostSubscriptionInfo,System.Int32,System.Int32,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Logs activity.
+            </summary>
+            <param name="bpsi">Blog subscription info</param>
+            <param name="activityType">Activity type to log</param>
+            <param name="contactId">Contact ID</param>
+            <param name="campaign">Campaign</param>
+            <param name="siteId">Site ID</param>
+            <param name="url">Current URL</param>
+            <param name="checkViewMode">Indicates if view mode should be checked</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptionInfoInternal(System.Int32)">
+            <summary>
+            Returns the BlogPostSubscriptionInfo structure for the specified blogPostSubscription.
+            </summary>
+            <param name="blogPostSubscriptionId">BlogPostSubscription id</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptionInfoInternal(System.Guid)">
+            <summary>
+            Returns the BlogPostSubscriptionInfo structure for the subscriber specified by its GUID.
+            </summary>
+            <param name="guid">Subscriber GUID</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetBlogPostSubscriptionsInternal">
+            <summary>
+            Gets the query for all blog post subscriptions.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.DeleteBlogPostSubscriptionInfoInternal(CMS.Blogs.BlogPostSubscriptionInfo)">
+            <summary>
+            Deletes specified blogPostSubscription.
+            </summary>
+            <param name="infoObj">BlogPostSubscription object</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.SetBlogPostSubscriptionInfoInternal(CMS.Blogs.BlogPostSubscriptionInfo)">
+            <summary>
+            Sets (updates or inserts) specified blogPostSubscription.
+            </summary>
+            <param name="blogPostSubscription">BlogPostSubscription to set</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.SendConfirmationEmailInternal(CMS.Blogs.BlogPostSubscriptionInfo,System.Boolean,System.Boolean)">
+            <summary>
+            Sends subscription or unsubscription confirmation mail.
+            </summary>
+            <param name="blogSubscription">Blog post subscription info</param>
+            <param name="isSubscription">If true subscription email is sent else unsubscription email is sent</param>
+            <param name="isOptIn">Indicates if opt-in email should be sent</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.SubscribeInternal(CMS.Blogs.BlogPostSubscriptionInfo,System.DateTime,System.Boolean,System.Boolean)">
+            <summary>
+            Subscribe method intend to subscribe user to blog post and send confirmation/opt-in email 
+            </summary>
+            <param name="bpsi">Subscription to be saved</param>
+            <param name="when">Time of subscription</param>
+            <param name="sendConfirmationEmail">Indicates if confirmation email should be send</param>
+            <param name="sendOptInEmail">Indicates if opt-in email should be send</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.ValidateHashInternal(CMS.Blogs.BlogPostSubscriptionInfo,System.String,System.String,System.DateTime)">
+            <summary>
+            Validates request hash and checks if request was approved in needed interval.  
+            </summary>
+            <param name="bpsi">Blog post subscription info.</param>
+            <param name="requestHash">Hash parameter representing specific subscription</param>
+            <param name="datetime">Date and time of request.</param>
+            <param name="siteName">Site name.</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetUnsubscriptionUrlInternal(CMS.Blogs.BlogPostSubscriptionInfo,CMS.DocumentEngine.TreeNode,CMS.DocumentEngine.TreeNode,System.String)">
+            <summary>
+            Returns unsubscription URL which is used to cancel existing subscription
+            </summary>
+            <param name="subscription">Blog post subscription object</param>
+            <param name="blog">Blog document</param>
+            <param name="blogPost">Blog post to which user was subscribed</param>
+            <param name="unsubscriptionUrl">Custom unsubscription page URL</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.GetActivationUrlInternal(CMS.Blogs.BlogPostSubscriptionInfo,CMS.DocumentEngine.TreeNode,CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Returns approval page URL to confirm blog post subscription.
+            </summary>
+            <param name="subscription">Forum subscription object</param>
+            <param name="blog">Blog document</param>
+            <param name="blogPost">Blog post to which user was subscribed</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.ApproveSubscriptionInternal(CMS.Blogs.BlogPostSubscriptionInfo,System.String,System.Boolean,System.String,System.DateTime)">
+            <summary>
+            Approves existing subscription - sets SubscriptionApproved to true. 
+            Checks if subscription wasn't already approved. Confirmation e-mail may be sent optionally.
+            </summary>
+            <param name="bpsi">Blog post subscription</param>
+            <param name="subscriptionHash">Hash parameter representing specific subscription</param>
+            <param name="sendConfirmationEmail">Indicates if confirmation e-mail should be sent. Confirmation e-mail may also be sent if blog settings requires so</param>
+            <param name="datetime">Date and time of request.</param>
+            <param name="siteName">Site name.</param>
+            <returns>Returns TRUE if subscription found and not already approved. Returns FALSE if subscription not found or already approved.</returns>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.UnsubscribeInternal(System.String,System.Boolean,System.String,System.DateTime)">
+            <summary>
+            Unsubscribes user from blog post.
+            </summary>
+            <param name="subscriptionHash">Subscription hash.</param>
+            <param name="sendConfirmationEmail">Indicates whether send confirmation e-mail</param>
+            <param name="datetime">Date and time of request</param>
+            <param name="siteName">Site name.</param>
+        </member>
+        <member name="M:CMS.Blogs.BlogPostSubscriptionInfoProvider.LogSubscriptionActivityInternal(CMS.Blogs.BlogPostSubscriptionInfo,System.Int32,System.Int32,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Logs activity.
+            </summary>
+            <param name="bpsi">Blog subscription info</param>
+            <param name="activityType">Activity type to log</param>
+            <param name="contactId">Contact ID</param>
+            <param name="campaign">Campaign</param>
+            <param name="siteId">Site ID</param>
+            <param name="url">Current URL</param>
+            <param name="checkViewMode">Indicates if view mode should be checked</param>
+        </member>
+        <member name="T:CMS.Blogs.BlogProperties">
+            <summary>
+            Class providing blog properties.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogProperties.OPEN_COMMENTS_ALWAYS">
+            <summary>
+            Indicates that comments are always opened after the blog post is published.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogProperties.OPEN_COMMENTS_DISABLE">
+            <summary>
+            Indicates that comments are closed after the blog post is published.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogProperties.#ctor">
+            <summary>
+            Empty constructor.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.OpenCommentsFor">
+            <summary>
+            Indicates how long are comments opened.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.ModerateComments">
+            <summary>
+            Indicates whether comments are moderated before publishing.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.ShowEditButton">
+            <summary>
+            Indicates whether 'Edit' button should be displayed in comment view while editing comments on the live site.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.ShowDeleteButton">
+            <summary>
+            Indicates whether 'Delete' button should be displayed in comment view while editing comments on the live site.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.SendCommentsToEmail">
+            <summary>
+            E-mail address the comments are sent to.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.AllowAnonymousComments">
+            <summary>
+            Indicates whether anonymous comments are allowed.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.UseCaptcha">
+            <summary>
+            Indicates whether security code should be entered when inserting new comment.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.CheckPermissions">
+            <summary>
+            Indicates whether permissions should be checked.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.StopProcessing">
+            <summary>
+            Indicates whether processing should be stopped.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.EnableUserPictures">
+            <summary>
+            Indicates whether user pictures should be displayed in comment detail.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.UserPictureMaxWidth">
+            <summary>
+            User picture max width.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.UserPictureMaxHeight">
+            <summary>
+            User picture max height.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.EnableSubscriptions">
+            <summary>
+            Indicates whether subscription is allowed.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.RequireEmails">
+            <summary>
+            Indicates whether e-mail is required.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.BlogProperties.EnableTrackbacks">
+            <summary>
+            Indicates if trackbacks are enabled.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogsModule">
+            <summary>
+            Represents the Blogs module.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogsModule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogsModule.OnInit">
+            <summary>
+            Initializes the module.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogsModule.InitMacros">
+            <summary>
+            Initializes blog macros
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogsModule.InitImportExport">
+            <summary>
+            Initializes blog import/export actions
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.BlogInfo">
+            <summary>
+            DocumentInfo class.
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Blogs.BlogInfo.TYPEINFO">
+            <summary>
+            Type information (Not complete - some information is missing).
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty BlogInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogInfo.GetDataQueryInternal">
+            <summary>
+            Gets the data query for this object type
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogInfo.GetInstance">
+            <summary>
+            Creates instance of object.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.BlogInfo.CheckPermissionsInternal(CMS.DataEngine.PermissionsEnum,System.String,CMS.Base.IUserInfo,System.Boolean)">
+            <summary>
+            Checks the permissions of the object.
+            </summary>
+            <param name="permission">Permission type</param>
+            <param name="siteName">Name of the site</param>
+            <param name="userInfo">UserInfo object</param>
+            <param name="exceptionOnFailure">If true, PermissionCheckException is thrown whenever a permission check fails</param>
+        </member>
+        <member name="T:CMS.Blogs.ThreadEmailSender">
+            <summary>
+            Handles sending message blog e-mails in separated thread.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.#ctor(CMS.Blogs.BlogCommentInfo)">
+            <summary>
+            Constructor - creates and initialize email sender.
+            </summary>
+            <param name="blogComment">Blog comment information</param>        
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.InitSender(CMS.Blogs.BlogCommentInfo)">
+            <summary>
+            Init sender private data and resolver.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.CreateMacroResolver(CMS.Membership.UserInfo,CMS.DocumentEngine.TreeNode,CMS.DocumentEngine.TreeNode)">
+            <summary>
+            Creates and initializes macro resolver.
+            </summary>
+            <param name="user">User info object</param>
+            <param name="blog">Blog node info object</param>
+            <param name="blogPost">Blog post info object</param>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.GetEmailMessage(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Returns initialized e-mail message without recepients and with unresolved macros.
+            </summary>
+            <param name="toSubscribers">Indicates if notification email should be sent to blog post subscribers</param>
+            <param name="toModerators">Indicates if notification email should be sent to blog moderators</param>
+            <param name="toOwner">Indicates if notification email should be sent to blog owner</param>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.SendNotificationToSubscribers">
+            <summary>
+            Sends e-mail notification to all blog post subscribers.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.SendNotificationToOwner">
+            <summary>
+            Sends e-mail notification to blog owner.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.SendNotificationToModerators">
+            <summary>
+            Sends e-mail notification to blog moderators.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.SendToOwner">
+            <summary>
+            Sends e-mail to blog owner.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.SendToModerators">
+            <summary>
+            Sends e-mails to blog moderators.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.SendToSubscribers">
+            <summary>
+            Sends e-mails to blog post subsribers.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.ResolveEmailMacros(CMS.EmailEngine.EmailMessage)">
+            <summary>
+            Resolves e-mail subject, body and plain text body.
+            </summary>
+            <param name="email">Email to be resolved</param>
+        </member>
+        <member name="M:CMS.Blogs.ThreadEmailSender.SendNewCommentNotification(System.Security.Principal.WindowsIdentity,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Sends a notification e-mail to blog post subscribers, to blog moderators and to blog owner.
+            </summary>        
+            <param name="wi">Windows identity</param>
+            <param name="toSubscribers">Indicates if notification email should be sent to blog post subscribers</param>
+            <param name="toModerators">Indicates if notification email should be sent to blog moderators</param>
+            <param name="toBlogOwner">Indicates if notification email should be sent to blog owner</param>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.CommentObj">
+            <summary>
+            Blog comment information.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.Moderators">
+            <summary>
+            List of users' names. These users represents blog moderators.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.BlogOwnerEmail">
+            <summary>
+            Blog owner e-mail address where the new comment notification should be sent.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.Subscribers">
+            <summary>
+            Holds the information on subscribers e-mail is being sent to.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.EmailToModerators">
+            <summary>
+            E-mail message to blog moderators and blog owner.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.EmailToSubscribers">
+            <summary>
+            E-mail message to blog subscribers.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.EmailToOwner">
+            <summary>
+            E-mail message to blog owner.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.Resolver">
+            <summary>
+            Resolver to use.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.SubscribersResolver">
+            <summary>
+            Resolver to use for subscribers notifications.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.SiteName">
+            <summary>
+            Name of the site the blog post is placed on.
+            </summary>
+        </member>
+        <member name="P:CMS.Blogs.ThreadEmailSender.UnsubscriptionURL">
+            <summary>
+            Resolved unsubscription URL.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.ThreadTrackbackPinger">
+            <summary>
+            Object for asynchronous trackback pinging.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadTrackbackPinger.SendAsync(System.Security.Principal.WindowsIdentity)">
+            <summary>
+            Runs the sender in an asynchronous thread.
+            </summary>
+            <param name="wi">Windows identity</param>
+        </member>
+        <member name="M:CMS.Blogs.ThreadTrackbackPinger.Run">
+            <summary>
+            Assings impersonisation and runs thread.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadTrackbackPinger.ProcessTrackbacks(CMS.DocumentEngine.TreeNode,System.String)">
+            <summary>
+            Processes URLs from blog post.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadTrackbackPinger.SendPing(System.String,CMS.DocumentEngine.TreeNode,System.String)">
+            <summary>
+            Sends pings to specified URLs.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadTrackbackPinger.CreateRequestParameters(CMS.DocumentEngine.TreeNode,System.String)">
+            <summary>
+            Creates HTTP POST parameters.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadTrackbackPinger.ProcessResponse(CMS.DocumentEngine.TreeNode,System.String,System.String)">
+            <summary>
+            Process HTTP POST response.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.ThreadTrackbackPinger.ModifyBlogPost(CMS.DocumentEngine.TreeNode,System.Boolean,System.String,System.String)">
+            <summary>
+            Modifies blog post value according to the response.
+            </summary>
+            <param name="blogPost">Blog post tree node</param>
+            <param name="error">Indicates if there was any error during ping</param>
+            <param name="message">Contains error message</param>
+            <param name="targetUrl">Target URL</param>
+        </member>
+        <member name="P:CMS.Blogs.ThreadTrackbackPinger.BlogPostID">
+            <summary>
+            Blog post ID.
+            </summary>
+        </member>
+        <member name="T:CMS.Blogs.TrackbackSender">
+            <summary>
+            Provides an ITask interface to ping trackback URLs.
+            </summary>
+        </member>
+        <member name="M:CMS.Blogs.TrackbackSender.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Method which executes task.
+            </summary>
+        </member>
+    </members>
+</doc>

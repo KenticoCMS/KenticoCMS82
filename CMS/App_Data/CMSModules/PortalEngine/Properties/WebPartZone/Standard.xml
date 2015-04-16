@@ -1,0 +1,78 @@
+<form>
+  <field column="ZoneTitle" fieldcaption="Zone title" visible="true" columntype="text" fieldtype="textbox" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.webpartproperties.zonetitle$}" publicfield="false" spellcheck="true" guid="d5637c54-f986-4620-8edb-20ff2e5aa956" />
+  <field column="DisableViewState" fieldcaption="Disable view state" visible="true" defaultvalue="false" columntype="boolean" fieldtype="checkbox" allowempty="false" isPK="false" system="false" publicfield="false" spellcheck="true" guid="ee85cfe4-7726-4b4d-80e2-e7bf2990d9d5" />
+  <field column="WidgetZoneType" fieldcaption="Widget zone type" visible="true" columntype="text" fieldtype="usercontrol" allowempty="false" isPK="false" system="false" columnsize="100" fielddescription="{$documentation.webpartproperties.zonetype$}" publicfield="false" spellcheck="true" guid="5a450079-5e36-4b14-92d9-40cf2cbefc05" visibility="none" defaultvalue="None">
+    <settings>
+      <controlname>zonetypeselector</controlname>
+    </settings>
+  </field>
+  <category name="Visibility" />
+  <field column="Visible" fieldcaption="Visible" visible="true" defaultvalue="true" columntype="boolean" fieldtype="checkbox" allowempty="false" isPK="false" system="false" fielddescription="{$documentation.zoneproperties.visible$}" publicfield="false" spellcheck="true" guid="8f351ce3-374f-4026-b935-2389d694a10c" />
+  <field column="HideOnSubPages" fieldcaption="Hide on subpages" visible="true" columntype="boolean" fieldtype="checkbox" allowempty="false" isPK="false" system="false" fielddescription="{$documentation.zoneproperties.hideonsub$}" publicfield="false" spellcheck="true" guid="f0ac3f83-83c6-4b8e-80ae-d023acdd93fb" />
+  <field column="ShowForDocumentTypes" fieldcaption="{$content.showforpagetypes$}" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" columnsize="400" fielddescription="{$documentation.zoneproperties.showfordocumenttypes$}" publicfield="false" spellcheck="true" guid="b3b46d10-668e-4d4b-8805-af670b474a31">
+    <settings>
+      <controlname>selectclassnames</controlname>
+    </settings>
+  </field>
+  <field column="DisplayToRoles" fieldcaption="Display to roles" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.zoneproperties.displaytoroles$}" publicfield="false" spellcheck="true" guid="190c38c7-914b-4044-bc78-6948b50ae31a">
+    <settings>
+      <controlname>rolecheckboxselector</controlname>
+    </settings>
+  </field>
+  <category name="Zone container" />
+  <field column="Container" fieldcaption="Container" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.zoneproperties.container$}" publicfield="false" spellcheck="true" guid="5b74cfb7-4e8b-4570-a4cb-c6fa20f2171e">
+    <settings>
+      <controlname>selectcontainer</controlname>
+    </settings>
+  </field>
+  <field column="ContainerTitle" fieldcaption="Container title" visible="true" columntype="text" fieldtype="textbox" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.zoneproperties.containertitle$}" publicfield="false" spellcheck="true" guid="8249d912-0dd7-49db-9fab-8ccc42548f94" />
+  <field column="ContainerCSSClass" fieldcaption="Container CSS class" visible="true" columntype="text" fieldtype="textbox" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.zoneproperties.containercssclass$}" publicfield="false" spellcheck="true" guid="8249d912-0dd7-49db-1cab-2aaa42548f94" />
+  <field column="ContainerCustomContent" fieldcaption="Container custom content" visible="true" columntype="longtext" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" fielddescription="{$documentation.zoneproperties.containercustomcontent$}" publicfield="false" spellcheck="true" guid="80e99300-3501-4942-a554-ca545fda3e5a">
+    <settings>
+      <controlname>largetextarea</controlname>
+    </settings>
+  </field>
+  <field column="ContainerHideOnSubPages" fieldcaption="Hide container on subpages" visible="true" columntype="boolean" fieldtype="checkbox" allowempty="false" isPK="false" system="false" fielddescription="{$documentation.zoneproperties.containerhideonsub$}" publicfield="false" spellcheck="true" guid="f11c3f83-83c6-4b8e-80ae-d073acdd93fb" />
+  <category name="HTML Envelope" />
+  <field column="ContentBefore" fieldcaption="Content before" visible="true" columntype="longtext" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" fielddescription="{$documentation.zoneproperties.contentbefore$}" publicfield="false" spellcheck="true" guid="80e99300-3501-4942-a554-ca545fda2c8c">
+    <settings>
+      <controlname>largetextarea</controlname>
+    </settings>
+  </field>
+  <field column="ContentAfter" fieldcaption="Content after" visible="true" columntype="longtext" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" fielddescription="{$documentation.zoneproperties.contentafter$}" publicfield="false" spellcheck="true" guid="5f2d51db-7b8a-4c1b-94ed-5bf58c5ab6e9">
+    <settings>
+      <controlname>largetextarea</controlname>
+    </settings>
+  </field>
+  <category name="Design" />
+  <field column="Align" fieldcaption="Align content" visible="true" columntype="text" fieldtype="CustomUserControl" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.webpartproperties.align$}" publicfield="false" spellcheck="true" guid="68bd393f-eb4c-4204-a4a5-8df03b8200ea" visibility="none" ismacro="false" hasdependingfields="false" dependsonanotherfield="false">
+    <settings>
+      <controlname>dropdownlistcontrol</controlname>
+      <Options>
+        ;(default)
+        left;Left
+        center;Center
+        right;Right
+      </Options>
+    </settings>
+  </field>
+  <field column="Padding" fieldcaption="Padding" visible="true" columntype="text" fieldtype="textbox" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.webpartproperties.padding$}" publicfield="false" spellcheck="true" guid="ae2f6f33-e01e-4627-81ad-146fb7d1ef6f" />
+  <field column="Margin" fieldcaption="Margin" visible="true" columntype="text" fieldtype="textbox" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.webpartproperties.margin$}" publicfield="false" spellcheck="true" guid="fe63e556-e256-45ab-a0ea-d88c01bcc147" />
+  <category name="AJAX" />
+  <field column="UseUpdatePanel" fieldcaption="Use update panel" visible="true" defaultvalue="false" columntype="boolean" fieldtype="checkbox" allowempty="false" isPK="false" system="false" publicfield="false" spellcheck="true" guid="dd7d576d-5abe-464b-9f25-e74c0ce62786" />
+  <category name="Time zones" />
+  <field column="TimeZoneType" fieldcaption="Time zone" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" columnsize="100" publicfield="false" spellcheck="true" guid="7bc3e789-4365-428f-bf85-9163d53d2941">
+    <settings>
+      <Sort>False</Sort>
+      <controlname>timezonetypeselector</controlname>
+      <ResourcePrefix>timez.type</ResourcePrefix>
+      <TypeName>CMS.Globalization.TimeZoneTypeEnum</TypeName>
+      <AssemblyName>CMS.Globalization</AssemblyName>
+    </settings>
+  </field>
+  <field column="CustomTimeZone" fieldcaption="Custom time zone" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" columnsize="100" publicfield="false" spellcheck="true" guid="0bf63e3a-c748-609f-8972-b5a1ef04e761">
+    <settings>
+      <controlname>timezoneselector</controlname>
+    </settings>
+  </field>
+</form>

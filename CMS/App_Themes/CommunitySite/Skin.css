@@ -1,0 +1,14 @@
+﻿@import url("../Global/Skin.css");
+
+/*# Tabs #*/
+
+.TabContainer .nav-tabs, .TabContainer .nav-tabs-container-horizontal {
+    padding: 0;
+}
+
+/*# Forms #*/
+.form-filter {
+    clear: both;
+    padding: 15px 0;
+}
+

@@ -1,0 +1,194 @@
+<form>
+  <category name="Web part container">
+    <properties>
+      <visible>true</visible>
+    </properties>
+  </category>
+  <field guid="5b74cfb7-4e8b-4570-a4cb-c6fa20f2171e" publicfield="false" columnsize="200" allowempty="true" fieldtype="CustomUserControl" columntype="text" column="Container">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.container$}</fielddescription>
+      <fieldcaption>Web part container</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>selectcontainer</controlname>
+    </settings>
+  </field>
+  <field guid="8249d912-0dd7-49db-9fab-8ccc42548f94" publicfield="false" columnsize="200" allowempty="true" fieldtype="CustomUserControl" columntype="text" column="ContainerTitle">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.containertitle$}</fielddescription>
+      <fieldcaption>Container title</fieldcaption>
+    </properties>
+    <settings>
+      <AutoCompleteEnableCaching>False</AutoCompleteEnableCaching>
+      <AutoCompleteShowOnlyCurrentWordInCompletionListItem>False</AutoCompleteShowOnlyCurrentWordInCompletionListItem>
+      <Trim>False</Trim>
+      <AutoCompleteFirstRowSelected>False</AutoCompleteFirstRowSelected>
+      <controlname>textboxcontrol</controlname>
+      <FilterMode>False</FilterMode>
+    </settings>
+  </field>
+  <field guid="8249d912-0dd7-49db-1cab-2aaa42548f94" publicfield="false" columnsize="200" allowempty="true" fieldtype="CustomUserControl" columntype="text" column="ContainerCSSClass">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.containercssclass$}</fielddescription>
+      <fieldcaption>Container CSS class</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>textboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="80e99300-3501-4942-a554-ca545fda3e5a" publicfield="false" allowempty="true" fieldtype="CustomUserControl" columntype="longtext" column="ContainerCustomContent">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.containercustomcontent$}</fielddescription>
+      <fieldcaption>Container custom content</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>largetextarea</controlname>
+    </settings>
+  </field>
+  <category name="HTML Envelope">
+    <properties>
+      <visible>true</visible>
+    </properties>
+  </category>
+  <field guid="80e99300-3501-4942-a554-ca545fda2c8c" publicfield="false" allowempty="true" fieldtype="CustomUserControl" columntype="longtext" column="ContentBefore">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.contentbefore$}</fielddescription>
+      <fieldcaption>Content before</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>largetextarea</controlname>
+    </settings>
+  </field>
+  <field guid="5f2d51db-7b8a-4c1b-94ed-5bf58c5ab6e9" publicfield="false" allowempty="true" fieldtype="CustomUserControl" columntype="longtext" column="ContentAfter">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.contentafter$}</fielddescription>
+      <fieldcaption>Content after</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>largetextarea</controlname>
+    </settings>
+  </field>
+  <category name="AJAX">
+    <properties>
+      <visible>true</visible>
+    </properties>
+  </category>
+  <field guid="dd7d576d-5abe-464b-9f25-e74c0ce62886" publicfield="false" fieldtype="CustomUserControl" columntype="boolean" column="UseUpdatePanel">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.useupdatepanel$}</fielddescription>
+      <defaultvalue>false</defaultvalue>
+      <fieldcaption>Use update panel</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <category name="Time zones">
+    <properties>
+      <visible>true</visible>
+    </properties>
+  </category>
+  <field guid="7bc3e789-4365-428f-bf85-9263d53d2941" publicfield="false" columnsize="100" allowempty="true" fieldtype="CustomUserControl" columntype="text" column="TimeZoneType">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.timezonetype$}</fielddescription>
+      <fieldcaption>Time zone</fieldcaption>
+    </properties>
+    <settings>
+      <TypeName>CMS.Globalization.TimeZoneTypeEnum</TypeName>
+      <controlname>timezonetypeselector</controlname>
+      <Sort>False</Sort>
+      <ResourcePrefix>timez.type</ResourcePrefix>
+      <AssemblyName>CMS.Globalization</AssemblyName>
+    </settings>
+  </field>
+  <field guid="0bf63e3a-c748-409f-8972-b5a1ef04e761" publicfield="false" columnsize="100" allowempty="true" fieldtype="CustomUserControl" columntype="text" column="CustomTimeZone">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.customtimezone$}</fielddescription>
+      <fieldcaption>Custom time zone</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>timezoneselector</controlname>
+    </settings>
+  </field>
+  <category name="Output_filter" caption="Output filter" collapsible="true" collapsedbydefault="true" visible="True" />
+  <field guid="75e5a978-7d07-4531-9643-a9f3c76ab913" allowempty="true" fieldtype="CustomUserControl" columntype="boolean" column="EnableOutputFilter">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.enableoutputfilter$}</fielddescription>
+      <defaultvalue>false</defaultvalue>
+      <fieldcaption>Filter output HTML of web part</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="2b929211-ed21-4c3d-857d-554c5d64fd62" allowempty="true" fieldtype="CustomUserControl" columntype="boolean" column="OutputResolveURLs">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.outputresolveurls$}</fielddescription>
+      <defaultvalue>true</defaultvalue>
+      <fieldcaption>Resolve URLs</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="ce3f3885-5230-459d-8325-bdc0a74fc135" allowempty="true" fieldtype="CustomUserControl" columntype="boolean" column="OutputFixAttributes">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.outputfixattributes$}</fielddescription>
+      <defaultvalue>true</defaultvalue>
+      <fieldcaption>Fix attributes</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="0804dbf0-be02-44ab-b5e7-20bc1c18639f" allowempty="true" fieldtype="CustomUserControl" columntype="boolean" column="OutputFixJavascript">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.outputfixjavascript$}</fielddescription>
+      <defaultvalue>true</defaultvalue>
+      <fieldcaption>Fix Javascript</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="878def1d-d8e1-44a7-a192-d577e37e3280" allowempty="true" fieldtype="CustomUserControl" columntype="boolean" column="OutputFixLowerCase">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.outputfixlowercase$}</fielddescription>
+      <defaultvalue>true</defaultvalue>
+      <fieldcaption>Fix lower case</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="49614d77-9285-4ec0-9274-b70c7033ce28" allowempty="true" fieldtype="CustomUserControl" columntype="boolean" column="OutputFixSelfClose">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.outputfixselfclose$}</fielddescription>
+      <defaultvalue>true</defaultvalue>
+      <fieldcaption>Fix self closing tags</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="36e0b717-7f22-4c4c-8928-5fc50b1047ec" allowempty="true" fieldtype="CustomUserControl" columntype="boolean" column="OutputFixHTML5">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.outputfixhtml5$}</fielddescription>
+      <defaultvalue>true</defaultvalue>
+      <fieldcaption>Fix HTML5</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+  <field guid="0383ac1e-71f6-46de-8110-c04322df3551" columnsize="100" allowempty="true" fieldtype="CustomUserControl" columntype="text" column="OutputConvertTablesToDivs">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.outputconverttablestodivs$}</fielddescription>
+      <fieldcaption>Convert TABLE tags to DIV tags</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>tableconversionsettings</controlname>
+      <EditText>False</EditText>
+    </settings>
+  </field>
+</form>

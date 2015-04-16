@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="CMSWebParts_General_usercontrol" CodeFile="~/CMSWebParts/General/usercontrol.ascx.cs" %>
+<asp:Label ID="lblError" runat="server" EnableViewState="false" Visible="false" />

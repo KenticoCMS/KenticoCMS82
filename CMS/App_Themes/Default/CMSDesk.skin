@@ -1,0 +1,2 @@
+<%-- Installer --%>
+<asp:Wizard runat="server" SkinID="InstallWizard" CssClass="install-wizard"/>

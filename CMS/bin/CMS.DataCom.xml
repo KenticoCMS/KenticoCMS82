@@ -1,0 +1,3281 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.DataCom</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.DataCom.Automation.AutomationHelper">
+            <summary>
+            Provides automation support for common actions related to Data.com integration.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Automation.AutomationHelper.UpdateContact(CMS.OnlineMarketing.ContactInfo,System.Net.NetworkCredential)">
+            <summary>
+            Updates the specified contact with data from Data.com business directory, if applicable, and returns the result.
+            </summary>
+            <param name="contact">The contact to update.</param>
+            <param name="credential">Credential used for buying/reading the Data.com contacts.</param>
+        </member>
+        <member name="M:CMS.DataCom.Automation.AutomationHelper.UpdateContact(CMS.OnlineMarketing.ContactInfo,System.Boolean,System.Net.NetworkCredential)">
+            <summary>
+            Updates the specified contact with data from Data.com business directory, if applicable, and returns the result.
+            </summary>
+            <param name="contact">The contact to update.</param>
+            <param name="buyEnabled">A value indicating whether to buy Data.com contacts that the current Data.com user does not own.</param>
+            <param name="credential">Credential used for buying/reading the Data.com contacts.</param>
+        </member>
+        <member name="M:CMS.DataCom.Automation.AutomationHelper.UpdateContactInternal(CMS.OnlineMarketing.ContactInfo,System.Boolean,System.Net.NetworkCredential)">
+            <summary>
+            Updates the specified contact with data from Data.com business directory, if applicable, and returns the result.
+            </summary>
+            <param name="contact">The contact to update.</param>
+            <param name="buyEnabled">A value indicating whether to buy Data.com contacts that the current Data.com user does not own.</param>
+            <param name="credential">Credential used for buying/reading the Data.com contacts.</param>
+        </member>
+        <member name="T:CMS.DataCom.Automation.UpdateContactAction">
+            <summary>
+            Represents the "Update contact" workflow action.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Automation.UpdateContactAction.Execute">
+            <summary>
+            Executes the action.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Automation.UpdateContactAction.DataComCredentialsValid">
+            <summary>
+            Checks if DataCom credentials of user that is bound to the action are valid.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Automation.UpdateContactAction.BuyEnabled">
+            <summary>
+            Gets a value indicating whether to buy Data.com contacts that the Data.com user does not own.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Automation.UpdateContactAction.Credential">
+            <summary>
+            Credential saved in the step.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Automation.UpdateContactCommand">
+            <summary>
+            Represents a command that updates contacts with data from Data.com business directory.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Automation.UpdateContactCommand.Execute(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Updates the specified contact with data from Data.com business directory, if applicable, and returns the result.
+            </summary>
+            <remarks>
+            The specified contact is updated if there's just one matching contact found in Data.com business directory.
+            It supports both global and site contacts. Site contacts use site settings and global contacts use global settings.
+            </remarks>
+            <param name="contact">The contact to update.</param>
+            <returns>The action result.</returns>
+        </member>
+        <member name="P:CMS.DataCom.Automation.UpdateContactCommand.BuyEnabled">
+            <summary>
+            Gets or sets a value indicating whether to buy Data.com contacts that the current Data.com user does not own.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Automation.UpdateContactCommand.Credential">
+            <summary>
+            Credential that should be used for purchasing a contact if required.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Automation.UpdateContactCommandResultEnum">
+            <summary>
+            Represent the result of "Update contact" command.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Automation.UpdateContactCommandResultEnum.Success">
+            <summary>
+            The action completed without errors.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Automation.UpdateContactCommandResultEnum.ContactIsGlobal">
+            <summary>
+            The contact is global and therefore cannot be updated.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Automation.UpdateContactCommandResultEnum.FeatureNotAvailable">
+            <summary>
+            Data.com integration is not available.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Automation.UpdateContactCommandResultEnum.SingleMatchNotFound">
+            <summary>
+            No or more then one matching contact was found in Data.com business directory.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Automation.UpdateContactCommandResultEnum.InsufficientCredit">
+            <summary>
+            There wasn't enough credit to buy the matching contact in Data.com business directory.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.DataComConfiguration">
+            <summary>
+            Represents a Data.com integration configuration.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.IDataComConfiguration">
+            <summary>
+            Provides access to Data.com integration configuration.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IDataComConfiguration.GetContactMapping">
+            <summary>
+            Retrieves the mapping of Data.com contact from the settings, and returns it.
+            </summary>
+            <returns>The mapping of Data.com contact from the settings, if present; otherwise, an empty mapping.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComConfiguration.GetCompanyMapping">
+            <summary>
+            Retrieves the mapping of Data.com company from the settings, and returns it.
+            </summary>
+            <returns>The mapping of Data.com company from the settings, if present; otherwise, an empty mapping.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComConfiguration.IsCompanyApiEnabled">
+            <summary>
+            Retrieves the value indicating whether the Data.com company API is enabled, and returns it.
+            </summary>
+            <returns>The value indicating whether the Data.com company API is enabled, if set; otherwise, true.</returns>
+        </member>
+        <member name="F:CMS.DataCom.DataComConfiguration.mSiteName">
+            <summary>
+            The identifier of the site to retrieve settings for.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the DataComConfiguration class.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComConfiguration.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the DataComConfiguration class with the specified site name.
+            </summary>
+            <param name="siteName">The name of the site to retrieve settings for</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComConfiguration.GetContactMapping">
+            <summary>
+            Retrieves the mapping of Data.com contact from the settings, and returns it.
+            </summary>
+            <returns>The mapping of Data.com contact from the settings, if present; otherwise, an empty mapping</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComConfiguration.GetCompanyMapping">
+            <summary>
+            Retrieves the mapping of Data.com company from the settings, and returns it.
+            </summary>
+            <returns>The mapping of Data.com company from the settings, if present; otherwise, an empty mapping</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComConfiguration.IsCompanyApiEnabled">
+            <summary>
+            Retrieves the value indicating whether the Data.com company API is enabled, and returns it.
+            </summary>
+            <returns>The value indicating whether the Data.com company API is enabled, if set; otherwise, true</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComConfiguration.GetStringSetting(System.String)">
+            <summary>
+            Retrieves the current value of the specified setting, and returns it.
+            </summary>
+            <param name="name">The setting key name</param>
+            <returns>The current value of the specified setting</returns>
+        </member>
+        <member name="T:CMS.DataCom.UserCredentialProvider">
+            <summary>
+            Class for providing credential for logging to Data.com from database.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ICredentialProvider">
+            <summary>
+            Provides credential for logging into Data.com
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ICredentialProvider.GetCredential">
+            <summary>
+            Gets credential. Returns null if no credentials were found.
+            </summary>
+            <returns>Credential</returns>
+        </member>
+        <member name="M:CMS.DataCom.ICredentialProvider.SetCredential(System.Net.NetworkCredential)">
+            <summary>
+            Saves Data.com credential.
+            </summary>
+            <param name="credential">Credential</param>
+        </member>
+        <member name="M:CMS.DataCom.UserCredentialProvider.#ctor(CMS.Membership.UserInfo)">
+            <summary>
+            Constructor of User Credential Provider.
+            </summary>
+            <param name="user">UserInfo object</param>
+        </member>
+        <member name="M:CMS.DataCom.UserCredentialProvider.GetCredential">
+            <summary>
+            Gets user credential from database. Returns null if no credentials were found.
+            </summary>
+            <returns>Credential</returns>
+        </member>
+        <member name="M:CMS.DataCom.UserCredentialProvider.SetCredential(System.Net.NetworkCredential)">
+            <summary>
+            Permanently saves credential for user.
+            </summary>
+            <param name="credential">Credential</param>
+            <remarks>This method will submit changes of <see cref="T:CMS.Membership.UserInfo"/> to database</remarks>
+        </member>
+        <member name="T:CMS.DataCom.DataComForm">
+            <summary>
+            Provides UI elements to display and edit CMS contact (or account) and possibly update if from the specified Data.com contact (or company).
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComForm.mItems">
+            <summary>
+            A dictionary of form field name/form item pairs.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComForm.mEntity">
+            <summary>
+            A Data.com entity.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComForm.mMergeHint">
+            <summary>
+            A value indicating whether this control should suggest entity attributes suitable for CMS object update.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComForm.mMergeHintAttributes">
+            <summary>
+            An array of form field names that are the object of the merge hint.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComForm.mFormatter">
+            <summary>
+            An object that formats values of Data.com contact (or company) attributes.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.Restore(CMS.Base.IDataContainer)">
+            <summary>
+            Provides the form fields with the values from the specified CMS contact (or account).
+            </summary>
+            <param name="data">CMS contact (or account).</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.Store">
+            <summary>
+            Saves the values of the form fields to the CMS contact (or account) assigned to this forms and returns the value indicating whether the operation was successful.
+            </summary>
+            <returns>True if the operation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.Validate">
+            <summary>
+            Validates the form fields and returns the value indicating whether validation was successful.
+            </summary>
+            <returns>True if validation was successful; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.Merge">
+            <summary>
+            Merges the Data.com contact (or company) attribute values with the CMS contact (or account) form field values according to the user choice.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.OnPreRender(System.EventArgs)">
+            <summary>
+            OnPreRender event.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.LoadData(CMS.Base.IDataContainer)">
+            <summary>
+            This method is overridden for a specific purpose and shouldn't be changed.
+            </summary>
+            <param name="data">CMS contact (or account).</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.LoadDefaultLayout">
+            <summary>
+            This method is overridden for a specific purpose and shouldn't be changed.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.SaveControlValue(System.String,CMS.FormControls.FormEngineUserControl)">
+            <summary>
+            This method is overridden for a specific purpose and shouldn't be changed.
+            </summary>
+            <param name="columnName">The name of the column.</param>
+            <param name="userControl">The form control.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.MergeFormState">
+            <summary>
+            Updates the form fields values with the selected Data.com contact (or company) attribute values, and returns a dictionary of form field name/original value pairs.
+            </summary>
+            <returns>A dictionary of form field name/original value pairs.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComForm.RestoreFormState(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Restores the form field values to the specified values.
+            </summary>
+            <param name="formFieldValues">A dictionary of form field name/original value pairs.</param>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.Items">
+            <summary>
+            Gets the dictionary of form field name/form item pairs.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.EntityInfo">
+            <summary>
+            Gets or sets the Data.com entity info.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.EntityMapping">
+            <summary>
+            Gets or sets the mapping of entity attributes to form fields.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.EntityAttributeMapperFactory">
+            <summary>
+            Gets or sets the factory that creates instances of entity attribute mappers for the specified entity attributes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.Entity">
+            <summary>
+            Gets or sets the Data.com entity.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.MergeHint">
+            <summary>
+            Gets or sets the value indicating whether this control should suggest entity attributes suitable for CMS object update.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.MergeHintAttributes">
+            <summary>
+            Gets or sets the array of form field names that are the object of the merge hint.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.BuyContactEnabled">
+            <summary>
+            Gets or sets the value indicating whether this form provides UI to buy a contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.EntityAttributeFormatter">
+            <summary>
+            Gets or sets the object that formats values of Data.com contact (or company) attributes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComForm.ParametersIdentifier">
+            <summary>
+            Gets or sets the unique identifier to pass the parameters on to the Buy contact dialog window.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.DataComFormLayout">
+            <summary>
+            Data com form layout.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComFormLayout.mDataComForm">
+            <summary>
+            The instance of the DataComForm that uses this layout.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.#ctor(CMS.DataCom.DataComForm)">
+            <summary>
+            Initializes a new instance of the Data.com form layout with the specified form and its panel.
+            </summary>
+            <param name="form">The Data.com form.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.LoadLayout">
+            <summary>
+            Creates layout for the Data.com form.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.CreateBuyContactButton(CMS.DataCom.Contact)">
+            <summary>
+            Creates a button to buy the specified contact, and returns it.
+            </summary>
+            <param name="contact">The contact to buy.</param>
+            <returns>A button to buy the specified contact.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.InitializeBuyContactButton(CMS.ExtendedControls.LocalizedButton)">
+            <summary>
+            Initializes the specified button to open a modal dialog.
+            </summary>
+            <param name="button">The button to buy a contact.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.CreateLastModifiedLiteral(System.DateTime)">
+            <summary>
+            Creates a control with localized date and time of last Data.com contact (or company) modification, and retuns it.
+            </summary>
+            <param name="value">Date and time of last Data.com contact (or company) modification.</param>
+            <returns>A control with localized date and time of last Data.com contact (or company) modification.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.InitializeCountrySelector(System.Web.UI.Control,CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Initializes a country selector with a dependent state field.
+            </summary>
+            <param name="innerControl">The country selector control.</param>
+            <param name="field">The form field info.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.CreateFormItem(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Creates a form item, i.e., a set of controls and objects related to the mapping of the specified form field to an entity attribute, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field info.</param>
+            <returns>A form item, i.e., a set of controls and objects related to the mapping of the specified form field to an entity attribute.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormLayout.CreateDataComCheckbox(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Creates a checkbox control for the specified form field info that enables Data.com attribute merging, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field info.</param>
+            <returns>A checkbox control for the specified form field info.</returns>
+        </member>
+        <member name="T:CMS.DataCom.CountrySelectorAdapter">
+            <summary>
+            Provides a compatibility layer between the DataComForm and the CountrySelector control.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.DataComFormItem">
+            <summary>
+            Represents a set of controls and objects related to the mapping of a form field to an entity attribute.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormItem.Initialize(System.Object,CMS.Base.StringSafeDictionary{CMS.FormControls.EditingFormControl},System.Boolean,System.String[])">
+            <summary>
+            Initializes data com form item.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComFormItem.AttributeValueEquals(System.Object,System.Object,CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether the specified attribute value is equal to the specified field value.
+            </summary>
+            <param name="attributeValue">The entity attribute value compatible with the specified form field.</param>
+            <param name="value">The form field value.</param>
+            <param name="field">The form field.</param>
+            <returns>True, if the specified attribute value is equal to the specified field value; otherwise, false.</returns>
+        </member>
+        <member name="P:CMS.DataCom.DataComFormItem.CheckboxControl">
+            <summary>
+            Checkbox control.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComFormItem.FieldInfo">
+            <summary>
+            Form field info.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComFormItem.EntityAttributeInfo">
+            <summary>
+            Entity attribute info.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComFormItem.EntityAttributeMapper">
+            <summary>
+            Entity attribute mapper.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.DataComFormItem.EntityAttributeFormatter">
+            <summary>
+            Entity attribute formatter.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.BuyerIdentity">
+            <summary>
+            Represents an user identity for Data.com billing purposes.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.BuyerIdentity.mUserIdentifier">
+            <summary>
+            The user identifier.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.BuyerIdentity.mOrganizationIdentifier">
+            <summary>
+            The user organization identifier.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.BuyerIdentity.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the BuyerIdentity class with the specified identifiers.
+            </summary>
+            <param name="userIdentifier">The user identifier.</param>
+            <param name="organizationIdentifier">The user organization identifier.</param>
+        </member>
+        <member name="P:CMS.DataCom.BuyerIdentity.UserIdentifier">
+            <summary>
+            Gets the user identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.BuyerIdentity.OrganizationIdentifier">
+            <summary>
+            Gets the user organization identifier.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.BuyerIdentityProvider">
+            <summary>
+            Buyer identity provider.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.IBuyerIdentityProvider">
+            <summary>
+            Provides access to current buyer identity for Data.com billing purposes.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IBuyerIdentityProvider.GetBuyerIdentity">
+            <summary>
+            Returns the buyer identity for Data.com billing purposes.
+            </summary>
+            <returns>The buyer identity for Data.com billing purposes.</returns>
+        </member>
+        <member name="M:CMS.DataCom.BuyerIdentityProvider.GetBuyerIdentity">
+            <summary>
+            Returns the buyer identity for Data.com billing purposes.
+            </summary>
+            <returns>The buyer identity for Data.com billing purposes.</returns>
+        </member>
+        <member name="T:CMS.DataCom.CompanyFinder">
+            <summary>
+            Provides a pattern-based search capability for companies in Data.com.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanyFinder.mProvider">
+            <summary>
+            An object that provides access to Data.com companies.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanyFinder.mPatterns">
+            <summary>
+            A collection of company search patterns ordered from the most specific to the least specific.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CompanyFinder.#ctor(CMS.DataCom.ICompanyProvider)">
+            <summary>
+            Initializes a new instance of the CompanyFinder class with the specified provider.
+            </summary>
+            <param name="provider">An object that provides access to Data.com companies.</param>
+        </member>
+        <member name="M:CMS.DataCom.CompanyFinder.AddPattern(System.String[])">
+            <summary>
+            Adds a company search pattern to the pattern collection.
+            </summary>
+            <param name="pattern">The pattern to add.</param>
+        </member>
+        <member name="M:CMS.DataCom.CompanyFinder.Find(CMS.DataCom.CompanyIdentity,CMS.DataCom.CompanyFilter@)">
+            <summary>
+            Searches for a company in Data.com that matches the specified identity.
+            </summary>
+            <param name="identity">The company identity.</param>
+            <param name="filter">The first pattern-based filter that matches at least one company.</param>
+            <returns>A company that matches the specified identity, if only one is found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.CompanyFinder.CreateFilter(System.String[],CMS.DataCom.CompanyIdentity)">
+            <summary>
+            Creates a filter for the specified company identity using only properties from the specified pattern.
+            </summary>
+            <param name="pattern">The pattern that specifies company identity properties.</param>
+            <param name="identity">The company identity.</param>
+            <returns>The company filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.CompanyFinder.Matches(System.String[],CMS.DataCom.CompanyIdentity)">
+            <summary>
+            Checks whether the specified company identity properties from the specified pattern contain a value.
+            </summary>
+            <param name="pattern">The pattern that specifies company identity properties.</param>
+            <param name="identity">The company identity.</param>
+            <returns>True if the specified company identity properties from the specified pattern contain a value; otherwise, false.</returns>
+        </member>
+        <member name="T:CMS.DataCom.CompanyProvider">
+            <summary>
+            Provides access to Data.com companies.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ICompanyProvider">
+            <summary>
+            Provides access to Data.com companies.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ICompanyProvider.SearchCompanies(CMS.DataCom.CompanyFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for companies that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The company filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.ICompanyProvider.GetCompany(System.Int64)">
+            <summary>
+            Searches Data.com for a company with the specified identifier, and returns it.
+            </summary>
+            <param name="companyIdentifier">The identifier of a Data.com company.</param>
+            <returns>The company with the specified identifier, if the company was found; otherwise, null.</returns>
+        </member>
+        <member name="F:CMS.DataCom.CompanyProvider.mClient">
+            <summary>
+            The Data.com service client.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CompanyProvider.#ctor(CMS.DataCom.DataComClient)">
+            <summary>
+            Initializes a new instance of the CompanyProvider class with the specified Data.com client.
+            </summary>
+            <param name="client">The Data.com client.</param>
+        </member>
+        <member name="M:CMS.DataCom.CompanyProvider.SearchCompanies(CMS.DataCom.CompanyFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for companies that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The company filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.CompanyProvider.GetCompany(System.Int64)">
+            <summary>
+            Searches Data.com for a company with the specified identifier, and returns it.
+            </summary>
+            <param name="companyIdentifier">The identifier of a Data.com company.</param>
+            <returns>The company with the specified identifier, if the company was found; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.CompanySearchResultProvider">
+            <summary>
+            Provides access to Data.com companies without using the company API.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanySearchResultProvider.mClient">
+            <summary>
+            The Data.com service client.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanySearchResultProvider.mSearchResults">
+            <summary>
+            The dictionary of Data.com company identifier/search result pairs for caching the response of SearchCompanies method.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CompanySearchResultProvider.#ctor(CMS.DataCom.DataComClient)">
+            <summary>
+            Initializes a new instance of the CompanyProvider class with the specified Data.com client.
+            </summary>
+            <param name="client">The Data.com client.</param>
+        </member>
+        <member name="M:CMS.DataCom.CompanySearchResultProvider.SearchCompanies(CMS.DataCom.CompanyFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for companies that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The company filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.CompanySearchResultProvider.GetCompany(System.Int64)">
+            <summary>
+            Searches Data.com for a company with the specified identifier, and returns it.
+            </summary>
+            <param name="companyIdentifier">The identifier of a Data.com company.</param>
+            <returns>The company with the specified identifier, if the company was found; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.ContactFinder">
+            <summary>
+            Provides a pattern-based search capability for contacts in Data.com.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.ContactFinder.mProvider">
+            <summary>
+            An object that provides access to Data.com contacts.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ContactFinder.#ctor(CMS.DataCom.IContactProvider)">
+            <summary>
+            Initializes a new instance of the ContactFinder class with the specified provider.
+            </summary>
+            <param name="provider">An object that provides access to Data.com contacts.</param>
+        </member>
+        <member name="M:CMS.DataCom.ContactFinder.Find(CMS.DataCom.ContactIdentity)">
+            <summary>
+            Searches for a contact in Data.com that matches the specified identity.
+            </summary>
+            <param name="identity">The contact identity.</param>
+            <returns>A contact that matches the specified identity, if only one is found; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.ContactProvider">
+            <summary>
+            Provides access to Data.com contacts.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.IContactProvider">
+            <summary>
+            Provides access to Data.com contacts.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IContactProvider.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IContactProvider.GetContact(System.Int64,System.Boolean)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier, and returns it.
+            </summary>
+            <param name="contactIdentifier">The identifier of a Data.com contact.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the account.</param>
+            <returns>The contact with the specified identifier, if the contact was found; otherwise, null.</returns>
+        </member>
+        <member name="P:CMS.DataCom.IContactProvider.CanBuyContacts">
+            <summary>
+            A value indicating whether it is possible to buy contacts with this provider.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.ContactProvider.mClient">
+            <summary>
+            The Data.com service client.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ContactProvider.#ctor(CMS.DataCom.IDataComClient)">
+            <summary>
+            Initializes a new instance of the PartnerContactProvider class with the specified Data.com client.
+            </summary>
+            <param name="client">The Data.com client.</param>
+        </member>
+        <member name="M:CMS.DataCom.ContactProvider.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.ContactProvider.GetContact(System.Int64,System.Boolean)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier, and returns it.
+            </summary>
+            <param name="contactIdentifier">The identifier of a Data.com contact.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the account.</param>
+            <returns>The contact with the specified identifier, if the contact was found; otherwise, null.</returns>
+        </member>
+        <member name="P:CMS.DataCom.ContactProvider.CanBuyContacts">
+            <summary>
+            A value indicating whether it is possible to buy contacts with this provider.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.DataComClient">
+            <summary>
+            Provides access to Data.com contacts and companies via REST API.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.IDataComClient">
+            <summary>
+            Interface for DataCom client
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.SearchCompanies(CMS.DataCom.CompanyFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for companies that match the specified filter and returns the specified page from the list of search results.
+            </summary>
+            <param name="filter">The company filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of company search results where the company matches the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetCompany(System.Int64)">
+            <summary>
+            Searches Data.com for a company with the specified identifier and returns the result.
+            </summary>
+            <param name="companyId">The identifier of a company in Data.com.</param>
+            <returns>The company with the specified identifier, if the company is found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetCompanyStructure(System.Int64)">
+            <summary>
+            Searches Data.com for a company with the specified identifier and returns its organizational structure.
+            </summary>
+            <param name="companyId">The identifier of a company in Data.com.</param>
+            <returns>The organizational structure of the company with the specified identifier, if the company is found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32,System.Net.NetworkCredential)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <param name="userCredential">The Data.com user credential.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetContact(System.Int64,System.Boolean,System.Net.NetworkCredential)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier and returns the result using the Data.com user account with given credential.
+            </summary>
+            <param name="contactId">The identifier of a contact in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the Data.com user account with given credential.</param>
+            <param name="userCredential">The Data.com user credential.</param>
+            <returns>The contact with the specified identifier, if the contact is found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetContacts(System.Collections.Generic.IList{System.Int64},System.Boolean,System.Net.NetworkCredential)">
+            <summary>
+            Searches Data.com for contacts with the specified identifiers and returns the result using the Data.com user account with given credential.
+            </summary>
+            <param name="contactIdentifiers">The identifiers of contacts in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contacts and deduct points from the Data.com user account with given credential.</param>
+            <param name="userCredential">The Data.com user credential.</param>
+            <returns>The contacts with the specified identifiers.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.SearchPartnerContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetPartnerContact(System.Int64,System.Boolean,CMS.DataCom.BuyerIdentity)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier and returns the result using the Data.com partner account with given access token.
+            </summary>
+            <param name="contactId">The identifier of a contact in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the Data.com partner on behalf of the specified buyer.</param>
+            <param name="buyerIdentity">The buyer identity for billing purposes.</param>
+            <returns>The contact with the specified identifier, if the contact was found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetPartnerContacts(System.Collections.Generic.IList{System.Int64},System.Boolean,CMS.DataCom.BuyerIdentity)">
+            <summary>
+            Searches Data.com for contacts with the specified identifiers and returns the result using the Data.com partner account with given access token.
+            </summary>
+            <param name="contactIdentifiers">The identifiers of contacts in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contacts and deduct points from the Data.com partner on behalf of the specified buyer.</param>
+            <param name="buyerIdentity">The buyer identity for billing purposes.</param>
+            <returns>The contacts with the specified identifiers.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetUser(System.Net.NetworkCredential)">
+            <summary>
+            Gets the Data.com user account information using the given credential.
+            </summary>
+            <param name="userCredential">The Data.com user credential.</param>
+            <returns>The Data.com user account information.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IDataComClient.GetCurrentPartner">
+            <summary>
+            Gets the Data.com partner account information using the given access token.
+            </summary>
+            <returns>The Data.com partner account information.</returns>
+        </member>
+        <member name="F:CMS.DataCom.DataComClient.REST_API_BASE_URL">
+            <summary>
+            The base URL of the REST service.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComClient.mResourceProvider">
+            <summary>
+            The HTTP resource provider.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComClient.mToken">
+            <summary>
+            The REST service access token.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.#ctor(CMS.DataCom.IHttpResourceProvider,System.String)">
+            <summary>
+            Initializes a new instance of the DataComClient class that uses the specified HTTP resource provider and token to access the REST service.
+            </summary>
+            <param name="resourceProvider">The HTTP resource provider.</param>
+            <param name="token">The REST service access token.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.SearchCompanies(CMS.DataCom.CompanyFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for companies that match the specified filter and returns the specified page from the list of search results.
+            </summary>
+            <param name="filter">The company filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of company search results where the company matches the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetCompany(System.Int64)">
+            <summary>
+            Searches Data.com for a company with the specified identifier and returns the result.
+            </summary>
+            <param name="companyId">The identifier of a company in Data.com.</param>
+            <returns>The company with the specified identifier, if the company is found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetCompanyStructure(System.Int64)">
+            <summary>
+            Searches Data.com for a company with the specified identifier and returns its organizational structure.
+            </summary>
+            <param name="companyId">The identifier of a company in Data.com.</param>
+            <returns>The organizational structure of the company with the specified identifier, if the company is found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32,System.Net.NetworkCredential)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <param name="userCredential">The Data.com user credential.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetContact(System.Int64,System.Boolean,System.Net.NetworkCredential)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier and returns the result using the Data.com user account with given credential.
+            </summary>
+            <param name="contactId">The identifier of a contact in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the Data.com user account with given credential.</param>
+            <param name="userCredential">The Data.com user credential.</param>
+            <returns>The contact with the specified identifier, if the contact is found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetContacts(System.Collections.Generic.IList{System.Int64},System.Boolean,System.Net.NetworkCredential)">
+            <summary>
+            Searches Data.com for contacts with the specified identifiers and returns the result using the Data.com user account with given credential.
+            </summary>
+            <param name="contactIdentifiers">The identifiers of contacts in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contacts and deduct points from the Data.com user account with given credential.</param>
+            <param name="userCredential">The Data.com user credential.</param>
+            <returns>The contacts with the specified identifiers.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.SearchPartnerContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetPartnerContact(System.Int64,System.Boolean,CMS.DataCom.BuyerIdentity)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier and returns the result using the Data.com partner account with given access token.
+            </summary>
+            <param name="contactId">The identifier of a contact in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the Data.com partner on behalf of the specified buyer.</param>
+            <param name="buyerIdentity">The buyer identity for billing purposes.</param>
+            <returns>The contact with the specified identifier, if the contact was found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetPartnerContacts(System.Collections.Generic.IList{System.Int64},System.Boolean,CMS.DataCom.BuyerIdentity)">
+            <summary>
+            Searches Data.com for contacts with the specified identifiers and returns the result using the Data.com partner account with given access token.
+            </summary>
+            <param name="contactIdentifiers">The identifiers of contacts in Data.com.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contacts and deduct points from the Data.com partner on behalf of the specified buyer.</param>
+            <param name="buyerIdentity">The buyer identity for billing purposes.</param>
+            <returns>The contacts with the specified identifiers.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetUser(System.Net.NetworkCredential)">
+            <summary>
+            Gets the Data.com user account information using the given credential.
+            </summary>
+            <param name="userCredential">The Data.com user credential</param>
+            <returns>The Data.com user account information</returns>
+            <exception cref="T:CMS.DataCom.DataComException">Thrown when problems with API occur, or if username/password is not valid</exception>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.UserIsValid(System.Net.NetworkCredential)">
+            <summary>
+            Checks if given Data.com user is valid.
+            </summary>
+            <param name="userCredential">Credentials to check data.com for</param>
+            <returns>True if user credential is valid, false otherwise</returns>
+            <exception cref="T:CMS.DataCom.DataComException">Thrown when problems with API occur</exception>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetCurrentPartner">
+            <summary>
+            Gets the Data.com partner account information using the given access token.
+            </summary>
+            <returns>The Data.com partner account information.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.GetResource``1(CMS.DataCom.HttpResourceUri)">
+            <summary>
+            Retrieves a Data.com REST API resource with the specified URI, and returns it.
+            </summary>
+            <typeparam name="T">The type of the response.</typeparam>
+            <param name="resourceUri">Data.com REST API resource URI.</param>
+            <returns>Data.com REST API resource.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.ParseResponse``1(System.String)">
+            <summary>
+            Parses the response of the successful REST service method call.
+            </summary>
+            <typeparam name="T">The type of the response.</typeparam>
+            <param name="content">The REST service method call response.</param>
+            <returns>The result of the REST service method call.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.ParseErrorResponse(System.String)">
+            <summary>
+            Parses the response of the unsuccessful REST service method call.
+            </summary>
+            <param name="content">The REST service method call response.</param>
+            <returns>The result of the REST service method call.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComClient.ResponseContainsErrors(System.String)">
+            <summary>
+            Determines whether the response of the REST service method call contains errors.
+            </summary>
+            <param name="content">The response content of the REST service method call.</param>
+            <returns>True, if the response contains errors; otherwise, false.</returns>
+        </member>
+        <member name="T:CMS.DataCom.DataComException">
+            <summary>
+            Represents a Data.com REST API exception.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DataComException.mErrors">
+            <summary>
+            An array of Data.com REST API errors.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComException.#ctor">
+            <summary>
+            Initializes a new instance of the DataComException class.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the DataComException class with the specified error message.
+            </summary>
+            <param name="message">An error message.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the DataComException class with the specified error message and inner exception.
+            </summary>
+            <param name="message">An error message.</param>
+            <param name="innerException">An inner exception.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComException.#ctor(System.String,System.Collections.Generic.IEnumerable{CMS.DataCom.Error})">
+            <summary>
+            Initializes a new instance of the DataComException class with the specified error message and Data.com REST API errors.
+            </summary>
+            <param name="message">An error message.</param>
+            <param name="errors">An enumerable collection of Data.com REST API errors.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComException.#ctor(System.String,System.Collections.Generic.IEnumerable{CMS.DataCom.Error},System.Exception)">
+            <summary>
+            Initializes a new instance of the DataComException class with the specified error message, Data.com REST API errors and inner exception.
+            </summary>
+            <param name="message">An error message.</param>
+            <param name="errors">An enumerable collection of Data.com REST API errors.</param>
+            <param name="innerException">An inner exception.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the DataComException class in the specified serialization context.
+            </summary>
+            <param name="info">A serialization info.</param>
+            <param name="context">A streaming context.</param>
+        </member>
+        <member name="M:CMS.DataCom.DataComException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Stores the object state into the specified serialization context.
+            </summary>
+            <param name="info">A serialization info.</param>
+            <param name="context">A streaming context.</param>
+        </member>
+        <member name="P:CMS.DataCom.DataComException.Errors">
+            <summary>
+            Gets an enumerable collection of Data.com REST API errors.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.DataComHelper">
+            <summary>
+            Provides support for construction of Data.com integration related objects.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetBuyerIdentityProvider">
+            <summary>
+            Returns an object that supplies the buyer identity for Data.com billing purposes.
+            </summary>
+            <returns>An object that supplies the buyer identity for Data.com billing purposes.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetEntityAttributeFormatter">
+            <summary>
+            Returns an object that provides formatting capabilities for entity attributes.
+            </summary>
+            <returns>An object that provides formatting capabilities for entity attributes.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetConfiguration(System.Int32)">
+            <summary>
+            Returns a Data.com integration configuration for the specified site.
+            </summary>
+            <param name="siteId">The identifier of the site to retrieve settings for.</param>
+            <returns>A Data.com integration configuration.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetContactFormInfo">
+            <summary>
+            Returns CMS contact form info.
+            </summary>
+            <returns>CMS contact form info.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetAccountFormInfo">
+            <summary>
+            Returns CMS account form info.
+            </summary>
+            <returns>CMS account form info.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetContactEntityInfo">
+            <summary>
+            Returns Data.com contact entity info.
+            </summary>
+            <returns>Data.com contact entity info.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetCompanyEntityInfo(CMS.DataCom.IDataComConfiguration)">
+            <summary>
+            Returns Data.com company entity info.
+            </summary>
+            <param name="configuration">The Data.com integration configuration.</param>
+            <returns>Data.com company entity info.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetContactAttributeMapperFactory">
+            <summary>
+            Returns Data.com contact attribute mapper.
+            </summary>
+            <returns>Data.com contact attribute mapper.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetCompanyAttributeMapperFactory">
+            <summary>
+            Returns Data.com company attribute mapper.
+            </summary>
+            <returns>Data.com company attribute mapper.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.CreateClient(CMS.DataCom.ITokenProvider)">
+            <summary>
+            Creates and initializes a new instance of the Data.com client.
+            </summary>
+            <returns>A new instance of the Data.com client</returns>
+            <param name="tokenProvider">Token provider to use. Please provide custom implementation</param>
+            <remarks>Custom implementation of ITokenProvider is required.</remarks>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.CreateContactIdentity(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Creates a contact identity from the specified CMS contact, and returns it.
+            </summary>
+            <param name="contactInfo">The CMS contact.</param>
+            <returns>A contact identity that corresponds to the specified CMS contact.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.CreateCompanyIdentity(CMS.OnlineMarketing.AccountInfo)">
+            <summary>
+            Creates a company identity from the specified CMS account, and returns it.
+            </summary>
+            <param name="accountInfo">The CMS account.</param>
+            <returns>A company identity that corresponds to the specified CMS account.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.CreateContactProvider(CMS.DataCom.DataComClient,System.Net.NetworkCredential)">
+            <summary>
+            Creates an object that provides access to Data.com contacts, and returns it.
+            </summary>
+            <param name="client">The Data.com client</param>
+            <param name="credential">Credentials for which the provider should make requests. Authenticated user if left null</param>
+            <returns>An object that provides access to Data.com contacts, and returns it</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.CreateCompanyProvider(CMS.DataCom.DataComClient,CMS.DataCom.IDataComConfiguration)">
+            <summary>
+            Creates an object that provides access to Data.com companies, and returns it.
+            </summary>
+            <param name="client">The Data.com client</param>
+            <param name="configuration">The Data.com integration configuration</param>
+            <returns>An object that provides access to Data.com companies, and returns it</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.CreateContactFinder(CMS.DataCom.IContactProvider)">
+            <summary>
+            Creates and initializes a new instance of the contact finder with the search patterns and the specified Data.com service.
+            </summary>
+            <param name="provider">An object that provides access to Data.com contacts</param>
+            <returns>A new instance of the contact finder initialized with the search patterns and the specified Data.com service</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.CreateCompanyFinder(CMS.DataCom.ICompanyProvider)">
+            <summary>
+            Creates and initializes a new instance of the company finder with the search patterns and the specified Data.com service.
+            </summary>
+            <param name="provider">An object that provider access to Data.com contacts</param>
+            <returns>A new instance of the company finder initialized with the search patterns and the specified Data.com service</returns>
+        </member>
+        <member name="M:CMS.DataCom.DataComHelper.GetContactAccount(CMS.OnlineMarketing.ContactInfo)">
+            <summary>
+            Determines the primary account of the specified contact, and returns it.
+            </summary>
+            <param name="contactInfo">The CMS contact.</param>
+            <returns>The primary account of the specified contact, if found; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.PartnerContactProvider">
+            <summary>
+            Provides access to Data.com contacts with given buyer identity.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.PartnerContactProvider.mClient">
+            <summary>
+            The Data.com client.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.PartnerContactProvider.mBuyerIdentity">
+            <summary>
+            The buyer identity.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.PartnerContactProvider.#ctor(CMS.DataCom.DataComClient,CMS.DataCom.BuyerIdentity)">
+            <summary>
+            Initializes a new instance of the PartnerContactProvider class with the specified Data.com client and buyer identity.
+            </summary>
+            <param name="client">The Data.com client.</param>
+            <param name="buyerIdentity">The buyer identity.</param>
+        </member>
+        <member name="M:CMS.DataCom.PartnerContactProvider.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.PartnerContactProvider.GetContact(System.Int64,System.Boolean)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier, and returns it.
+            </summary>
+            <param name="contactIdentifier">The identifier of a Data.com contact.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the account.</param>
+            <returns>The contact with the specified identifier, if the contact was found; otherwise, null.</returns>
+        </member>
+        <member name="P:CMS.DataCom.PartnerContactProvider.BuyerIdentity">
+            <summary>
+            Gets the buyer identity.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.PartnerContactProvider.CanBuyContacts">
+            <summary>
+            A value indicating whether it is possible to buy contacts with this provider.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ITokenProvider">
+            <summary>
+            Provides tokens for data.com communication.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ITokenProvider.GetToken">
+            <summary>
+            Gets token for Data.com communication.
+            </summary>
+            <returns>Token</returns>
+        </member>
+        <member name="T:CMS.DataCom.UserContactProvider">
+            <summary>
+            Provides access to Data.com contacts with given Data.com user credential.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.UserContactProvider.mClient">
+            <summary>
+            The Data.com service client.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.UserContactProvider.mUserCredential">
+            <summary>
+            The Data.com user credential.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.UserContactProvider.#ctor(CMS.DataCom.DataComClient,System.Net.NetworkCredential)">
+            <summary>
+            Initializes a new instance of the PartnerContactProvider class with the specified Data.com client and user credentials.
+            </summary>
+            <param name="client">The Data.com client.</param>
+            <param name="userCredential">The Data.com user credentials.</param>
+        </member>
+        <member name="M:CMS.DataCom.UserContactProvider.SearchContacts(CMS.DataCom.ContactFilter,System.Int32,System.Int32)">
+            <summary>
+            Searches Data.com for contacts that match the specified filter and returns the specified page from the result.
+            </summary>
+            <remarks>This methods compensates for an error in Data.com REST service where owned contacts are returned without the company name.</remarks>
+            <param name="filter">The contact filter.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+            <returns>The specified page from the list of contacts that match the specified filter.</returns>
+        </member>
+        <member name="M:CMS.DataCom.UserContactProvider.GetContact(System.Int64,System.Boolean)">
+            <summary>
+            Searches Data.com for a contact with the specified identifier, and returns it.
+            </summary>
+            <param name="contactIdentifier">The identifier of a Data.com contact.</param>
+            <param name="purchaseFlag">The value that indicates whether the service should attempt to buy the contact and deduct points from the account.</param>
+            <returns>The contact with the specified identifier, if the contact was found; otherwise, null.</returns>
+        </member>
+        <member name="P:CMS.DataCom.UserContactProvider.UserCredential">
+            <summary>
+            Gets the buyer identity.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.UserContactProvider.CanBuyContacts">
+            <summary>
+            A value indicating whether it is possible to buy contacts with this provider.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.CMSTokenProvider">
+            <summary>
+            Provides a token for data.com communication.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CMSTokenProvider.GetToken">
+            <summary>
+            Gets hard-coded token for Data.com communication.
+            </summary>
+            <returns>Token</returns>
+        </member>
+        <member name="T:CMS.DataCom.StepCredentialProvider">
+            <summary>
+            Class for providing credentials for workflow step.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.StepCredentialProvider.#ctor(CMS.WorkflowEngine.WorkflowStepInfo)">
+            <summary>
+            Constructor of Step Credential Provider.
+            </summary>
+            <param name="stepInfo">WorkFlowStepInfo object</param>
+        </member>
+        <member name="M:CMS.DataCom.StepCredentialProvider.GetCredential">
+            <summary>
+            Gets credential from step's parameters. Returns null if no credentials were found.
+            </summary>
+            <returns>Credential</returns>
+        </member>
+        <member name="M:CMS.DataCom.StepCredentialProvider.SetCredential(System.Net.NetworkCredential)">
+            <summary>
+            Permanently saves credential into step.
+            </summary>
+            <param name="credential">Credential</param>
+        </member>
+        <member name="T:CMS.DataCom.CompanyFilter">
+            <summary>
+            Represents a company filter.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Filter">
+            <summary>
+            Represents a filter base.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.Filter.#ctor">
+            <summary>
+            Initializes a new instance of the Filter class.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Filter.Country">
+            <summary>
+            Gets or sets the list of country names.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Filter.State">
+            <summary>
+            Gets or sets the list of state abbreviations.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Filter.MetroArea">
+            <summary>
+            Gets or sets the list of metro area names.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Filter.AreaCode">
+            <summary>
+            Gets or sets the list of area codes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Filter.ZipCode">
+            <summary>
+            Gets or sets the list of zip codes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Filter.IncludeGraveyard">
+            <summary>
+            Gets or sets the value indicating whether the search should include inactive contacts.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CompanyFilter.#ctor">
+            <summary>
+            Initializes a new instance of the CompanyFilter class.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.CompanyId">
+            <summary>
+            Gets or sets the company identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.Name">
+            <summary>
+            Gets or sets the list of company name search patterns.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.Industry">
+            <summary>
+            Gets or sets the list of industry codes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.Subindustry">
+            <summary>
+            Gets or sets the list of subindustry codes.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.EmployeeCount">
+            <summary>
+            Gets or sets the list of number of employees ranges.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.Revenue">
+            <summary>
+            Gets or sets the list of revenue ranges.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.Ownership">
+            <summary>
+            Gets or sets the list of ownerships.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.WebsiteType">
+            <summary>
+            Gets or sets the list of website types.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyFilter.FortuneRank">
+            <summary>
+            Gets or sets the Fortune 500 rank.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.CompanyIdentity">
+            <summary>
+            Represents a company identity.
+            </summary>
+            <remarks>
+            A company identity is a set of properties that are used for searching a matching record in Data.com business directory.
+            </remarks>
+        </member>
+        <member name="M:CMS.DataCom.CompanyIdentity.CreateFilter">
+            <summary>
+            Creates a filter based on this company identity, and returns it.
+            </summary>
+            <returns>A filter based on this company identity.</returns>
+        </member>
+        <member name="P:CMS.DataCom.CompanyIdentity.Name">
+            <summary>
+            Gets or sets the name of a company.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ContactFilter">
+            <summary>
+            Represents a contact filter.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ContactFilter.#ctor">
+            <summary>
+            Initializes a new instance of the ContactFilter class.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.CompanyId">
+            <summary>
+            Gets or sets the identifier of a contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.Title">
+            <summary>
+            Gets or sets the title search pattern.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.CompanyName">
+            <summary>
+            Gets or sets the company name search pattern.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.LastName">
+            <summary>
+            Gets or sets the last name search pattern.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.FirstName">
+            <summary>
+            Gets or sets the first name search pattern.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.Level">
+            <summary>
+            Gets or sets the list of organizational levels.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.Department">
+            <summary>
+            Gets or sets the list of departments.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactFilter.Email">
+            <summary>
+            Gets or sets the e-mail address.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ContactIdentity">
+            <summary>
+            Represents a contact identity.
+            </summary>
+            <remarks>
+            A contact identity is a set of properties that are used for searching a matching record in Data.com business directory.
+            </remarks>
+        </member>
+        <member name="M:CMS.DataCom.ContactIdentity.CreateFilter">
+            <summary>
+            Creates a filter based on this contact identity, and returns it.
+            </summary>
+            <returns>A filter based on this contact identity.</returns>
+        </member>
+        <member name="M:CMS.DataCom.ContactIdentity.EqualsInExistingProperties(CMS.DataCom.ContactIdentity)">
+            <summary>
+            Returns true if ContactIdentities match in all its fields.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ContactIdentity.op_Implicit(CMS.DataCom.Contact)~CMS.DataCom.ContactIdentity">
+            <summary>
+            Implicit conversion from Contact class.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactIdentity.FirstName">
+            <summary>
+            Gets or sets the first name of a contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactIdentity.LastName">
+            <summary>
+            Gets or sets the last name of a contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactIdentity.Email">
+            <summary>
+            Gets or sets the e-mail address of a contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactIdentity.CompanyName">
+            <summary>
+            Gets or sets the name of the contact's company.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Company">
+            <summary>
+            Represents a company.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Company.creationDateTimeText">
+            <summary>
+            The string representation of a date and time when this company record was created.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Company.lastModificationDateTimeText">
+            <summary>
+            The string representation of a date and time when this company record was last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.CompanyId">
+            <summary>
+            Gets or sets the identifier of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Name">
+            <summary>
+            Gets or sets the name of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Phone">
+            <summary>
+            Gets or sets the phone number of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Website">
+            <summary>
+            Gets or sets the website URL of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.StockSymbol">
+            <summary>
+            Gets or sets the stock symbol of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.StockExchange">
+            <summary>
+            Gets or sets the stock exchange of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Ownership">
+            <summary>
+            Gets or sets the ownership of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.FortuneRank">
+            <summary>
+            Gets or sets the Fortune 500 rank of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.EmployeeCount">
+            <summary>
+            Gets or sets the number of employees of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.EmployeeRange">
+            <summary>
+            Gets or sets the the number of employees range of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Revenue">
+            <summary>
+            Gets or sets the revenue of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.RevenueRange">
+            <summary>
+            Gets or sets the revenue range of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Industry1">
+            <summary>
+            Gets or sets the industry of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Industry2">
+            <summary>
+            Gets or sets the industry of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Industry3">
+            <summary>
+            Gets or sets the industry of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.SubIndustry1">
+            <summary>
+            Gets or sets the subindustry of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.SubIndustry2">
+            <summary>
+            Gets or sets the subindustry of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.SubIndustry3">
+            <summary>
+            Gets or sets the subindustry of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.SicCode">
+            <summary>
+            Gets or sets the Standard industrial classification code of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Address">
+            <summary>
+            Gets or sets the address where this company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.City">
+            <summary>
+            Gets or sets the city where this company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.State">
+            <summary>
+            Gets or sets the state where this company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.ZipCode">
+            <summary>
+            Gets or sets the zip code where this company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Country">
+            <summary>
+            Gets or sets the country where this company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.ActiveContactCount">
+            <summary>
+            Gets or sets the number of active contacts of this company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.CreationDateTime">
+            <summary>
+            Gets the date and time when this company record was created.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.LinkInJigsaw">
+            <summary>
+            Gets or sets the URL of this company in Jigsaw.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.Graveyarded">
+            <summary>
+            Gets or sets the value indicating whether this company's record is up-to-date.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.LastModificationDateTime">
+            <summary>
+            Gets the date and time when this company record was last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.CurrentWikiText">
+            <summary>
+            Gets or sets the current text about this company in Data.com wiki.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Company.CurrentLogoUrl">
+            <summary>
+            Gets or sets the current logo URL of this company.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.CompanyList">
+            <summary>
+            Represents a list of companies.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyList.Companies">
+            <summary>
+            Gets or sets the list of companies.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.CompanySearchResult">
+            <summary>
+            Represents a company search result.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.CompanyId">
+            <summary>
+            Gets or sets the identifier of the company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.Name">
+            <summary>
+            Gets or sets the name of the company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.Address">
+            <summary>
+            Gets or sets the address where the company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.City">
+            <summary>
+            Gets or sets the city where the company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.State">
+            <summary>
+            Gets or sets the state where the company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.ZipCode">
+            <summary>
+            Gets or sets the zip code where the company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.Country">
+            <summary>
+            Gets or sets the country where the company is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.ActiveContactCount">
+            <summary>
+            Gets or sets the number of active contacts in the company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResult.Graveyarded">
+            <summary>
+            Gets or sets the value indicating whether the company record is up-to-date.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.CompanySearchResults">
+            <summary>
+            Represents a list of company search results.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResults.TotalHits">
+            <summary>
+            Gets or sets the total number of search results.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanySearchResults.Results">
+            <summary>
+            Gets or sets the list of company search results.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.CompanyStructure">
+            <summary>
+            Represents an organizational structure of a company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyStructure.CompanyId">
+            <summary>
+            Gets or sets the identifier of the company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyStructure.Url">
+            <summary>
+            Gets or sets the URL with more details about the organizational structure of the company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyStructure.ContactCount">
+            <summary>
+            Gets or sets the number of contacts in the company.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyStructure.Departments">
+            <summary>
+            Gets or sets the list of company departments.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.CompanyStructure.Levels">
+            <summary>
+            Gets or sets the list of company organizational levels.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Contact">
+            <summary>
+            Represents a contact.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.Contact.lastModificationDateTimeText">
+            <summary>
+            The string representation of a date and time when the contact record was last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.ContactId">
+            <summary>
+            Gets or sets the identifier of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.CompanyId">
+            <summary>
+            Gets or sets the identifier of the company of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.ContactSaleCount">
+            <summary>
+            Gets or sets the number of sales of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.Title">
+            <summary>
+            Gets or sets the title of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.CompanyName">
+            <summary>
+            Gets or sets the name ot the company of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.LastModificationDateTime">
+            <summary>
+            Gets or sets the date and time when this contact record was last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.Graveyarded">
+            <summary>
+            Gets or sets the value indicating whether this contact record is up-to-date.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.FirstName">
+            <summary>
+            Gets or sets the first name of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.LastName">
+            <summary>
+            Gets or sets the last name of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.City">
+            <summary>
+            Gets or sets the city where this contact is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.State">
+            <summary>
+            Gets or sets the state where this contact is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.Country">
+            <summary>
+            Gets or sets the country where this contact is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.ZipCode">
+            <summary>
+            Gets or sets the zip code where this contact is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.ContactUrl">
+            <summary>
+            Gets or sets the URL with more details about this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.SeoContactUrl">
+            <summary>
+            Gets or sets the SEO optimized URL with more details about this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.AreaCode">
+            <summary>
+            Gets or sets the area code where this contact is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.Phone">
+            <summary>
+            Gets or sets the phone number of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.Email">
+            <summary>
+            Gets or sets the e-mail address of this contact.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.Address">
+            <summary>
+            Gets or sets the address where this contact is located.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.Owned">
+            <summary>
+            Gets or sets the value indicating whether the Data.com account used to retrieve this contact record owns it.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Contact.OwnedType">
+            <summary>
+            Gets or sets the type of ownership of this contact.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ContactList">
+            <summary>
+            Represents a list of contacts.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactList.TotalHits">
+            <summary>
+            Gets or sets the total number of contacts.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactList.PointBalance">
+            <summary>
+            Gets or sets the number of points on the Data.com account used to retrieve contacts.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactList.Contacts">
+            <summary>
+            Gets or sets the list of contacts.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ContactSearchResults">
+            <summary>
+            Represents a list of contact search results.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactSearchResults.TotalHits">
+            <summary>
+            Gets or sets the total number of search results.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.ContactSearchResults.Contacts">
+            <summary>
+            Gets or sets the list of contacts.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Department">
+            <summary>
+            Represents a company department.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Department.Name">
+            <summary>
+            Gets or sets the name of this department.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Department.ContactCount">
+            <summary>
+            Gets or sets the number of contacts in this department.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Department.Url">
+            <summary>
+            Gets or sets the URL with more information about this department.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Error">
+            <summary>
+            Represents an error.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Error.HttpStatusCode">
+            <summary>
+            Gets or sets the HTTP status code.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Error.ErrorCode">
+            <summary>
+            Gets or sets the error code.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Error.ErrorMessage">
+            <summary>
+            Gets or sets the error message.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Level">
+            <summary>
+            Represents a level in the company organizational structure.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Level.Name">
+            <summary>
+            Gets or sets the name of this level.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Level.ContactCount">
+            <summary>
+            Gets or sets the number of contacts on this level.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Level.Url">
+            <summary>
+            Gets or sets the URL with more information about this level.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.Partner">
+            <summary>
+            Represents a partner account.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.Partner.Points">
+            <summary>
+            Gets or sets the number of points on this account.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.User">
+            <summary>
+            Represents an user account.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.User.Points">
+            <summary>
+            Gets or sets the number of points on this account.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.User.PurchasePointsUrl">
+            <summary>
+            Gets or sets the URL to purchase more points.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.DomainExtensions">
+            <summary>
+            Provides a set of static methods for transformation of domain objects.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DomainExtensions.ToCompany(CMS.DataCom.CompanySearchResult)">
+            <summary>
+            Creates and initializes a new instance of the Company class with properties of the specified instance of the CompanySearchResult class.
+            </summary>
+            <param name="result">An instance of the CompanySearchResult class.</param>
+            <returns>A new instance of the Company class based initialized with properties of the specified instance of the CompanySearchResult class.</returns>
+        </member>
+        <member name="M:CMS.DataCom.DomainExtensions.MergeWith(CMS.DataCom.Contact,CMS.DataCom.Contact)">
+            <summary>
+            Merges the specified contact into this contact.
+            </summary>
+            <param name="contact">The contact to merge into.</param>
+            <param name="otherContact">The contact to merge.</param>
+        </member>
+        <member name="T:CMS.DataCom.EntityAttributeMapperBase">
+            <summary>
+            Provides a mapping of Data.com entity attribute values to form field values.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityAttributeMapperBase.mAttributeInfo">
+            <summary>
+            The entity attribute info that is the source of this mapping.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityAttributeMapperBase.mSupportsDependentStateField">
+            <summary>
+            A value indicating whether this mapping supports advanced country selection.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeMapperBase.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeMapperBase.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeMapperBase.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeMapperBase.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeMapperBase.GetValue``1(System.Object)">
+            <summary>
+            Gets the attribute value of the specified entity regardless of value nullability, and returns it.
+            </summary>
+            <typeparam name="T">The type of entity attribute value.</typeparam>
+            <param name="entity">The entity to get the value of.</param>
+            <returns>The attribute value of the specified entity regardless of value nullability.</returns>
+        </member>
+        <member name="P:CMS.DataCom.EntityAttributeMapperBase.AttributeInfo">
+            <summary>
+            Gets an entity attribute info that is the source of this mapping.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.EntityAttributeMapperBase.SupportsDependentStateField">
+            <summary>
+            Gets a value indicating whether this mapping supports advanced country selection.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.EntityBooleanAttributeMapper">
+            <summary>
+            Provides a mapping of Data.com entity boolean attribute values to form field values.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityBooleanAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityBooleanAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityBooleanAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityBooleanAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityBooleanAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityCountryAttributeMapper">
+            <summary>
+            Entity country attribute mapper
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityCountryAttributeMapper.mStateAttributeInfo">
+            <summary>
+            The entity attribute with state name.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityCountryAttributeMapper.mCountryFinder">
+            <summary>
+            The CMS country finder.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityCountryAttributeMapper.mStateFinder">
+            <summary>
+            The CMS state finder.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityCountryAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo,CMS.DataCom.EntityAttributeInfo,CMS.DataCom.ICountryFinder,CMS.DataCom.IStateFinder)">
+            <summary>
+            Initializes a new instance of the EntityCountryAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity country attribute info that is the source of this mapping.</param>
+            <param name="stateAttributeInfo">The entity state attribute info that is the source of this mapping.</param>
+            <param name="countryFinder">The country finder.</param>
+            <param name="stateFinder">The state finder.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityCountryAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityCountryAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityCountryAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityDateTimeAttributeMapper">
+            <summary>
+            Entity datetime attribute mapper.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityDateTimeAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityDateTimeAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityDateTimeAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityDateTimeAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityDateTimeAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityDecimalAttributeMapper">
+            <summary>
+            Entity decimal attribute mapper.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityDecimalAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityDecimalAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityDecimalAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityDecimalAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityDecimalAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityIntegerAttributeMapper">
+            <summary>
+            Entity integer attribute mapper.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityIntegerAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityIntegerAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityIntegerAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityIntegerAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityIntegerAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityLongIntegerAttributeMapper">
+            <summary>
+            Entity long integer attribute mapper.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityLongIntegerAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityIntegerAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityLongIntegerAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityLongIntegerAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityLongIntegerAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityPositiveIntegerAttributeMapper">
+            <summary>
+            Entity positive integer attribute mapper.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityPositiveIntegerAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityPositiveIntegerAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityPositiveIntegerAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityPositiveIntegerAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityPositiveIntegerAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityTextAttributeMapper">
+            <summary>
+            Entity text attribute mapper.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityTextAttributeMapper.#ctor(CMS.DataCom.EntityAttributeInfo)">
+            <summary>
+            Initializes a new instance of the EntityTextAttributeMapper class.
+            </summary>
+            <param name="attributeInfo">The entity attribute info that is the source of this mapping.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityTextAttributeMapper.GetFormFieldValue(CMS.FormEngine.FormFieldInfo,System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Computes a value compatible with the specified form field, and returns it.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A value compatible with the specified form field, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityTextAttributeMapper.IsCompatibleWithFormField(CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Determines whether this mapping is compatible with the specified form field.
+            </summary>
+            <param name="fieldInfo">The form field to receive a result of this mapping.</param>
+            <returns>True, if this mapping is compatible with the specified form field; otherwise, false.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityTextAttributeMapper.GetEntityAttributeDisplayValue(System.Object,CMS.DataCom.IEntityAttributeFormatter)">
+            <summary>
+            Creates a text representation of the entity attribute value, and returns it.
+            </summary>
+            <param name="entity">The Data.com entity.</param>
+            <param name="formatter">The object that provides formatting of attribute values.</param>
+            <returns>A text representation of the entity attribute value, if applicable; otherwise, an empty string.</returns>
+        </member>
+        <member name="T:CMS.DataCom.CompanyAttributeMapperFactory">
+            <summary>
+            Provides support for creating entity attribute mappers from company attributes.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.IEntityAttributeMapperFactory">
+            <summary>
+            Provides support for creating entity attribute mappers from entity attributes.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IEntityAttributeMapperFactory.CreateEntityAttributeMapper(System.String,CMS.DataCom.EntityInfo)">
+            <summary>
+            Creates an entity attribute mapper that corresponds to the specified entity attribute.
+            </summary>
+            <param name="entityAttributeName">The name of the entity attribute.</param>
+            <param name="entityInfo">The entity info.</param>
+            <returns>An entity attribute mapper that corresponds to the specified entity attribute, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="F:CMS.DataCom.CompanyAttributeMapperFactory.mCountryFinder">
+            <summary>
+            The CMS country finder.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanyAttributeMapperFactory.mStateFinder">
+            <summary>
+            The CMS state finder.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CompanyAttributeMapperFactory.#ctor(CMS.DataCom.ICountryFinder,CMS.DataCom.IStateFinder)">
+            <summary>
+            Initializes a new instance of the CompanyAttributeMapperFactory with the specified country and state finders.
+            </summary>
+            <param name="countryFinder">The country finder.</param>
+            <param name="stateFinder">The state finder.</param>
+        </member>
+        <member name="M:CMS.DataCom.CompanyAttributeMapperFactory.CreateEntityAttributeMapper(System.String,CMS.DataCom.EntityInfo)">
+            <summary>
+            Creates an entity attribute mapper that corresponds to the specified company attribute.
+            </summary>
+            <param name="entityAttributeName">The name of the company attribute.</param>
+            <param name="entityInfo">The company entity info.</param>
+            <returns>An entity attribute mapper that corresponds to the specified company attribute, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.ContactAttributeMapperFactory">
+            <summary>
+            Provides support for creating entity attribute mappers from contact attributes.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.ContactAttributeMapperFactory.mCountryFinder">
+            <summary>
+            The CMS country finder.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.ContactAttributeMapperFactory.mStateFinder">
+            <summary>
+            The CMS state finder.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ContactAttributeMapperFactory.#ctor(CMS.DataCom.ICountryFinder,CMS.DataCom.IStateFinder)">
+            <summary>
+            Initializes a new instance of the ContactAttributeMapperFactory with the specified country and state finders.
+            </summary>
+            <param name="countryFinder">The country finder.</param>
+            <param name="stateFinder">The state finder.</param>
+        </member>
+        <member name="M:CMS.DataCom.ContactAttributeMapperFactory.CreateEntityAttributeMapper(System.String,CMS.DataCom.EntityInfo)">
+            <summary>
+            Creates an entity attribute mapper that corresponds to the specified contact attribute.
+            </summary>
+            <param name="entityAttributeName">The name of the contact attribute.</param>
+            <param name="entityInfo">The contact entity info.</param>
+            <returns>An entity attribute mapper that corresponds to the specified contact attribute, if applicable; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.CountryFinder">
+            <summary>
+            Finds CMS countries by Data.com country names.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ICountryFinder">
+            <summary>
+            Finds CMS countries by Data.com country names.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ICountryFinder.Find(System.String)">
+            <summary>
+            Searches for a country in CMS that corresponds to to the specified Data.com country name, and returns it.
+            </summary>
+            <param name="name">The Data.com country name.</param>
+            <returns>The CMS country that corresponds to the specified Data.com country name, if found; otherwise, null.</returns>
+        </member>
+        <member name="F:CMS.DataCom.CountryFinder.mCodeNames">
+            <summary>
+            The dictionary for special cases when for given Data.com country name there's no country with matching name in CMS.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CountryFinder.Find(System.String)">
+            <summary>
+            Searches for a country in CMS that corresponds to to the specified Data.com country name, and returns it.
+            </summary>
+            <param name="name">The Data.com country name.</param>
+            <returns>The CMS country that corresponds to the specified Data.com country name, if found; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.IStateFinder">
+            <summary>
+            Finds CMS states by Data.com state names.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IStateFinder.Find(System.String,CMS.Globalization.CountryInfo)">
+            <summary>
+            Searches for a state in CMS that corresponds to to the specified Data.com state name, and returns it.
+            </summary>
+            <param name="name">The Data.com state name.</param>
+            <param name="country">The CMS country to which the state belongs.</param>
+            <returns>The CMS state that corresponds to the specified Data.com state name, if found; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.StateFinder">
+            <summary>
+            Finds CMS states by Data.com state names.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.StateFinder.Find(System.String,CMS.Globalization.CountryInfo)">
+            <summary>
+            Searches for a state in CMS that corresponds to to the specified Data.com state name, and returns it.
+            </summary>
+            <param name="name">The Data.com state name.</param>
+            <param name="country">The CMS country to which the state belongs.</param>
+            <returns>The CMS state that corresponds to the specified Data.com state name, if found; otherwise, null.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityAttributeFormatter">
+            <summary>
+            Provides culture-sensitive formatting for attribute values of Data.com entities.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.IEntityAttributeFormatter">
+            <summary>
+            Provides formatting for attribute values of Data.com entities.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IEntityAttributeFormatter.Format(System.Boolean)">
+            <summary>
+            Formats a Boolean value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IEntityAttributeFormatter.Format(System.Int64)">
+            <summary>
+            Formats an Int64 value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IEntityAttributeFormatter.Format(System.Decimal)">
+            <summary>
+            Formats a Decimal value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="M:CMS.DataCom.IEntityAttributeFormatter.Format(System.DateTime)">
+            <summary>
+            Formats a DateTime value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeFormatter.Format(System.Boolean)">
+            <summary>
+            Formats a Boolean value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeFormatter.Format(System.Int64)">
+            <summary>
+            Formats an Int64 value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeFormatter.Format(System.Decimal)">
+            <summary>
+            Formats a Decimal value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeFormatter.Format(System.DateTime)">
+            <summary>
+            Formats a DateTime value, and returns it.
+            </summary>
+            <param name="value">A value to format.</param>
+            <returns>A string representation of the specified value.</returns>
+        </member>
+        <member name="T:CMS.DataCom.CompanyEntityInfoProvider">
+            <summary>
+            Provides a Data.com company entity info.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanyEntityInfoProvider.mCompanyApiEnabled">
+            <summary>
+            A value indicating whether the Data.com GetCompany method is available.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanyEntityInfoProvider.mCompleteAttributeNames">
+            <summary>
+            A set of valid company attribute names when the Data.com GetCompany method is available.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.CompanyEntityInfoProvider.mAttributeNames">
+            <summary>
+            A set of valid company attribute names when the Data.com GetCompany method is not available.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.CompanyEntityInfoProvider.GetEntityInfo">
+            <summary>
+            Creates a company entity info, and returns it.
+            </summary>
+            <returns>The company entity info.</returns>
+        </member>
+        <member name="P:CMS.DataCom.CompanyEntityInfoProvider.CompanyApiEnabled">
+            <summary>
+            Gets or sets a value indicating whether the Data.com GetCompany method is available.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.ContactEntityInfoProvider">
+            <summary>
+            Provides a Data.com contact entity info.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.ContactEntityInfoProvider.mAttributeNames">
+            <summary>
+            A set of valid contact attribute names.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ContactEntityInfoProvider.GetEntityInfo">
+            <summary>
+            Creates a contact entity info, and returns it.
+            </summary>
+            <returns>The contact entity info.</returns>
+        </member>
+        <member name="T:CMS.DataCom.EntityAttributeInfo">
+            <summary>
+            Provides access to Data.com entity attribute metadata.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityAttributeInfo.mPropertyInfo">
+            <summary>
+            The corresponding entity property info.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityAttributeInfo.mDisplayName">
+            <summary>
+            The display name.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityAttributeInfo.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Initializes a new instance of the EntityAttributeInfo class.
+            </summary>
+            <param name="propertyInfo">The corresponding entity property info.</param>
+        </member>
+        <member name="P:CMS.DataCom.EntityAttributeInfo.Name">
+            <summary>
+            Gets the entity attribute name.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.EntityAttributeInfo.DisplayName">
+            <summary>
+            Gets the entity attribute display name.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.EntityAttributeInfo.PropertyInfo">
+            <summary>
+            Gets the corresponding entity property info.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.EntityInfo">
+            <summary>
+            Provides access to Data.com entity metadata.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityInfo.mItems">
+            <summary>
+            The dictionary that holds pairs of entity attribute name and the corresponding entity attribute info.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityInfo.#ctor">
+            <summary>
+            Initializes a new instance of the EntityInfo class.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityInfo.#ctor(System.Collections.Generic.IEnumerable{CMS.DataCom.EntityAttributeInfo})">
+            <summary>
+            Initializes a new instance of the EntityInfo class with the collection of entity attribute info.
+            </summary>
+            <param name="source">The collection of entity attribute info.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityInfo.GetAttributeInfo(System.String)">
+            <summary>
+            Searches for an entity attribute info with the specified name, and returns it.
+            </summary>
+            <param name="name">The entity attribute name.</param>
+            <returns>The entity attribute info with the specified name, if found; otherwise, null.</returns>
+        </member>
+        <member name="P:CMS.DataCom.EntityInfo.Items">
+            <summary>
+            Gets the array of entity attribute info.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.EntityMapping">
+            <summary>
+            Represents a mapping between a form info and an entity info.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityMapping.mItems">
+            <summary>
+            The dictionary that holds pairs of a form field name and the related entity mapping item.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityMapping.#ctor">
+            <summary>
+            Initializes a new instance of the EntityMapping class.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityMapping.#ctor(System.Collections.Generic.IEnumerable{CMS.DataCom.EntityMappingItem})">
+            <summary>
+            Initializes a new instance of the EntityMapping class with the collection of entity mapping items.
+            </summary>
+            <param name="source">The collection of entity mapping items.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityMapping.GetItem(System.String)">
+            <summary>
+            Searches for an entity mapping item with the specified form field name, and returns it.
+            </summary>
+            <param name="formFieldName">The form field name.</param>
+            <returns>The entity mapping item with the specified form field name, if found; otherwise, null.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityMapping.Add(CMS.DataCom.EntityAttributeInfo,CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Adds an entity mapping item to this mapping.
+            </summary>
+            <param name="attributeInfo">The entity attribute info.</param>
+            <param name="fieldInfo">The form field info</param>
+        </member>
+        <member name="P:CMS.DataCom.EntityMapping.Items">
+            <summary>
+            Gets the array of entity mapping items.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.EntityMappingItem">
+            <summary>
+            Represents an item of an entity mapping.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityMappingItem.mEntityAttributeName">
+            <summary>
+            The name of the entity attribute that is the target of this mapping item.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.EntityMappingItem.mFormFieldName">
+            <summary>
+            The name of the form field that is the source of this mapping item.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityMappingItem.#ctor(CMS.DataCom.EntityAttributeInfo,CMS.FormEngine.FormFieldInfo)">
+            <summary>
+            Initializes a new instance of the EntityMappingItem class with the specified entity attribute info and form field info.
+            </summary>
+            <param name="attributeInfo">The entity attribute info of this mapping item.</param>
+            <param name="fieldInfo">The form field info of this mapping item.</param>
+        </member>
+        <member name="M:CMS.DataCom.EntityMappingItem.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the EntityMappingItem class with the specified entity attribute and form field name.
+            </summary>
+            <param name="attributeName">The name of the entity attribute of this mapping item.</param>
+            <param name="fieldName">The name of the form field of this mapping item.</param>
+        </member>
+        <member name="P:CMS.DataCom.EntityMappingItem.EntityAttributeName">
+            <summary>
+            Gets the name of the entity attribute that is the target of this mapping item.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.EntityMappingItem.FormFieldName">
+            <summary>
+            Gets the name of the form field that is the source of this mapping item.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.EntityMappingSerializer">
+            <summary>
+            Serializes and deserializes an entity mapping into an XML string.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.EntityMappingSerializer.SerializeEntityMapping(CMS.DataCom.EntityMapping)">
+            <summary>
+            Serializes an entity mapping into an XML string.
+            </summary>
+            <param name="mapping">The entity mapping to serialize.</param>
+            <returns>The XML string that contains the specified entity mapping.</returns>
+        </member>
+        <member name="M:CMS.DataCom.EntityMappingSerializer.UnserializeEntityMapping(System.String)">
+            <summary>
+            Parses the specified XML string and returns the deserialized entity mapping.
+            </summary>
+            <param name="content">The XML string that contains an entity mapping.</param>
+            <returns>The deserialized entity info.</returns>
+        </member>
+        <member name="T:CMS.DataCom.AccountFormInfoTransformation">
+            <summary>
+            Transforms an account form info, i.e., updates field settings or removes certain field to provide a better UI experience.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.FormInfoTransformationBase">
+            <summary>
+            Transforms a form info, i.e., updates field settings or removes certain field to provide a better UI experience.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.Execute(CMS.FormEngine.FormInfo)">
+            <summary>
+            Transforms the specified form info.
+            </summary>
+            <param name="formInfo">The form info to transform.</param>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.UpdateSystemFormField(CMS.FormEngine.FormFieldInfo,System.String,System.String)">
+            <summary>
+            Updates the specified system form field info with new settings.
+            </summary>
+            <param name="formField">The system form field info to update.</param>
+            <param name="caption">The new field caption.</param>
+            <param name="controlName">The name of the new editing control associated with the specified field.</param>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.UpdateCountrySystemFormField(CMS.FormEngine.FormFieldInfo,System.String,System.String)">
+            <summary>
+            Updates the specified system form field info with new settings and changes the associated editing control to a country selector.
+            </summary>
+            <param name="formField">The system form field info to update.</param>
+            <param name="caption">The new field caption.</param>
+            <param name="returnType">The ReturnType setting of the country selector.</param>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.UpdateHtmlSystemFormField(CMS.FormEngine.FormFieldInfo,System.String)">
+            <summary>
+            Updates the specified system form field info with new settings and changes the associated editing control to a HTML area.
+            </summary>
+            <param name="formField">The system form field info to update.</param>
+            <param name="caption">The new field caption.</param>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.UpdateStatusSelectorSystemFormField(CMS.FormEngine.FormFieldInfo,System.String,System.String)">
+            <summary>
+            Updates the specified system form field info with new settings and changes the associated editing control to a status selector.
+            </summary>
+            <param name="formField">The system form field info to update.</param>
+            <param name="caption">The new field caption.</param>
+            <param name="controlName">The new control name.</param>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.TransformFormInfo(CMS.FormEngine.FormInfo,System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Removes empty categories and excluded form field infos from the specified form info.
+            </summary>
+            <param name="formInfo">The form info to modify.</param>
+            <param name="excludedFieldNames">The set of excluded form field names.</param>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.SetupCountrySelectors(CMS.FormEngine.FormInfo)">
+            <summary>
+            Modifies the specified form info to enable advanced country selection.
+            </summary>
+            <param name="formInfo">The form info to modify.</param>
+        </member>
+        <member name="M:CMS.DataCom.FormInfoTransformationBase.IsDependentStateField(CMS.FormEngine.FormFieldInfo,CMS.FormEngine.FormInfo)">
+            <summary>
+            Determines whether the specified form field contains a state identifier and can participate in advanced country selection.
+            </summary>
+            <param name="fieldInfo">The form field info.</param>
+            <param name="formInfo">The form info.</param>
+            <returns>True, if the specified form field contains a state identifier and could participate in advanced country selection; otherwise, false.</returns>
+        </member>
+        <member name="F:CMS.DataCom.AccountFormInfoTransformation.mExcludedFieldNames">
+            <summary>
+            The set of excluded account field names.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.AccountFormInfoTransformation.Execute(CMS.FormEngine.FormInfo)">
+            <summary>
+            Transforms the specified form info.
+            </summary>
+            <param name="formInfo">The form info to transform.</param>
+        </member>
+        <member name="T:CMS.DataCom.ContactFormInfoTransformation">
+            <summary>
+            Transforms a contact form info, i.e., updates field settings or removes certain field to provide a better UI experience.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.ContactFormInfoTransformation.mExcludedFieldNames">
+            <summary>
+            The set of excluded field names.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.ContactFormInfoTransformation.Execute(CMS.FormEngine.FormInfo)">
+            <summary>
+            Transforms the specified form info.
+            </summary>
+            <param name="formInfo">The form info to transform.</param>
+        </member>
+        <member name="T:CMS.DataCom.HttpResource">
+            <summary>
+            Represents an HTTP resource.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.HttpResource.mContent">
+            <summary>
+            The resource content.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.HttpResource.mStatusCode">
+            <summary>
+            The status code returned by the server.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.HttpResource.#ctor(System.String,System.Net.HttpStatusCode)">
+            <summary>
+            Initializes a new instance of the HttpResource class with the specified content and status code.
+            </summary>
+            <param name="content">The resource content.</param>
+            <param name="statusCode">The status code returned by the server.</param>
+        </member>
+        <member name="P:CMS.DataCom.HttpResource.Content">
+            <summary>
+            Gets the resource content.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.HttpResource.StatusCode">
+            <summary>
+            Gets the status code returned by the server.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.HttpResourceProvider">
+            <summary>
+            Provides access to HTTP resources.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.IHttpResourceProvider">
+            <summary>
+            Provides access to HTTP resources.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.IHttpResourceProvider.GetResource(System.String)">
+            <summary>
+            Retrieves the resource with the specified URL, and returns it.
+            </summary>
+            <param name="locator">The URL of the resource.</param>
+            <returns>The resource with the specified URL.</returns>
+        </member>
+        <member name="F:CMS.DataCom.HttpResourceProvider.mMaxRequestCount">
+            <summary>
+            Maximum number of requests.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.HttpResourceProvider.mTimeout">
+            <summary>
+            A request timeout.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.HttpResourceProvider.mRequestExceptionDelay">
+            <summary>
+            A delay between two requests if there is a protocol violation exception.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceProvider.GetResource(System.String)">
+            <summary>
+            Retrieves the resource with the specified URL, and returns it.
+            </summary>
+            <param name="locator">The URL of the resource.</param>
+            <returns>The resource with the specified URL.</returns>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceProvider.ExecuteGetResource(System.String)">
+            <summary>
+            Retrieves the resource with the specified URL, and returns it.
+            </summary>
+            <param name="locator">The URL of the resource.</param>
+            <returns>The resource with the specified URL.</returns>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceProvider.CreateResourceFromResponse(System.Net.HttpWebResponse)">
+            <summary>
+            Creates a new HTTP resource from the specified response, and returns it.
+            </summary>
+            <param name="response">A web response to process.</param>
+            <returns>A new HTTP resource created from the specified response.</returns>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceProvider.Timeout">
+            <summary>
+            Gets or sets the request timeout.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.HttpResourceUri">
+            <summary>
+            Represents an URI of Data.com REST API resources.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.HttpResourceUri.mTransformation">
+            <summary>
+            An object that transforms a filter into a collection of URL parameters.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.#ctor">
+            <summary>
+            Initializes a new instance of the HttpResourceUriBuilder class.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.ToString">
+            <summary>
+            Creates an URL of the Jigsaw REST service resource according to the current builder configuration, and returns it.
+            </summary>
+            <returns>An URL of the Jigsaw REST service resource according to the current builder configuration.</returns>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.CreateParameters">
+            <summary>
+            Creates a collection of URL parameters according to the current builder configuration, and returns it.
+            </summary>
+            <returns>A collection of URL parameters according to the current builder configuration.</returns>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.SetToken(System.Collections.Specialized.NameValueCollection,System.String)">
+            <summary>
+            Adds the specified access token the URL parameters of the REST service method call.
+            </summary>
+            <param name="collection">The URL parameters of the REST service method call.</param>
+            <param name="token">The Data.com REST API access token.</param>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.SetUserCredential(System.Collections.Specialized.NameValueCollection,System.Net.NetworkCredential)">
+            <summary>
+            Adds Jigsaw member's credential to the URL parameters of the REST service method call.
+            </summary>
+            <param name="collection">The URL parameters of the REST service method call.</param>
+            <param name="userCredential">The Jigsaw member's credential.</param>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.SetBuyerIdentity(System.Collections.Specialized.NameValueCollection,CMS.DataCom.BuyerIdentity)">
+            <summary>
+            Adds buyer identity to the URL parameters of the REST service method call.
+            </summary>
+            <param name="collection">The URL parameters of the REST service method call.</param>
+            <param name="buyerIdentity">The buyer identity.</param>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.SetPaging(System.Collections.Specialized.NameValueCollection,System.Int32,System.Int32)">
+            <summary>
+            Adds paging information to the URL parameters of the REST service method call.
+            </summary>
+            <param name="collection">The URL parameters of the REST service method call.</param>
+            <param name="pageIndex">The index of the requested page.</param>
+            <param name="pageSize">The size of the requested page.</param>
+        </member>
+        <member name="M:CMS.DataCom.HttpResourceUri.SetPurchaseFlag(System.Collections.Specialized.NameValueCollection,System.Boolean)">
+            <summary>
+            Adds a purchase flag to the URL parameters of the REST service method call.
+            </summary>
+            <param name="collection">The URL parameters of the REST service method call.</param>
+            <param name="purchaseFlag">A value of the purchase flag.</param>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.BaseUri">
+            <summary>
+            Gets or sets the URI of Data.com REST API.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.ResourceId">
+            <summary>
+            Gets or sets a resource identifier.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.Token">
+            <summary>
+            Gets or sets an access token.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.PageIndex">
+            <summary>
+            Gets or sets a zero-based page index.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.PageSize">
+            <summary>
+            Gets or sets a page size.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.PurchaseFlag">
+            <summary>
+            Gets or sets a value indicating whether the contact that is not owned should be bought.
+            </summary>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.UserCredential">
+            <summary>
+            Gets or sets a Jigsaw member's credential.
+            </summary>
+            <remarks>
+            A Jigsaw member's credential is applicable only with PassThrough API model.
+            </remarks>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.BuyerIdentity">
+            <summary>
+            Gets or sets a buyer identity.
+            </summary>
+            <remarks>
+            A buyer identity is applicable only with Reseller API model.
+            </remarks>
+        </member>
+        <member name="P:CMS.DataCom.HttpResourceUri.Filter">
+            <summary>
+            Gets or sets a filter.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.DateTimeParser">
+            <summary>
+            Provides the conversion of the string representation of a Data.com JSON REST service date and time to its DateTime equivalent.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DateTimeParser.mTimezoneOffsets">
+            <summary>
+            The dictionary that maps North America time zone abbreviations to their .NET DateTime compatible counterparts.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DateTimeParser.Parse(System.String)">
+            <summary>
+            Converts the specified string representation of a Data.com JSON REST service date and time to its DateTime equivalent.
+            </summary>
+            <param name="value">A string containing a date and time to convert.</param>
+            <returns>An object that is equivalent to the date and time contained in <paramref name="value"/>.</returns>
+        </member>
+        <member name="T:CMS.DataCom.DisplayAttribute">
+            <summary>
+            Provides an attribute that lets you specify display names for members of Data.com entity classes.
+            </summary>
+        </member>
+        <member name="F:CMS.DataCom.DisplayAttribute.mDisplayName">
+            <summary>
+            The display name.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.DisplayAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the DisplayAttribute class.
+            </summary>
+            <param name="displayName">The display name.</param>
+        </member>
+        <member name="P:CMS.DataCom.DisplayAttribute.DisplayName">
+            <summary>
+            The display name.
+            </summary>
+        </member>
+        <member name="T:CMS.DataCom.FilterTransformation">
+            <summary>
+            Provides a transformation of a filter into a set of URL parameters for the REST service.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.FilterTransformation.Execute(CMS.DataCom.Filter)">
+            <summary>
+            Transforms the specified filter into a set of URL parameters for the REST service.
+            </summary>
+            <param name="filter">The Data.com entity filter.</param>
+            <returns>The set of URL parameters for the REST service.</returns>
+        </member>
+        <member name="M:CMS.DataCom.FilterTransformation.Transform(System.String,System.Reflection.PropertyInfo,CMS.DataCom.Filter,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Transforms the specified filter property and adds the result to the set of URL parameters for the REST service.
+            </summary>
+            <param name="name">The name of the property for the REST service.</param>
+            <param name="property">The property info.</param>
+            <param name="filter">The Data.com entity filter.</param>
+            <param name="collection">The set of URL parameters for the REST service.</param>
+        </member>
+        <member name="M:CMS.DataCom.FilterTransformation.Transform(System.String,System.Nullable{System.DateTime},System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Transforms the specified filter property and adds the result to the set of URL parameters for the REST service.
+            </summary>
+            <param name="name">The name of the property for the REST service.</param>
+            <param name="input">The value of the property.</param>
+            <param name="collection">The set of URL parameters for the REST service.</param>
+        </member>
+        <member name="M:CMS.DataCom.FilterTransformation.Transform(System.String,System.Boolean,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Transforms the specified filter property and adds the result to the set of URL parameters for the REST service.
+            </summary>
+            <param name="name">The name of the property for the REST service.</param>
+            <param name="input">The value of the property.</param>
+            <param name="collection">The set of URL parameters for the REST service.</param>
+        </member>
+        <member name="M:CMS.DataCom.FilterTransformation.Transform(System.String,System.Nullable{System.Int64},System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Transforms the specified filter property and adds the result to the set of URL parameters for the REST service.
+            </summary>
+            <param name="name">The name of the property for the REST service.</param>
+            <param name="input">The value of the property.</param>
+            <param name="collection">The set of URL parameters for the REST service.</param>
+        </member>
+        <member name="M:CMS.DataCom.FilterTransformation.Transform(System.String,System.Collections.Generic.List{System.String},System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Transforms the specified filter property and adds the result to the set of URL parameters for the REST service.
+            </summary>
+            <param name="name">The name of the property for the REST service.</param>
+            <param name="input">The value of the property.</param>
+            <param name="collection">The set of URL parameters for the REST service.</param>
+        </member>
+        <member name="M:CMS.DataCom.FilterTransformation.Transform(System.String,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Transforms the specified filter property and adds the result to the set of URL parameters for the REST service.
+            </summary>
+            <param name="name">The name of the property for the REST service.</param>
+            <param name="input">The value of the property.</param>
+            <param name="collection">The set of URL parameters for the REST service.</param>
+        </member>
+        <member name="T:CMS.DataCom.JsonSerializer">
+            <summary>
+            Serializes objects to the JavaScript Object Notation (JSON) strings and deserializes JSON strings to objects.
+            </summary>
+        </member>
+        <member name="M:CMS.DataCom.JsonSerializer.Serialize``1(``0)">
+            <summary>
+            Serializes an object to the JSON string.
+            </summary>
+            <typeparam name="T">The type of object to serialize.</typeparam>
+            <param name="entity">The object that contains the data to serialize.</param>
+            <returns>JSON string with the serialized object.</returns>
+        </member>
+        <member name="M:CMS.DataCom.JsonSerializer.Unserialize``1(System.String)">
+            <summary>
+            Parses the JSON string and returns the deserialized object.
+            </summary>
+            <typeparam name="T">The type of object to deserialize.</typeparam>
+            <param name="content">The JSON string with the serialized object.</param>
+            <returns>The deserialized object.</returns>
+        </member>
+    </members>
+</doc>

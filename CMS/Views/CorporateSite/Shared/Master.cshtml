@@ -1,0 +1,47 @@
+﻿@inherits WebViewPage
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.PageTitle</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link rel="stylesheet" type="text/css" href="~/CMSPages/GetResource.ashx?stylesheetname=CorporateSite" />
+</head>
+<body>
+    <div class="zoneMainContent">
+        <div class="zoneTopWrap">
+            <div class="inner">
+                <!-- Logo -->
+                <div class="zoneLogo">
+                    <a href="~/Home.aspx" title="Home page">
+                        <img class="logo" src="~/Images/CorporateSiteLogo.aspx?width=183&height=47" alt="Logo"
+                            style="border-width: 0px;" />
+                    </a>
+                </div>
+                <div class="clear">
+                </div>
+                <br />
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="zoneMainContent">
+            @RenderBody()
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!-- Footer zone -->
+    <div class="zoneFooter">
+        <div class="inner">
+            <div class="footerLogo">
+                <h3>Powered by</h3>
+                <a href="http://www.kenticoasia.com" title="Kentico">
+                    <img border="0" src="~/App_Themes/CorporateSite/Images/PoweredByKentico.png" alt="This web site uses Kentico." /></a>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

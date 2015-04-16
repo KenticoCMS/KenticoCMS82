@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.CMSSiteMapProvider</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.CMSSiteMapProvider.TreeSiteMapNode">
+            <summary>
+            Site map node for the CMS tree sitemap structure.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapNode.mChildNodesLoaded">
+            <summary>
+            True if child nodes has been already loaded for this node.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapNode.mTreeNode">
+            <summary>
+            Tree node.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapNode.mNodeData">
+            <summary>
+            Node data.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapNode.mTreeProvider">
+            <summary>
+            Tree provider object to use for the database access.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapNode.#ctor(CMS.CMSSiteMapProvider.TreeSiteMapProvider,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="provider">TreeSiteMapProvider</param>
+            <param name="key">Node key</param>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapNode.#ctor(CMS.CMSSiteMapProvider.TreeSiteMapProvider,System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="provider">TreeSiteMapProvider</param>
+            <param name="key">Node key</param>
+            <param name="url">Node URL</param>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapNode.#ctor(CMS.CMSSiteMapProvider.TreeSiteMapProvider,System.String,System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="provider">TreeSiteMapProvider</param>
+            <param name="key">Node key</param>
+            <param name="url">Node URL</param>
+            <param name="title">Node title</param>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapNode.#ctor(CMS.CMSSiteMapProvider.TreeSiteMapProvider,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="provider">TreeSiteMapProvider</param>
+            <param name="key">Node key</param>
+            <param name="url">Node URL</param>
+            <param name="title">Node title</param>
+            <param name="description">Node description</param>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapNode.GetValue(System.String)">
+            <summary>
+            Returns value of column.
+            </summary>
+            <param name="columnName">Column name</param>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapNode.SetValue(System.String,System.Object)">
+            <summary>
+            Sets value of column.
+            </summary>
+            <param name="columnName">Column name</param>
+            <param name="value">Column value</param> 
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapNode.TreeProvider">
+            <summary>
+            Tree provider instance used to access data. If no TreeProvider is assigned, a new TreeProvider instance is created.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapNode.ChildNodesLoaded">
+            <summary>
+            Flag saying whether the child nodes are already loaded to the node.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapNode.TreeNode">
+            <summary>
+            Property to get and set the inner TreeNode.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapNode.NodeData">
+            <summary>
+            Property to get and set the inner data.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapNode.CMS#Base#ISimpleDataContainer#Item(System.String)">
+            <summary>
+            Gets or sets the value of the column.
+            </summary>
+            <param name="columnName">Column name</param>
+        </member>
+        <member name="T:CMS.CMSSiteMapProvider.TreeSiteMapProvider">
+            <summary>
+            Class providing tree site map management.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mTreeProvider">
+            <summary>
+            Tree provider.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mClassNames">
+            <summary>
+            Class names.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mCheckPermissions">
+            <summary>
+            Indicates if the permissions should be checked.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mPath">
+            <summary>
+            Path.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mAlternativePath">
+            <summary>
+            Alternative path.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mUsedPath">
+            <summary>
+            Used path.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mSiteName">
+            <summary>
+            Site name.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mCultureCode">
+            <summary>
+            Culture code.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mCombineWithDefaultCulture">
+            <summary>
+            Combine with default culture.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mWhereCondition">
+            <summary>
+            Where condition.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mOrderBy">
+            <summary>
+            Order by.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mSelectOnlyPublished">
+            <summary>
+            Select only published.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mSelectPublishedData">
+            <summary>
+            Select the published data.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mMaxRelativeLevel">
+            <summary>
+            Maximum relative level.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mBindNodeData">
+            <summary>
+            Bind the node data to the nodes.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mMaxTreeNodes">
+            <summary>
+            Maximum number of the nodes in a level.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mRootNodeLevel">
+            <summary>
+            Root node level.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mNodes">
+            <summary>
+            A table of all the nodes, indexed by NodeAliasPath.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mNodesByID">
+            <summary>
+            A table of all the nodes, indexed by NodeID.
+            </summary>
+        </member>
+        <member name="F:CMS.CMSSiteMapProvider.TreeSiteMapProvider.mRootNode">
+            <summary>
+            Sitemap root node.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.GetRootNodeCore">
+            <summary>
+            Returns the the root sitemap node.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.Clear">
+            <summary>
+            Clean up any collections or other state that an instance of this may hold.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.ReloadData">
+            <summary>
+            Reloads the tree data.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.BuildSiteMap">
+            <summary>
+            Performs the sitemap build.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.GetNodeById(System.Int32)">
+            <summary>
+            Returns the node specified by given Node ID.
+            </summary>
+            <param name="nodeId">Node ID to retrieve</param>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.GetNodeByAliasPath(System.String)">
+            <summary>
+            Returns the node by its Alias.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.GetChildNodes(System.Int32)">
+            <summary>
+            Returns the set of child nodes for the specified node.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.GetChildNodes(System.Int32,System.Int32)">
+            <summary>
+            Returns the set of child nodes for the specified node.
+            </summary>
+        </member>
+        <member name="M:CMS.CMSSiteMapProvider.TreeSiteMapProvider.GetColumns">
+            <summary>
+            Gets columns to be selected.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.TreeProvider">
+            <summary>
+            Tree provider instance used to access data. If no TreeProvider is assigned, a new TreeProvider instance is created.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.RootNode">
+            <summary>
+            Property to get Sitemap root node.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.ClassNames">
+            <summary>
+            Property to set and get the classnames list (separated by the semicolon).
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.CheckPermissions">
+            <summary>
+            Indicates if the permissions should be checked.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.Path">
+            <summary>
+            Property to set and get the Path.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.AlternativePath">
+            <summary>
+            Property to set and get the alternative path.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.UsedPath">
+            <summary>
+            Used alias path.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.SiteName">
+            <summary>
+            Property to set and get the SiteName.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.CultureCode">
+            <summary>
+            Property to set and get the CultureCode.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.CombineWithDefaultCulture">
+            <summary>
+            Property to set and get the CombineWithDefaultCulture flag.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.WhereCondition">
+            <summary>
+            Property to set and get the WhereCondition.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.OrderBy">
+            <summary>
+            Property to set and get the OrderBy.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.SelectOnlyPublished">
+            <summary>
+            Property to set and get the SelectOnlyPublished flag.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.SelectPublishedData">
+            <summary>
+            If true, the published data.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.MaxRelativeLevel">
+            <summary>
+            Property to set and get the MaxRelativeLevel.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.BindNodeData">
+            <summary>
+            Specifies if the node data (TreeNode) should be bound to the nodes.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.MaxTreeNodes">
+            <summary>
+            Maximum number of tree nodes displayed within the tree.
+            </summary>
+        </member>
+        <member name="P:CMS.CMSSiteMapProvider.TreeSiteMapProvider.RootNodeLevel">
+            <summary>
+            Root node level.
+            </summary>
+        </member>
+    </members>
+</doc>

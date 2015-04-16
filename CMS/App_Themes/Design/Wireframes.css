@@ -1,0 +1,859 @@
+﻿/* General */
+.WireframeWebPart {
+    background-color: white;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+.WireframeWebPart input {
+    cursor: default;
+}
+
+.WireframeWebPart *, .WireframeContent * {
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    font-size: 14px;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-family: Comic Sans MS;
+}
+
+.WireframeWebPart h1 {
+    font-size: 160%;
+}
+
+.WireframeWebPart img {
+    filter: Gray;
+}
+
+.WebPartComments {
+    position: relative;
+    height: 0;
+    overflow: visible;
+}
+
+.WebPartComments .CommentsText {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    filter: none;
+}
+
+.WireframeContainer {
+    border: solid 2px #000;
+}
+
+.WireframeHeader {
+    font-weight: bold;
+    border-bottom: solid 2px #000;
+    padding: 3px;
+}
+
+.WireframeContent {
+    padding: 3px;
+    display: inline-block;
+}
+
+/* Layouts */
+.WireframeWebPart .VerticalResizer {
+    border-top: dashed 2px #cccccc;
+    border-bottom: none;
+}
+
+.WireframeWebPart .HorizontalResizer {
+    border-left: dashed 2px #ccc;
+    border-right: none;
+}
+
+.WireframeWebPart .BothResizer {
+    border: none;
+    background: #ccc;
+    width: 0;
+    height: 0;
+}
+
+.WireframeWebPart .VerticalResizer, .WireframeWebPart .HorizontalResizer, .WireframeWebPart .HorizontalDivResizer {
+    background: none;
+}
+
+.WireframeBox {
+    border: solid 2px #000;
+}
+
+.WireframeBoxHeader, .WireframeBoxContent {
+    padding: 5px;
+    display: block;
+}
+
+.WireframeBoxHeader {
+    border-bottom: solid 2px #000;
+}
+
+.WireframeButtons, .WireframeMenuBar ul {
+    list-style-type: none;
+    text-align: center;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.WireframeMenuItemSelected, .WireframeTabSelected {
+    background-color: #ccc;
+}
+
+.WireframeButtons {
+    padding: 5px 5px 0 5px;
+    height: 40px;
+}
+
+.WireframeButtons li, .WireframeMenuBar li {
+    float: left;
+    margin: 0;
+}
+
+.WireframeButtons li {
+    margin-right: 10px;
+    min-width: 30px;
+}
+
+.WireframeMenuBar li {
+    padding: 5px 15px 5px 15px;
+}
+
+li.WireframeTab {
+    border: solid 2px #000;
+    padding: 3px 15px 3px 15px;
+}
+
+.WireframeButton {
+    padding: 5px 15px 5px 15px;
+    display: table-cell;
+    vertical-align: middle;
+    min-width: 20px;
+    min-height: 20px;
+    border: solid 3px #000;
+    border-style: outset;
+    text-align: center;
+}
+
+.WireframeButtonBar {
+    padding: 5px;
+}
+
+.WireframeButtonBar li {
+    border-left: none;
+}
+
+.WireframeButtonBar ul {
+    border-left: solid 3px #000;
+    border-left-style: outset;
+}
+
+.WireframeLink {
+    text-decoration: underline;
+    color: #00f;
+}
+
+.WireframeNoteHeaderBack, .WireframeNoteMarkBack {
+    background-color: #888;
+}
+
+.WireframeNoteHeader, .WireframeNoteMarkHeader {
+    background-color: #ec0;
+    border-bottom: none;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+    min-height: 8px;
+}
+
+.WireframeNoteHeader {
+    padding: 3px;
+    font-weight: bold;
+}
+
+.WireframeNote, .WireframeNoteMark {
+    background-color: #fd0;
+    padding: 11px;
+    border-top: none;
+    display: block;
+    overflow: hidden;
+}
+
+.WireframeNoteMark {
+    padding: 3px 5px 3px 5px;
+    font-weight: bold;
+}
+
+.WireframeToggleImage {
+    vertical-align: text-top;
+    cursor: default;
+}
+
+.WireframeDropdown {
+    border: solid 2px #000;
+    margin: 5px;
+    height: 26px;
+}
+
+.NoWrap {
+    white-space: nowrap;
+}
+
+.WireframeTextBox {
+    height: 16px;
+}
+
+.WireframeTextBox, .WireframeTextArea {
+    border: solid 2px #000;
+    display: block;
+    padding: 2px;
+    overflow: hidden;
+    width: 200px;
+}
+
+.WireframeTextBoxIcon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 24px;
+    top: -24px;
+    vertical-align: text-top;
+}
+
+.WireframeTextArea {
+    overflow-y: scroll;
+}
+
+.WireframeDateTime {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/calendar.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 25px;
+}
+
+.WireframeColorPicker {
+    height: 25px;
+    width: 25px;
+    border: solid 2px #000;
+}
+
+.WireframeGrid {
+    border: solid 1px #000;
+}
+
+.WireframeGrid td {
+    border: solid 1px #000;
+    padding: 3px;
+}
+
+.WireframeGrid .Item0 td {
+    background-color: #888;
+    font-weight: bold;
+}
+
+.WireframeGrid .ItemEven {
+    background-color: #ddd;
+}
+
+.WireframeFieldset {
+    border: solid 2px #000;
+    margin: 15px 5px 5px 5px;
+}
+
+.WireframeFieldsetLegend {
+    position: relative;
+    top: -10px;
+    background-color: #fff;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.WireframeImageBox {
+    background-color: #fff;
+}
+
+.WireframeImageBox, .WireframeRectangle {
+    border: solid 2px #000;
+}
+
+.WireframeImageBox img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.WireframeImageCentered {
+    text-align: center;
+}
+
+.WireframeHorizontalSplitter, .WireframeVerticalSplitter {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/splithorz.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.WireframeVerticalSplitter {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/splitvert.png');
+}
+
+.WireframeTitle, .WireframeParagraph h1 {
+    line-height: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0 10px 0;
+    padding: 0;
+}
+
+.WireframeParagraph {
+    display: block;
+    width: 100px;
+}
+
+.WireframeSubtitle, .WireframeParagraph h2 {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+    padding: 0;
+}
+
+.WireframeTagCloud {
+    overflow: hidden;
+}
+
+.WireframeTag {
+    white-space: nowrap;
+}
+
+.WireframeIcon {
+    text-align: center;
+}
+
+.WireframeIcon img {
+    vertical-align: middle;
+}
+
+.WireframeIconLabel {
+    padding: 5px;
+}
+
+.WireframeIcon .XL {
+    width: 64px;
+}
+
+.WireframeIcon .L {
+    width: 48px;
+}
+
+.WireframeIcon .M {
+    width: 32px;
+}
+
+.WireframeIcon .S {
+    width: 16px;
+}
+
+.Block {
+    display: block;
+}
+
+
+.WireframeMultilineButton {
+    border: solid 2px #000;
+    border-style: outset;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    overflow: hidden;
+}
+
+.WireframeMultilineButton .MultilineButtonMain {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+}
+
+.WireframeSliderBox {
+    height: 0;
+    border-top: solid 2px #000;
+}
+
+.WireframeSliderBoxVertical {
+    width: 0;
+    border-left: solid 2px #000;
+}
+
+.WireframeSliderElem {
+    position: relative;
+    top: -7px;
+    border-right: solid 6px #000;
+    height: 12px;
+}
+
+.WireframeSliderElemVertical {
+    position: relative;
+    left: -7px;
+    border-bottom: solid 6px #000;
+    width: 12px;
+}
+
+.WireframeSliderElem .WebPartResizer .WebPartResizerHandle {
+    top: 13px;
+    left: 9px;
+}
+
+.WebPartResizerHandle.HorizontalOnly {
+    cursor: e-resize !important;
+}
+
+.WebPartResizerHandle.VerticalOnly {
+    cursor: n-resize !important;
+}
+
+.DraggedWebPart .WebPartResizerHandle {
+    display: none;
+}
+
+.WireframeSliderBoxVertical .WireframeSliderInside, .WireframeSliderElemVertical .WireframeSliderElemInside,
+.WireframeScrollbarBoxVertical .WireframeSliderInside, .WireframeScrollbarElemVertical .WireframeSliderElemInside {
+    position: relative;
+    height: 100%;
+}
+
+.WireframeSliderElem, .WireframeProgressElem, .WireframeScrollbarElem {
+    max-width: 100%;
+}
+
+.WireframeSliderElemVertical, .WireframeProgressElemVertical, .WireframeScrollbarElemVertical {
+    max-height: 100%;
+}
+
+.WireframeSliderElemVertical .WebPartResizer .WebPartResizerHandle {
+    left: 13px;
+    top: -3px;
+}
+
+.WireframeProgressBox {
+    border: solid 2px #000;
+    padding: 2px;
+}
+
+.WireframeProgressBox .WebPartResizer .WebPartResizerHandle {
+    left: 10px;
+    top: -11px;
+}
+
+.WireframeProgressElem {
+    height: 10px;
+    background-color: #aaa;
+}
+
+.WireframeProgressElem .WebPartResizer .WebPartResizerHandle {
+    left: 5px;
+    top: 10px;
+}
+
+.WireframeScrollbarBox, .WireframeScrollbarBoxVertical {
+    border: solid 2px #000;
+}
+
+.WireframeScrollbarBox {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/scrollright.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 32px;
+}
+
+.WireframeScrollbarBox .WireframeSliderInside {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/scrollleft.png');
+    background-repeat: no-repeat;
+    padding: 2px;
+}
+
+.WireframeScrollbarBox .WebPartResizer .WebPartResizerHandle {
+    left: 42px;
+    top: -14px;
+}
+
+.WireframeScrollbarBoxVertical {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/scrollbottom.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 36px;
+}
+
+.WireframeScrollbarBoxVertical .WireframeSliderInside {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/scrolltop.png');
+    background-repeat: no-repeat;
+    padding: 2px;
+}
+
+.WireframeScrollbarBoxVertical .WebPartResizer .WebPartResizerHandle {
+    left: -2px;
+    top: 30px;
+}
+
+.WireframeScrollbarElem {
+    border-right: solid 16px #000;
+    height: 12px;
+    min-width: 16px;
+}
+
+.WireframeScrollbarElem .WebPartResizer .WebPartResizerHandle {
+    left: 14px;
+    top: 13px;
+}
+
+.WireframeScrollbarElemVertical {
+    border-bottom: solid 16px #000;
+    width: 12px;
+    min-height: 16px;
+}
+
+.WireframeScrollbarElemVertical .WebPartResizer .WebPartResizerHandle {
+    left: 13px;
+    top: 2px;
+}
+
+.WireframeWYSIWYG {
+    display: block;
+    border: solid 2px #000;
+    min-height: 80px;
+    overflow: hidden;
+    min-width: 100px;
+}
+
+.WireframeWYSIWYGToolbar, .WireframeToolbar {
+    position: relative;
+    border-bottom: solid 2px #000;
+    max-height: 50%;
+    background: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Components/Toolbar.png') no-repeat rgba(226, 226, 226, 0.6);
+}
+
+.WireframeToolbar {
+    border: solid 2px #000 !important;
+    max-height: 92px;
+    overflow: hidden;
+}
+
+.WireframeToolbar .WireframeRectangleImage {
+    max-height: 92px;
+}
+
+.WireframeWYSIWYGContent {
+    display: block;
+    padding: 5px;
+    min-height: 30px;
+}
+
+/* Layouts */
+.WireframeTabs .ajax__tab_tab {
+    margin-right: 2px;
+}
+
+.WireframeTabs .ajax__tab_tab, .WireframeTabs .ajax__tab_body, .WireframeTabs .ajax__tab_body_bottom, .WireframeTabs .ajax__tab_tab_bottom {
+    border: solid 2px #000;
+    padding: 3px 5px 3px 5px;
+    line-height: 18px;
+}
+
+.WireframeTabs .ajax__tab_header .ajax__tab_active .ajax__tab_tab {
+    border-bottom: solid 2px #fff;
+}
+
+.WireframeTabs .ajax__tab_header_bottom {
+    position: relative;
+    top: -2px;
+}
+
+.WireframeTabs .ajax__tab_header_bottom .ajax__tab_active .ajax__tab_tab {
+    border-top: solid 2px #fff;
+}
+
+.WireframeTabs .ajax__tab_header, .WireframeTabs .ajax__tab_header_bottom {
+    padding-left: 5px;
+}
+
+.WireframeTabs .ajax__tab_header_bottom .ajax__tab_tab {
+    vertical-align: top;
+}
+
+.WireframeTabs .ajax__tab_header {
+    position: relative;
+    top: 2px;
+}
+
+
+.WireframeTabs .ajax__tab_body, .WireframeTabs .ajax__tab_body_bottom {
+    overflow: hidden;
+}
+
+.WireframeActions {
+    height: 0;
+    text-align: right;
+    overflow: visible;
+    position: relative;
+}
+
+.WireframeActionsInner {
+    padding: 2px;
+}
+
+.WireframeAccordionActions .WireframeActionsInner, .WireframeAreaActions .WireframeActionsInner {
+    top: -1px;
+    right: 0;
+    background: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/handle.png') no-repeat #fff;
+    background-position: right;
+    padding-right: 17px;
+    position: absolute;
+    z-index: 1;
+}
+
+.WireframeArea .FreeLayout {
+    border: none !important;
+    max-width: 100%;
+}
+
+.WireframeArea {
+    min-width: 50px;
+}
+
+.FreeLayout {
+    min-height: 50px;
+}
+
+.FreeLayout .DraggedWebPart {
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+}
+
+.WireframeNextPageLevel .FreeLayout, .WireframeNextPageLevelWebPart {
+    border: dashed 2px #aaa;
+    background-color: #fff;
+    font-family: Comic Sans MS;
+}
+
+.WireframeNextPageLevel .WebPartHandle, .WireframeNextPageLevel .AddWebPart {
+    left: 2px;
+    top: 4px;
+}
+
+.WireframeNextLevel {
+    min-width: 100px;
+    min-height: 30px;
+}
+
+.WireframeNextPageLevel .PagePlaceholderHeaderOut {
+    height: 0;
+}
+
+.WireframeMode .PagePlaceholderHeader {
+    background: #ddfec1;
+    padding: 1px;
+}
+
+.WireframeNextPageLevel .PagePlaceholderHeader {
+    position: relative;
+    top: -24px;
+    width: 100%;
+}
+
+.WireframeNextPageLevel .PagePlaceholderLeftAction {
+    border: none !important;
+}
+
+.WireframeNextLevelLabel {
+    display: block;
+    position: relative;
+    color: #aaa;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.WireframeAccordion {
+    min-width: 75px;
+}
+
+.WireframeAccordion, .WireframeAccordionContent {
+    overflow: hidden !important;
+}
+
+.WireframeAccordionContent .FreeLayout {
+    overflow: visible !important;
+}
+
+.WireframeAccordion, .WireframeAccordionHeader, .WireframeAccordionSelectedHeader, .WireframeAccordionContent {
+    border: solid 1px #000;
+    overflow: hidden;
+}
+
+.WireframeAccordionHeader, .WireframeAccordionSelectedHeader, .WireframeAccordionContent {
+    padding: 3px;
+}
+
+.WireframeAccordionSelectedHeader {
+    background-color: #ccc;
+}
+
+.WireframeActionsInner {
+    text-align: right;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+}
+
+.WireframeAccordionActions .WireframeActionsInner {
+    top: -9px;
+    background: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/handle.png') no-repeat #fff;
+    background-position: right;
+    padding-right: 20px;
+}
+
+.WireframeActionsInner .LayoutAction img {
+    padding-top: 0;
+}
+
+/* Properties */
+.EditProperty, .ColorEditor {
+    position: absolute;
+    z-index: 10000;
+}
+
+.EditOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    background-color: #888;
+    filter: alpha(opacity=20);
+    opacity: 0.2;
+}
+
+.ColorEditor {
+    border: solid 1px #000;
+    background-color: #ccc;
+}
+
+.ColorEditorColor {
+    width: 25px;
+    height: 15px;
+    float: left;
+    border: solid 1px #000;
+    margin: 2px;
+}
+
+.WebPartResizer, .WireframePositionEnvelope {
+    height: 0;
+    overflow: visible;
+    text-align: right;
+}
+
+.WebPartResizerHandle {
+    position: relative;
+    left: -12px;
+    top: 4px;
+    cursor: nw-resize;
+}
+
+.WebPartResizer .WebPartResizerHandle {
+    left: 1px;
+    top: -11px;
+}
+
+/* Text formatting */
+.WireframeCheckBoxChecked, .WireframeCheckBox, .WireframeRadioChecked, .WireframeRadio,
+.WireframeDown, .WireframeUp, .WireframeUpDown, .WireframeLeft, .WireframeRight, .WireframePlus, .WireframeMinus,
+.WireframeDir, .WireframeFile, .WireframeDoc, .WireframeSpace {
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.WireframeUp {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/arrowup.png');
+}
+
+.WireframeDown {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/arrowdown.png');
+}
+
+.WireframeRight {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/arrowright.png');
+}
+
+.WireframeLeft {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/arrowleft.png');
+}
+
+.WireframeUpDown {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/arrowupdown.png');
+}
+
+.WireframeCheckBoxChecked {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/checkboxchecked.png');
+}
+
+.WireframeCheckBox {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/checkbox.png');
+}
+
+.WireframeRadioChecked {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/radiochecked.png');
+}
+
+.WireframeRadio {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/radio.png');
+}
+
+.WireframeMinus {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/minus.png');
+}
+
+.WireframePlus {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/plus.png');
+}
+
+.WireframeDir {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/dir.png');
+}
+
+.WireframeFile {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/file.png');
+}
+
+.WireframeDoc {
+    background-image: url('../../CMSPages/GetResource.ashx?image=CMSModules/CMS_PortalEngine/Wireframes/Icons/doc.png');
+}
+
+.WireframeLink {
+    text-decoration: underline;
+    color: #00f;
+}
+
+.WireframeItalics {
+    font-style: italic;
+}
+
+.WireframeBold {
+    font-weight: bold;
+}
+
+.WireframeDisabled {
+    color: #888;
+}
+
+.WireframeUnderlined {
+    text-decoration: underline;
+}

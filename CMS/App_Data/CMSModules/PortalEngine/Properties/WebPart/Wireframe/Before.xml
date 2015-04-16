@@ -1,0 +1,3 @@
+<form>
+	<field column="WebPartTitle" fieldcaption="Web part title" visible="true" columntype="text" fieldtype="textbox" allowempty="true" columnsize="200" fielddescription="{$documentation.webpartproperties.webparttitle$}" guid="2bf266ee-b4fb-4f3b-9a91-523cf7b55e7e" />
+</form>

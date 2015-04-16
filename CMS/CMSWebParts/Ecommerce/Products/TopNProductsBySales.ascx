@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="CMSWebParts_Ecommerce_Products_TopNProductsBySales" CodeFile="~/CMSWebParts/Ecommerce/Products/TopNProductsBySales.ascx.cs" %>
+<cms:CMSDataList ID="lstElem" runat="server" />

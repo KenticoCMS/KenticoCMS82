@@ -1,0 +1,1783 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.OnlineForms</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.OnlineForms.BizForm">
+            <summary>
+            Basic bizform engine independent on CMS.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.uploadFiles">
+            <summary>
+            List of files (controls) to upload files.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.deleteFiles">
+            <summary>
+            List of files (controls) to delete files.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.mRegExEmailMacro">
+            <summary>
+            Regular expression for macros in e-mail body.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.hideForm">
+            <summary>
+            Indicates if the form should be hidden.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.mEnableNotificationEmail">
+            <summary>
+            Indicates if notification e-mail should be sent.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.mEnableAutoresponder">
+            <summary>
+            Indicates if autoresponder e-mail should be sent.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.mDisplayOriginalFileName">
+            <summary>
+            Indicates whether original file name should be displayed instead of the file GUID in 'Uploader' controls.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.mUseLocalMessagesPlaceholder">
+            <summary>
+            Indicates whether local MessagesPlaceholder control should be added.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.mLocalMessagesPlaceHolder">
+            <summary>
+            Local messages placeholder.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.mBizFormID">
+            <summary>
+            Bizform ID of currently loaded bizform.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.bizFormInfo">
+            <summary>
+            BizForm info object.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizForm.content">
+            <summary>
+            Bizform item.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.OnPreRender(System.EventArgs)">
+            <summary>
+            OnPreRender event handler.
+            </summary>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Renders the control at design-time.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.InitFormInternal">
+            <summary>
+            Initializes the form.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.InitForm">
+            <summary>
+            Initializes the form properties and prepares the data to load.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.AddControlsBeforeInternal">
+            <summary>
+            Allows to add additional components before the form.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.BizForm_OnBeforeValidate(System.Object,System.EventArgs)">
+            <summary>
+            On before validate event handler.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.SaveDataInternal">
+            <summary>
+            Saves data to database.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.AfterSaveActionsInternal(System.String,System.Boolean)">
+            <summary>
+            Executes additional actions after successful save.
+            </summary>
+            <param name="redirectUrlAfterSave">Target URL for the final redirection</param>
+            <param name="showChangesSaved">Indicates if info message should be displayed (redirect URL should be empty)</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.ReloadData">
+            <summary>
+            Reloads the form and its data.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.BizForm_OnUploadFile(System.Object,System.EventArgs)">
+            <summary>
+            Handles file upload
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.BizForm_OnDeleteFile(System.Object,System.EventArgs)">
+            <summary>
+            Handles file deletion
+            </summary>
+            <param name="sender">Sender object</param>
+            <param name="e">Event arguments</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.ProcessFiles(CMS.OnlineForms.BizFormItem)">
+            <summary>
+            Proceeds the file operations on the bizform.
+            </summary>
+            <param name="dataItem">Updated BizFrom item</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.GetNewGuidName(System.String)">
+            <summary>
+            Returns GUID.extension for newly created files.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.GetFileNameForUploader(System.String)">
+            <summary>
+            Returns file name that will be displayed by the Uploader control. Return value depends on property <see cref="P:CMS.OnlineForms.BizForm.DisplayOriginalFileName"/>.
+            </summary>
+            <param name="fileNameString">File name from database in format "[guid].[extension]/[originalfilename].[extension]"</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.SaveFileToDisk(System.Web.HttpPostedFile,System.String,System.String,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Save uploaded file to file system.
+            </summary>
+            <param name="postedFile">Posted file</param>
+            <param name="fileName">File name</param>        
+            <param name="filesFolderPath">Directory path where the file is saved to</param>
+            <param name="widht">Image required widht</param>
+            <param name="height">Image required height</param>
+            <param name="maxSideSize">Image required max side size</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.DeleteFile(System.String,System.String,System.String)">
+            <summary>
+            Delete uploaded file from file system.
+            </summary>
+            <param name="fileName">File name</param>
+            <param name="directoryPath">Directory path</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.SendNotificationEmail(System.String,System.String,CMS.Base.IDataContainer,CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Sends notification email to specified person.
+            </summary>
+            <param name="fromEmail">From email address</param>
+            <param name="recipients">Email address of recipients where notification emails are sent. You can specify multiple addresses separated by semicolons.</param>
+            <param name="data">Data from BasicForm</param>
+            <param name="bfi">BizFormInfo</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.SendConfirmationEmail(System.String,System.String,CMS.Base.IDataContainer,CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Sends confirmation email (autoresponder).
+            </summary>
+            <param name="fromEmail">From email address</param>
+            <param name="toEmail">To email address</param>
+            <param name="data">Data from basic form</param>
+            <param name="bfi">BizFormInfo</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.ResolveEmailMessageText(System.String,CMS.FormEngine.FormInfo,CMS.Base.IDataContainer)">
+            <summary>
+            Resolve confirmation email message text.
+            </summary>
+            <param name="emailLayout">Email layout template with macros to resolve</param>
+            <param name="fi">Form info object</param>
+            <param name="data">Form data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.GetBizFormAttachmentLink(System.String)">
+            <summary>
+            Returns html code of link to bizform attached file.
+            </summary>
+            <param name="fileNameString">BizForm file name - guid + extension</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizForm.EnsureDataForSending(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Ensures that essential data is initialized when notification or confirmation emails are send from an external code.
+            </summary>
+            <param name="bfi">BizFormInfo object</param>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.LocalMessagesPlaceHolder">
+            <summary>
+            Gets the local messages placeholder.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.RegExEmailMacro">
+            <summary>
+            Regular expression for macros in e-mail body, macros are in form $$type:fieldname$$.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.FormName">
+            <summary>
+            BizForm name.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.ItemID">
+            <summary>
+            Primary key value of the item being edited.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.ShowPrivateFields">
+            <summary>
+            Indicates whether to show private fields or not.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.AlternativeFormFullName">
+            <summary>
+            Alternative form full name (ClassName.AlternativeFormName).
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.DefaultValidationErrorMessage">
+            <summary>
+            Default validation error message.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.EncodeEmails">
+            <summary>
+            Indicates if notification and confirmation e-mails should be encoded, default value is 'false'.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.EnableNotificationEmail">
+            <summary>
+            If TRUE then notification e-mail will be send. The notification e-mail has to be defined. Default value is TRUE.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.EnableAutoresponder">
+            <summary>
+            If TRUE then autoresponder e-mail will be send. The autoresponder has to be defined. Default value is TRUE.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.FormRedirectToUrl">
+            <summary>
+            If set, overrides settings in BizFormInfo.FormRedirectToUrl.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.FormDisplayText">
+            <summary>
+            If set, overrides settings in BizFormInfo.FormDisplayText.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.FormClearAfterSave">
+            <summary>
+            If set, overrides settings in BizFormInfo.FormClearAfterSave.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.DisplayOriginalFileName">
+            <summary>
+            Indicates whether original file name should be displayed instead of the file GUID in 'Uploader' controls.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.InfoLabel">
+            <summary>
+            Information label.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.ErrorLabel">
+            <summary>
+            Label for the errors.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizForm.MessagesPlaceHolder">
+            <summary>
+            Messages placeholder
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormInfo">
+            <summary>
+            BizFormInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty BizFormInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new BizFormInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.IsFormAllowedForRole(System.Int32)">
+            <summary>
+            Indicates whether form is allowed for specified role.
+            </summary>
+            <param name="roleId">Role id</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.IsFormAllowedForUser(CMS.Membership.UserInfo,System.String)">
+            <summary>
+            Indicates whether specified user is authorized for specified form.
+            </summary>        
+            <param name="user">User info</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.IsFormAllowedForUser(System.String,System.String)">
+            <summary>
+            Indicates whether specified user is authorized for specified form.
+            </summary>        
+            <param name="userName">User name</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.ClearAuthorizedRoles">
+            <summary>
+            Sets Hashtable with authorized roles to NULL -> enforce hashtable reload next time the data are needed.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.ResetFormInfo">
+            <summary>
+            Sets Form property to NULL -> enforce FormInfo reload next time the data are needed.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.GetPermissionName(CMS.DataEngine.PermissionsEnum)">
+            <summary>
+            Converts permissions enum to permission code name when CheckPermission() is called.
+            </summary>
+            <param name="permission">Permissions enum</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.CheckPermissionsInternal(CMS.DataEngine.PermissionsEnum,System.String,CMS.Base.IUserInfo,System.Boolean)">
+            <summary>
+            Checks the permissions of the object.
+            </summary>
+            <param name="permission">Permission type</param>
+            <param name="siteName">Name of the site</param>
+            <param name="userInfo">UserInfo object</param>
+            <param name="exceptionOnFailure">If true, PermissionCheckException is thrown whenever a permission check fails</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.InsertAsCloneInternal(CMS.DataEngine.CloneSettings,CMS.DataEngine.CloneResult,CMS.DataEngine.BaseInfo)">
+            <summary>
+            Inserts cloned object to DB.
+            </summary>
+            <param name="settings">Cloning settings</param>
+            <param name="result">Cloning result</param>
+            <param name="originalObject">Original source BaseInfo (object being cloned)</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.RegisterProperties">
+            <summary>
+            Registers the properties of this object
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.RemoveObjectDependencies(System.Boolean,System.Boolean)">
+            <summary>
+            Removes object dependencies. First tries to execute removedependencies query, if not found, automatic process is executed.
+            </summary>
+            <param name="deleteAll">If false, only required dependencies are deleted, dependencies with default value are replaced with default value and nullable values are replaced with null</param>
+            <param name="clearHashtables">If true, hashtables of all objecttypes which were potentionally modified are cleared</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.DeleteOnLineFormIndex(System.String)">
+            <summary>
+            Removes given on-line form from all the On-Line form indexes.
+            </summary>
+            <param name="objectType">BizFrom object type</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.CheckLicense(CMS.DataEngine.ObjectActionEnum,System.String)">
+            <summary>
+            Checks the object license. Returns true if the licensing conditions for this object were matched
+            </summary>
+            <param name="action">Object action</param>
+            <param name="domainName">Domain name, if not set, uses current domain</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfo.GetAutomaticCodeName">
+            <summary>
+            Gets the automatic code name for the object
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.Items">
+            <summary>
+            Returns the items of this collection
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.AuthorizedRoles">
+            <summary>
+            Hashtable of roles the form is allowed for.
+            RoleId is key and RoleName is value.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormItems">
+            <summary>
+            Gets or sets items count.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormDisplayName">
+            <summary>
+            Form display name.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormReportFields">
+            <summary>
+            Report fields.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormName">
+            <summary>
+            Form code name.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormID">
+            <summary>
+            Form id.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormRedirectToUrl">
+            <summary>
+            Redirect to url.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormClearAfterSave">
+            <summary>
+            Clear form.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormDisplayText">
+            <summary>
+            Display text.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormSendFromEmail">
+            <summary>
+            From E-mail.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormSendToEmail">
+            <summary>
+            To E-mail.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormEmailSubject">
+            <summary>
+            E-mail subject.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormEmailTemplate">
+            <summary>
+            Form notification e-mail template text.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormEmailAttachUploadedDocs">
+            <summary>
+            Attach uploaded documents to notification e-mail.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormClassID">
+            <summary>
+            Class id.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormSiteID">
+            <summary>
+            Site id.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormSubmitButtonText">
+            <summary>
+            Submit button text.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormSubmitButtonImage">
+            <summary>
+            Submit image button.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormConfirmationEmailField">
+            <summary>
+            Field name whose value is used as recipient email address the confirmation email is sent to.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormConfirmationTemplate">
+            <summary>
+            Form confirmation template text.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormConfirmationSendFromEmail">
+            <summary>
+            Form confirmation send from email.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormConfirmationEmailSubject">
+            <summary>
+            Form confirmation email subject.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormGUID">
+            <summary>
+            Form GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormLastModified">
+            <summary>
+            Object last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormAccess">
+            <summary>
+            Form access.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.Form">
+            <summary>
+            Form definition.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormInfo.FormLogActivity">
+            <summary>
+            Indicates if bizform activity is logged.
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormInfoProvider">
+            <summary>
+            Class providing BizFormInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfoForClass(System.Int32)">
+            <summary>
+            Returns the BizFormInfo structure for the specified class.
+            </summary>
+            <param name="classId">Class ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfoByGUID(System.Guid,System.Int32)">
+            <summary>
+            Returns object with specified GUID.
+            </summary>
+            <param name="guid">Object GUID</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfo(System.Int32)">
+            <summary>
+            Returns the BizFormInfo structure for the specified bizForm.
+            </summary>
+            <param name="bizFormId">BizForm ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfo(System.String,System.Int32)">
+            <summary>
+            Returns the BizFormInfo structure for the specified form and site.
+            </summary>
+            <param name="formName">Form name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfo(System.String,System.String)">
+            <summary>
+            Returns the BizFormInfo structure for the specified form and site.
+            </summary>
+            <param name="formName">Form name</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.SetBizFormInfo(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Sets (updates or inserts) specified bizForm.
+            </summary>
+            <param name="bizForm">BizForm to set</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.ClearBizHash">
+            <summary>
+            Clear hashtable.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteBizFormInfo(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Deletes specified bizForm.
+            </summary>
+            <param name="bizFormObj">BizForm object</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteBizFormInfo(System.Int32)">
+            <summary>
+            Deletes specified bizForm.
+            </summary>
+            <param name="bizFormId">BizForm ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizForms">
+            <summary>
+            Returns a query for all the BizFormInfo objects.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizForms(System.Int32)">
+            <summary>
+            Returns a query for all the BizFormInfo objects specified by site ID.
+            </summary>
+            <param name="siteID">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.CreateBizFormDataClass(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates bizform data class definition based on the given parameters.
+            </summary>
+            <param name="className">Form class name</param>
+            <param name="displayName">Form display name</param>
+            <param name="tableName">Form table name</param>
+            <param name="primaryKeyName">Table primary key column name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetTimeField(System.String,System.String)">
+            <summary>
+            Returns new form field info of the datetime datatype indicating when form data were changed(inserted/updated).
+            </summary>
+            <param name="fieldName">Field name</param>
+            <param name="fieldCaption">Field caption</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetFormAuthorizedRoles(System.Int32)">
+            <summary>
+            Returns DataSet with roles that are allowed for specified form.
+            </summary>        
+            <param name="formId">Form ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.LicenseVersionCheck(System.String,CMS.DataEngine.FeatureEnum,CMS.DataEngine.ObjectActionEnum)">
+            <summary>
+            License version check.
+            </summary>
+            <param name="domain">Domain name</param>
+            <param name="feature">Feature</param>
+            <param name="action">Action</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.CheckLicense(CMS.DataEngine.ObjectActionEnum,System.String)">
+            <summary>
+            Checks the license.
+            </summary>
+            <param name="action">Object action</param>
+            <param name="domainName">Domain name, if not set, current domain name is used</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.CheckLicense(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Checks the license for insert for a new bizform or for edit in other cases.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears the hashtable.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.RefreshDataCount(System.String,System.Int32)">
+            <summary>
+            Refresh bizform items count.
+            </summary>
+            <param name="formName">Form name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.RefreshDataCount(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Refresh bizform items count.
+            </summary>
+            <param name="bizForm">BizForm info object</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteData(System.String,System.Int32)">
+            <summary>
+            Delete all bizform data.
+            </summary>
+            <param name="formName">Form name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.RemoveFromHash(System.String)">
+            <summary>
+            Remove from hash table.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GenerateFormPrimaryKeyName(System.String)">
+            <summary>
+            Takes code name of the form and generates a primary key name from it. Generated primary key is safe to use in the 
+            database. It does not contain forbidden characters, does not start with a number, etc.
+            </summary>
+            <param name="formCodeName">Code name of the FormInfo</param>
+            <returns>Primary key name of the form</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="formCodeName"/> is null or empty</exception>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteBizFormRecordFiles(System.String,CMS.OnlineForms.BizFormItem,System.String)">
+            <summary>
+            Deletes all files of specified BizForm record.
+            </summary>
+            <param name="classFormDefinition">BizForm class form definition</param>
+            <param name="item">BizForm item</param>
+            <param name="siteName">SiteName</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteBizFormFiles(System.String,System.String,System.Int32)">
+            <summary>
+            Deletes all files of the specified BizForm.
+            </summary>
+            <param name="className">BizForm class name</param>
+            <param name="column">Name of the column where file information is stored, optional</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormFileColumns(System.String)">
+            <summary>
+            Returns names of the columns where BizForm file information is stored.
+            </summary>
+            <param name="classFormDefinition">BizForm's class form definition</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteBizFormFile(System.String,System.String,System.String)">
+            <summary>
+            Deletes uploaded file from file system.
+            </summary>
+            <param name="fileName">File name in format "[guid].[extension]/[originalfilename].[extension]"</param>
+            <param name="directoryPath">Directory path</param>
+            <param name="siteName">Name of the site to which is bizform assigned. Is used for web farms</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfoInternal(System.Guid,System.Int32)">
+            <summary>
+            Returns object with specified GUID.
+            </summary>
+            <param name="guid">Object GUID</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfoInternal(System.Int32)">
+            <summary>
+            Returns the BizFormInfo structure for the specified bizForm.
+            </summary>
+            <param name="bizFormId">BizForm ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormInfoInternal(System.String,System.Int32)">
+            <summary>
+            Returns the BizFormInfo structure for the specified form and site.
+            </summary>
+            <param name="formName">Form name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.SetBizFormInfoInternal(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Sets (updates or inserts) specified bizForm.
+            </summary>
+            <param name="bizForm">BizForm to set</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteBizFormInfoInternal(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Deletes specified bizForm.
+            </summary>
+            <param name="bizFormObj">BizForm object</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormsInternal">
+            <summary>
+            Returns a query for all the BizFormInfo objects.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetBizFormsInternal(System.Int32)">
+            <summary>
+            Returns a query for all the BizFormInfo objects specified by site ID.
+            </summary>
+            <param name="siteID">SiteId</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GetFormAuthorizedRolesInternal(System.Int32)">
+            <summary>
+            Returns DataSet with roles that are allowed for specified form.
+            </summary>        
+            <param name="formId">Form ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.RefreshDataCountInternal(System.String,System.Int32)">
+            <summary>
+            Refresh bizform items count.
+            </summary>
+            <param name="formName">Form name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.RefreshDataCountInternal(CMS.OnlineForms.BizFormInfo)">
+            <summary>
+            Refresh bizform items count.
+            </summary>
+            <param name="bzi">BizFormInfo</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteDataInternal(System.String,System.Int32)">
+            <summary>
+            Delete all bizform data.
+            </summary>
+            <param name="formName">Form name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.DeleteBizFormFilesInternal(System.String,System.String,System.Int32)">
+            <summary>
+            Deletes all files of the specified BizForm.
+            </summary>
+            <param name="className">BizForm class name</param>
+            <param name="column">Name of the column where file information is stored, optional</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormInfoProvider.GenerateFormPrimaryKeyNameInternal(System.String)">
+            <summary>
+            Takes code name of the form and generates a primary key name from it. Generated primary key is safe to use in the 
+            database. It does not contain forbidden characters, does not start with a number, etc.
+            </summary>
+            <param name="formCodeName">Code name of the FormInfo</param>
+            <returns>Primary key name of the form</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="formCodeName"/> is null or empty</exception>
+        </member>
+        <member name="T:CMS.OnlineForms.FormClassInfo">
+            <summary>
+            Specialized class for the form class info
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.FormClassInfo.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.FormClassInfo.RegisterProperties">
+            <summary>
+            Registers the properties of this object
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.FormClassInfo.TypeInfo">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.FormClassInfo.Items">
+            <summary>
+            Returns the items of this collection
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.FormClassInfo.RegisteredProperties">
+            <summary>
+            Local registered properties
+            </summary>
+        </member>
+        <member name="T:CMS.RegisterBizFormAttribute">
+            <summary>
+            Registers the BizForm item class within the system or overrides the existing one.
+            </summary>
+        </member>
+        <member name="M:CMS.RegisterBizFormAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="className">Class name</param>
+            <param name="type">Object type</param>
+        </member>
+        <member name="M:CMS.RegisterBizFormAttribute.Init">
+            <summary>
+            Initializes the attribute
+            </summary>
+        </member>
+        <member name="P:CMS.RegisterBizFormAttribute.ClassName">
+            <summary>
+            Class name
+            </summary>
+        </member>
+        <member name="P:CMS.RegisterBizFormAttribute.AssemblyName">
+            <summary>
+            Class assembly name
+            </summary>
+        </member>
+        <member name="P:CMS.RegisterBizFormAttribute.MarkedType">
+            <summary>
+            Document factory
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.FormSynchronization">
+            <summary>
+            Web farm synchronization for Documents
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.FormSynchronization.Init">
+            <summary>
+            Initializes the tasks for forms synchronization
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.FormSynchronization.CheckSynchronizeBizFormFiles">
+            <summary>
+            Returns true if the synchronization of the BizForm files is allowed
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.FormSynchronization.CheckSynchronizeDeleteBizFormFiles">
+            <summary>
+            Returns true if the synchronization of the deletion of the BizForm files is allowed
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.FormSynchronization.UpdateBizFormFile(System.String,System.String,CMS.Core.BinaryData)">
+            <summary>
+            Updates the BizForm file
+            </summary>
+            <param name="target">Task target</param>
+            <param name="data">Task data</param>
+            <param name="binaryData">Task binary data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.FormSynchronization.DeleteBizFormFile(System.String,System.String,CMS.Core.BinaryData)">
+            <summary>
+            Deletes the BizForm file
+            </summary>
+            <param name="target">Task target</param>
+            <param name="data">Task data</param>
+            <param name="binaryData">Task binary data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.FormSynchronization.ClearBizFormTypeInfo(System.String,System.String,CMS.Core.BinaryData)">
+            <summary>
+            Clears the BizForm item type info
+            </summary>
+            <param name="target">Task target</param>
+            <param name="data">Task data</param>
+            <param name="binaryData">Task binary data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.FormSynchronization.InvalidateBizFormTypeInfo(System.String,System.String,CMS.Core.BinaryData)">
+            <summary>
+            Invalidates the BizForm item type info
+            </summary>
+            <param name="target">Task target</param>
+            <param name="data">Task data</param>
+            <param name="binaryData">Task binary data</param>
+        </member>
+        <member name="P:CMS.OnlineForms.FormSynchronization.SynchronizeBizFormFiles">
+            <summary>
+            Gets or sets value that indicates whether file synchronization for BizForm files is enabled.
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormItemEventArgs">
+            <summary>
+            BizForm item event arguments
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItemEventArgs.Item">
+            <summary>
+            Processed BizForm item
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormItemEvents">
+            <summary>
+            BizForm item events
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormItemEvents.Update">
+            <summary>
+            Fires when BizForm item is updated
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormItemEvents.Insert">
+            <summary>
+            Fires when BizForm item is inserted
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormItemEvents.Delete">
+            <summary>
+            Fires when BizForm item is deleted
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormItemHandler">
+            <summary>
+            BizForm item handler
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemHandler.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemHandler.#ctor(CMS.OnlineForms.BizFormItemHandler)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="parentHandler">Parent handler</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemHandler.StartEvent(CMS.OnlineForms.BizFormItem)">
+            <summary>
+            Initiates the event handling
+            </summary>
+            <param name="item">Handled item</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemHandler.GetRecursionKey(CMS.OnlineForms.BizFormItemEventArgs)">
+            <summary>
+            Gets the recursion key of the class to identify recursion
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormAttribute">
+            <summary>
+            Registers the BizForm item class to the system
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="className">Class name</param>
+            <param name="type">Class to register</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormAttribute.Init">
+            <summary>
+            Applies the attribute.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormAttribute.ClassName">
+            <summary>
+            Class name.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormAttribute.Type">
+            <summary>
+            BizForm item type.
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormItem">
+            <summary>
+            Class providing access to BizForm data.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.Clone">
+            <summary>
+            Creates a clone of BizForm item
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.UpdateData">
+            <summary>
+            Update BizForm item DataClass.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.InsertData">
+            <summary>
+            Insert BizForm item DataClass.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.DeleteData">
+            <summary>
+            Delete BizForm item DataClass.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.GetPermissionName(CMS.DataEngine.PermissionsEnum)">
+            <summary>
+            Converts permissions enum to permission code name when CheckPermission() is called.
+            </summary>
+            <param name="permission">Permissions enum</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.#ctor(System.String,System.Data.DataRow)">
+            <summary>
+            Base constructor for inherited classes and internal purposes
+            </summary>
+            <param name="className">Class name of the document</param>
+            <param name="dr">Data row with the data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.New(System.String,System.Data.DataRow)">
+            <summary>
+            Creates new BizFormItem instance which must inherit the BizFormItem class.
+            </summary>
+            <param name="className">Class name in format application.class</param>
+            <param name="dataRow">Data row containing both tree node and coupled table</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.New``1(System.String,System.Data.DataRow)">
+            <summary>
+            Creates new document instance.
+            </summary>
+            <param name="className">Class name in format application.class</param>
+            <param name="dataRow">Data row containing both tree node and coupled table</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.New``1(System.String,CMS.Base.IDataContainer)">
+            <summary>
+            Creates new document instance.
+            </summary>
+            <param name="className">Class name in format application.class</param>
+            <param name="data">Data container containing both tree node and coupled table</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.NewInstance``1(System.String)">
+            <summary>
+            Creates a new instance of the given type
+            </summary>
+            <param name="className">Class name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.Initialize(System.String,System.Data.DataRow)">
+            <summary>
+            Initializes the object created with default constructor. Use it to load existing item from data row.
+            </summary>
+            <param name="className">Class name</param>
+            <param name="dataRow">Data row containing all page data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.Initialize(System.String,CMS.Base.IDataContainer)">
+            <summary>
+            Initializes the object created with default constructor. Use it to load existing item from data row.
+            </summary>
+            <param name="className">Class name</param>
+            <param name="data">Data container containing all page data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.UpdateTypeInfo(CMS.DataEngine.ObjectTypeInfo)">
+            <summary>
+            Updates instance with given type info
+            </summary>
+            <param name="typeInfo">Type info</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.GetValue(System.String)">
+            <summary>
+            Gets BizForm item value.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Returns value of column.
+            </summary>
+            <param name="columnName">Column name</param>
+            <param name="value">Returns the value</param>
+            <returns>Returns true if the operation was successful (the value was present)</returns>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.SetValue(System.String,System.Object)">
+            <summary>
+            Sets value of column.
+            </summary>
+            <param name="columnName">Column name</param>
+            <param name="value">Column value</param> 
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.GetSearchID">
+            <summary>
+            Gets the id column value which is used as search id by default.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItem.GetSearchImageUrl(System.String,System.String)">
+            <summary>
+            Returns URL to current search result item.
+            </summary>
+            <param name="id">ID of the item</param>
+            <param name="image">Image</param>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItem.DataClassInfo">
+            <summary>
+            DataClass info
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItem.BizFormInfo">
+            <summary>
+            BizForm which this item belongs to.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItem.BizFormClassName">
+            <summary>
+            Gets class name of BizForm item.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItem.ItemID">
+            <summary>
+            Gets or sets BizForm item ID.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItem.FormInserted">
+            <summary>
+            Gets or sets BizForm item insertion date.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItem.FormUpdated">
+            <summary>
+            Gets or sets date of modification of BizForm item.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItem.ObjectDisplayName">
+            <summary>
+            Object display name.
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormItemFactory">
+            <summary>
+            Factory that provides BizForm item objects
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemFactory.#ctor(System.Type)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="type">Type of the BizForm class</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemFactory.CreateNewObject">
+            <summary>
+            Creates new BizForm item object
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItemFactory.Type">
+            <summary>
+            BizForm item type
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormItemGenerator">
+            <summary>
+            Generator of the specific BizForm items
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormItemGenerator.mGenerator">
+            <summary>
+            Object generator
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemGenerator.NewInstance``1(System.String)">
+            <summary>
+            Creates new instance of the given type
+            </summary>
+            <param name="className">Class name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemGenerator.RegisterBizForm(System.String,CMS.OnlineForms.BizFormItemFactory)">
+            <summary>
+            Registers the given BizForm item class
+            </summary>
+            <param name="className">Class name to register</param>
+            <param name="factory">Factory to use for new items</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemGenerator.RegisterBizForm``1(System.String)">
+            <summary>
+            Registers the given BizForm item class
+            </summary>
+            <param name="className">Class name to register</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemGenerator.RegisterDefaultFactory(CMS.OnlineForms.BizFormItemFactory)">
+            <summary>
+            Registers the default factory for the BizForm items, which overlaps the default one
+            </summary>
+            <param name="factory">Factory to register</param>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormItemProvider">
+            <summary>
+            Class for retrieving BizForm items.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormItemProvider.BIZFORM_ITEM_PREFIX">
+            <summary>
+            BizFrom item prefix for object type.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormItemProvider.licenseBizForm">
+            <summary>
+            License limitation "BizForms" table
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormItemProvider.mTypeInfos">
+            <summary>
+            BizForms TypeInfo [className.ToLowerCSafe()] -> [TypeInfo]
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.#ctor">
+            <summary>
+            Constructor (Creates uninitialized provider.)
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.#ctor(System.String)">
+            <summary>
+            Base constructor for inherited classes and internal purposes
+            </summary>
+            <param name="className">Class name of the BizForm</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItem(System.Int32,System.String)">
+            <summary>
+            Returns BizForm item of specified class name and item ID.
+            </summary>
+            <param name="itemId">Item ID</param>
+            <param name="className">Class name of the BizForm</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItem``1(System.Int32)">
+            <summary>
+            Returns BizForm item of specified type and item ID.
+            </summary>
+            <param name="itemId">Item ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.DeleteItem(CMS.OnlineForms.BizFormItem)">
+            <summary>
+            Deletes given BizForm item
+            </summary>
+            <param name="item">BizForm item</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.SetItem(CMS.OnlineForms.BizFormItem)">
+            <summary>
+            Sets given BizForm item
+            </summary>
+            <param name="item">BizForm item</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItems(System.String)">
+            <summary>
+            Returns query of all data record for given BizForm.
+            </summary>
+            <param name="className">Class name of the BizForm</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItems``1">
+            <summary>
+            Returns query of all data records for given type.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.DeleteItems(System.String,System.String)">
+            <summary>
+            Deletes all items for given BizForm.
+            </summary>
+            <param name="className">Class name of the BizForm</param>
+            <param name="where">Where condition to filter the items</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.LicenseVersionCheck(System.String,CMS.DataEngine.ObjectActionEnum)">
+            <summary>
+            License version checker.
+            </summary>
+            <param name="domain">Domain name</param>
+            <param name="action">Type of action - edit, insert, delete</param>
+            <returns>Returns true if feature is without any limitations for domain and action</returns>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.CheckLicense(CMS.DataEngine.ObjectActionEnum,System.String)">
+            <summary>
+            Checks the license.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.ClearLicensesCount">
+            <summary>
+            Clear BizForm items hash count values.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetClassName(System.String)">
+            <summary>
+            Gets BizForm item class name from given object type.
+            </summary>
+            <param name="objectType">Object type</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetObjectType(System.String)">
+            <summary>
+            Gets BizForm item object type from given class name.
+            </summary>
+            <param name="className">Class name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.IsBizFormItemObjectType(System.String)">
+            <summary>
+            Indicates if given object type represents BizForm item.
+            </summary>
+            <param name="objectType">Object type</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItemName(CMS.OnlineForms.BizFormItem,System.String)">
+            <summary>
+            Gets BizForm item name.
+            </summary>
+            <param name="item">BizFrom table item</param>
+            <param name="classDisplayName">Class display name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.DeleteItemInternal(CMS.OnlineForms.BizFormItem)">
+            <summary>
+            Deletes given BizForm item
+            </summary>
+            <param name="item">BizForm item</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.SetItemInternal(CMS.OnlineForms.BizFormItem)">
+            <summary>
+            Sets given BizForm item
+            </summary>
+            <param name="item">BizForm item</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItemInternal(System.Int32)">
+            <summary>
+            Returns BizForm item of specified class name and item ID.
+            </summary>
+            <param name="itemId">Item ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItemsInternal">
+            <summary>
+            Returns query of all data record for given BizForm.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.DeleteItemsInternal(System.String)">
+            <summary>
+            Deletes all items for given class.
+            </summary>
+            <param name="where">Where condition to filter the items</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetItemNameInternal(CMS.OnlineForms.BizFormItem,System.String)">
+            <summary>
+            Gets BizForm item name.
+            </summary>
+            <param name="item">BizForm item</param>
+            <param name="classDisplayName">Class display name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetProviderObject(System.String)">
+            <summary>
+            Gets provider object.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.LoadProviderInternal(System.String)">
+            <summary>
+            Loads BizForm item provider for given object type
+            </summary>
+            <param name="objectType">BizForm item object type</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.InvalidateProvider(System.String)">
+            <summary>
+            Invalidates specific provider.
+            </summary>
+            <param name="objectType">Type of the object</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.CreateInfo(System.Data.DataRow,System.Boolean)">
+            <summary>
+            Creates new BizForm item instance
+            </summary>
+            <param name="dr">DataRow with the data</param>
+            <param name="useGenerator">If true, the process allows using the generator to differentiate between particular info types based on data</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.GetTypeInfo(System.String)">
+            <summary>
+            Returns the TypeInfo for specified class.
+            </summary>
+            <param name="className">Class name</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.Clear(System.Boolean)">
+            <summary>
+            Clear the class info and properties lists of all object types.
+            </summary>
+            <param name="logTask">If true, web farm tasks are logged</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.InvalidateTypeInfo(System.String,System.Boolean)">
+            <summary>
+            Invalidates typeinfo specified by class name.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.ValidateClass(System.String)">
+            <summary>
+            Validates given class name if represents existing on-line form.
+            </summary>
+            <param name="className">Class name to validate</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormItemProvider.CreateTypeInfo(System.String)">
+            <summary>
+            Creates new typeinfo.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItemProvider.IsValid">
+            <summary>
+            Indicates if the provider instance is up-to-date and can be used to manage object instances.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItemProvider.TypeInfos">
+            <summary>
+            BizForms TypeInfo [className.ToLowerCSafe()] -> [TypeInfo]
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormItemProvider.ClassName">
+            <summary>
+            Class name
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormTypeInfo">
+            <summary>
+            Type info for the BizForm items
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormTypeInfo.#ctor(System.Type,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="providerType">Provider type</param>
+            <param name="objectType">Object type</param>
+            <param name="objectClassName">Object class name</param>
+            <param name="idColumn">ID column name</param>
+            <param name="timeStampColumn">Time stamp column name</param>
+            <param name="guidColumn">GUID column name</param>
+            <param name="codeNameColumn">Code name column name</param>
+            <param name="displayNameColumn">Display name column name</param>
+            <param name="binaryColumn">Binary column name</param>
+            <param name="siteIDColumn">Site ID column name</param>
+            <param name="parentIDColumn">Parent ID column name</param>
+            <param name="parentObjectType">Parent object type</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormTypeInfo.GetNiceObjectTypeName">
+            <summary>
+            Gets the nice object type name for this type
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormTypeInfo.CopyBizFormTypeInfoEventsTo(CMS.DataEngine.ObjectTypeInfo)">
+            <summary>
+            Copies the event's hooks from current ObjectTypeInfo to specified one.
+            </summary>
+            <param name="info">Target.</param>
+        </member>
+        <member name="T:CMS.OnlineForms.ImportSpecialActions">
+            <summary>
+            Handles special actions during the import process.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.ImportSpecialActions.Init">
+            <summary>
+            Initializes export handlers
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.OnlineFormsHandlers">
+            <summary>
+            Online forms events handlers.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsHandlers.Init">
+            <summary>
+            Initializes the events handlers.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsHandlers.Insert(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Handles additional actions when inserting a form
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsHandlers.Delete(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Handles additional actions when deleting a form
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsHandlers.ClearHashtables(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Clears data in hashtables
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsHandlers.Update(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Handles additional actions when updating a form
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsHandlers.UpdateDisplayName(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Updates display name of DataClass when BizFormInfo display name changes.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsHandlers.LogChange(System.Object,CMS.DataEngine.ObjectEventArgs)">
+            <summary>
+            Logs the change of the biz form for the alternative form event handler
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.OnlineFormsModule">
+            <summary>
+            Represents the Form module.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsModule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsModule.OnPreInit">
+            <summary>
+            Initializes the module
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsModule.OnInit">
+            <summary>
+            Init module
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsModule.GetObject(System.String)">
+            <summary>
+            Gets the object created from the given DataRow.
+            </summary>
+            <param name="objectType">Object type</param>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsModule.AbstractProvider_LoadProvider(System.String,CMS.DataEngine.AbstractProvider@)">
+            <summary>
+            Ensures provider for the BizForm items
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsModule.ClearHashtables(System.Boolean)">
+            <summary>
+            Clears the module hashtables.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="T:CMS.OnlineForms.OnlineFormsModuleMetadata">
+            <summary>
+            Represents the Online forms module metadata.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.OnlineFormsModuleMetadata.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormExport">
+            <summary>
+            Handles special actions during the BizForm export process.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormExport.Init">
+            <summary>
+            Initializes export handlers
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormExport.ExportData(CMS.CMSImportExport.SiteExportSettings,System.Data.DataSet,CMS.DataEngine.TranslationHelper)">
+            <summary>
+            Export BizForms data.
+            </summary>
+            <param name="settings">Export settings</param>
+            <param name="data">Parent dataset</param>
+            <param name="th">Translation helper</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormExport.GetData(CMS.DataEngine.DataClassInfo)">
+            <summary>
+            Returns DataSet of form records.
+            </summary>
+            <param name="dataClass">Form class</param>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormImport">
+            <summary>
+            Handles special actions during the BizForm import process.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormImport.Init">
+            <summary>
+            Initializes import handlers
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormImport.ImportData(CMS.CMSImportExport.SiteImportSettings,System.Data.DataTable,CMS.DataEngine.TranslationHelper)">
+            <summary>
+            Import BizForms data.
+            </summary>
+            <param name="settings">Import settings</param>
+            <param name="table">Parent data</param>
+            <param name="th">Translation helper</param>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormRoleInfo">
+            <summary>
+            BizFormRoleInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormRoleInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.OnlineForms.BizFormRoleInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty BizFormRoleInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new BizFormRoleInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormRoleInfo.FormID">
+            <summary>
+            ID of the Form.
+            </summary>
+        </member>
+        <member name="P:CMS.OnlineForms.BizFormRoleInfo.RoleID">
+            <summary>
+            ID of the Role.
+            </summary>
+        </member>
+        <member name="T:CMS.OnlineForms.BizFormRoleInfoProvider">
+            <summary>
+            Class providing BizFormRoleInfo management.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.GetBizFormRoles">
+            <summary>
+            Returns a query for all the BizFormRoleInfo objects.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.GetBizFormRoleInfo(System.Int32,System.Int32)">
+            <summary>
+            Returns the BizFormRoleInfo structure for the specified bizFormRole.
+            </summary>
+            <param name="roleId">RoleID</param>
+            <param name="formId">FormID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.SetBizFormRoleInfo(CMS.OnlineForms.BizFormRoleInfo)">
+            <summary>
+            Sets (updates or inserts) specified BizFormRoleInfo.
+            </summary>
+            <param name="infoObj">BizFormRoleInfo to be set.</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.SetBizFormRoleInfo(System.Int32,System.Int32)">
+            <summary>
+            Inserts specified BizFormRoleInfo.
+            </summary>
+            <param name="formId">FormId</param>
+            <param name="roleId">RoleId</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.DeleteBizFormRoleInfo(CMS.OnlineForms.BizFormRoleInfo)">
+            <summary>
+            Deletes specified BizFormRoleInfo.
+            </summary>
+            <param name="infoObj">BizFormRoleInfo to be deleted.</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.DeleteBizFormRoleInfo(System.Int32,System.Int32)">
+            <summary>
+            Deletes specified BizFormRole.
+            </summary>
+            <param name="formId">FormId</param>
+            <param name="roleId">RoleId</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.RemoveAllRolesFromForm(System.Int32)">
+            <summary>
+            Removes all allowed roles from the form.
+            </summary>        
+            <param name="formId">Form ID</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.GetBizFormRolesInternal">
+            <summary>
+            Returns a query for all the BizFormRoleInfo objects.
+            </summary>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.GetBizFormRoleInfoInternal(System.Int32,System.Int32)">
+            <summary>
+            Returns the BizFormRoleInfo structure for the specified form and role.
+            </summary>
+            <param name="roleId">RoleId</param>
+            <param name="formId">FormId</param>       
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.SetBizFormRoleInfoInternal(CMS.OnlineForms.BizFormRoleInfo)">
+            <summary>
+            Sets (updates or inserts) specified BizFormRoleInfo.
+            </summary>
+            <param name="infoObj">BizFormRoleInfo to be set.</param>        
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.SetBizFormRoleInfoInternal(System.Int32,System.Int32)">
+            <summary>
+            Inserts specified BizFormRoleInfo.
+            </summary>
+            <param name="roleId">RoleId</param>
+            <param name="formId">FormId</param>
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.DeleteBizFormRoleInfoInternal(CMS.OnlineForms.BizFormRoleInfo)">
+            <summary>
+            Deletes specified BizFormRoleInfo.
+            </summary>
+            <param name="infoObj">BizFormRoleInfo to be deleted.</param>        
+        </member>
+        <member name="M:CMS.OnlineForms.BizFormRoleInfoProvider.RemoveAllRolesFromFormInternal(System.Int32)">
+            <summary>
+            Removes all allowed roles from the form.
+            </summary>        
+            <param name="formId">Form ID</param>
+        </member>
+    </members>
+</doc>

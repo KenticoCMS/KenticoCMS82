@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <columns>
+    <column source="##ALL##" caption="$pm.project.progress$" externalsourcename="ProjectProgress" wrap="false" sort="ProjectProgress" />
+    <column source="##ALL##" externalsourcename="linkeddisplayname" caption="$general.name$" wrap="false" sort="ProjectDisplayName" localize="true">
+      <filter type="text" source="ProjectDisplayName" size="200" />
+    </column>
+    <column source="ProjectDeadline" caption="$pm.project.deadline$" wrap="false" externalsourcename="ProjectDeadline" />
+    <column source="##ALL##" caption="$pm.project.owner$" wrap="false" externalsourcename="ownerfullname" sort="ProjectOwnerFullName" />
+    <column source="##ALL##" caption="$pm.project.status$" wrap="false" externalsourcename="statusicon" sort="ProjectStatus" />
+    <column cssclass="filling-column" />
+  </columns>
+  <objecttype name="pm.projectlist" columns="ProjectID, ProjectDeadline, ProjectOwnerFullName, ProjectProgress, ProjectStatus, ProjectStatusColor, ProjectStatusIcon, ProjectOwnerUserName, ProjectDisplayName, ProjectNodeID, NodeAliasPath" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>
+

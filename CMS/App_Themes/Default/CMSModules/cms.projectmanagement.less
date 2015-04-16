@@ -1,0 +1,56 @@
+﻿// Project progress
+.ProgressBlock {
+    width: (@base-unit * 7);
+
+    .ProgressBar .Bar {
+        background-color: @color-white;
+        height: @base-unit;
+        width: (@base-unit * 4);
+        border: solid 1px @color-gray-150;
+        float: left;
+        margin-top: (@base-unit / 8);
+        margin-right: @margin-50;
+
+        .Progress {
+            background-color: @color-green-120;
+            height: 100%;
+            width: 50%;
+        }
+
+        .ProgressValue {
+            float: left;
+        }
+    }
+}
+
+.RTL .ProgressBlock .ProgressBar .Bar {
+    float: right;
+    margin-left: @margin-50;
+}
+
+    .RTL .ProgressBlock .ProgressBar .Bar .ProgressValue {
+        float: right;
+    }
+
+// Project (Project task) status color
+.StatusColorBar {
+    height: (@base-unit * 1.25);
+}
+
+div.ProjectStatusIcon {
+    text-align: center;
+}
+
+img.ProjectStatusIcon {
+    max-width: (@base-unit * 3);
+    max-height: (@base-unit * 3);
+}
+
+// Project task - Modal popup for Send reminer action
+.project-management-task-send-reminder {
+    min-width: 490px;
+}
+
+.PageHeader.TaskEditModalDialog{ 
+    min-width: 800px;
+}

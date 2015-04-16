@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="install.lblexistingdatabasename" xml:space="preserve">
+    <value>现有的数据库名称:</value>
+  </data>
+  <data name="install.chkcreatedatabaseobjects" xml:space="preserve">
+    <value>创建Kentico数据库对象</value>
+  </data>
+  <data name="install.btninstalldb" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="install.lblpassword" xml:space="preserve">
+    <value>密码:</value>
+  </data>
+  <data name="install.lblusername" xml:space="preserve">
+    <value>登录名称:</value>
+  </data>
+  <data name="install.lblservername" xml:space="preserve">
+    <value>SQL服务器名称或IP地址:</value>
+  </data>
+  <data name="install.errordbnameempty" xml:space="preserve">
+    <value>请输入数据库名称</value>
+  </data>
+  <data name="install.errorserverempty" xml:space="preserve">
+    <value>请输入SQL服务器名称或IP地址</value>
+  </data>
+  <data name="installer.logerrorcreatedbobjects" xml:space="preserve">
+    <value>发生错误:</value>
+  </data>
+  <data name="installer.logerrordefaultdata" xml:space="preserve">
+    <value>An error occurred:</value>
+  </data>
+  <data name="installer.logexecutingscript" xml:space="preserve">
+    <value>运行查询:</value>
+  </data>
+  <data name="install.dbsetupok" xml:space="preserve">
+    <value>该站点已成功创建.</value>
+  </data>
+  <data name="install.errorsetupdb" xml:space="preserve">
+    <value>数据库安装过程中发生了错误</value>
+  </data>
+  <data name="install.lnkwebsite" xml:space="preserve">
+    <value>继续新网站</value>
+  </data>
+  <data name="install.lbllog" xml:space="preserve">
+    <value>安装日志:</value>
+  </data>
+  <data name="install.inprogress" xml:space="preserve">
+    <value>进行中</value>
+  </data>
+  <data name="install.radcreatenew" xml:space="preserve">
+    <value>创建一个新的数据库</value>
+  </data>
+  <data name="install.raduseexisting" xml:space="preserve">
+    <value>使用现有数据库</value>
+  </data>
+  <data name="install.lblnewdatabasename" xml:space="preserve">
+    <value>新的数据库名称:</value>
+  </data>
+  <data name="install.errorcreatedb" xml:space="preserve">
+    <value>错误创建数据库 {0}</value>
+  </data>
+  <data name="install.radsqlauthentication" xml:space="preserve">
+    <value>使用SQL Server的帐户</value>
+  </data>
+  <data name="install.radwindowsauthentication" xml:space="preserve">
+    <value>使用集成的Windows身份验证</value>
+  </data>
+  <data name="installer.logcreatingdatabase" xml:space="preserve">
+    <value>创建一个新的数据库</value>
+  </data>
+  <data name="installer.logerrorcreatedb" xml:space="preserve">
+    <value>创建数据库时发生错误:</value>
+  </data>
+  <data name="install.lblsqlserver" xml:space="preserve">
+    <value>SQL服务器</value>
+  </data>
+  <data name="install.lbldatabase" xml:space="preserve">
+    <value>数据库</value>
+  </data>
+  <data name="install.btncontinue" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="install.connectionstringerror" xml:space="preserve">
+    <value>安装程序无法更新您的服务器上的web.config文件. 这可能是由于文件系统权限限制引起.请在记事本中手动打开你的web.config文件,并添加以下行内&amp;lt;connectionStrings&amp;gt;&amp;lt;/connectionStrings&amp;gt; section below the &amp;lt;clear /&amp;gt; line: &lt;br/&gt;&lt;br/&gt;&lt;strong class="connection-string"&gt;{0}&lt;/strong&gt;&lt;br/&gt;&lt;br/&gt;</value>
+  </data>
+  <data name="install.lblconnectionstring" xml:space="preserve">
+    <value>连接字符串</value>
+  </data>
+  <data name="install.backstep" xml:space="preserve">
+    <value>后退</value>
+  </data>
+  <data name="install.finish" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="install.nextstep" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="install.erroraddconnstring" xml:space="preserve">
+    <value>所添加的连接字符串不匹配.确保,连接字符串是正确的.</value>
+  </data>
+  <data name="install.lblwebsite" xml:space="preserve">
+    <value>该网站已创建</value>
+  </data>
+  <data name="install.radcorporatesite" xml:space="preserve">
+    <value>企业网站 (portal engine)&lt;br /&gt;&lt;i&gt;(建议初学者)&lt;/i&gt;</value>
+  </data>
+  <data name="install.radwizard" xml:space="preserve">
+    <value>继续新建网站向导</value>
+  </data>
+  <data name="install.lblsitecreationinfo" xml:space="preserve">
+    <value>该数据库已成功创建.现在,您可以选择创建示例企业网站,继续新的网站向导或导入现有Kentico网站.</value>
+  </data>
+  <data name="install.errordiskaccess" xml:space="preserve">
+    <value>警告:  {0}帐户无法写入磁盘.请给予与帐户读取,写入和修改权限在以下文件夹 (包括子文件夹): </value>
+  </data>
+  <data name="install.errordiskaccesssetuppermissions" xml:space="preserve">
+    <value>如果继续不设置相应的权限,您可能会遇到错误.下图显示了如何授予帐户的权限:</value>
+  </data>
+  <data name="install.errordatabsedoesntexist" xml:space="preserve">
+    <value>数据库 '{0}' 不存在!</value>
+  </data>
+  <data name="install.detailerror" xml:space="preserve">
+    <value>&lt;b&gt;发生错误:&lt;/b&gt; {0}&lt;br/&gt;&lt;b&gt;堆栈跟踪:&lt;/b&gt; {1}</value>
+  </data>
+  <data name="install.errortriallicense" xml:space="preserve">
+    <value>在web.config中的试用许可证密钥信息丢失.试用许可证密钥尚未添加!</value>
+  </data>
+  <data name="install.dbheaderstep" xml:space="preserve">
+    <value>数据库安装 - 步骤 {0}</value>
+  </data>
+  <data name="install.lblenterlicensekey" xml:space="preserve">
+    <value>请输入密钥:</value>
+  </data>
+  <data name="install.lbllicensecaption" xml:space="preserve">
+    <value>你所使用的Kentico不是在域名 localhost 或者 127.0.0.1上,或者您试用许可证已经过期,所以你需要输入相应的许可证密钥给域名: {0}</value>
+  </data>
+  <data name="install.lbllicensetip" xml:space="preserve">
+    <value>&lt;b&gt;提示:&lt;/b&gt;如果您需要这个域名的临时许可证密钥,请写邮件给 &lt;a href="mailto:support@kenticoasia.com"&gt;support@kenticoasia.com&lt;/a&gt;申请试用许可证给以下域名: {0}</value>
+  </data>
+  <data name="install.errorlicense" xml:space="preserve">
+    <value>无效许可证.</value>
+  </data>
+  <data name="install.lnkskiplicense" xml:space="preserve">
+    <value>跳过此对话框</value>
+  </data>
+  <data name="install.errorlicenseexists" xml:space="preserve">
+    <value>许可证密钥实际域已经存在.</value>
+  </data>
+  <data name="install.licenseempty" xml:space="preserve">
+    <value>请输入一些许可证密钥</value>
+  </data>
+  <data name="install.licensenotvalid.expired" xml:space="preserve">
+    <value>给予许可证已过期</value>
+  </data>
+  <data name="install.licensenotvalid.invalid" xml:space="preserve">
+    <value>给予许可证无效</value>
+  </data>
+  <data name="install.licensenotvalid.notavailable" xml:space="preserve">
+    <value>给予许可证不可用</value>
+  </data>
+  <data name="install.licensenotvalid.wrongformat" xml:space="preserve">
+    <value>给予许可证格式错误</value>
+  </data>
+  <data name="install.lbllicensecaptionexpired" xml:space="preserve">
+    <value>您的试用许可证已过期,请输入有效的许可证密钥给域名: {0}</value>
+  </data>
+  <data name="install.errorsqltroubleshoot" xml:space="preserve">
+    <value>打开SQL故障排除帮助</value>
+  </data>
+  <data name="install.errorpermissions" xml:space="preserve">
+    <value>了解如何在您的计算机上配置权限</value>
+  </data>
+  <data name="cmssitemanager.diskpermissions" xml:space="preserve">
+    <value>ASP.NET 进程不允许写入磁盘. 您需要授予用户&lt;user&gt; 磁盘文件夹 &lt;folder&gt; 和所有子文件夹的修改权限.</value>
+  </data>
+  <data name="cmssitemanager.invaliddiskpermissions" xml:space="preserve">
+    <value>无效的磁盘权限</value>
+  </data>
+  <data name="install.radcorporatesiteaspx" xml:space="preserve">
+    <value>企业网站 (ASPX templates)&lt;br /&gt;&lt;i&gt;(给有经验的 ASP.NET 开发人员)&lt;/i&gt;</value>
+  </data>
+  <data name="install.radexisting" xml:space="preserve">
+    <value>导入现有Kentico网站</value>
+  </data>
+  <data name="install.btnpermissioncontinue" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="install.btnpermissionskip" xml:space="preserve">
+    <value>跳过</value>
+  </data>
+  <data name="install.btnpermissiontest" xml:space="preserve">
+    <value>再次测试权限</value>
+  </data>
+  <data name="install.lblpermission" xml:space="preserve">
+    <value>文件夹 &lt;b&gt;{1}&lt;/b&gt;没有授予&lt;b&gt;{0}&lt;/b&gt;账户修改权限.虽然这不是一个错误,强烈建议你配置这些权限.</value>
+  </data>
+  <data name="install.lblpermissionsuccess" xml:space="preserve">
+    <value>该权限已正确配置.</value>
+  </data>
+  <data name="requirescript.continue" xml:space="preserve">
+    <value>检查并继续</value>
+  </data>
+  <data name="requirescript.information" xml:space="preserve">
+    <value>本页面需要Javascript才能正常运行,请启用浏览器的JavaScript并继续.</value>
+  </data>
+  <data name="requirescript.title" xml:space="preserve">
+    <value>需要使用Javascript</value>
+  </data>
+  <data name="install.lnkmediumtrust" xml:space="preserve">
+    <value>继续访问站点管理器</value>
+  </data>
+  <data name="install.mediumtrustinfo" xml:space="preserve">
+    <value>VirtualPathProvider没有运行,需要将虚拟对象导出到文件系统中运行网站. 转到 &lt;b&gt;站点管理器 -&gt; 管理 -&gt; 系统 -&gt; 部署&lt;/b&gt; 导出对象.</value>
+  </data>
+  <data name="install.tooltip" xml:space="preserve">
+    <value>上下文帮助</value>
+  </data>
+  <data name="install.notemplate" xml:space="preserve">
+    <value>请选择一些起动站点.</value>
+  </data>
+  <data name="install.radtemplate" xml:space="preserve">
+    <value>选择起动站点</value>
+  </data>
+  <data name="general.productname" xml:space="preserve">
+    <value>Kentico</value>
+  </data>
+  <data name="install.build" xml:space="preserve">
+    <value>Build:</value>
+  </data>
+  <data name="install.version" xml:space="preserve">
+    <value>Version:</value>
+  </data>
+  <data name="install.webtemplaterequireslicense" xml:space="preserve">
+    <value>这个模板需要以下许可证版本之一 &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data name="install.licensefordifferentdomain" xml:space="preserve">
+    <value>请输入当前域许可证密钥.</value>
+  </data>
+  <data name="global.errorsign" xml:space="preserve">
+    <value>错误:</value>
+  </data>
+  <data name="global.warning" xml:space="preserve">
+    <value>警告:</value>
+  </data>
+  <data name="installer.dbinstallfinished" xml:space="preserve">
+    <value>数据库已成功创建.</value>
+  </data>
+  <data name="siteimport.applicationrestarted" xml:space="preserve">
+    <value>应用程序已重新启动.请重复安装过程.</value>
+  </data>
+  <data name="install.templateswarning" xml:space="preserve">
+    <value>磁盘上不存在任何网站模板.只有现有的网站才可以导入.</value>
+  </data>
+  <data name="install.lblfreelicenseinfo" xml:space="preserve">
+    <value>你可以获得一个免费版的Kentico许可证在 &lt;a href="http://www.kenticoasia.com/download/free-edition.aspx"&gt;http://www.kenticoasia.com&lt;/a&gt;.</value>
+  </data>
+  <data name="install.account" xml:space="preserve">
+    <value>(ASP.NET 账户: {0})</value>
+  </data>
+  <data name="install.changecollation" xml:space="preserve">
+    <value>更改数据库排序规则到 '{0}'</value>
+  </data>
+  <data name="install.databasecollation" xml:space="preserve">
+    <value>现有数据库的排序规则不完全支持,并可能导致意想不到的问题.因此建议改变数据库排序规则至 SQL_Latin1_General_CP1_CI_AS.</value>
+  </data>
+  <data name="install.leavecollation" xml:space="preserve">
+    <value>离开当前排序规则 '{0}'</value>
+  </data>
+  <data name="install.step" xml:space="preserve">
+    <value>步骤  {0}</value>
+  </data>
+  <data name="install.step0" xml:space="preserve">
+    <value>SQL服务器和身份验证模式</value>
+  </data>
+  <data name="install.step1" xml:space="preserve">
+    <value>数据库实例</value>
+  </data>
+  <data name="install.step2" xml:space="preserve">
+    <value>数据库创建日志</value>
+  </data>
+  <data name="install.step3" xml:space="preserve">
+    <value>Web.config权限</value>
+  </data>
+  <data name="install.step4" xml:space="preserve">
+    <value>许可证密钥</value>
+  </data>
+  <data name="install.step5" xml:space="preserve">
+    <value>演示网站</value>
+  </data>
+  <data name="install.step6" xml:space="preserve">
+    <value>演示网站创建日志</value>
+  </data>
+  <data name="install.step7" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="install.step8" xml:space="preserve">
+    <value>数据库排序规则</value>
+  </data>
+  <data name="install.webtemplatecurrentlicense" xml:space="preserve">
+    <value>您的许可证版本是 &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data name="install.webtemplatecurrentpackages" xml:space="preserve">
+    <value>包含软件包 &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data name="install.webtemplaterequireslicenseorpackages" xml:space="preserve">
+    <value>或软件包 &lt;b&gt;{0}&lt;/b&gt;</value>
+  </data>
+  <data name="install.connectionstringazure" xml:space="preserve">
+    <value>安装程序无法插入任何数据库连接字符串为您的配置文件. 您可以手动添加下面的连接字符串在你的 web.config 和智能搜索工作者角色 app.config文件,或添加应用程序设置连接字符串的服务配置文件.选择适合你的项目的最佳选择.如果您使用的是Windows Azure的模拟器, 在你插入连接字符串后你将不得不停止并重新启动调试器.&lt;br/&gt;&lt;br/&gt;连接字符串为您的&lt;strong&gt;web.config&lt;/strong&gt; 和 &lt;strong&gt;app.config 文件&lt;/strong&gt;: &lt;br/&gt;&lt;br/&gt;&lt;strong class="connection-string"&gt; {0}&lt;/strong&gt; &lt;br/&gt;&lt;br/&gt;连接字符串为您的&lt;strong&gt;ServiceConfiguration.Cloud.cscfg&lt;/strong&gt;文件: &lt;br/&gt;&lt;br /&gt;&lt;strong class="connection-string"&gt;{1}&lt;/strong&gt;</value>
+  </data>
+  <data name="install.dbobjectsmissing" xml:space="preserve">
+    <value>DB对象在目标数据库丢失.也请安装Kentico数据库对象.</value>
+  </data>
+  <data name="install.wrongdbversion" xml:space="preserve">
+    <value>目标数据库包含脚本来自不同的版本.不允许安装至此数据库.</value>
+  </data>
+  <data name="footer.build" xml:space="preserve">
+    <value>Build:</value>
+  </data>
+  <data name="install.lbldbprogress" xml:space="preserve">
+    <value>创建数据库对象...</value>
+  </data>
+  <data name="install.hideadvancedoptions" xml:space="preserve">
+    <value>隐藏高级选项</value>
+  </data>
+  <data name="install.schema" xml:space="preserve">
+    <value>对象模式</value>
+  </data>
+  <data name="install.showadvancedoptions" xml:space="preserve">
+    <value>显示高级选项</value>
+  </data>
+  <data name="install.support" xml:space="preserve">
+    <value>你需要用安装帮助?请联系我们 &lt;a target="_blank" href="http://www.kenticoasia.com/Support"&gt;技术支持&lt;/a&gt;.</value>
+  </data>
+  <data name="install.errordatabseschemadoesnotexist" xml:space="preserve">
+    <value>数据库模式 '{0}' 不存在.当前模式为 '{1}'.</value>
+  </data>
+  <data name="install.finishstep" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="install.sqlsetting" xml:space="preserve">
+    <value>SQL设置</value>
+  </data>
+  <data name="install.merging" xml:space="preserve">
+    <value>合并</value>
+  </data>
+  <data name="install.prerequisites" xml:space="preserve">
+    <value>前提条件</value>
+  </data>
+  <data name="install.separation" xml:space="preserve">
+    <value>分割</value>
+  </data>
+</root>

@@ -1,0 +1,23 @@
+﻿<form>
+  <category name="Widget container" />
+  <field column="Container" fieldcaption="Widget container" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.widgetproperties.container$}" publicfield="false" spellcheck="true" guid="5b74cfb7-4e8b-4570-a4cb-c6fa20f2171e">
+    <settings>
+      <controlname>selectcontainer</controlname>
+    </settings>
+  </field>
+  <field column="ContainerTitle" fieldcaption="Container title" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.widgetproperties.containertitle$}" publicfield="false" spellcheck="true" guid="8249d912-0dd7-49db-9fab-8ccc42548f94" >
+    <settings>
+      <controlname>encodingtextbox</controlname>
+    </settings>
+  </field>
+  <field column="ContainerCSSClass" fieldcaption="Container CSS class" visible="false" columntype="text" fieldtype="textbox" allowempty="true" isPK="false" system="false" columnsize="200" fielddescription="{$documentation.widgetproperties.containercssclass$}" publicfield="false" spellcheck="true" guid="8249d912-0dd7-49db-1cab-2aaa42548f94" >
+    <settings>
+      <controlname>encodingtextbox</controlname>
+    </settings>
+  </field>
+  <field column="ContainerCustomContent" fieldcaption="Container custom content" visible="false" columntype="longtext" fieldtype="usercontrol" allowempty="true" isPK="false" system="false" fielddescription="{$documentation.widgetproperties.containercustomcontent$}" publicfield="false" spellcheck="true" guid="80e99300-3501-4942-a554-ca545fda3e5a">
+    <settings>
+      <controlname>encodingtextbox</controlname>
+    </settings>
+  </field>
+</form>

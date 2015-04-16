@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMSApp_MVC</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.Mvc.FilterConfig">
+            <summary>
+            Class providing manipulation with the application filters.
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)">
+            <summary>
+            Registers the global filters.
+            </summary>
+            <param name="filters">The global filters collection</param>
+        </member>
+        <member name="T:CMS.Mvc.RouteConfig">
+            <summary>
+            Class providing manipulation with the application routes.
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Registers the application routes.
+            </summary>
+            <param name="routes">The routes collection</param>
+        </member>
+        <member name="T:CMS.Mvc.WebApiConfig">
+            <summary>
+            Class providing manipulation with the application API routes.
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.WebApiConfig.Register(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Registers the specified config.
+            </summary>
+            <param name="config">The http configuration</param>
+        </member>
+        <member name="T:CMS.Controllers.NewsController">
+            <summary>
+            Sample controller for the news.
+            </summary>
+        </member>
+        <member name="M:CMS.Controllers.NewsController.List">
+            <summary>
+            Process the list action.
+            </summary>
+        </member>
+        <member name="M:CMS.Controllers.NewsController.Detail(System.String)">
+            <summary>
+            Process the detail action.
+            </summary>
+        </member>
+        <member name="M:CMS.Controllers.NewsController.GetNewsList">
+            <summary>
+            Gets the news list.
+            </summary>
+        </member>
+        <member name="M:CMS.Controllers.NewsController.GetNewsDocument(System.String)">
+            <summary>
+            Gets a specific news document.
+            </summary>
+            <param name="aliasPath">The alias path</param>
+        </member>
+        <member name="M:CMS.Controllers.NewsController.GetCacheKey(System.String[])">
+            <summary>
+            Generates the cache key according to the given cache key parameters.
+            </summary>
+            <param name="cacheItemNameParts">Cache key parts which will be used in the generated cache key</param>
+        </member>
+        <member name="M:CMS.Controllers.NewsController.GetCacheMinutes">
+            <summary>
+            Gets the default content cache minutes set for the current site.
+            </summary>
+        </member>
+        <member name="T:CMS.Mvc.CMS_MvcModuleMetadata">
+            <summary>
+            Represents the CMSApp_MVC web application module meta data.
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.CMS_MvcModuleMetadata.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:CMS.Mvc.CMS_MvcModule">
+            <summary>
+            Represents the CMSApp_MVC web application module.
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.CMS_MvcModule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Mvc.CMS_MvcModule.OnInit">
+            <summary>
+            Initializes the module.
+            </summary>
+        </member>
+        <member name="T:CMS.DocumentEngine.Types.News">
+            <summary>
+            Sample item class.
+            </summary>
+        </member>
+        <member name="F:CMS.DocumentEngine.Types.News.CLASS_NAME">
+            <summary>
+            Class name of the item.
+            </summary>
+        </member>
+        <member name="M:CMS.DocumentEngine.Types.News.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Types.News.NewsID">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Types.News.NewsTitle">
+            <summary>
+            News Title.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Types.News.NewsReleaseDate">
+            <summary>
+            Release Date.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Types.News.NewsSummary">
+            <summary>
+            News Summary.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Types.News.NewsText">
+            <summary>
+            News Text.
+            </summary>
+        </member>
+        <member name="P:CMS.DocumentEngine.Types.News.NewsTeaser">
+            <summary>
+            Teaser.
+            </summary>
+        </member>
+    </members>
+</doc>

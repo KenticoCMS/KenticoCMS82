@@ -1,0 +1,116 @@
+﻿.DebugLog .LogInfo
+{
+    display: block;
+    padding: 8px;
+    font-weight: bold;
+    background-color: #ecc;
+    border-bottom: solid 1px #ff0000;
+    text-decoration: none;
+    color: #000;
+}
+
+.DebugLog .LogInfo:visited, .DebugLog .LogInfo:active, .DebugLog .LogInfo:hover, .DebugLog .LogInfo:focus
+{
+    color: #000;
+}
+
+.DebugLog .QueryText
+{
+    color: #666;
+}
+
+.DebugLog .ContextInfo
+{
+    color: #888888;
+}
+
+.DebugLog .Chart
+{
+    border: solid 1px #cccccc;
+    height: 10px;
+    width: 50px;
+}
+
+.DebugLog .Chart .Inner
+{
+    float: left;
+    overflow: hidden;
+    height: 10px;
+}
+
+.DebugLog .Chart.Good
+{
+    background-color: #bbffbb;
+}
+
+.DebugLog .Chart.Good .Inner
+{
+    background-color: #88dd88;
+}
+
+.DebugLog .Chart.Bad
+{
+    background-color: #ffbbbb;
+}
+
+.DebugLog .Chart.Bad .Inner
+{
+    background-color: #ff3333;
+}
+
+.DebugLog .Chart.Warn
+{
+    background-color: #ffcc66;
+}
+
+.DebugLog .Chart.Warn .Inner
+{
+    background-color: #ff9900;
+}
+
+.DebugLog .CacheDep
+{
+    margin-top: 2px;
+    border-top: solid 1px #dddddd;
+    color: #888888;
+    padding-left: 10px;
+}
+
+.DebugLog
+{
+    margin-top: 2px;
+    border-top: solid 1px #dddddd;
+}
+
+.DebugLog .LessImportant
+{
+    color: #888;
+}
+
+.DebugLog .Error *
+{
+    color: #f00 !important;
+}
+
+.DebugLog .View
+{
+    float: right;
+    border: none;
+}
+
+.DebugLog .Yes
+{
+    color: green;
+}
+
+.DebugLog .No
+{
+    color: Red;
+}
+
+.DebugLog .Output
+{
+    width: 100%;
+    height: 530px;
+    font-family: "Courier New", monospace;
+}

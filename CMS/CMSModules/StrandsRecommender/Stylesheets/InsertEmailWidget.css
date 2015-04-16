@@ -1,0 +1,74 @@
+﻿.InsertEmailWidget * {
+    margin: 0;
+    padding: 0;
+}
+
+.InsertEmailWidget .PageHeaderLine {
+    overflow: hidden;
+}
+
+    .InsertEmailWidget .PageHeaderLine p {
+        margin: 16px;
+    }
+
+.InsertEmailWidget .row,
+.InsertEmailWidget .col {
+    overflow: hidden;
+}
+
+.InsertEmailWidget .row {
+    margin: 0;
+    left: 0;
+    right: 0;
+}
+
+.InsertEmailWidget .table {
+    margin-bottom: 0;
+}
+
+.InsertEmailWidget .scroll-y {
+    overflow-y: auto;
+}
+
+.InsertEmailWidget .body.row {
+    top: 38px;
+    bottom: 43px;
+}
+
+.InsertEmailWidget .EmailTemplatesList li {
+    cursor: pointer;
+    list-style: none;
+    display: inline;
+}
+
+    .InsertEmailWidget .EmailTemplatesList li span {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+.InsertEmailWidget .table img {
+    margin: 0 auto;
+    display: block;
+}
+
+.InsertEmailWidget .shadow {
+    background-repeat: repeat-x;
+    background-position: bottom;
+    float: left;
+    clear: left;
+}
+
+.InsertEmailWidget .inner {
+    padding: 16px;
+}
+
+.InsertEmailWidget .shadow:hover,
+.InsertEmailWidget .selected .shadow {
+    background-color: #d0e8ed;
+    background-position: top;
+}
+
+.InsertEmailWidget .shadow .table table {
+    background-color: white;
+}

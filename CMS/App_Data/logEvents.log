@@ -1,0 +1,2889 @@
+Event type: I
+Event time: 4/10/2015 1:25:57 PM
+Source: Application_Start
+Event code: STARTAPP
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=9f31e5d0-5bd8-4821-94c3-9d970e477b73
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: Web application has started with following modules loaded:
+
+
+CMS.Base
+CMS.Helpers
+CMS.DataEngine
+CMS.Automation
+CMS.BannerManagement
+CMS.Blog
+CMS.Chat
+CMS.CMSMembershipProvider
+CMS.Community
+CMS.CustomTables
+CMS.EventLog
+CMS.FormEngine
+CMS.DocumentEngine
+CMS.Email
+CMS.Globalization
+CMS.IO
+CMS.MacroEngine
+CMS.License
+CMS.ImportExport
+CMS.Localization
+CMS.Site
+CMS.Modules
+CMS.Membership
+CMS.ExtendedControls
+CMS.ABTest
+CMS.ContactManagement
+CMS.ContentPersonalization
+CMS.FormControls
+CMS.Controls
+CMS.Ecommerce
+CMS.EventManager
+CMS.Forums
+CMS.HealthMonitoring
+CMS.MediaLibrary
+CMS.MessageBoards
+CMS.Messaging
+CMS.ModuleUsageTracking
+CMS.Mvc
+CMS.MVC.Impl
+CMS.Notifications
+CMS.OnlineForms
+CMS.OutputFilter
+CMS.Search
+Test.Test
+CMS.PortalEngine
+CMS.Scheduler
+CMS.WebAnalytics
+CMS.URLRewritingEngine
+CMS.Workflow
+CMS.Newsletter
+CMS.MVTest
+CMS.OnlineMarketing
+CMS.Personas
+CMS.Polls
+CMS.PortalControls
+CMS.ProjectManagement
+CMS.Protection
+CMS.Relationships
+CMS.Reporting
+CMS.Search.Lucene3
+CMS.Search.TextExtractors
+CMS.SharePoint
+CMS.SocialMedia
+CMS.SocialMarketing
+CMS.StrandsRecommender
+CMS.Synchronization
+CMS.Taxonomy
+CMS.SynchronizationEngine
+CMS.TranslationServices
+CMS.WebApi
+CMS.WebDAV
+CMS.WebFarmSyncHelper
+CMS.WebServices
+CMS.WIFIntegration
+CMS.WSE3Service
+CMSModuleLoader
+CMS.AbuseReport
+CMS.Admin
+CMS.AdminControls
+CMS.ApplicationDashboard
+CMS.Avatars
+CMS.Badges
+CMS.BadWords
+CMS.BannedIP
+CMS.Form
+CMS.Blogs
+CMS.Categories
+CMS.Content
+CMS.CssStyleSheets
+CMS.Cultures
+CMS.Departments
+CMS.DeviceProfile
+CMS.DocumentLibrary
+CMS.DocumentTypes
+CMS.EmailQueue
+CMS.EmailTemplates
+CMS.FileImport
+CMS.Friends
+CMS.Groups
+CMS.Integration
+CMS.IntranetPortal
+Licenses
+CMS.Macros
+CMS.MyDesk
+CMS.Newsletters
+CMS.Objects
+CMS.Permissions
+CMS.RecycleBin
+CMS.REST
+CMS.Scoring
+CMS.Settings
+CMS.Sites
+CMS.SmartSearch
+CMS.SMTPServers
+CMS.Staging
+CMS.Support
+CMS.System
+CMS.SystemDevelopment
+CMS.SystemTables
+CMS.TagGroups
+CMS.TimeZones
+CMS.Translations
+CMS.UIPersonalization
+CMS.WebFarm
+CMS.Widgets
+CMS.Workflows
+CMS
+Event type: E
+Event time: 4/10/2015 1:25:58 PM
+Source: ApplicationDashboard
+Event code: ApiMethod
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=69d69d2d-6d4e-40ef-9ce1-97d628083898
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator (ID:53) 
+Description: Unexpected error occurred in API call to Controller: CMS.ApplicationDashboard.LiveTileController, Action: Get
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Event type: E
+Event time: 4/10/2015 1:25:58 PM
+Source: ApplicationDashboard
+Event code: ApiMethod
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=6e969eb5-cb85-45ac-89c9-2bdebef2c820
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator (ID:53) 
+Description: Unexpected error occurred in API call to Controller: CMS.ApplicationDashboard.LiveTileController, Action: Get
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Event type: E
+Event time: 4/10/2015 1:25:58 PM
+Source: ApplicationDashboard
+Event code: ApiMethod
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=1c55d3da-a29b-4df6-a0b2-dc72a065a317
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator (ID:53) 
+Description: Unexpected error occurred in API call to Controller: CMS.ApplicationDashboard.LiveTileController, Action: Get
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Event type: E
+Event time: 4/10/2015 1:25:58 PM
+Source: ApplicationDashboard
+Event code: ApiMethod
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=9f31e5d0-5bd8-4821-94c3-9d970e477b73
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: Unexpected error occurred in API call to Controller: CMS.ApplicationDashboard.LiveTileController, Action: Get
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Event type: E
+Event time: 4/10/2015 1:25:58 PM
+Source: ApplicationDashboard
+Event code: ApiMethod
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=51836837-1d6b-4087-a85c-9c09420d0e98
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator (ID:53) 
+Description: Unexpected error occurred in API call to Controller: CMS.ApplicationDashboard.LiveTileController, Action: Get
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Message: Value cannot be null.
+Parameter name: site
+
+Exception type: System.ArgumentNullException
+Stack Trace: 
+   at CMS.ApplicationDashboard.Logic.LiveTileModelLoader.LoadLiveTileModel(Guid uiElementGuid, SiteInfo site, UserInfo user)
+   at CMS.ApplicationDashboard.LiveTileController.Get(Guid guid)
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   at System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+
+Event type: W
+Event time: 4/10/2015 1:25:58 PM
+Source: Webfarm
+Event code: LICENSELIMITATION
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=51836837-1d6b-4087-a85c-9c09420d0e98
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator (ID:53) 
+Description: Feature Webfarm is not available.
+Event type: E
+Event time: 4/10/2015 1:25:58 PM
+Source: Application
+Event code: EndRequest
+Machine name: GURU-PC
+Event URL: /cmsapi/LiveTile/?guid=51836837-1d6b-4087-a85c-9c09420d0e98
+URL Referrer: http://customers.kenticoasia.com/CMSModules/ApplicationDashboard/ApplicationDashboard.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator (ID:53) 
+Description: 
+Message: License for feature 'Webfarm' not found.
+
+Exception type: CMS.DataEngine.LicenseException
+Stack Trace: 
+   at CMS.LicenseProvider.LicenseHelperInternal.ReportLicenseError(String redirectUrl, String message)
+   at CMS.LicenseProvider.LicenseService.CheckLicense(FeatureEnum feature, String domain, Boolean throwError)
+   at CMS.DataEngine.AbstractInfoProvider`2.GetObjectQuery(Boolean checkLicense)
+   at CMS.WebFarmSync.WebSyncHelper.get_ServerCount()
+   at CMS.WebFarmSync.WebSyncHelper.CheckLicense()
+   at CMS.WebFarmSync.WebSyncHelper.ProcessMyTasks()
+   at CMS.Base.AbstractHandler.CallEventHandler[TArgs](EventHandler`1 h, TArgs e)
+   at CMS.Base.AbstractHandler.Raise[TArgs](String partName, List`1 list, TArgs e, Boolean important)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.StartEvent(TArgs e)
+   at CMS.Base.LockHelper.ExecuteOnceInLifetime(Action action, Object lockObject, Boolean& executedFlag)
+   at CMS.Base.AbstractHandler.CallEventHandler[TArgs](EventHandler`1 h, TArgs e)
+   at CMS.Base.AbstractHandler.Raise[TArgs](String partName, List`1 list, TArgs e, Boolean important)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.StartEvent(TArgs e)
+   at CMS.Base.ApplicationModule.EndRequest(Object sender, EventArgs e)
+
+Message: License for feature 'Webfarm' not found.
+
+Exception type: CMS.DataEngine.LicenseException
+Stack Trace: 
+   at CMS.LicenseProvider.LicenseHelperInternal.ReportLicenseError(String redirectUrl, String message)
+   at CMS.LicenseProvider.LicenseService.CheckLicense(FeatureEnum feature, String domain, Boolean throwError)
+   at CMS.DataEngine.AbstractInfoProvider`2.GetObjectQuery(Boolean checkLicense)
+   at CMS.WebFarmSync.WebSyncHelper.get_ServerCount()
+   at CMS.WebFarmSync.WebSyncHelper.CheckLicense()
+   at CMS.WebFarmSync.WebSyncHelper.ProcessMyTasks()
+   at CMS.Base.AbstractHandler.CallEventHandler[TArgs](EventHandler`1 h, TArgs e)
+   at CMS.Base.AbstractHandler.Raise[TArgs](String partName, List`1 list, TArgs e, Boolean important)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.StartEvent(TArgs e)
+   at CMS.Base.LockHelper.ExecuteOnceInLifetime(Action action, Object lockObject, Boolean& executedFlag)
+   at CMS.Base.AbstractHandler.CallEventHandler[TArgs](EventHandler`1 h, TArgs e)
+   at CMS.Base.AbstractHandler.Raise[TArgs](String partName, List`1 list, TArgs e, Boolean important)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.RaiseExecute(TArgs e)
+   at CMS.Base.SimpleHandler`2.StartEvent(TArgs e)
+   at CMS.Base.ApplicationModule.EndRequest(Object sender, EventArgs e)
+
+Event type: E
+Event time: 2015/4/10 13:26:09
+Source: EventLogWorker
+Event code: RUN
+IP Address: 
+Machine name: GURU-PC
+User: public (ID:65) 
+Description: 
+Message: Cannot open database "Kentico82" requested by the login. The login failed.
+Login failed for user 'sa'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at CMS.DataEngine.AbstractDataConnection.Open()
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.SimpleDataClass.Insert(Boolean getId)
+   at CMS.DataEngine.AbstractInfo`1.InsertData()
+   at CMS.EventLog.EventLogProvider.SetEventLogInfoInternal(EventLogInfo eventLog)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject, Boolean logDirectly, Boolean deleteOlder)
+   at CMS.EventLog.EventLogWorker.ProcessItem(EventLogInfo item)
+   at CMS.Base.ThreadQueueWorker`2.ProcessItems(IEnumerable`1 items)
+   at CMS.EventLog.EventLogWorker.ProcessItems(IEnumerable`1 items)
+   at CMS.Base.ThreadQueueWorker`2.Process()
+   at CMS.Base.ThreadWorker`1.RunProcess()
+   at CMS.Base.ThreadWorker`1.Run(WindowsIdentity wi)
+   at CMS.Base.CMSThread.RunThread()
+   at CMS.Base.CMSThread.Run()
+
+Message: Cannot open database "Kentico82" requested by the login. The login failed.
+Login failed for user 'sa'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at CMS.DataEngine.AbstractDataConnection.Open()
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.SimpleDataClass.Insert(Boolean getId)
+   at CMS.DataEngine.AbstractInfo`1.InsertData()
+   at CMS.EventLog.EventLogProvider.SetEventLogInfoInternal(EventLogInfo eventLog)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject, Boolean logDirectly, Boolean deleteOlder)
+   at CMS.EventLog.EventLogWorker.ProcessItem(EventLogInfo item)
+   at CMS.Base.ThreadQueueWorker`2.ProcessItems(IEnumerable`1 items)
+   at CMS.EventLog.EventLogWorker.ProcessItems(IEnumerable`1 items)
+   at CMS.Base.ThreadQueueWorker`2.Process()
+   at CMS.Base.ThreadWorker`1.RunProcess()
+   at CMS.Base.ThreadWorker`1.Run(WindowsIdentity wi)
+   at CMS.Base.CMSThread.RunThread()
+   at CMS.Base.CMSThread.Run()
+
+Event type: E
+Event time: 2015/4/10 13:29:31
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:31
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:40
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:40
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:41
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:41
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:42
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:42
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:43
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:43
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:49
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:49
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:50
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Stocks/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 2015/4/10 13:29:50
+Source: Control
+Event code: LOAD
+Machine name: GURU-PC
+Event URL: /
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+SELECT   [NodeAliasPath], [DocumentUrlPath], [ArticleName], [ArticleTeaserText], [ArticleText], [ArticleTeaserImage], [DocumentCulture], [NodeID], [NodeLinkedNodeID], [SiteName], [ClassName], [NodeLevel], [NodeOrder], [NodeParentID] FROM View_KenticoMasters_Article_Joined WHERE [NodeSiteID] = @NodeSiteID AND ([Published] = @Published AND (NodeAliasPath LIKE N'/Home/Services/%') AND [DocumentCulture] = @DocumentCulture) ORDER BY NodeOrder
+
+Caused exception: 
+Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.ObjectQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.ObjectQueryBase`2.GetData()
+   at CMS.DocumentEngine.DocumentQueryBase`2.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.DocumentEngine.DocumentQueryProperties.FilterResultsByPermissions(IDataQuery query, Int32& totalRecords)
+   at CMS.DocumentEngine.MultiDocumentQueryBase`3.GetResults(IDataQuery query, Int32& totalRecords)
+   at CMS.DataEngine.MultiQueryBase`2.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.DataQueryBase`1.get_Result()
+   at CMS.Controls.CMSAbstractDataProperties.GetDataSet(String path, String where, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSAbstractDataProperties.LoadData(Object& dataSource, Boolean forceReload, Int32 offset, Int32 maxRecords, Int32& totalRecords)
+   at CMS.Controls.CMSDocumentsDataSource.GetDataSource(Int32 offset, Int32 maxRecords)
+   at CMS.Controls.CMSBaseDataSource.get_DataSource()
+   at CMS.Controls.CMSRepeater.ReloadDataInternal(Boolean forceReload)
+   at CMS.ExtendedControls.ControlsExtensions.CallHandled(Control ctrl, Action func)
+
+Message: Invalid object name 'View_KenticoMasters_Article_Joined'.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: E
+Event time: 4/10/2015 1:30:08 PM
+Source: EventLogWorker
+Event code: RUN
+IP Address: 
+Machine name: GURU-PC
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+INSERT INTO CMS_EventLog ([EventType], [EventTime], [Source], [EventCode], [UserID], [UserName], [IPAddress], [NodeID], [DocumentName], [EventDescription], [SiteID], [EventUrl], [EventMachineName], [EventUserAgent], [EventUrlReferrer]) VALUES (@EventType, @EventTime, @Source, @EventCode, @UserID, @UserName, @IPAddress, @NodeID, @DocumentName, @EventDescription, @SiteID, @EventUrl, @EventMachineName, @EventUserAgent, @EventUrlReferrer); SELECT SCOPE_IDENTITY() AS [ID]
+
+Caused exception: 
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.SimpleDataClass.Insert(Boolean getId)
+   at CMS.DataEngine.AbstractInfo`1.InsertData()
+   at CMS.EventLog.EventLogProvider.SetEventLogInfoInternal(EventLogInfo eventLog)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject, Boolean logDirectly, Boolean deleteOlder)
+   at CMS.EventLog.EventLogWorker.ProcessItem(EventLogInfo item)
+   at CMS.Base.ThreadQueueWorker`2.ProcessItems(IEnumerable`1 items)
+   at CMS.EventLog.EventLogWorker.ProcessItems(IEnumerable`1 items)
+   at CMS.Base.ThreadQueueWorker`2.Process()
+   at CMS.Base.ThreadWorker`1.RunProcess()
+   at CMS.Base.ThreadWorker`1.Run(WindowsIdentity wi)
+   at CMS.Base.CMSThread.RunThread()
+   at CMS.Base.CMSThread.Run()
+
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+INSERT INTO CMS_EventLog ([EventType], [EventTime], [Source], [EventCode], [UserID], [UserName], [IPAddress], [NodeID], [DocumentName], [EventDescription], [SiteID], [EventUrl], [EventMachineName], [EventUserAgent], [EventUrlReferrer]) VALUES (@EventType, @EventTime, @Source, @EventCode, @UserID, @UserName, @IPAddress, @NodeID, @DocumentName, @EventDescription, @SiteID, @EventUrl, @EventMachineName, @EventUserAgent, @EventUrlReferrer); SELECT SCOPE_IDENTITY() AS [ID]
+
+Caused exception: 
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.SimpleDataClass.Insert(Boolean getId)
+   at CMS.DataEngine.AbstractInfo`1.InsertData()
+   at CMS.EventLog.EventLogProvider.SetEventLogInfoInternal(EventLogInfo eventLog)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject, Boolean logDirectly, Boolean deleteOlder)
+   at CMS.EventLog.EventLogWorker.ProcessItem(EventLogInfo item)
+   at CMS.Base.ThreadQueueWorker`2.ProcessItems(IEnumerable`1 items)
+   at CMS.EventLog.EventLogWorker.ProcessItems(IEnumerable`1 items)
+   at CMS.Base.ThreadQueueWorker`2.Process()
+   at CMS.Base.ThreadWorker`1.RunProcess()
+   at CMS.Base.ThreadWorker`1.Run(WindowsIdentity wi)
+   at CMS.Base.CMSThread.RunThread()
+   at CMS.Base.CMSThread.Run()
+
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: I
+Event time: 4/10/2015 1:30:21 PM
+Source: User
+Event code: UPDATEOBJ
+Machine name: GURU-PC
+Event URL: /CMSPages/logon.aspx?ReturnUrl=%2fAdmin%2fCMSAdministration.aspx
+URL Referrer: http://localhost/CMSPages/logon.aspx?ReturnUrl=/Admin/CMSAdministration.aspx
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator (ID:53) 
+Description: Update User 'Global Administrator'
+Event type: E
+Event time: 4/10/2015 1:30:21 PM
+Source: EventLogWorker
+Event code: RUN
+IP Address: 
+Machine name: GURU-PC
+User: public (ID:65) 
+Description: 
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+INSERT INTO CMS_EventLog ([EventType], [EventTime], [Source], [EventCode], [UserID], [UserName], [IPAddress], [NodeID], [DocumentName], [EventDescription], [SiteID], [EventUrl], [EventMachineName], [EventUserAgent], [EventUrlReferrer]) VALUES (@EventType, @EventTime, @Source, @EventCode, @UserID, @UserName, @IPAddress, @NodeID, @DocumentName, @EventDescription, @SiteID, @EventUrl, @EventMachineName, @EventUserAgent, @EventUrlReferrer); SELECT SCOPE_IDENTITY() AS [ID]
+
+Caused exception: 
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.SimpleDataClass.Insert(Boolean getId)
+   at CMS.DataEngine.AbstractInfo`1.InsertData()
+   at CMS.EventLog.EventLogProvider.SetEventLogInfoInternal(EventLogInfo eventLog)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject, Boolean logDirectly, Boolean deleteOlder)
+   at CMS.EventLog.EventLogWorker.ProcessItem(EventLogInfo item)
+   at CMS.Base.ThreadQueueWorker`2.ProcessItems(IEnumerable`1 items)
+   at CMS.EventLog.EventLogWorker.ProcessItems(IEnumerable`1 items)
+   at CMS.Base.ThreadQueueWorker`2.Process()
+   at CMS.Base.ThreadWorker`1.RunProcess()
+   at CMS.Base.ThreadWorker`1.Run(WindowsIdentity wi)
+   at CMS.Base.CMSThread.RunThread()
+   at CMS.Base.CMSThread.Run()
+
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Message: 
+[DataConnection.HandleError]: 
+
+Query: 
+INSERT INTO CMS_EventLog ([EventType], [EventTime], [Source], [EventCode], [UserID], [UserName], [IPAddress], [NodeID], [DocumentName], [EventDescription], [SiteID], [EventUrl], [EventMachineName], [EventUserAgent], [EventUrlReferrer]) VALUES (@EventType, @EventTime, @Source, @EventCode, @UserID, @UserName, @IPAddress, @NodeID, @DocumentName, @EventDescription, @SiteID, @EventUrl, @EventMachineName, @EventUserAgent, @EventUrlReferrer); SELECT SCOPE_IDENTITY() AS [ID]
+
+Caused exception: 
+The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+
+Exception type: System.Exception
+Stack Trace: 
+   at CMS.DataEngine.AbstractDataConnection.HandleError(String queryText, Exception ex)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+   at CMS.DataEngine.GeneralConnection.RunQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query)
+   at CMS.DataEngine.GeneralConnection.ExecuteQuery(QueryParameters query, Int32& totalRecords)
+   at CMS.DataEngine.DataQueryBase`1.GetDataFromDB()
+   at CMS.DataEngine.DataQueryBase`1.GetData()
+   at CMS.DataEngine.SimpleDataClass.Insert(Boolean getId)
+   at CMS.DataEngine.AbstractInfo`1.InsertData()
+   at CMS.EventLog.EventLogProvider.SetEventLogInfoInternal(EventLogInfo eventLog)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject)
+   at CMS.EventLog.EventLogProvider.LogEventInternal(EventLogInfo eventObject, Boolean logDirectly, Boolean deleteOlder)
+   at CMS.EventLog.EventLogWorker.ProcessItem(EventLogInfo item)
+   at CMS.Base.ThreadQueueWorker`2.ProcessItems(IEnumerable`1 items)
+   at CMS.EventLog.EventLogWorker.ProcessItems(IEnumerable`1 items)
+   at CMS.Base.ThreadQueueWorker`2.Process()
+   at CMS.Base.ThreadWorker`1.RunProcess()
+   at CMS.Base.ThreadWorker`1.Run(WindowsIdentity wi)
+   at CMS.Base.CMSThread.RunThread()
+   at CMS.Base.CMSThread.Run()
+
+Message: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_CMS_Event_SiteID_CMS_Site". The conflict occurred in database "Kentico82", table "dbo.CMS_Site", column 'SiteID'.
+The statement has been terminated.
+
+Exception type: System.Data.SqlClient.SqlException
+Stack Trace: 
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at CMS.DataEngine.AbstractDataConnection.ExecuteQuery(String queryText, QueryDataParameters queryParams, QueryTypeEnum queryType, Boolean requiresTransaction)
+
+Event type: I
+Event time: 4/10/2015 1:32:16 PM
+Source: Authentication
+Event code: AUTHENTICATIONSUCC
+Machine name: GURU-PC
+Event URL: /CMSPages/logon.aspx?ReturnUrl=%2fAdmin%2fCMSAdministration.aspx%3fusername%3dadministrator&username=administrator
+URL Referrer: http://127.0.0.1/CMSPages/logon.aspx?ReturnUrl=/Admin/CMSAdministration.aspx?username=administrator&username=administrator
+User agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+User: administrator
+Site ID: 1
+Event type: I
+Event time: 4/10/2015 1:33:33 PM
+Source: 网页模板
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 网页模板 'Ad-hoc: Home'
+Event type: I
+Event time: 4/10/2015 1:33:56 PM
+Source: 网页模板
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 网页模板 'Ad-hoc: Blog post unsubscription'
+Event type: I
+Event time: 4/10/2015 1:34:43 PM
+Source: 网页模板
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 网页模板 'Ad-hoc: Forum unsubscription'
+Event type: I
+Event time: 4/10/2015 1:34:44 PM
+Source: 网页模板
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 网页模板 'Ad-hoc: Message board unsubscription'
+Event type: I
+Event time: 4/10/2015 1:34:47 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Kentico CMS Information Sources'
+Event type: I
+Event time: 4/10/2015 1:34:47 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'Kentico-CMS-Information-Sources.pdf'
+Event type: I
+Event time: 4/10/2015 1:34:47 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'info_sources_product.png'
+Event type: I
+Event time: 4/10/2015 1:34:49 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Apple iPad 2'
+Event type: I
+Event time: 4/10/2015 1:34:49 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'ipad2_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:34:50 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Apple MacBook Pro MC723LL/A'
+Event type: I
+Event time: 4/10/2015 1:34:50 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'mb_pro_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:34:51 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Dell XPS 15z'
+Event type: I
+Event time: 4/10/2015 1:34:51 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'dell_xps_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:34:51 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'HP EliteBook 8440p WJ681AW'
+Event type: I
+Event time: 4/10/2015 1:34:51 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'hp_elite_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:01 PM
+Source: 网页模板
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 网页模板 'Ad-hoc: Product recommendations'
+Event type: I
+Event time: 4/10/2015 1:35:02 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Donate with Us'
+Event type: I
+Event time: 4/10/2015 1:35:03 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Silver partner membership for 1 year'
+Event type: I
+Event time: 4/10/2015 1:35:03 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'silver.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:04 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Gold partner membership for 1 year'
+Event type: I
+Event time: 4/10/2015 1:35:04 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'gold.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:05 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Microsoft Windows 7 installation package'
+Event type: I
+Event time: 4/10/2015 1:35:05 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'Windows_7_Ultimate_Install.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:05 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Dell XPS 15z with iPhone 4'
+Event type: I
+Event time: 4/10/2015 1:35:05 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'dell_xps_iphone.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:06 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 '1 Hour of Web Development Consulting'
+Event type: I
+Event time: 4/10/2015 1:35:06 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'it_service_product.png'
+Event type: I
+Event time: 4/10/2015 1:35:07 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Operating System Installation'
+Event type: I
+Event time: 4/10/2015 1:35:07 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'os_installation_product.png'
+Event type: I
+Event time: 4/10/2015 1:35:08 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Apple iPhone 4 with inscription'
+Event type: I
+Event time: 4/10/2015 1:35:08 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'iphone4_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:09 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Apple iPhone 3GS'
+Event type: I
+Event time: 4/10/2015 1:35:09 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'iphone_3gs_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:09 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Samsung Google Nexus S'
+Event type: I
+Event time: 4/10/2015 1:35:09 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'nexus_s_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:10 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Motorola Atrix 4G'
+Event type: I
+Event time: 4/10/2015 1:35:10 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'motorola_atrix_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:11 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'HTC Sensation'
+Event type: I
+Event time: 4/10/2015 1:35:11 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'htc_sensation_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:12 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'BlackBerry Torch 9800'
+Event type: I
+Event time: 4/10/2015 1:35:12 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'bb_torch_product.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:12 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Microsoft Office Professional 2010'
+Event type: I
+Event time: 4/10/2015 1:35:12 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'Office_Professional_2010.jpg'
+Event type: I
+Event time: 4/10/2015 1:35:13 PM
+Source: 产品
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 产品 'Microsoft Windows 7 Ultimate'
+Event type: I
+Event time: 4/10/2015 1:35:13 PM
+Source: 元文件
+Event code: DELETEOBJ
+IP Address: 
+Machine name: GURU-PC
+Event URL: /CMSModules/Sites/Pages/site_delete.aspx?siteid=1
+User: administrator (ID:53) 
+Site ID: 1
+Description: 删除 元文件 'Windows_7_Ultimate.jpg'

@@ -1,0 +1,3 @@
+<%@ Control Language="C#" AutoEventWireup="true" Inherits="CMSWebParts_SocialMedia_Facebook_FacebookRecommendations" CodeFile="~/CMSWebParts/SocialMedia/Facebook/FacebookRecommendations.ascx.cs" %>
+<cms:LocalizedLabel runat="server" CssClass="webpart-error-label" ID="lblErrorMessage" Visible="False"></cms:LocalizedLabel>
+<asp:Literal runat="server" ID="ltlRecommendations" EnableViewState="false" />

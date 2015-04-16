@@ -1,0 +1,49 @@
+﻿<category name="Output_filter">
+  <properties>
+    <caption>Output filter</caption>
+    <collapsedbydefault>true</collapsedbydefault>
+    <collapsible>true</collapsible>
+    <visible>True</visible>
+  </properties>
+</category>
+<field column="EnableOutputFilter" fieldcaption="Filter output HTML of web part" visible="true" defaultvalue="false" columntype="boolean" fieldtype="CustomUserControl" allowempty="true" fielddescription="{$documentation.webpartproperties.enableoutputfilter$}" guid="75e5a978-7d07-4531-9643-a9f3c76ab913">
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field column="OutputResolveURLs" fieldcaption="Resolve URLs" visible="true" defaultvalue="true" columntype="boolean" fieldtype="CustomUserControl" allowempty="true" fielddescription="{$documentation.webpartproperties.outputresolveurls$}" guid="2b929211-ed21-4c3d-857d-554c5d64fd62">
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field column="OutputFixAttributes" fieldcaption="Fix attributes" visible="true" defaultvalue="true" columntype="boolean" fieldtype="CustomUserControl" allowempty="true" fielddescription="{$documentation.webpartproperties.outputfixattributes$}" guid="ce3f3885-5230-459d-8325-bdc0a74fc135">
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field column="OutputFixJavascript" fieldcaption="Fix Javascript" visible="true" defaultvalue="true" columntype="boolean" fieldtype="CustomUserControl" allowempty="true" fielddescription="{$documentation.webpartproperties.outputfixjavascript$}" guid="0804dbf0-be02-44ab-b5e7-20bc1c18639f">
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field column="OutputFixLowerCase" fieldcaption="Fix lower case" visible="true" defaultvalue="true" columntype="boolean" fieldtype="CustomUserControl" allowempty="true" fielddescription="{$documentation.webpartproperties.outputfixlowercase$}" guid="878def1d-d8e1-44a7-a192-d577e37e3280">
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field column="OutputFixSelfClose" fieldcaption="Fix self closing tags" visible="true" defaultvalue="true" columntype="boolean" fieldtype="CustomUserControl" allowempty="true" fielddescription="{$documentation.webpartproperties.outputfixselfclose$}" guid="49614d77-9285-4ec0-9274-b70c7033ce28">
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field column="OutputFixHTML5" fieldcaption="Fix HTML5" visible="true" defaultvalue="true" columntype="boolean" fieldtype="CustomUserControl" allowempty="true" fielddescription="{$documentation.webpartproperties.outputfixhtml5$}" guid="36e0b717-7f22-4c4c-8928-5fc50b1047ec">
+  <settings>
+    <controlname>checkboxcontrol</controlname>
+  </settings>
+</field>
+<field column="OutputConvertTablesToDivs" fieldcaption="Convert TABLE tags to DIV tags" visible="true" columntype="text" fieldtype="CustomUserControl" allowempty="true" columnsize="100" fielddescription="{$documentation.webpartproperties.outputconverttablestodivs$}" guid="0383ac1e-71f6-46de-8110-c04322df3551">
+  <settings>
+    <controlname>tableconversionsettings</controlname>
+    <EditText>False</EditText>
+  </settings>
+</field>

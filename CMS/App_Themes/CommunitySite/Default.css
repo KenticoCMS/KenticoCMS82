@@ -1,0 +1,133 @@
+﻿/* UniGrid */
+.UniGridBody
+{
+}
+
+.UniGridBody a
+{
+	color: #000000;
+}
+
+.UniGridHeader
+{
+}
+
+.UniGridHead
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+.RTL .UniGridHead
+{
+	text-align: right;
+	_float: right;
+}
+
+.UniGridHead a
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+.UnigridActionButton
+{
+    margin-right: 5px;
+}
+
+.RTL .UnigridActionButton
+{
+    margin-right: auto;
+    margin-left: 5px;
+}
+
+.UniGridMain
+{
+    width: 100%;
+}
+
+.UniGridGrid
+{
+	width: 100%;
+	border: solid 1px #cccccc;
+}
+
+.Opera .UniGridGrid td, .Opera .UniGridGrid th
+{
+	border-top: solid 1px #cccccc;
+	border-bottom: solid 1px #cccccc;
+	border-right: none;
+	border-left: none;
+}
+
+.Opera .UniGridGrid td td, .Opera .UniGridGrid th td
+{
+	border: none;
+}
+
+.UniGridFooter
+{
+	float: right;
+	width: 100%;
+	text-align: right;
+}
+
+.RTL .UniGridFooter
+{
+	float: left;
+	text-align: left;
+}
+
+.GridFooter
+{
+	text-align: right;
+	border-bottom: solid 1px #cccccc;
+	border-right: solid 1px #cccccc;
+	border-left: solid 1px #cccccc;
+	padding: 3px;
+}
+
+.RTL .GridFooter
+{
+	text-align: left;
+}
+
+.UniGridActionSeparator
+{
+	border-left: solid 1px #cccccc;
+	vertical-align: middle;
+	padding-top: 4px;
+	padding-bottom: 0px;
+	overflow: hidden;
+}
+
+.RTL .UniGridActionSeparator
+{
+	border-left: none;
+	border-right: solid 1px #cccccc;
+}
+
+/* Grids */
+
+.ContentGrid
+{
+	width: 100%;
+	border: solid 1px #cccccc;
+}
+
+.ContentGridHead
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+.RTL .ContentGridHead
+{
+	text-align: right;
+}
+
+.ContentGridHead a
+{
+	text-decoration: none;
+	color: #000000;
+}

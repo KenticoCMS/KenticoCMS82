@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions parameters="ProjectTaskID">
+    <action name="delete" caption="$general.delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$general.confirmdelete$" />
+  </actions>
+  <columns>
+    <column source="##ALL##" externalsourcename="editlinkdisplayname" caption="$general.title$" wrap="false" sort="ProjectTaskDisplayName">
+      <filter type="text" source="ProjectTaskDisplayName" size="200" />
+    </column>
+    <column source="ProjectTaskDeadline" caption="$pm.projecttask.deadline$" wrap="false" externalsourcename="ProjectTaskDeadline" />
+    <column source="ProjectDisplayName" caption="$pm.project$" wrap="false"  externalsourcename="projectdisplayname"/>
+    <column source="TaskPriorityDisplayName" caption="$pm.projecttask.priority$" wrap="false"  />
+    <column source="##ALL##" externalsourcename="TaskStatus" caption="$pm.projecttask.status$" wrap="false"  sort="TaskStatusDisplayName"  />
+    <column cssclass="filling-column" />
+  </columns>
+  <objecttype name="pm.projecttasklist" columns="ProjectTaskID, ProjectDisplayName, ProjectTaskDeadline, ProjectTaskDisplayName, AssigneeFullName, ProjectTaskProgress, OwnerFullName, TaskPriorityDisplayName, TaskStatusDisplayName, TaskStatusIcon, TaskStatusColor, AssigneeUserName, OwnerUserName, ProjectOwner" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>

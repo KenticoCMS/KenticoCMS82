@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions parameters="ProjectID">
+    <action name="edit" caption="$general.edit$" fonticonclass="icon-edit" fonticonstyle="allow" onclick="var ret = true; if (window.EditProject) {ret = window.EditProject({0});} if (ret == false) {return false;} " />
+  </actions>
+  <columns>
+    <column source="ProjectDisplayName" caption="$general.name$" wrap="false" externalsourcename="projectdisplayname" localize="true">
+      <filter type="text" size="200" />
+    </column>
+    <column source="ProjectDeadline" caption="$pm.project.deadline$" wrap="false" externalsourcename="ProjectDeadline" />
+    <column source="##ALL##" caption="$pm.project.owner$" wrap="false" externalsourcename="ownerfullname" sort="ProjectOwnerFullName" />
+    <column source="##ALL##" caption="$pm.project.status$" externalsourcename="StatusIcon" sort="ProjectStatus" wrap="false" />
+    <column source="##ALL##" caption="$pm.project.progress$" externalsourcename="ProjectProgress" sort="ProjectProgress" wrap="false" />
+    <column cssclass="filling-column" />
+  </columns>
+  <objecttype name="pm.projectlist" columns="ProjectID, ProjectDeadline, ProjectOwnerFullName, ProjectProgress, ProjectStatus, ProjectStatusColor, ProjectStatusIcon, ProjectOwnerUserName, ProjectDisplayName, ProjectNodeID" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <MenuItem text="Content management" module="ContentManagement" img="Objects/CMS_Document/list.png">
+    <MenuItem text="Attachments" module="Attachments" id="Attachments" url="Documents/Attachments/Default.aspx" img="Objects/CMS_Attachment/list.png" />
+    <MenuItem text="Blogs" module="Blogs" id="Blogs" url="Documents/Blogs/Default.aspx" img="Objects/CMS_Blog/list.png"/>
+    <MenuItem text="Categories" module="Categories" id="Categories" url="Documents/Categories/Default.aspx" img="Objects/CMS_Category/list.png" />
+    <MenuItem text="Page aliases" module="DocumentAliases" id="Aliases" url="Documents/DocumentAliases/Default.aspx" img="Objects/CMS_Document/list.png" />
+    <MenuItem text="Media" module="MediaLibrary" id="MediaLibrary" url="Tools/MediaLibrary/Default.aspx" />
+    <MenuItem text="Pages - Basics" module="Basics" id="Basics" url="Documents/Basics/Default.aspx" img="Objects/CMS_Document/list.png" />
+    <MenuItem text="Pages - Advanced" module="Advanced" id="Advanced" url="Documents/Advanced/Default.aspx" img="Objects/CMS_Document/list.png" />
+    <MenuItem text="Polls" module="Polls" id="Polls" url="Tools/Polls/Default.aspx" img="CMSModules/CMS_Polls/list.png" />
+    <MenuItem text="Relationships" module="Relationships" id="Relationships" url="Documents/Relationships/Default.aspx" img="Objects/CMS_Relationshipname/list.png" />
+    <MenuItem text="Security" module="Security" id="Security" url="Documents/Security/Default.aspx" img="Objects/CMS_Permission/list.png" />
+    <MenuItem text="Tags" module="Tags" id="Tags" url="Documents/Tags/Default.aspx" img="Objects/CMS_TagGroup/list.png" />
+    <MenuItem text="Versioning w/o workflow" module="VersioningWithoutWorkflow" id="VersioningWithoutWorkflow" url="Documents/Workflow/VersioningWithoutWorkflow/Default.aspx" img="Objects/CMS_Workflow/list.png" />
+    <MenuItem text="Workflow basics" module="WorkflowBasics" id="WorkflowBasics" url="Documents/Workflow/Basics/Default.aspx" img="Objects/CMS_Workflow/list.png" />
+    <MenuItem text="Workflow advanced" module="WorkflowAdvanced" id="WorkflowAdvanced" url="Documents/Workflow/Advanced/Default.aspx" img="Objects/CMS_Workflow/list.png" />
+  </MenuItem>
+  <MenuItem text="On-line marketing" module="OnlineMarketing" img="CMSModules/CMS_OnlineMarketing/list.png">
+    <MenuItem text="Automation" module="Automation" id="Automation" url="OnlineMarketing/Automation/Default.aspx" img="Objects/MA_AutomationProcess/list.png" />
+    <MenuItem text="Contact Management" module="ContactManagement" id="ContactManagement" url="OnlineMarketing/ContactManagement/Default.aspx" img="CMSModules/CMS_ContactManagement/list.png" />
+    <MenuItem text="Newsletters" module="Newsletters" id="Newsletters" url="OnlineMarketing/Newsletters/Default.aspx" img="CMSModules/CMS_Newsletter/list.png" />
+  </MenuItem>
+  <MenuItem text="E-commerce" module="Ecommerce" url="Ecommerce/Default.aspx" />
+  <MenuItem text="Social &amp; Community" module="SocialAndCommunity" img="CMSModules/CMS_Tools/module.png">
+    <MenuItem text="Abuse report" module="AbuseReport" id="AbuseReport" url="Tools/AbuseReport/Default.aspx" img="Objects/CMS_AbuseReport/list.png"/>
+    <MenuItem text="Avatars" module="Avatars" id="Avatars" url="Community/Avatars/Default.aspx" img="Objects/CMS_Avatar/list.png"/>
+    <MenuItem text="Bad words" module="BadWords" id="BadWords" url="Administration/BadWords/Default.aspx" img="Objects/Badwords_Word/list.png" />
+    <MenuItem text="Badges" module="Badges" id="Badges" url="Administration/Badges/Default.aspx" img="Objects/CMS_Badge/list.png"/>
+    <MenuItem text="Events" module="Events" id="Events" url="Tools/Events/Default.aspx" img="CMSModules/CMS_EventManager/list.png" />
+    <MenuItem text="Facebook" module="Facebook" img="CMSModules/CMS_SocialMarketing/facebook.png" url="SocialMarketing/Facebook/default.aspx"/>
+    <MenuItem text="Forums" module="Forums" id="Forums" url="Community/Forums/Default.aspx" img="Objects/__FORUMS__/list.png" />
+    <MenuItem text="Friends" module="Friends" id="Friends" url="Community/Friends/Default.aspx" img="CMSModules/CMS_Friends/list.png" />
+    <MenuItem text="Groups" module="Groups" id="Groups" url="Community/Groups/Default.aspx" img="CMSModules/CMS_Groups/list.png" />
+    <MenuItem text="Message boards" module="MessageBoards" id="MessageBoards" url="Community/MessageBoards/Default.aspx" />
+    <MenuItem text="Messaging" module="Messaging" id="Messaging" url="Community/Messaging/Default.aspx" />
+    <MenuItem text="Projects" module="ProjectManagement" id="ProjectManagement" url="Tools/ProjectManagement/Default.aspx" img="CMSModules/CMS_ProjectManagement/list.png" />
+    <MenuItem text="SharePoint" module="SharePoint" url="SharePoint/default.aspx"/>
+    <MenuItem text="Twitter" module="Twitter" img="CMSModules/CMS_SocialMarketing/twitter.png" url="SocialMarketing/Twitter/default.aspx"/>
+  </MenuItem>
+  <MenuItem text="Development" module="Development" img="CMSModules/CMS_Development/module.png">
+    <MenuItem text="CSS stylesheets" module="CSSStyleSheets" id="CSSStylesheets" url="Development/CSSStyleSheets/Default.aspx" img="Objects/CMS_CSSStylesheet/list.png" />
+    <MenuItem text="Custom tables" module="CustomTables"  id="CustomTables" url="Development/CustomTables/Default.aspx" />
+    <MenuItem text="Form controls" module="FormControls" id="FormControls" url="Development/FormControls/Default.aspx" img="CMSModules/CMS_FormControls/list.png" />
+    <MenuItem text="Inline controls" module="InlineControls" id="InlineControls" url="Development/InlineControls/Default.aspx" img="CMSModules/CMS_InlineControls/list.png" />
+    <MenuItem text="Modules" module="Modules" id="Modules" url="Development/Modules/Default.aspx" img="Objects/CMS_Resource/list.png" />
+    <MenuItem text="Notifications" module="Notifications" id="Notifications" url="Development/Notifications/Default.aspx" />
+    <MenuItem text="Object versioning" module="ObjectVersioning" id="ObjectVersioning" url="Development/ObjectVersioning/Default.aspx" img="CMSModules/CMS_Settings/Categories/CMS_Synchronization_Versioning/list.png" />
+    <MenuItem text="Page layouts" module="PageLayouts" id="PageLayouts" url="Development/PageLayouts/Default.aspx" img="Objects/CMS_Layout/list.png" />
+    <MenuItem text="Page templates" module="PageTemplates" id="PageTemplates" url="Development/PageTemplates/Default.aspx" img="Objects/CMS_PageTemplate/list.png" />
+    <MenuItem text="Web parts" module="WebParts" id="WebParts" url="Development/Webparts/Default.aspx" img="Objects/CMS_Webpart/list.png" />
+    <MenuItem text="Web templates" module="WebTemplates" id="WebTemplates" url="Development/WebTemplates/Default.aspx" img="Objects/CMS_WebTemplate/list.png" />
+    <MenuItem text="Widgets" module="Widgets" id="Widgets" url="Development/Widgets/Default.aspx" img="Objects/CMS_Widget/list.png" />
+  </MenuItem>
+  <MenuItem text="Configuration" module="Configuration" img="CMSModules/CMS_Administration/module.png">
+    <MenuItem text="Banned IPs" module="BannedIPs" id="BannedIPs" url="Administration/BannedIP/Default.aspx" img="Objects/CMS_BannedIP/list.png"/>
+    <MenuItem text="Countries" module="Countries" url="Development/Countries/Default.aspx" />
+    <MenuItem text="Cultures" module="Cultures" id="Cultures" url="Development/Cultures/Default.aspx" />
+    <MenuItem text="Event log" module="EventLog" id="EventLog" url="Administration/EventLog/Default.aspx" img="Objects/CMS_EventLog/list.png" />
+    <MenuItem text="Import and export" module="ImportExport" id="ImportExport" url="Tools/ImportExport/Default.aspx" img="CMSModules/CMS_FileImport/list.png" />
+    <MenuItem text="Membership" module="Membership" id="Membership" url="Administration/Membership/Default.aspx" img="Objects/CMS_User/list.png" />
+    <MenuItem text="Reporting" module="Reporting" id="Reporting" url="Tools/Reporting/Default.aspx" img="CMSModules/CMS_Reporting/list.png" />
+    <MenuItem text="Scheduled tasks" module="Scheduler" id="Scheduler" url="Administration/ScheduledTasks/Default.aspx" img="Objects/CMS_ScheduledTask/list.png" />
+    <MenuItem text="Settings" module="Settings" url="Settings/Default.aspx" img="Objects/CMS_SettingsKey/list.png" />
+    <MenuItem text="Sites" module="Sites" url="Sites/Default.aspx" img="Objects/CMS_Site/list.png" />
+    <MenuItem text="Smart search" module="Search" id="Search" url="Administration/SmartSearch/Default.aspx" img="Objects/CMS_SearchIndex/list.png" />
+    <MenuItem text="Staging" module="Staging" id="Staging" url="Tools/Staging/Default.aspx" />
+    <MenuItem text="Time zones" module="TimeZones" id="TimeZones" url="Development/TimeZones/Default.aspx" img="Objects/CMS_TimeZone/list.png" />
+    <MenuItem text="Web farm" module="WebFarm" id="WebFarm" url="Administration/WebFarm/Default.aspx" img="Objects/CMS_WebFarmServer/list.png" />
+    <MenuItem text="Workflows" module="Workflows" id="Workflows" url="Development/Workflows/Default.aspx" img="Objects/CMS_Workflow/list.png" />
+  </MenuItem>
+</Menu>
+

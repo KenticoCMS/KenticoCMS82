@@ -1,0 +1,1382 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.Scheduler</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.Scheduler.ImportSpecialActions">
+            <summary>
+            Handles special actions during the import process.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.ImportSpecialActions.Init">
+            <summary>
+            Initializes export handlers
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.TaskExport">
+            <summary>
+            Handles special actions during the Task export process.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskExport.Init">
+            <summary>
+            Initializes export handlers
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskExport.RegisterTranslationRecords(System.Data.DataSet,System.String,CMS.DataEngine.TranslationHelper,System.String[])">
+            <summary>
+            Ensure translation records registration.
+            </summary>
+            <param name="data">Source dataset</param>
+            <param name="objectType">Type of the object</param>
+            <param name="th">Translation helper</param>
+            <param name="excludedNames">Excluded object names</param>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulerCounters">
+            <summary>
+            Performance counters for scheduler
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerCounters.RegisterPerformanceCounters">
+            <summary>
+            Registers the performance counters
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerCounters.UpdateRunningTasks(CMS.HealthMonitoring.Counter)">
+            <summary>
+            Updates the running tasks counter
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerCounters.UpdateTasksInQueue(CMS.HealthMonitoring.Counter)">
+            <summary>
+            Updates performance counter that contains value of tasks in queue.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulerHandlers">
+            <summary>
+            Event handlers for the scheduler module
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerHandlers.Init">
+            <summary>
+            Initializes the handlers
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerHandlers.RunEndRequestScheduler(System.Object,System.EventArgs)">
+            <summary>
+            Runs the scheduler in the end request mode
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerHandlers.RunEndRequestScheduler">
+            <summary>
+            Attempts to run the scheduler request.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerHandlers.ReInitCorruptedTasks(System.Object,System.EventArgs)">
+            <summary>
+            Re-init all scheduled task which are corrupted.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulerModuleMetadata">
+            <summary>
+            Represents the Scheduler module metadata.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerModuleMetadata.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulingExecutorParameters">
+            <summary>
+            Wrapper for SchedulingExecutor.ExecuteScheduledTasks method. 
+            Used to create CMSThread with proper calling context.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutorParameters.ExecuteScheduledTasks">
+            <summary>
+            Executes scheduled task
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingExecutorParameters.SiteName">
+            <summary>
+            Site name
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingExecutorParameters.ServerName">
+            <summary>
+            Server name
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.ITask">
+            <summary>
+            Defines a common interface for scheduled tasks.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.ITask.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Executes the task given in a task info.
+            </summary>
+            <param name="task">Container with task information</param>
+            <returns>Textual description of task run's failure if any.</returns>
+        </member>
+        <member name="T:CMS.Scheduler.ScheduledTaskTypeEnum">
+            <summary>
+            Enumeration of the scheduled task types.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.ScheduledTaskTypeEnum.Standard">
+            <summary>
+            Standard task.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.ScheduledTaskTypeEnum.System">
+            <summary>
+            System task.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulingExecutor">
+            <summary>
+            Methods for executing scheduled tasks.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingExecutor.mRunningTasks">
+            <summary>
+            Counter of running tasks.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingExecutor.mScriptTimeout">
+            <summary>
+            Request timeout.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.ExecuteScheduledTasks(System.String,System.String)">
+            <summary>
+            Gets all scheduled tasks using and executes each scheduled task.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="serverName">Server name</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.ExecuteTask(System.Int32,System.String)">
+            <summary>
+            Executes specified task.
+            </summary>
+            <param name="taskID">ID of task to execute</param>
+            <param name="siteName">Current site name of the execution context</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.TaskResourceAvailable(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Checks and returns whether the resource specified by task is available or not.
+            Saves the "Last result" message if resource is not available.
+            </summary>
+            <param name="task">Task to check the resource availability</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.ExecuteTask(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Executes specified task.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.ExecuteTask(CMS.Scheduler.TaskInfo,System.Object)">
+            <summary>
+            Executes specified task.
+            </summary>
+            <param name="sti">Task to execute</param>
+            <param name="taskInstance">Task instance</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.SetNextRunTime(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Sets the next run time for a task. Does not save the task info.
+            </summary>
+            <param name="sti">Task info</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.GetTaskInstance(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Gets the task instance for execution
+            </summary>
+            <param name="sti">Task info</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.ExecuteTaskInternal(CMS.Scheduler.TaskInfo,System.Object)">
+            <summary>
+            Executes the given task
+            </summary>
+            <param name="sti">Task info</param>
+            <param name="task">Task implementation</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.GetTaskDelegate(System.Object)">
+            <summary>
+            Gets the delegate from the given task object
+            </summary>
+            <param name="task">Task implementation</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingExecutor.ReInitCorruptedTasks">
+            <summary>
+            Re-init all scheduled task which are corrupted.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingExecutor.ScriptTimeout">
+            <summary>
+            Gets or sets the script timeout in seconds.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingExecutor.RunningTasks">
+            <summary>
+            Counter of running tasks.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingExecutor.ReInitTasks">
+            <summary>
+            Indicates if corrupted tasks should be re-initialized before next task execution.
+            Occurs if the last execution failed.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulingHelper">
+            <summary>
+            Global class providing Scheduler methods.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_SECOND">
+            <summary>
+            Second period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_MINUTE">
+            <summary>
+            Minute period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_HOUR">
+            <summary>
+            Hour period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_DAY">
+            <summary>
+            Day period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_WEEK">
+            <summary>
+            Week period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_MONTH">
+            <summary>
+            Month period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_ONCE">
+            <summary>
+            Once period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.PERIOD_YEAR">
+            <summary>
+            Year period.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.MONTHS_FIRST">
+            <summary>
+            First day of the month.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.MONTHS_SECOND">
+            <summary>
+            Second day of the month.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.MONTHS_THIRD">
+            <summary>
+            Third day of the month.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.MONTHS_FOURTH">
+            <summary>
+            Fourth day of the month.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.MONTHS_LAST">
+            <summary>
+            Last day of the month.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mUseAutomaticScheduler">
+            <summary>
+            If true, automatic scheduler is to be used.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mRunSchedulerWithinRequest">
+            <summary>
+            If true, the scheduler runs within the request process (on request_end).
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mLogTasks">
+            <summary>
+            If true, executed tasks are logged into file.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mLogFile">
+            <summary>
+            Logs file path.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mSchedulerUrl">
+            <summary>
+            Direct URL of the scheduler page.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mSchedulerUserName">
+            <summary>
+            Scheduler user name.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mSchedulerPassword">
+            <summary>
+            Scheduler user password.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mSchedulerUserDomain">
+            <summary>
+            Scheduler user domain.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingHelper.mEnableScheduler">
+            <summary>
+            If true, running of scheduler is enabled.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.GetNextTime(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Returns date and time when the next scheduling moment occurs based on the current date and time and the scheduling pattern string.
+            </summary>
+            <param name="schedulingPattern">information about task repeating</param>
+            <param name="lastRunTime">Last run time of task</param>
+            <param name="plannedRunTime">Planned run time of task</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.EncodeInterval(CMS.Scheduler.TaskInterval)">
+            <summary>
+            Encodes interval for save it to database.
+            </summary>
+            <param name="infoObj">Task to encode</param>
+            <returns>Encoded string</returns>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.DecodeInterval(System.String)">
+            <summary>
+            Decodes interval string from database.
+            </summary>
+            <param name="interval">Interval string from database</param>
+            <returns>TaksInterval object</returns>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.LogTask(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Logs task.
+            </summary>
+            <param name="task">Task to log</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.RunSchedulerRequest(System.String)">
+            <summary>
+            Runs the request to the scheduler page.
+            </summary>
+            <param name="url">URL to request</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.RunEndRequestScheduler">
+            <summary>
+            Attempts to run the scheduler request based on scheduler configuration.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.ApplicationInterval(System.String)">
+            <summary>
+            Gets application scheduler interval.
+            </summary>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.GetNextTimeInternal(System.DateTime,CMS.Scheduler.TaskInterval,System.DateTime)">
+            <summary>
+            Test if planned run time fits criteria.
+            </summary>
+            <param name="plannedRunTime">Planned run time</param>
+            <param name="ti">Task interval criteria</param>        
+            <param name="shiftedTime">Planned run time + interval</param>        
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.ConvertDayToNumber(System.String)">
+            <summary>
+            Converts day of week from string to number
+            </summary>
+            <param name="day">Day name</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.GetFirstTime(CMS.Scheduler.TaskInterval,System.DateTime,System.DateTime)">
+            <summary>
+            Gets first time in the future for the scheduled task.
+            </summary>
+            <param name="ti">Task interval</param>
+            <param name="nowTime">Current time and date</param>
+            <param name="lastRunTime">Last run time of the task</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.ShiftToAllowedDay(System.Collections.ArrayList,System.DateTime)">
+            <summary>
+            Finds allowed Day.
+            </summary>
+            <param name="Days">Allowed Days</param>
+            <param name="date">Task next run time date</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.ShiftToAllowedDayAndTime(CMS.Scheduler.TaskInterval)">
+            <summary>
+            Shifts task start time to allowed day considering allowed time interval.
+            </summary>
+            <param name="ti">Task time information</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.ShiftToAllowedDay(System.Collections.ArrayList,System.DateTime,System.DateTime)">
+            <summary>
+            Finds allowed Day.
+            </summary>
+            <param name="Days">Allowed Days</param>
+            <param name="date">Task next run time date</param>
+            <param name="BetweenStart">Interval start time</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.ShiftToAllowedDayNextMonth(CMS.Scheduler.TaskInterval,System.Int32)">
+            <summary>
+            Finds allowed day in next month.
+            </summary>
+            <param name="ti">Task time information</param>
+            <param name="monthCounter">Month counter</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.DecodeEvery(System.String)">
+            <summary>
+            Decodes 'every' value from string to integer.
+            </summary>
+            <param name="interval">String representation of every value</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.DecodeTime(System.String)">
+            <summary>
+            Returns datetime in english culture format.
+            </summary>
+            <param name="interval">DateTime string</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingHelper.DecodeDays(System.String)">
+            <summary>
+            Splits days from input string into arraylist.
+            </summary>
+            <param name="interval">String with days separated by ','</param>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.SchedulerUserName">
+            <summary>
+            Gets the scheduler user name.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.SchedulerPassword">
+            <summary>
+            Gets the scheduler user password.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.SchedulerDomain">
+            <summary>
+            Gets the scheduler user domain.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.SchedulerUrl">
+            <summary>
+            Gets the direct URL of the scheduler page.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.UseAutomaticScheduler">
+            <summary>
+            If true, the automatic version of scheduler is used (standalone thread and scheduler.aspx page). The default settings is false (scheduler is executed by the activity of the requests).
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.RunSchedulerWithinRequest">
+            <summary>
+            If true, the scheduler tasks are executed within the standard requests (at the end of requests). The default settings is true (scheduler is executed within the request).
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.LogTasks">
+            <summary>
+            If true, executed tasks are logged into file.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.LogFile">
+            <summary>
+            Logs file.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.EnableScheduler">
+            <summary>
+            If true (default value), running of scheduler is enabled.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.UseExternalService">
+            <summary>
+            Indicates if the windows service should be used.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingHelper.ServiceInterval">
+            <summary>
+            Gets windows service interval (in seconds).
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulingTimer">
+            <summary>
+            Class to provide timing for scheduler.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mTimers">
+            <summary>
+            Timer objects.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mThreads">
+            <summary>
+            Timer threads.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mLastRuns">
+            <summary>
+            Last timer run.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mRunning">
+            <summary>
+            If true, the timer is running.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mCancel">
+            <summary>
+            If true, the timer cancels execution.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mScheduleURL">
+            <summary>
+            URL to scheduler.aspx.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mSiteName">
+            <summary>
+            Scheduler site name.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mThread">
+            <summary>
+            Timer thread.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SchedulingTimer.mExecuteThread">
+            <summary>
+            Execute thread.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Creates thread which calls SchedulerExecutor periodicaly.
+            </summary>
+            <param name="schedulerURL">Scheduler URL</param>
+            <param name="siteName">Site name</param>
+            <param name="runTimer">Run the timer immediately</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.RunTimerAsync">
+            <summary>
+            Runs the timer in an asynchronous thread.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.Run">
+            <summary>
+            Downloads scheduler.aspx in neverending loop.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.Execute">
+            <summary>
+            Downloads scheduler.aspx once.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.ExecuteAsync">
+            <summary>
+            Executes the request in an asynchronous thread.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.EnsureTimer(System.String,System.Boolean)">
+            <summary>
+            Ensures the scheduling timer.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="running">If true, the timer is running, else the timer is passive (executes at request)</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.StopTimers">
+            <summary>
+            Stops all the timers.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.StopTimer(System.String)">
+            <summary>
+            Stops the specified timer.
+            </summary>
+            <param name="siteName">Timer site name to stop</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.TimerExists(System.String)">
+            <summary>
+            Returns true if specified site timer exists.
+            </summary>
+            <param name="siteName">Site name to check</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.RestartTimer(System.String)">
+            <summary>
+            Restarts the given site timer.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.CreateTimer(System.String,System.Boolean)">
+            <summary>
+            Creates a timer for specified site name.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="runTimer">Run the timer immediately</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.RequestRun(System.String)">
+            <summary>
+            Requests scheduler run for specified site name, updates the Last runs HashTable and returns true if the scheduler run is allowed.
+            </summary>
+            <param name="siteName">Scheduler site name</param>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulingTimer.RunSchedulerASAP(System.String)">
+            <summary>
+            Initializes the site scheduler to run ASAP.
+            </summary>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingTimer.LastRuns">
+            <summary>
+            Last timer run.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingTimer.RunSchedulerImmediately">
+            <summary>
+            If true, the scheduler runs immediately after the request finishes.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingTimer.SchedulerRunImmediatelySiteName">
+            <summary>
+            Gets or sets the site name which should be used for immediate run
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.SchedulingTimer.ScheduleURL">
+            <summary>
+            Schedule URL.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.SystemTaskListInfo">
+            <summary>
+            List info for scheduled tasks generated by the system.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SystemTaskListInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.SystemTaskListInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SystemTaskListInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty SystemTaskListInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SystemTaskListInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new SystemTaskListInfo object from the given DataRow.
+            </summary>
+            <param name="dr">DataRow with the object data</param>
+        </member>
+        <member name="T:CMS.Scheduler.TaskExecutor">
+            <summary>
+            Task executor.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskExecutor.Run">
+            <summary>
+            Runs the task.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskExecutor.RunAsync(System.Security.Principal.WindowsIdentity)">
+            <summary>
+            Runs the task in an asynchronous thread.
+            </summary>
+            <param name="wi">Windows identity</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskExecutor.RunAsync(System.Int32,System.Security.Principal.WindowsIdentity)">
+            <summary>
+            Runs the specified task in an asynchronous thread.
+            </summary>
+            <param name="taskId">Task ID to run</param>
+            <param name="wi">Windows identity</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskExecutor.RunAsync(CMS.Scheduler.TaskInfo,System.Security.Principal.WindowsIdentity)">
+            <summary>
+            Runs the specified task in an asynchronous thread.
+            </summary>
+            <param name="task">Task to run</param>
+            <param name="wi">Windows identity</param>
+        </member>
+        <member name="P:CMS.Scheduler.TaskExecutor.TaskID">
+            <summary>
+            Task ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskExecutor.TaskInstance">
+            <summary>
+            Task instance object.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskExecutor.Task">
+            <summary>
+            Task object.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.TaskInfo">
+            <summary>
+            TaskInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.TaskInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.TaskInfo.OBJECT_TYPE_OBJECTTASK">
+            <summary>
+            Object type for object tasks
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.TaskInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.TaskInfo.TYPEINFO_OBJECT">
+            <summary>
+            Type information for object scheduled tasks.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty TaskInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new TaskInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfo.#ctor(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Constructor - Creates a new TaskInfo object from the given object.
+            </summary>
+            <param name="source">Source object</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfo.DisableLogging">
+            <summary>
+            Disables logging for the object
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskLastRunTime">
+            <summary>
+            Time of last run.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskNextRunTime">
+            <summary>
+            Time of next run.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskAssemblyName">
+            <summary>
+            Assembly name of task.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskSiteID">
+            <summary>
+            Task site ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskLastResult">
+            <summary>
+            Task last result.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskClass">
+            <summary>
+            Task class.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskData">
+            <summary>
+            Task data.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskName">
+            <summary>
+            Task name.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskEnabled">
+            <summary>
+            Indicates whether task is enabled.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskInterval">
+            <summary>
+            Interval between execution of task.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskID">
+            <summary>
+            Task ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskDisplayName">
+            <summary>
+            Display name.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskProgress">
+            <summary>
+            Task progress.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskDeleteAfterLastRun">
+            <summary>
+            If true, the task is deleted after successful execution.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskServerName">
+            <summary>
+            Task Server Name.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskGUID">
+            <summary>
+            Task GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskLastModified">
+            <summary>
+            Object last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskExecutions">
+            <summary>
+            Number of task executions.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskLastExecutionReset">
+            <summary>
+            Date of last execution count reset.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskCondition">
+            <summary>
+            Task macro condition.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskRunIndividuallyForEachSite">
+            <summary>
+            If true, the task is executed for each site individually. Available only for global tasks.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskResourceID">
+            <summary>
+            Task resource (module) ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskUserID">
+            <summary>
+            Task user ID to specify the user context for the task execution.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskRunInSeparateThread">
+            <summary>
+            If true, task runs in separate thread.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskUseExternalService">
+            <summary>
+            Indicates whether the task is processed by an external service.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskAllowExternalService">
+            <summary>
+            Indicates whether the task can be processed by an external service.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskType">
+            <summary>
+            Indicates whether the task can be processed by an external service.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskObjectType">
+            <summary>
+            Type of object associated to this task.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TaskObjectID">
+            <summary>
+            ID of object associated to this task.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.CurrentSiteName">
+            <summary>
+            Current site name of the execution (stored in memory)
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.TypeInfo">
+            <summary>
+            Object type information.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfo.AllowRestore">
+            <summary>
+            Indicates if the object supports deleting to recycle bin.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.TaskInfoProvider">
+            <summary>
+            Class providing TaskInfo management.
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.TaskInfoProvider.mNoTime">
+            <summary>
+            No time selected.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfoByGUID(System.Guid,System.Int32)">
+            <summary>
+            Returns object with specified GUID.
+            </summary>
+            <param name="guid">Object GUID</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfo(System.Int32)">
+            <summary>
+            Returns the TaskInfo structure for the specified task.
+            </summary>
+            <param name="taskId">Task id</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.ResetAllTasks(System.Int32)">
+            <summary>
+            Reset executions count of all tasks
+            </summary>
+            <param name="siteID">SiteID of tasks. 0 for global tasks</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfo(System.String,System.String)">
+            <summary>
+            Returns the TaskInfo structure for the specified task.
+            </summary>
+            <param name="taskName">Task name</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfo(System.String,System.Int32)">
+            <summary>
+            Returns the TaskInfo structure for the specified task.
+            </summary>
+            <param name="taskName">Task name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.SetTaskInfo(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Sets (updates or inserts) specified task.
+            </summary>
+            <param name="task">Task to set</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.CreateWebFarmTasks(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Creates the tasks for all the web farm servers.
+            </summary>
+            <param name="task">Task data</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetAllTasks">
+             <summary>
+            Returns DataSet with information about all tasks.
+             </summary>
+             <returns>DataSet</returns>      
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTasks(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets all tasks based on parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by</param>
+            <param name="topN">Get top N items</param>
+            <param name="columns">Columns to get</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTasks">
+            <summary>
+            Gets the query for all tasks
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskToReInit">
+            <summary>
+            Returns DataSet with information about tasks which have next runtime NULL.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.DeleteTaskInfo(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Deletes specified task.
+            </summary>
+            <param name="taskObj">Task object</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.DeleteTaskInfo(System.Int32)">
+            <summary>
+            Deletes specified task.
+            </summary>
+            <param name="taskId">Task id</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.DeleteObjectsTasks(System.String,System.Collections.Generic.IList{System.Int32})">
+            <summary>
+            Removes scheduled tasks associated to selected objects of given type.
+            </summary>
+            <param name="objectType">Object type</param>
+            <param name="ids">List of IDs</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.DeleteObjectsTasks(System.String)">
+            <summary>
+            Removes scheduled tasks. Other than objects' tasks might require individual handling.
+            </summary>
+            <param name="where">Where condition</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.FetchAllTasksToRun(System.String,System.String)">
+            <summary>
+            Gets all scheduled tasks to run, the process is expected to set the next run time for next task iteration.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="serverName">Server name</param>
+            <returns>Dataset with information about all scheduled tasks</returns>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.FetchTasksToRun(System.String,System.String,System.Boolean)">
+            <summary>
+            Gets scheduled tasks to run, the process is expected to set the next run time for next task iteration.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="serverName">Server name</param>
+            <param name="useExternalService">Indicates if get tasks for external service.</param>
+            <returns>Dataset with information about scheduled tasks</returns>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.UpdateAllTasks(System.String,CMS.DataEngine.QueryDataParameters,System.String)">
+            <summary>
+            Updates all specified tasks.
+            </summary>
+            <param name="updateExpression">Data to be update</param>
+            <param name="parameters">Parameters</param>
+            <param name="where">WHERE condition</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTasksInternal">
+            <summary>
+            Gets the query for all tasks
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfoByGUIDInternal(System.Guid,System.Int32)">
+            <summary>
+            Returns task with specified GUID.
+            </summary>
+            <param name="guid">Object GUID</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfoInternal(System.Int32)">
+            <summary>
+            Returns the TaskInfo structure for the specified task.
+            </summary>
+            <param name="taskId">Task id</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfoInternal(System.String,System.String)">
+            <summary>
+            Returns the TaskInfo structure for the specified task.
+            </summary>
+            <param name="taskName">Task name</param>
+            <param name="siteName">Site name</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskInfoInternal(System.String,System.Int32)">
+            <summary>
+            Returns the TaskInfo structure for the specified task.
+            </summary>
+            <param name="taskName">Task name</param>
+            <param name="siteId">Site ID</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.SetTaskInfoInternal(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Sets (updates or inserts) specified task.
+            </summary>
+            <param name="task">Task to set</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.ResetAllTasksInternal(System.Int32)">
+            <summary>
+            Reset executions count of all non-system tasks
+            </summary>
+            <param name="siteID">SiteID of tasks. 0 for global tasks</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.CreateWebFarmTasksInternal(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Creates the tasks for all the web farm servers.
+            </summary>
+            <param name="task">Task data</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTasksInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets all tasks based on parameters.
+            </summary>
+            <param name="where">Where condition</param>
+            <param name="orderBy">Order by</param>
+            <param name="topN">Get top N items</param>
+            <param name="columns">Columns to get</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.GetTaskToReInitInternal">
+            <summary>
+            Returns DataSet with information about tasks which have next runtime NULL.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.DeleteTaskInfoInternal(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Deletes specified task.
+            </summary>
+            <param name="taskObj">Task object</param>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInfoProvider.FetchTasksToRunInternal(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Gets scheduled tasks to run, the process is expected to set the next run time for next task iteration.
+            </summary>
+            <param name="siteName">Site name</param>
+            <param name="serverName">Server name</param>
+            <param name="useExternalService">Indicates if tasks is processed by service. If null, all tasks are fetched.</param>
+            <returns>Dataset with information about scheduled tasks</returns>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInfoProvider.NO_TIME">
+            <summary>
+            No time selected.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.TaskInterval">
+            <summary>
+            Task interval data container class.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TaskInterval.ToIntOrder">
+            <summary>
+            Transforms Day repeating Period to integer.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.Period">
+            <summary>
+            The task interval Period type.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.StartTime">
+            <summary>
+            The task interval start time.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.UseSpecificTime">
+            <summary>
+            Indicates whether Time part of StartTime should be used.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.Every">
+            <summary>
+            The task interval Period value.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.BetweenStart">
+            <summary>
+            The task interval run from time.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.BetweenEnd">
+            <summary>
+            The task interval run to time.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.Days">
+            <summary>
+            The task interval Days allowed for repeating.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.Order">
+            <summary>
+            The task interval Day repeating Period.
+            </summary>
+        </member>
+        <member name="P:CMS.Scheduler.TaskInterval.Day">
+            <summary>
+            The task interval month Day for repeating.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.DeleteImageEditorHistory">
+            <summary>
+            Provides an ITask interface for the temporary files deletion.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.DeleteImageEditorHistory.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Executes the delete action.
+            </summary>
+            <param name="task">Task to process</param>
+        </member>
+        <member name="T:CMS.Scheduler.FileSystemCacheCleaner">
+            <summary>
+            Scheduler task to clean the output file system cache. Deletes all files older than current file system output cache minutes
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.FileSystemCacheCleaner.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Executes the scheduled task
+            </summary>
+            <param name="task">Task to execute</param>
+        </member>
+        <member name="T:CMS.Scheduler.PartialQueueCleaner">
+            <summary>
+            Deletes expired archived emails (worker task).
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.PartialQueueCleaner.DESCRIPTION">
+            <summary>
+            Common description used as a base for task display name.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.PartialQueueCleaner.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Runs a partial queue cleaner using the task info specified.
+            </summary>
+            <param name="task">Task info</param>
+            <returns>A message describing the result of operation</returns>
+        </member>
+        <member name="M:CMS.Scheduler.PartialQueueCleaner.Create(System.Int32,System.DateTime,System.DateTime,System.Int32,System.String)">
+            <summary>
+            Factory method that creates partial queue cleaner tasks.
+            </summary>        
+            <param name="siteId">Site ID</param>
+            <param name="expirationDate">Expiration date for archived emails</param>
+            <param name="scheduleTime">Task run time</param>
+            <param name="batchSize">Number of emails to delete</param>
+            <param name="identifier">Unique batch identifier</param>
+            <returns>A partial queue cleaner wrapped in a task object</returns>
+        </member>
+        <member name="M:CMS.Scheduler.PartialQueueCleaner.DeleteAll">
+            <summary>
+            Deletes all existing partial queue cleaners tasks.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.QueueCleaner">
+            <summary>
+            Deletes expired archived e-mails (manager task).
+            </summary>
+        </member>
+        <member name="F:CMS.Scheduler.QueueCleaner.DeleteArchivedBatchSize">
+            <summary>
+            Gets the number of archived emails to delete in one batch.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.QueueCleaner.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+             Removes archived e-mails which are older then specified number of days.
+            </summary>
+            <param name="task">Task to process</param>
+        </member>
+        <member name="M:CMS.Scheduler.QueueCleaner.SchedulePartialCleaners(System.Int32,System.Int32,System.DateTime,System.DateTime@,System.Boolean)">
+            <summary>
+            Schedules a batch of partial queue cleaners.
+            </summary>        
+            <param name="siteId">Site ID</param>
+            <param name="expiredEmailsCount">Number of expired emails to delete</param>
+            <param name="expirationDate">Expiration date for archived emails</param>
+            <param name="scheduleTime">Task run time</param>
+            <param name="useExternalService">Indicates if task should be run in external service</param>
+        </member>
+        <member name="T:CMS.Scheduler.QueueSender">
+            <summary>
+            Scheduled task that dispatches e-mail messages from the e-mail queue.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.QueueSender.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Sends all emails in a queue.
+            </summary>
+            <param name="task">Container with task information</param>
+            <returns>Textual description of task run's failure if any.</returns>
+        </member>
+        <member name="T:CMS.Scheduler.RentedLicenseUpdaterTask">
+            <summary>
+            Class for RentedLicenseUpdaterTask scheduled task, which renews rented licenses keys.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.RentedLicenseUpdaterTask.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Executes license update
+            </summary>
+            <param name="task">Task to process</param>
+        </member>
+        <member name="T:CMS.Scheduler.SearchIndexOptimizer">
+            <summary>
+            Class used by scheduler to execute the task.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SearchIndexOptimizer.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Optimalize search indexes.
+            </summary>
+            <param name="task">Task to start</param>
+        </member>
+        <member name="T:CMS.Scheduler.SearchTaskExecutor">
+            <summary>
+            Class used by scheduler to execute the task.
+            </summary>  
+        </member>
+        <member name="M:CMS.Scheduler.SearchTaskExecutor.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Processes search tasks (starts indexer).
+            </summary>
+            <param name="task">Task to start</param>
+        </member>
+        <member name="T:CMS.Scheduler.TimeZoneRecalculate">
+            <summary>
+            Provides an ITask interface to recalculate DST time.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.TimeZoneRecalculate.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Executes the publish action.
+            </summary>
+            <param name="task">Task to process</param>
+        </member>
+        <member name="T:CMS.Scheduler.SchedulerModule">
+            <summary>
+            Represents the Scheduler module.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerModule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.SchedulerModule.OnInit">
+            <summary>
+            Initializes the module.
+            </summary>
+        </member>
+        <member name="T:CMS.Scheduler.UnusedMemoryCleaner">
+            <summary>
+            Class for cleaning unused memory.
+            </summary>
+        </member>
+        <member name="M:CMS.Scheduler.UnusedMemoryCleaner.Execute(CMS.Scheduler.TaskInfo)">
+            <summary>
+            Cleans unused memory.
+            </summary>
+            <param name="task">Task to process</param>
+        </member>
+    </members>
+</doc>

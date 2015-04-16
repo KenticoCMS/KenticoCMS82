@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <columns>
+    <column source="##ALL##" externalsourcename="DocumentName" sort="DocumentName" caption="$general.documentname$" wrap="false" cssclass="main-column-100"  />
+    <column source="DocumentModifiedWhen" externalsourcename="modifiedwhen" caption="$general.modified$" wrap="false">
+      <tooltip source="DocumentModifiedWhen" externalsourcename="modifiedwhentooltip" />
+    </column>
+    <column source="##ALL##" externalsourcename="status" caption="$general.workflowstep$" wrap="false" />
+  </columns>
+  <options>
+    <key name="ShowSelection" value="false" />
+  </options>
+</grid>

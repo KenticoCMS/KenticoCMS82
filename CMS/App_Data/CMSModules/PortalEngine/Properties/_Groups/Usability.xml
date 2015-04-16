@@ -1,0 +1,14 @@
+﻿<category name="Behavior" collapsible="true" collapsedbydefault="true" />
+
+<field column="Visible" fieldcaption="Enabled" visible="true" defaultvalue="true" columntype="boolean" fieldtype="checkbox" allowempty="false" fielddescription="{$documentation.webpartproperties.enabled$}" guid="8f751ce3-374f-4026-b935-2389d694a10c" />
+<field column="HideOnSubPages" fieldcaption="Disable on subpages" visible="true" columntype="boolean" fieldtype="checkbox" allowempty="false" fielddescription="{$documentation.webpartproperties.disableonsub$}" guid="f0ac3f83-83c6-4b8e-80ae-d073acdd93fb" />
+<field column="ShowForDocumentTypes" fieldcaption="{$content.enableforpagetypes$}" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" columnsize="400" fielddescription="{$documentation.webpartproperties.usefordocumenttypes$}" guid="b3b46d10-668e-4d4b-8805-af671b474a31">
+  <settings>
+    <controlname>selectclassnames</controlname>
+  </settings>
+</field>
+<field column="DisplayToRoles" fieldcaption="Enable for roles" visible="true" columntype="text" fieldtype="usercontrol" allowempty="true" columnsize="200" fielddescription="{$documentation.webpartproperties.useforroles$}" guid="190c38c7-904b-4044-bc78-6998b50ae31a">
+  <settings>
+    <controlname>rolecheckboxselector</controlname>
+  </settings>
+</field>

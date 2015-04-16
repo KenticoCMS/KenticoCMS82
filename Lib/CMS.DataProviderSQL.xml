@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.DataProviderSQL</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.DataProviderSQL.DataConnection">
+            <summary>
+            Represents SQL Server data connection.
+            </summary>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataConnection.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="connectionString">Connection string</param>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataConnection.BulkInsert(System.Data.DataTable,System.String,CMS.DataEngine.BulkInsertSettings)">
+            <summary>
+            Performs a bulk insert of the data into a target database table
+            </summary>
+            <param name="sourceData">Source data table</param>
+            <param name="targetTable">Name of the target DB table</param>
+            <param name="insertSettings">Bulk insert configuration</param>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataConnection.CreateNativeConnection">
+            <summary>
+            Creates a new native connection
+            </summary>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataConnection.CreateCommand(System.String)">
+            <summary>
+            Creates a new SQL command
+            </summary>
+            <param name="cmdText">Command text</param>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataConnection.CreateParameter(System.String,System.Object)">
+            <summary>
+            Creates a new command parameter
+            </summary>
+            <param name="name">Parameter name</param>
+            <param name="value">Parameter value</param>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataConnection.CreateDataAdapter">
+            <summary>
+            Creates a data adapter
+            </summary>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataConnection.HandleDbError(System.String,System.Data.Common.DbException)">
+            <summary>
+            Handles the database error. Returns false, if the error was not handled
+            </summary>
+            <param name="message">Error message</param>
+            <param name="ex">Database exception</param>
+        </member>
+        <member name="T:CMS.DataProviderSQL.DataProvider">
+            <summary>
+            Data provider class.
+            </summary>
+        </member>
+        <member name="M:CMS.DataProviderSQL.DataProvider.GetNewConnection(System.String)">
+            <summary>
+            Returns new data connection.
+            </summary>
+            <param name="connectionString">Connection string</param>
+        </member>
+        <member name="T:CMS.DataProviderSQL.SqlGenerator">
+            <summary>
+            Sql generator.
+            </summary>
+        </member>
+        <member name="T:CMS.DataProviderSQL.TableManager">
+            <summary>
+            Ensures management of database table and table column.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <actions parameters="TaskStatusID">
+    <action name="edit" caption="$general.edit$" fonticonclass="icon-edit" fonticonstyle="allow" />
+    <action name="#delete" caption="$general.delete$" fonticonclass="icon-bin" fonticonstyle="critical" confirmation="$general.confirmdelete$" />
+    <action name="#moveup" caption="$Unigrid.Groups.Actions.up$" fonticonclass="icon-chevron-up" />
+    <action name="#movedown" caption="$Unigrid.Groups.Actions.down$" fonticonclass="icon-chevron-down" />
+  </actions>
+  <columns>
+    <column source="TaskStatusDisplayName" caption="$general.name$" wrap="false" allowsorting="false" localize="true">
+      <filter type="text" />
+    </column>
+    <column source="TaskStatusColor" caption="$pm.projectstatus.color$" externalsourcename="#colorbar|-" wrap="false" allowsorting="false" />
+    <column source="TaskStatusIcon" caption="$pm.projectstatus.icon$" externalsourcename="TaskStatusIcon" wrap="false" allowsorting="false" />
+    <column source="TaskStatusIsNotStarted" caption="$pm.projectstatus.isnotstartedstatus$" externalsourcename="#yesno" wrap="false" allowsorting="false" />
+    <column source="TaskStatusIsFinished" caption="$pm.projectstatus.isfinishstatus$" externalsourcename="#yesno" wrap="false" allowsorting="false" />
+    <column source="TaskStatusEnabled" caption="$general.enabled$" externalsourcename="#yesno" wrap="false" allowsorting="false" />
+    <column cssclass="filling-column" />
+  </columns>
+  <objecttype name="PM.ProjectTaskStatus" />
+  <options>
+    <key name="DisplayFilter" value="true" />
+  </options>
+</grid>

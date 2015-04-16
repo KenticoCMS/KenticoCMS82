@@ -1,0 +1,58 @@
+﻿.api-examples-container {
+    overflow: hidden;
+    position: fixed;
+    bottom: 284px;
+    top: 0;
+    margin: @base-unit 0 0 @base-unit;
+
+    .api-examples-column {
+        overflow: auto;
+        height: 100%;
+        position: relative;
+        float: left;
+        width: 50%;
+
+        .api-examples-column-content {
+            padding-right: @base-unit;
+
+            &.right {
+                padding-left: @base-unit;
+            }
+
+            .api-examples-column-header {
+                clear: both;
+
+                h3 {
+                    display: inline;
+                }
+
+                a {
+                    margin-left: @margin-50;
+                }
+
+                .api-examples-description {
+                    float: left;
+                    clear: both;
+                }
+            }
+
+            .api-examples-body {
+                margin-top: 1.5 * @base-unit;
+            }
+
+            .api-examples-action-buttons {
+                margin-bottom: @margin-50;
+            }
+        }
+    }
+}
+
+.api-examples-hint {
+    padding-bottom: @base-unit;
+}
+
+.api-examples-footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name="Sample test settings" id="51ec3f23-f18e-4ad6-990d-430fd1d3ff29" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>This settngs file defines a sample test settings for automated tests within Kentico installation. It automatically deploys DataProviderSQL and FileSystemStorage assemblies which are not directly referenced, but loaded dynamically in run-time.</Description>
+  <Deployment>
+    <DeploymentItem filename="Lib\CMS.DataProviderSQL.dll" />
+    <DeploymentItem filename="Lib\CMS.FileSystemStorage.dll" />
+  </Deployment>
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+    </AgentRule>
+  </Execution>
+</TestSettings>

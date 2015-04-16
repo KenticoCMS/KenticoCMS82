@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<grid>
+  <columns>
+    <column  source="FilePath" externalsourcename="filename" caption="$general.name$" wrap="false">
+    </column>
+    <column source="FilePath" externalsourcename="result" allowsorting="false" caption="$Tools.FileImport.DataGrid.ColumnResult$" wrap="false" cssclass="main-column-100" />
+  </columns>
+  <options>
+    <key name="DisplayFilter" value="false" />
+    <key name="ShowSelection" value="true" />
+    <key name="SelectionColumn" value="FilePath" />
+  </options>
+</grid>

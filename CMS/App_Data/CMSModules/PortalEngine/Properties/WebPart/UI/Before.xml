@@ -1,0 +1,21 @@
+﻿<form>
+  [Group:Default]
+<category name="Visibility">
+  <properties>
+    <collapsedbydefault>true</collapsedbydefault>
+    <collapsible>true</collapsible>
+    <visible>true</visible>
+  </properties>
+</category>
+
+  <field guid="8f751ce3-374f-4026-b935-2389d694a10c" fieldtype="CustomUserControl" columntype="boolean" visible="true" column="Visible">
+    <properties>
+      <fielddescription>{$documentation.webpartproperties.visible$}</fielddescription>
+      <defaultvalue>true</defaultvalue>
+      <fieldcaption>Visible</fieldcaption>
+    </properties>
+    <settings>
+      <controlname>checkboxcontrol</controlname>
+    </settings>
+  </field>
+</form>

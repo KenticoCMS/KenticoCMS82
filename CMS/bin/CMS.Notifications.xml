@@ -1,0 +1,1124 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CMS.Notifications</name>
+    </assembly>
+    <members>
+        <member name="T:CMS.Notifications.NotificationsModuleMetadata">
+            <summary>
+            Represents the Notifications module metadata.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationsModuleMetadata.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationSender">
+            <summary>
+            Object for asynchronous notification sending.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationSender.mGatewaysById">
+            <summary>
+            Hashtable with CMSNotificationGateways indexed by GatewayID.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSender.GetNotificationGateway(System.Int32)">
+            <summary>
+            Gets notification gateway according to the specified NotificationGatewayInfo.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSender.SendNotifications">
+            <summary>
+            Sends all notifications matching the given criteria (properties of the object).
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSender.SendAsync(System.Security.Principal.WindowsIdentity)">
+            <summary>
+            Runs the sender in an asynchronous thread.
+            </summary>
+            <param name="wi">Windows identity</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSender.Send">
+            <summary>
+            Sends the notifications.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSender.ClearHashtables">
+            <summary>
+            Clears hashtables with notification gateways' assemblies.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.GatewaysById">
+            <summary>
+            Hashtable with CMSNotificationGateways indexed by GatewayID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.EventSource">
+            <summary>
+            Subscription event source.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.EventCode">
+            <summary>
+            Subscription event code.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.EventObjectID">
+            <summary>
+            Subscription event object ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.EventData1">
+            <summary>
+            Subscription event data 1.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.EventData2">
+            <summary>
+            Subscription event data 2.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.SiteID">
+            <summary>
+            ID of the site where the event belongs.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.Where">
+            <summary>
+            Additional WHERE condition.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.ResolverCustomData">
+            <summary>
+            Custom data for the macro resolver (IInfo, DataRow or DataClass object).
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSender.ResolverSourceParameters">
+            <summary>
+            Special macros for the resolver (couples [name, value]).
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationsModule">
+            <summary>
+            Represents the Notifications module.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationsModule.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationsModule.RegisterCommands">
+            <summary>
+            Registers the object type of this module
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationsModule.RaiseEvent(System.Object[])">
+            <summary>
+            Raises a notification event
+            </summary>
+            <param name="parameters">Parameters array</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationsModule.ClearHashtables(System.Boolean)">
+            <summary>
+            Clears the module hashtables.
+            </summary>
+            <param name="logTasks">If true, web farm tasks are logged</param>
+        </member>
+        <member name="T:CMS.Notifications.CMSEmailNotificationGateway">
+            <summary>
+            Base class for e-mail notification gateways.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.CMSNotificationGateway">
+            <summary>
+            Base class for all notification gateways.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.CMSNotificationGateway.mEnableNotifications">
+            <summary>
+            Indicates if notifications are sent when specified event occurs.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.GetNotificationGateway(CMS.Notifications.NotificationGatewayInfo)">
+            <summary>
+            Gets notification gateway according to the specified NotificationGatewayInfo.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.GetNotificationGateway(System.Int32)">
+            <summary>
+            Gets notification gateway assambly according to the specified gateway ID.
+            </summary>
+            <param name="gatewayId">ID of the gateway to obtain</param>        
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.GetNotificationGateway(System.String)">
+            <summary>
+            Gets notification gateway assambly according to the specified gateway name.
+            </summary>
+            <param name="gatewayName">Name of the gateway to obtain</param>        
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.RaiseEvent(System.String,System.String,System.Int32,System.String,System.String,System.Int32,System.String,System.Object,System.String[0:,0:])">
+            <summary>
+            Raises event with specified parameters and performs sending notifications to all subscribers who were subscribed to such event.
+            </summary>
+            <param name="eventSource">Subscription event source</param>
+            <param name="eventCode">Subscription event code</param>
+            <param name="eventObjectId">Subscription event object ID</param>
+            <param name="eventData1">Subscription event data 1</param>
+            <param name="eventData2">Subscription event data 2</param>
+            <param name="siteId">ID of the site where the event belongs</param>
+            <param name="where">Additional WHERE conditoin</param>
+            <param name="resolverData">Custom data for macro resolver (DataRow or DataClass object)</param>
+            <param name="resolverSourceParameters">Resolver special macros (couples [name, value])</param>
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.GetNotificationGatewayForm">
+            <summary>
+            Returns notification gateway form with custom control(s) which are used to enter/select user target(s) the provider should send notification to. You will need to override this method for your custom gateway.
+            </summary>        
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.SendNotification">
+            <summary>
+            Sends notification. It is automatically called after the specified event is raised. You will need to override this method for your custom gateway.
+            </summary>        
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.Clone">
+            <summary>
+            Returns clone of current notification gateway instance.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGateway.LogEvent(System.Exception)">
+            <summary>
+            Logs an event if error occurred during action.
+            </summary>
+            <param name="ex">Exception occuring</param>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGateway.EnableNotifications">
+            <summary>
+            Indicates if notifications are sent when specified event occurs, by default it is set to TRUE.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGateway.Resolver">
+            <summary>
+            Macro resolver for resolving macros in notification messages.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGateway.GatewayName">
+            <summary>
+            Gets or sets the code name of the notification gateway.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGateway.NotificationGatewayObj">
+            <summary>
+            Gets the notification gateway object.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGateway.NotificationSubscriptionObj">
+            <summary>
+            Subscritption information the gateway use when sending notification.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGateway.NotificationSubscriptionControl">
+            <summary>
+            Gets or sets notification subscription control where the notification gateway form is placed on.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGateway.NotificationGatewayForm">
+            <summary>
+            Gets or sets the notification gateway form.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSEmailNotificationGateway.GetNotificationGatewayForm">
+            <summary>
+            Returns the e-mail gateway form.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSEmailNotificationGateway.SendNotification">
+            <summary>
+            Sends the notification via e-mail.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSEmailNotificationGateway.GetNotificationSubject(CMS.Notifications.NotificationTemplateTextInfo)">
+            <summary>
+            Gets the notification subject.
+            </summary>
+            <param name="templateText">The template text</param>
+            <returns>Notification e-mail subject</returns>
+        </member>
+        <member name="M:CMS.Notifications.CMSEmailNotificationGateway.GetNotificationBody(CMS.Notifications.NotificationTemplateTextInfo,System.Boolean)">
+            <summary>
+            Gets the notification body.
+            </summary>
+            <param name="templateText">The template text</param>
+            <param name="htmlSupported">If <c>true</c> the HTML e-mails are supported</param>
+            <returns>Notification e-mail body</returns>
+        </member>
+        <member name="M:CMS.Notifications.CMSEmailNotificationGateway.EmailNotificationsFrom(System.String)">
+            <summary>
+            Gets the e-mail addres that should be used as a sender of a notification.
+            </summary>
+            <param name="siteName">Name of the site</param>
+            <returns>E-mail address of the notification sender</returns>
+        </member>
+        <member name="T:CMS.Notifications.CMSNotificationGatewayForm">
+            <summary>
+            Base class for notification gateway forms.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGatewayForm.GetNotificationGatewayForm(System.String)">
+            <summary>
+            Gets the notification gateway form which is loaded according to the specified path.
+            </summary>
+            <param name="path">Virtual path to the control to load</param>        
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGatewayForm.Validate">
+            <summary>
+            Validates user entered/selected target(s)
+            </summary>        
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationGatewayForm.ClearForm">
+            <summary>
+            Clears the form (this method is called when successful subscription is made).
+            </summary>        
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationGatewayForm.Value">
+            <summary>
+            Gets or sets the form value.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.CMSNotificationSubscription">
+            <summary>
+            Base class for the subscription controls.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationSubscription.Validate">
+            <summary>
+            For each notification gateway provider validates its notification form data.
+            If validation fails returns concatenated error messages from each form otherwise returns empty string.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.CMSNotificationSubscription.Subscribe">
+            <summary>
+            Calls Validate() method, if validation fails returns error message, 
+            otherwise creates subscriptions and returns empty string.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.Subscriptions">
+            <summary>
+            Array of SubscriptionInfos (used when multple subscriptions should be created).
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.SubscriptionSiteID">
+            <summary>
+            If specified, user is subscribed to site specific event. If zero, user is subscribed to global event.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.SubscriptionUseHTML">
+            <summary>
+            Gets or sets the value which determines whether to use HTML format of the template for the subscription.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventData1">
+            <summary>
+            Event data field 1.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventData2">
+            <summary>
+            Event data field 2.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventDescription">
+            <summary>
+            Gets or sets the text which will be displayed above the notification gateway forms.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.GatewayNames">
+            <summary>
+            Gets or sets the code names of the notification gateways separated with semicolon.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.NotificationTemplateName">
+            <summary>
+            Gets or sets the notification template name in following format:
+            [sitename].[templatename] for site specific template, [templatename] for global template.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventSource">
+            <summary>
+            Gets or sets the event source.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventCode">
+            <summary>
+            Gets or sets the event code.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventObjectID">
+            <summary>
+            Gets or sets the event object ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventDisplayName">
+            <summary>
+            Gets or sets localizable string or plain text which describes event and which is visible to the users.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.EventUserID">
+            <summary>
+            Gets or sets the Event user ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.CMSNotificationSubscription.NotificationGateways">
+            <summary>
+            Gets the list of the notification gateway providers, which will be loaded according to the GatewayNames.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationGatewayInfo">
+            <summary>
+            NotificationGatewayInfo data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationGatewayInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationGatewayInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty NotificationGatewayInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new NotificationGatewayInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewaySupportsEmail">
+            <summary>
+            Gateway supports email.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayClassName">
+            <summary>
+            Gateway class name.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayName">
+            <summary>
+            Gateway name.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewaySupportsPlainText">
+            <summary>
+            Gateway supports plain text.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewaySupportsHTMLText">
+            <summary>
+            Gateway supports HTML text.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayDisplayName">
+            <summary>
+            Gateway display name.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayDescription">
+            <summary>
+            Gateway description.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayEnabled">
+            <summary>
+            Indicates if gateway is enabled or not.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayID">
+            <summary>
+            Gateway id.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayLastModified">
+            <summary>
+            Gateway last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayGUID">
+            <summary>
+            Gateway GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfo.GatewayAssemblyName">
+            <summary>
+            Gateway assembly name.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationGatewayInfoProvider">
+            <summary>
+            Class providing NotificationGatewayInfo management.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationGatewayInfoProvider.mIsAnyNotificationGatewayEnabled">
+            <summary>
+            Determines if at least one notification gateway is enabled, if so, returns true, otherwise returns false.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.GetGateways(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns DataSet with all gateways according to WHERE condition.
+            </summary>
+            <param name="where">WHERE condition</param>
+            <param name="orderBy">ORDER BY</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.GetGateways(System.String,System.String)">
+            <summary>
+            Returns DataSet with all gateways according to WHERE condition.
+            </summary>
+            <param name="where">WHERE condition</param>
+            <param name="orderBy">ORDER BY</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.GetNotificationGatewayInfo(System.Int32)">
+            <summary>
+            Returns the NotificationGatewayInfo structure for the specified notificationGateway.
+            </summary>
+            <param name="notificationGatewayId">NotificationGateway ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.GetNotificationGatewayInfo(System.String)">
+            <summary>
+            Returns the NotificationGatewayInfo structure for the specified notificationGateway.
+            </summary>
+            <param name="gatewayName">Gateway codename</param>        
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.SetNotificationGatewayInfo(CMS.Notifications.NotificationGatewayInfo)">
+            <summary>
+            Sets (updates or inserts) specified notificationGateway.
+            </summary>
+            <param name="notificationGateway">NotificationGateway to set</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.DeleteNotificationGatewayInfo(CMS.Notifications.NotificationGatewayInfo)">
+            <summary>
+            Deletes specified notificationGateway.
+            </summary>
+            <param name="infoObj">NotificationGateway object</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.DeleteNotificationGatewayInfo(System.Int32)">
+            <summary>
+            Deletes specified notificationGateway.
+            </summary>
+            <param name="notificationGatewayId">NotificationGateway ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears the hashtables.
+            </summary>
+            <param name="logTasks">If true, the clear tasks are logged</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.GetGatewaysInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns DataSet with all gateways according to WHERE condition.
+            </summary>
+            <param name="where">WHERE condition</param>
+            <param name="orderBy">ORDER BY</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.GetNotificationGatewayInternal(System.Int32)">
+            <summary>
+            Returns the NotificationGatewayInfo structure for the specified notificationGateway.
+            </summary>
+            <param name="notificationGatewayId">NotificationGateway id</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.GetNotificationGatewayInternal(System.String)">
+            <summary>
+            Returns the NotificationGatewayInfo structure for the specified notificationGateway.
+            </summary>
+            <param name="gatewayName">Gateway codename</param>        
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.SetNotificationGatewayInternal(CMS.Notifications.NotificationGatewayInfo)">
+            <summary>
+            Sets (updates or inserts) specified notificationGateway.
+            </summary>
+            <param name="notificationGateway">NotificationGateway to set</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationGatewayInfoProvider.DeleteNotificationGatewayInternal(CMS.Notifications.NotificationGatewayInfo)">
+            <summary>
+            Deletes specified notificationGateway.
+            </summary>
+            <param name="infoObj">NotificationGateway object</param>
+        </member>
+        <member name="P:CMS.Notifications.NotificationGatewayInfoProvider.IsAnyNotificationGatewayEnabled">
+            <summary>
+            Determines if at least one notification gateway is enabled, if so, returns true, otherwise returns false.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationSubscriptionInfo">
+            <summary>
+            Notification subscription info data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationSubscriptionInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationSubscriptionInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty NotificationSubscriptionInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new NotificationSubscriptionInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionSiteID">
+            <summary>
+            Subscription site ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionUseHTML">
+            <summary>
+            Gets or sets the value which determines whether to use HTML format of the template for the subscription.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionEventData1">
+            <summary>
+            Event data field 1.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionEventData2">
+            <summary>
+            Event data field 2.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionEventSource">
+            <summary>
+            Subscription event source.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionLastModified">
+            <summary>
+            Subscription last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionTarget">
+            <summary>
+            Subscription target.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionID">
+            <summary>
+            Subscription ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionEventCode">
+            <summary>
+            Subscription event code.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionEventDisplayName">
+            <summary>
+            Subscription event display name.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionTemplateID">
+            <summary>
+            Subscription template ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionEventObjectID">
+            <summary>
+            Subscription event object ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionUserID">
+            <summary>
+            Subscription user ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionGUID">
+            <summary>
+            Subscription GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionGatewayID">
+            <summary>
+            Subscription gateway ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationSubscriptionInfo.SubscriptionTime">
+            <summary>
+            Subscription time.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationSubscriptionInfoProvider">
+            <summary>
+            Class providing notification subscription info management.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfoProvider.GetNotificationSubscriptionInfo(System.Int32)">
+            <summary>
+            Returns the notification subscription info structure for the specified notification subscription.
+            </summary>
+            <param name="notificationSubscriptionId">Notification subscription ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfoProvider.GetSubscriptions(System.String,System.String)">
+            <summary>
+            Gets all the notification subscriptions filtered by where condition and sorted by order by expression.
+            </summary>
+            <param name="where">Where condition to use</param>
+            <param name="orderBy">Order by statement</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfoProvider.GetSubscriptions(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets all the notification subscriptions filtered by where condition and sorted by order by expression.
+            </summary>
+            <param name="where">Where condition to use</param>
+            <param name="orderBy">Order by statement</param>
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfoProvider.SetNotificationSubscriptionInfo(CMS.Notifications.NotificationSubscriptionInfo)">
+            <summary>
+            Sets (updates or inserts) specified notification subscription.
+            </summary>
+            <param name="notificationSubscription">Notification subscription to set</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfoProvider.DeleteNotificationSubscriptionInfo(CMS.Notifications.NotificationSubscriptionInfo)">
+            <summary>
+            Deletes specified notificationSubscription.
+            </summary>
+            <param name="infoObj">Notification subscription object</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfoProvider.DeleteNotificationSubscriptionInfo(System.Int32)">
+            <summary>
+            Deletes specified notification subscription.
+            </summary>
+            <param name="notificationSubscriptionId">Notification subscription ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationSubscriptionInfoProvider.GetWhereCondition(System.String,System.String,System.Int32,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Returns complete WHERE condition for subscriptions which should be searched according to the given parameters.
+            </summary>
+            <param name="eventSource">Subscription event source</param>
+            <param name="eventCode">Subscription event code</param>
+            <param name="eventObjectId">Subscription event object ID</param>
+            <param name="eventData1">Subscription event data 1</param>
+            <param name="eventData2">Subscription event data 2</param>
+            <param name="siteId">ID of the site where the event belongs</param>
+            <param name="where">Additional WHERE conditoin</param>
+        </member>
+        <member name="T:CMS.Notifications.NotificationTemplateInfo">
+            <summary>
+            Notification template info data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationTemplateInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationTemplateInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty NotificationTemplateInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new NotificationTemplateInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateInfo.TemplateLastModified">
+            <summary>
+            Template last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateInfo.TemplateID">
+            <summary>
+            Template ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateInfo.TemplateGUID">
+            <summary>
+            Template GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateInfo.TemplateName">
+            <summary>
+            Template name.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateInfo.TemplateDisplayName">
+            <summary>
+            Template display name.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateInfo.TemplateSiteID">
+            <summary>
+            Template site ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateInfo.TemplateFullName">
+            <summary>
+            Gets the template full name.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationTemplateInfoProvider">
+            <summary>
+            Class providing notification template info management.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetNotificationTemplateInfo(System.String)">
+            <summary>
+            Returns the global notification template.
+            </summary>
+            <param name="notificationTemplateName">Notification template name</param>        
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetNotificationTemplateInfo(System.String,System.Int32)">
+            <summary>
+            Returns the site related notification template.
+            </summary>
+            <param name="notificationTemplateName">Notification template name</param>
+            <param name="siteId">Template site ID. User zero to get global template</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetNotificationTemplateInfo(System.Int32)">
+            <summary>
+            Returns the notification template info structure for the specified notification template.
+            </summary>
+            <param name="notificationTemplateId">Notification template ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetTemplates(System.String,System.String)">
+            <summary>
+            Gets all the templates filtered by given WHERE condition and ordered by specified ORDER BY statement.
+            </summary>
+            <param name="where">Where condition to use</param>
+            <param name="orderBy">Order by statement to use</param>        
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetTemplates(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets all the templates filtered by given WHERE condition and ordered by specified ORDER BY statement.
+            </summary>
+            <param name="where">Where condition to use</param>
+            <param name="orderBy">Order by statement to use</param>        
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.SetNotificationTemplateInfo(CMS.Notifications.NotificationTemplateInfo)">
+            <summary>
+            Sets (updates or inserts) specified notification template.
+            </summary>
+            <param name="notificationTemplate">Notification template to set</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.DeleteNotificationTemplateInfo(CMS.Notifications.NotificationTemplateInfo)">
+            <summary>
+            Deletes specified notification template.
+            </summary>
+            <param name="infoObj">Notification template object</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.DeleteNotificationTemplateInfo(System.Int32)">
+            <summary>
+            Deletes specified notification template.
+            </summary>
+            <param name="notificationTemplateId">Notification template ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears the hashtables.
+            </summary>
+            <param name="logTasks">If true, the clear tasks are logged</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetNotificationTemplateInfoInternal(System.String,System.Int32)">
+            <summary>
+            Returns the site related notification template.
+            </summary>
+            <param name="notificationTemplateName">Notification template name</param>
+            <param name="siteId">Template site ID. User zero to get global template</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetNotificationTemplateInfoInternal(System.Int32)">
+            <summary>
+            Returns the notification template info structure for the specified notification template.
+            </summary>
+            <param name="notificationTemplateId">Notification template ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.GetTemplatesInternal(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Gets all the templates filtered by given WHERE condition and ordered by specified ORDER BY statement.
+            </summary>
+            <param name="where">Where condition to use</param>
+            <param name="orderBy">Order by statement to use</param>        
+            <param name="topN">Specifies number of returned records</param>
+            <param name="columns">Data columns to return</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.SetNotificationTemplateInfoInternal(CMS.Notifications.NotificationTemplateInfo)">
+            <summary>
+            Sets (updates or inserts) specified notification template.
+            </summary>
+            <param name="notificationTemplate">Notification template to set</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateInfoProvider.DeleteNotificationTemplateInfoInternal(CMS.Notifications.NotificationTemplateInfo)">
+            <summary>
+            Deletes specified notification template.
+            </summary>
+            <param name="infoObj">Notification template object</param>
+        </member>
+        <member name="T:CMS.Notifications.NotificationTemplateTextInfo">
+            <summary>
+            Notification template text info data container class.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationTemplateTextInfo.OBJECT_TYPE">
+            <summary>
+            Object type
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationTemplateTextInfo.TYPEINFO">
+            <summary>
+            Type information.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfo.DeleteObject">
+            <summary>
+            Deletes the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfo.SetObject">
+            <summary>
+            Updates the object using appropriate provider.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfo.#ctor">
+            <summary>
+            Constructor - Creates an empty NotificationTemplateTextInfo object.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfo.#ctor(System.Data.DataRow)">
+            <summary>
+            Constructor - Creates a new NotificationTemplateTextInfo object from the given DataRow.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.TempalateTextID">
+            <summary>
+            Template text ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.TempalateTextGUID">
+            <summary>
+            Template text GUID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.TempalateTextLastModified">
+            <summary>
+            Template text last modified.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.GatewayID">
+            <summary>
+            Gateway ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.TemplatePlainText">
+            <summary>
+            Template plain text.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.TemplateSubject">
+            <summary>
+            Template subject.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.TemplateID">
+            <summary>
+            Template ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfo.TemplateHTMLText">
+            <summary>
+            Template HTML text.
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.NotificationTemplateTextInfoProvider">
+            <summary>
+            Class providing notification template text info management.
+            </summary>
+        </member>
+        <member name="F:CMS.Notifications.NotificationTemplateTextInfoProvider.mTemplateTextsByName">
+            <summary>
+            Hashtable indexed by key "[gatewayID]_[templateID]".
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.Clear(System.Boolean)">
+            <summary>
+            Clears the hashtables.
+            </summary>
+            <param name="logTasks">If true, the clear tasks are logged</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.GetNotificationTemplateTexts(System.String,System.String)">
+            <summary>
+            Returns DataSet with all template texts according to WHERE condition.
+            </summary>
+            <param name="where">WHERE condition</param>
+            <param name="orderBy">ORDER BY</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.GetNotificationTemplateTextInfo(System.Int32)">
+            <summary>
+            Returns the notification template text info structure for the specified notification template text.
+            </summary>
+            <param name="templateTextId">Template text ID</param>        
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.GetNotificationTemplateTextInfo(System.Int32,System.Int32)">
+            <summary>
+            Returns the notification template text info structure for the specified notification template text.
+            </summary>
+            <param name="gatewayId">Gateway ID</param>
+            <param name="templateId">Template ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.GetNotificationTemplateTextInfoFromDB(System.Int32,System.Int32)">
+            <summary>
+            Returns the notification template text info structure for the specified notification template text.
+            </summary>
+            <param name="gatewayId">Gateway ID</param>
+            <param name="templateId">Template ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.SetNotificationTemplateTextInfo(CMS.Notifications.NotificationTemplateTextInfo)">
+            <summary>
+            Sets (updates or inserts) specified notification template text.
+            </summary>
+            <param name="notificationTemplateText">Notification template text to set</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.DeleteNotificationTemplateTextInfo(CMS.Notifications.NotificationTemplateTextInfo)">
+            <summary>
+            Deletes specified notification template text.
+            </summary>
+            <param name="infoObj">Notification template text object</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.DeleteNotificationTemplateTextInfo(System.Int32,System.Int32)">
+            <summary>
+            Deletes specified notification template text.
+            </summary>
+            <param name="gatewayId">Gateway ID</param>
+            <param name="templateId">Template ID</param>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.DeleteNotificationTemplateTextInfo(System.Int32)">
+            <summary>
+            Deletes specified notification template text.
+            </summary>
+            <param name="templateTextId">Template text ID</param>
+        </member>
+        <member name="F:CMS.Notifications.NotificationTemplateTextInfoProvider.tableLock">
+            <summary>
+            Table lock for loading.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.LoadTemplateTexts">
+            <summary>
+            Loads the gateways to the hashtables.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.NotificationTemplateTextInfoProvider.GetHashKey(System.Int32,System.Int32)">
+            <summary>
+            Returns key for the hashtable of the templatetexts according to the parameters.
+            </summary>
+            <param name="gatewayId">ID of the gateway</param>
+            <param name="templateId">ID of the template</param>
+        </member>
+        <member name="P:CMS.Notifications.NotificationTemplateTextInfoProvider.TemplateTextsByName">
+            <summary>
+            Hashtable indexed by key "[gatewayID]_[templateID]".
+            </summary>
+        </member>
+        <member name="T:CMS.Notifications.TemplateTextEdit">
+            <summary>
+            Base class for the control which is used for editing notificatin template text.
+            </summary>
+        </member>
+        <member name="M:CMS.Notifications.TemplateTextEdit.SaveData">
+            <summary>
+            Builts object and saves it to the database.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.TemplateTextEdit.GatewayID">
+            <summary>
+            Gateway ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.TemplateTextEdit.TemplateID">
+            <summary>
+            Template ID.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.TemplateTextEdit.TemplateSubject">
+            <summary>
+            Template subject.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.TemplateTextEdit.TemplatePlainText">
+            <summary>
+            Template plain text.
+            </summary>
+        </member>
+        <member name="P:CMS.Notifications.TemplateTextEdit.TemplateHTMLText">
+            <summary>
+            Template HTML text.
+            </summary>
+        </member>
+    </members>
+</doc>
